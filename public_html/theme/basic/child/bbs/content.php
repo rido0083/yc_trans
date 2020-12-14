@@ -1,38 +1,43 @@
 <?php
+include_once('./_common.php');
+
+$co_id = preg_replace('/[^a-z0-9_]/i', '', $co_id);
+
+//dbconfig파일에 $g5['content_table'] 배열변수가 있는지 체크
+if( !isset($g5['content_table']) ){
+    die('<meta charset="utf-8">관리자 모드에서 게시판관리->내용 관리를 먼저 확인해 주세요.');
+}
+
+// 내용
+if($co_seo_title){
+    $co = get_content_by_field($g5['content_table'], 'content', 'co_seo_title', generate_seo_title($co_seo_title));
+    $co_id = $co['co_id'];
+} else {
+    $co = get_content_db($co_id);
+}
+
+if( ! (isset($co['co_seo_title']) && $co['co_seo_title']) && $co['co_id'] ){
+    seo_title_update($g5['content_table'], $co['co_id'], 'content');
+}
+
+if (G5_IS_MOBILE) {
+    include_once(G5_MOBILE_PATH.'/content.php');
+    return;
+}
+
 if (!$co['co_id'])
     alert('등록된 내용이 없습니다.');
 
 $g5['title'] = $co['co_subject'];
-// include_once('./_head.php');
 
-$co_content = $co['co_mobile_content'] ? $co['co_mobile_content'] : $co['co_content'];
-$str = conv_content($co_content, $co['co_html'], $co['co_tag_filter_use']);
+if ($co['co_include_head'] && is_include_path_check($co['co_include_head']))
+    @include_once($co['co_include_head']);
+else
+    include_once('./_head.php');
 
-// pr_child
-$sql_pr = " select * from ".PR_CONTENT_EXP." where co_id = '{$co['co_id']}' ";
-$row_pr = sql_fetch($sql_pr);
-$pr_co_value = pr_json_decode($row_pr['co_value']);
-
-//회원권한 설정
-//{"co_filename":"bell_list","access_mblv":"2","co_point":"100","co_view":"Y"}
-if ($member['mb_level'] < $pr_co_value['access_mblv']) {
-  alert('회원권한이 필요합니다.',G5_URL);
-}
-//포인트 설정
-if ($pr_co_value['co_point'] > $member['mb_point']) {
-  alert('포인트가 필요한 서비스 입니다.',G5_URL);
-} else {
-  //포인트 차감 (포인트는 한번만 차감한다.)
-  //function insert_point($mb_id, $point, $content='', $rel_table='', $rel_id='', $rel_action='', $expire=0)
-  $po_content = $co['co_subject'].'열람';
-  $sql = " select count(*) as cnt from {$g5['point_table']} where mb_id = '{$member['mb_id']}' and po_content = '{$po_content}' ";
-  $po_content_cnt = sql_fetch($sql);
-  if (!$po_content_cnt['cnt']) {
-    insert_point($member['mb_id'], '-'.$pr_co_value['co_point'], $po_content);
-  }
-}
-//var_dump($pr_co_value);
-// pr_child
+// KVE-2019-0828 취약점 내용
+$co['co_tag_filter_use'] = 1;
+$str = conv_content($co['co_content'], $co['co_html'], $co['co_tag_filter_use']);
 
 // $src 를 $dst 로 변환
 unset($src);
@@ -67,43 +72,34 @@ $dst[] = $default['de_admin_info_email'];
 $str = preg_replace($src, $dst, $str);
 
 // 스킨경로
-if(trim($co['co_mobile_skin']) == '')
-    $co['co_mobile_skin'] = 'basic';
+if(trim($co['co_skin']) == '')
+    $co['co_skin'] = 'basic';
 
-$content_skin_path = get_skin_path('content', $co['co_mobile_skin']);
-$content_skin_url  = get_skin_url('content', $co['co_mobile_skin']);
+$content_skin_path = get_skin_path('content', $co['co_skin']);
+$content_skin_url  = get_skin_url('content', $co['co_skin']);
 $skin_file = $content_skin_path.'/content.skin.php';
 
-if($pr_co_value['co_filename']) {
-  // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
-  add_stylesheet('<link rel="stylesheet" href="'.$content_skin_url.'/style.css">', 0);
-  ?>
-  <article id="ctt" class="ctt_<?php echo $co_id; ?>">
-    <header>
-        <h1><?php echo $g5['title']; ?></h1>
-    </header>
+if ($is_admin)
+    echo '<div class="ctt_admin"><a href="'.G5_ADMIN_URL.'/contentform.php?w=u&amp;co_id='.$co_id.'" class="btn_admin btn"><span class="sound_only">내용 수정</span><i class="fa fa-cog fa-spin fa-fw"></i></a></div>';
+?>
 
-    <div id="ctt_con">
-        <?php
-        if ($pr_co_value['co_view'] == 'Y') {
-          echo $str;
-        }        
-        ?>
-        <?php
-          $content_file = PR_CONTENT_PATH .'/'. $pr_co_value['co_filename'];
-          include_once($content_file.'.php');
-        ?>
-    </div>
+<?php
+if(is_file($skin_file)) {
+    $himg = G5_DATA_PATH.'/content/'.$co_id.'_h';
+    if (file_exists($himg)) // 상단 이미지
+        echo '<div id="ctt_himg" class="ctt_img"><img src="'.G5_DATA_URL.'/content/'.$co_id.'_h" alt=""></div>';
 
-  </article>
-  <?php
-} else if(is_file($skin_file)) {
-// if(is_file($skin_file)) {
     include($skin_file);
+
+    $timg = G5_DATA_PATH.'/content/'.$co_id.'_t';
+    if (file_exists($timg)) // 하단 이미지
+        echo '<div id="ctt_timg" class="ctt_img"><img src="'.G5_DATA_URL.'/content/'.$co_id.'_t" alt=""></div>';
 } else {
     echo '<p>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</p>';
 }
 
-include_once("./_tail.php");
-exit;
+if ($co['co_include_tail'] && is_include_path_check($co['co_include_tail']))
+    @include_once($co['co_include_tail']);
+else
+    include_once('./_tail.php');
 ?>

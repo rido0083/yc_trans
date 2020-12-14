@@ -31,7 +31,7 @@ jQuery(function ($) {
                 }
                 
                 mainCart.update_wish_side();
-                alert("상품을 위시리스트에 담았습니다.");
+                alert("<?php echo _('상품을 위시리스트에 담았습니다.') ?>");
                 return;
             }
         );
@@ -86,7 +86,7 @@ jQuery(function ($) {
 
         // 금액 음수 체크
         if(it_price + parseInt(price) < 0) {
-            alert("구매금액이 음수인 상품은 구매할 수 없습니다.");
+            alert("<?php echo _('구매금액이 음수인 상품은 구매할 수 없습니다.') ?>");
             mainCart.add_cart_after();
             return false;
         }
@@ -114,7 +114,7 @@ jQuery(function ($) {
                 
                 mainCart.update_cart_side();
 
-                alert("상품을 장바구니에 담았습니다.");
+                alert("<?php echo _('상품을 장바구니에 담았습니다.') ?>");
             },
             error : function(request, status, error){
                 mainCart.add_cart_after(frm);
@@ -290,7 +290,7 @@ jQuery(function ($) {
             var info = val.split(",");
             // 재고체크
             if(parseInt(info[2]) < 1) {
-                alert("선택하신 선택옵션상품은 재고가 부족하여 구매할 수 없습니다.");
+                alert("<?php echo _('선택하신 선택옵션상품은 재고가 부족하여 구매할 수 없습니다.') ?>");
                 return false;
             }
         }

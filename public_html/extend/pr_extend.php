@@ -60,6 +60,7 @@ define('PR_MEMO_EXP', 'prexp_'.G5_TABLE_PREFIX.'memo');        //메모를 확�
 define('PR_SCRAP_EXP', 'prexp_'.G5_TABLE_PREFIX.'scrap');      //스크렙을 확장한다. (검색등을 활용)
 
 //현재 디렉토리와 파일명을 반환 합니다.
+$pr_return_uri = $_SERVER['PHP_SELF'];
 $pr_php_self = explode("/", $_SERVER['PHP_SELF']);
 $pr_file_cnt = count($pr_php_self) - 1;
 $pr_dir_cnt = count($pr_php_self) - 2;

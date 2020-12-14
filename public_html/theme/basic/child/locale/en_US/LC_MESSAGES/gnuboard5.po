@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-12-09 11:09+0900\n"
-"PO-Revision-Date: 2020-12-09 11:16+0900\n"
+"POT-Creation-Date: 2020-12-14 11:11+0900\n"
+"PO-Revision-Date: 2020-12-14 11:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -10,14 +10,198 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
-"X-Poedit-Basepath: ../../..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ../../../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: theme/basic/shop/index.php:22
-msgid "히트상품"
-msgstr "Hit Products"
+#: child/lib/pr_common_lib.php:67
+msgid "년 전"
+msgstr "years ago"
 
-#: theme/basic/shop/index.php:57
-msgid "번역테스트"
-msgstr "Translations"
+#: child/lib/pr_common_lib.php:67
+msgid "개월 전"
+msgstr "months ago"
+
+#: child/lib/pr_common_lib.php:67
+msgid "일 전"
+msgstr "days ago"
+
+#: child/lib/pr_common_lib.php:67
+msgid "시간 전"
+msgstr "Before time"
+
+#: child/lib/pr_common_lib.php:67
+msgid "분 전"
+msgstr "minutes ago"
+
+#: child/lib/pr_common_lib.php:67
+msgid "초 전"
+msgstr "seconds ago"
+
+#: child/lib/pr_common_lib.php:181
+msgid "한국어"
+msgstr "Korean"
+
+#: child/lib/pr_common_lib.php:182
+msgid "태국어"
+msgstr "Thai"
+
+#: child/lib/pr_common_lib.php:183
+msgid "영어"
+msgstr "English"
+
+#: child/lib/pr_common_lib.php:184
+msgid "일본어"
+msgstr "日本語"
+
+#: child/lib/pr_common_lib.php:185
+msgid "중국어"
+msgstr "Chinese"
+
+#: group.php:10
+msgid "그룹은 모바일에서만 접근할 수 있습니다."
+msgstr " Groups are only accessible on mobile."
+
+#: head.php:26
+msgid "본문 바로가기"
+msgstr "skip to content"
+
+#: head.php:37
+msgid "커뮤니티"
+msgstr "Community"
+
+#: head.php:38
+msgid "쇼핑몰"
+msgstr "Shopping mall"
+
+#: head.php:51
+msgid "FAQ"
+msgstr "FAQs"
+
+#: head.php:52
+msgid "Q&A"
+msgstr "Q&A"
+
+#: head.php:53
+msgid "새글"
+msgstr "New Posts"
+
+#: head.php:54
+msgid "접속자"
+msgstr "Connector"
+
+#: head.php:66
+msgid "사이트 내 전체검색"
+msgstr "Site search"
+
+#: head.php:70
+msgid "검색어 필수"
+msgstr "Keyword"
+
+#: head.php:71
+msgid "검색어를 입력해주세요"
+msgstr ""
+
+#: head.php:72
+msgid "검색"
+msgstr ""
+
+#: head.php:79
+msgid "검색어는 두글자 이상 입력하십시오."
+msgstr ""
+
+#: head.php:93
+msgid "빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다."
+msgstr ""
+
+#: head.php:109
+msgid "정보수정"
+msgstr ""
+
+#: head.php:110
+msgid "로그아웃"
+msgstr ""
+
+#: head.php:112
+msgid "관리자"
+msgstr ""
+
+#: head.php:115
+msgid "회원가입"
+msgstr ""
+
+#: head.php:116
+msgid "로그인"
+msgstr ""
+
+#: head.php:122
+msgid "메인메뉴"
+msgstr ""
+
+#: head.php:125 head.php:163
+msgid "전체메뉴"
+msgstr ""
+
+#: head.php:125
+msgid "전체메뉴열기"
+msgstr ""
+
+#: head.php:143
+msgid "하위분류"
+msgstr ""
+
+#: head.php:159 head.php:192
+msgid "메뉴 준비 중입니다."
+msgstr ""
+
+#: head.php:159 head.php:192
+msgid "관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다."
+msgstr ""
+
+#: mobile/group.php:5
+msgid "그룹은 PC에서만 접근할 수 있습니다."
+msgstr ""
+
+#: tail.php:32
+msgid "회사소개"
+msgstr ""
+
+#: tail.php:33
+msgid "개인정보처리방침"
+msgstr ""
+
+#: tail.php:34
+msgid "서비스이용약관"
+msgstr ""
+
+#: tail.php:35
+msgid "모바일버전"
+msgstr ""
+
+#: tail.php:38
+msgid "사이트 정보"
+msgstr ""
+
+#: tail.php:40
+msgid ""
+"회사명 : 회사명 / 대표 : 대표자명<br>\n"
+"\t\t\t\t주소  : OO도 OO시 OO구 OO동 123-45<br>\n"
+"\t\t\t\t사업자 등록번호  : 123-45-67890<br>\n"
+"\t\t\t\t전화 :  02-123-4567  팩스  : 02-123-4568<br>\n"
+"\t\t\t\t통신판매업신고번호 :  제 OO구 - 123호<br>\n"
+"\t\t\t\t개인정보관리책임자 :  정보책임자명<br>"
+msgstr ""
+
+#: tail.php:59
+msgid "소유하신 도메인."
+msgstr ""
+
+#: tail.php:63
+msgid "상단으로"
+msgstr ""
+
+#~ msgid "히트상품"
+#~ msgstr "Hit Products"
+
+#~ msgid "번역테스트"
+#~ msgstr "Translations"

@@ -39,6 +39,15 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     		</ul>
             <?php } ?>                  
 			<ul id="hd_qnb">
+            
+                    <?php
+                    foreach ($iu_lnagMenu as $key => $val) {                        
+                    ?>
+                        <li><a onclick="change_trans('<?php echo $key?>' , '<?php echo $pr_return_uri?>')"><?php echo _($val)?></a></li>
+                    <?php
+                    }
+                    ?>
+                
 	            <li><a href="<?php echo G5_BBS_URL ?>/faq.php"><?php echo _('FAQ') ?></a></li>
 	            <li><a href="<?php echo G5_BBS_URL ?>/qalist.php"><?php echo _('Q&A') ?></a></li>
 	            <li><a href="<?php echo G5_BBS_URL ?>/new.php"><?php echo _('새글') ?></a></li>
@@ -50,24 +59,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
         <div id="logo">
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
-            <ul class="pr_lang" style="color:#fff">
-              <?php
-              foreach ($iu_lnagMenu as $key => $val) {
-              ?>
-                  <li><a onclick="change_trans('<?php echo $key?>' , '/<?php echo $return_uri?>')"><?php echo _($val)?></a></li>
-              <?php
-              }
-              ?>
-            </ul>      
         </div>
-    <script>
-  function change_trans(lang, url) {
-    var f = document.change;
-    var chang_tans = '<?php echo PR_CHILD_URL?>/plugin/trans_ch.php?l='+lang+'&u='+url;   
-    location.href=chang_tans;   
-  }
 
-    </script>
         <div class="hd_sch_wr">
             <fieldset id="hd_sch">
                 <legend><?php echo _('사이트 내 전체검색') ?></legend>
@@ -122,15 +115,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <li><a href="<?php echo G5_BBS_URL ?>/register.php"><?php echo _('회원가입') ?></a></li>
             <li><a href="<?php echo G5_BBS_URL ?>/login.php"><?php echo _('로그인') ?></a></li>
             <?php }  ?>
-
-        </ul>
+        </ul>     
     </div>
     
     <nav id="gnb">
         <h2><?php echo _('메인메뉴') ?></h2>
         <div class="gnb_wrap">
             <ul id="gnb_1dul">
-                <li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn" title="전체메뉴"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only"><?php echo _('전체메뉴열기') ?></span></button></li>
+                <li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn" title="<?php echo _('전체메뉴') ?>"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only"><?php echo _('전체메뉴열기') ?></span></button></li>
                 <?php
 				$menu_datas = get_menu_db(0, true);
 				$gnb_zindex = 999; // gnb_1dli z-index 값 설정용
@@ -147,8 +139,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
                         if( empty($row2) ) continue; 
 
-                        if($k == 0)
-                            echo '<span class="bg">하위분류</span><div class="gnb_2dul"><ul class="gnb_2dul_box">'.PHP_EOL;
+                        if($k == 0)                                                
+                            echo '<span class="bg">'._('하위분류').'</span><div class="gnb_2dul"><ul class="gnb_2dul_box">'.PHP_EOL;
                     ?>
                         <li class="gnb_2dli"><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><?php echo $row2['me_name'] ?></a></li>
                     <?php
@@ -205,8 +197,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <div id="gnb_all_bg"></div>
         </div>
     </nav>
-    <script>
-    
+    <script>    
     $(function(){
         $(".gnb_menu_btn").click(function(){
             $("#gnb_all, #gnb_all_bg").show();
@@ -215,7 +206,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             $("#gnb_all, #gnb_all_bg").hide();
         });
     });
-
     </script>
 </div>
 <!-- } 상단 끝 -->
@@ -230,3 +220,10 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <div id="container">
         <?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php } ?>
 
+<?php
+// pr-child
+if ($is_file_child) {
+	include_once($pr_child_file);
+}
+// pr-child
+?>

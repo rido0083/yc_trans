@@ -34,6 +34,13 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
     			<li class="active"><a href="<?php echo G5_SHOP_URL ?>/">쇼핑몰</a></li>
     		</ul>
 			<ul id="hd_qnb">
+                <?php
+                foreach ($iu_lnagMenu as $key => $val) {                        
+                ?>
+                    <li><a onclick="change_trans('<?php echo $key?>' , '<?php echo $pr_return_uri?>')"><?php echo _($val)?></a></li>
+                <?php
+                }
+                ?>
 	            <li><a href="<?php echo G5_BBS_URL ?>/faq.php">FAQ</a></li>
 	            <li><a href="<?php echo G5_BBS_URL ?>/qalist.php">1:1문의</a></li>
 	            <li><a href="<?php echo G5_SHOP_URL ?>/personalpay.php">개인결제</a></li>
@@ -262,3 +269,11 @@ jQuery(function ($){
                 <button class="no_text_resize" onclick="font_resize('container', 'increase');">크게</button>
             </div>
             <!-- } 글자크기 조정 display:none 되어 있음 끝 -->
+
+            <?php
+// pr-child
+if ($is_file_child) {
+	include_once($pr_child_file);
+}
+// pr-child
+?>                

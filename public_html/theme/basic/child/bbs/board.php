@@ -1,5 +1,4 @@
 <?php
-/*
 include_once('./_common.php');
 
 if (!$board['bo_table']) {
@@ -242,6 +241,4 @@ include_once(G5_BBS_PATH.'/board_tail.php');
 echo "\n<!-- 사용스킨 : ".(G5_IS_MOBILE ? $board['bo_mobile_skin'] : $board['bo_skin'])." -->\n";
 
 include_once(G5_PATH.'/tail.sub.php');
-exit;
-*/
 ?>

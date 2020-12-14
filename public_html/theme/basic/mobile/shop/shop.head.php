@@ -12,7 +12,7 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
 <header id="hd">
     <?php if ((!$bo_table || $w == 's' ) && defined('_INDEX_')) { ?><h1><?php echo $config['cf_title'] ?></h1><?php } ?>
 
-    <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+    <div id="skip_to_container"><a href="#container"><?php echo _('본문 바로가기') ?></a></div>
 
     <?php if(defined('_INDEX_')) { // index에서만 실행
         include G5_MOBILE_PATH.'/newwin.inc.php'; // 팝업레이어
@@ -21,10 +21,10 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
     <div id="hd_wr">
         <div id="logo"><a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/mobile_logo_img" alt="<?php echo $config['cf_title']; ?> 메인"></a></div>
         <div id="hd_btn">
-            <button type="button" id="btn_hdcate"><i class="fa fa-bars"></i><span class="sound_only">분류</span></button>
-            <button type="button" id="btn_hdsch"><i class="fa fa-search"></i><span class="sound_only">검색열기</span></button>
-            <a href="<?php echo G5_SHOP_URL; ?>/mypage.php" id="btn_hduser"><i class="fa fa-user"></i><span class="sound_only">마이페이지</span></a>
-            <a href="<?php echo G5_SHOP_URL; ?>/cart.php" id="btn_hdcart"><i class="fa fa-shopping-cart"></i><span class="sound_only">장바구니</span><span class="cart-count"><?php echo get_boxcart_datas_count(); ?></span></a>
+            <button type="button" id="btn_hdcate"><i class="fa fa-bars"></i><span class="sound_only"><?php echo _('분류') ?></span></button>
+            <button type="button" id="btn_hdsch"><i class="fa fa-search"></i><span class="sound_only"><?php echo _('검색열기') ?></span></button>
+            <a href="<?php echo G5_SHOP_URL; ?>/mypage.php" id="btn_hduser"><i class="fa fa-user"></i><span class="sound_only"><?php echo _('마이페이지') ?></span></a>
+            <a href="<?php echo G5_SHOP_URL; ?>/cart.php" id="btn_hdcart"><i class="fa fa-shopping-cart"></i><span class="sound_only"><?php echo _('장바구니') ?></span><span class="cart-count"><?php echo get_boxcart_datas_count(); ?></span></a>
 
         </div>
     </div>
@@ -33,11 +33,11 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
     <aside id="hd_sch">
         <div class="sch_inner">
             <h2>상품 검색</h2>
-            <label for="sch_str" class="sound_only">상품명<strong class="sound_only"> 필수</strong></label>
-            <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required class="frm_input" placeholder="검색어를 입력해주세요">
+            <label for="sch_str" class="sound_only"><?php echo _('상품명') ?><strong class="sound_only"> <?php echo _('필수') ?></strong></label>
+            <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required class="frm_input" placeholder="<?php echo _('검색어를 입력해주세요') ?>">
             <button type="submit" value="검색" class="sch_submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
-        <button type="button" class="btn_close"><i class="fa fa-times"></i><span class="sound_only">닫기</span></button>
+        <button type="button" class="btn_close"><i class="fa fa-times"></i><span class="sound_only"><?php echo _('닫기') ?></span></button>
 
     </aside>
     </form>
@@ -45,7 +45,7 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
     <script>
     function search_submit(f) {
         if (f.q.value.length < 2) {
-            alert("검색어는 두글자 이상 입력하십시오.");
+            alert("<?php echo _('검색어는 두글자 이상 입력하십시오.') ?>");
             f.q.select();
             f.q.focus();
             return false;
@@ -115,3 +115,19 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
 ?>
 <div id="container" class="<?php echo implode(' ', $container_class); ?>">
     <?php if ((!$bo_table || $w == 's' ) && !defined('_INDEX_')) { ?><h1 id="container_title"><a href="javascript:history.back()" class="btn_back"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="sound_only">뒤로</span></a> <?php echo $g5['title'] ?></h1><?php } ?>
+
+    <?php
+    foreach ($iu_lnagMenu as $key => $val) {                        
+    ?>
+        <div><a onclick="change_trans('<?php echo $key?>' , '<?php echo $pr_return_uri?>')"><?php echo _($val)?></a></div>
+    <?php
+    }
+    ?>
+
+<?php
+// pr-child
+if ($is_file_child) {
+	include_once($pr_child_file);
+}
+// pr-child
+?>        

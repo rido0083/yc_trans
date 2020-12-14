@@ -9,31 +9,31 @@ $admin = get_admin("super");
 </div><!-- container End -->
 
 <div id="ft">
-    <h2><?php echo $config['cf_title']; ?> 정보</h2>
+    <h2><?php echo $config['cf_title']; ?><?php echo _('정보') ?></h2>
     <div id="ft_company">
-        <a href="<?php echo get_pretty_url('content', 'company'); ?>">회사소개</a>
-        <a href="<?php echo get_pretty_url('content', 'privacy'); ?>">개인정보</a>
-        <a href="<?php echo get_pretty_url('content', 'provision'); ?>">이용약관</a>
+        <a href="<?php echo get_pretty_url('content', 'company'); ?>"><?php echo _('회사소개') ?></a>
+        <a href="<?php echo get_pretty_url('content', 'privacy'); ?>"><?php echo _('개인정보') ?></a>
+        <a href="<?php echo get_pretty_url('content', 'provision'); ?>"><?php echo _('이용약관') ?></a>
 
     </div>
     <div id="ft_logo"><a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/mobile_logo_img2" alt="<?php echo $config['cf_title']; ?> 메인"></a></div>
     <p>
-        <span><b>회사명</b> <?php echo $default['de_admin_company_name']; ?></span>
-        <span><b>주소</b> <?php echo $default['de_admin_company_addr']; ?></span><br>
-        <span><b>사업자 등록번호</b> <?php echo $default['de_admin_company_saupja_no']; ?></span><br>
-        <span><b>대표</b> <?php echo $default['de_admin_company_owner']; ?></span>
-        <span><b>전화</b> <?php echo $default['de_admin_company_tel']; ?></span>
-        <span><b>팩스</b> <?php echo $default['de_admin_company_fax']; ?></span><br>
+        <span><b><?php echo _('회사명') ?></b> <?php echo $default['de_admin_company_name']; ?></span>
+        <span><b><?php echo _('주소') ?></b> <?php echo $default['de_admin_company_addr']; ?></span><br>
+        <span><b><?php echo _('사업자 등록번호') ?></b> <?php echo $default['de_admin_company_saupja_no']; ?></span><br>
+        <span><b><?php echo _('대표') ?></b> <?php echo $default['de_admin_company_owner']; ?></span>
+        <span><b><?php echo _('전화') ?></b> <?php echo $default['de_admin_company_tel']; ?></span>
+        <span><b><?php echo _('팩스') ?></b> <?php echo $default['de_admin_company_fax']; ?></span><br>
         <!-- <span><b>운영자</b> <?php echo $admin['mb_name']; ?></span><br> -->
-        <span><b>통신판매업신고번호</b> <?php echo $default['de_admin_tongsin_no']; ?></span><br>
-        <span><b>개인정보 보호책임자</b> <?php echo $default['de_admin_info_name']; ?></span>
+        <span><b><?php echo _('통신판매업신고번호') ?></b> <?php echo $default['de_admin_tongsin_no']; ?></span><br>
+        <span><b><?php echo _('개인정보 보호책임자') ?></b> <?php echo $default['de_admin_info_name']; ?></span>
 
-        <?php if ($default['de_admin_buga_no']) echo '<span><b>부가통신사업신고번호</b> '.$default['de_admin_buga_no'].'</span>'; ?><br>
+        <?php if ($default['de_admin_buga_no']) echo '<span>'._('<b>부가통신사업신고번호</b>').$default['de_admin_buga_no'].'</span>'; ?><br>
         Copyright &copy; 2001-2013 <?php echo $default['de_admin_company_name']; ?>. All Rights Reserved.
     </p>
    <?php
     if(G5_DEVICE_BUTTON_DISPLAY && G5_IS_MOBILE) { ?>
-    <a href="<?php echo get_device_change_url(); ?>" id="device_change">PC 버전</a>
+    <a href="<?php echo get_device_change_url(); ?>" id="device_change"><?php echo _('PC 버전') ?></a>
     <?php
     }
 

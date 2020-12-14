@@ -3,7 +3,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 ##############################################################
 #
-# 그누보드5.3을 위한 확장 빌드 BUILD rd
+# 그누보드5.4을 위한 확장 빌드 BUILD siRido
 #
 ##############################################################
 
@@ -64,7 +64,7 @@ function pr_exist_table($table_name) {
 function pr_date_return ($datetime) {
 	//그누보드 익명닉네임 이 알려주신 팁
 	$_timestamp = array(86400*365, 86400*31, 86400, 3600, 60, 1);
-	$_timetitle = array("년 전", "개월 전", "일 전", "시간 전", "분 전", "초 전");
+	$_timetitle = array(_("년 전"), _("개월 전"), _("일 전"), _("시간 전"), _("분 전"), _("초 전"));
 
 	$d = strtotime($datetime);
 
@@ -114,23 +114,25 @@ $is_file_child = file_exists($pr_child_file);
 //$pr_this_page
 $pr_updatepage_ar = array();
 $pr_updatepage_ar = array(
-	'contentformupdate.php'
+	'contentformupdate.php'	
 	,'.php'
 );
+
 if (in_array($pr_this_page , $pr_updatepage_ar)) {
 	if ($is_file_child) {
 		include_once($pr_child_file);
-		//exit;
+		exit;
 	}
 }
-// add_event('prhead','pr_addhead',20,0);
+
+//add_event('prhead','pr_addhead',20,0);
 // function pr_addhead() {
 // 	global $is_file_child;
-// 	if ($is_file_child) {
-// 		include_once($pr_child_file);
-// 		//exit;
-// 	}
-// }
+	//if ($is_file_child) {
+//		include_once($pr_child_file);
+		//exit;
+	//}
+//}
 
 // 언어 설정
 $locale = "ko_KR";
@@ -160,7 +162,7 @@ function lang_ch ($l) {
 //기본언어를 한국어로 선택
 if (!$_SESSION['lang']) {
     $_SESSION['lang'] = 'ko_KR';
-    $_SESSION['locale'] = 'ko_KR';
+		$_SESSION['locale'] = 'ko_KR';		
 }
 
 $srd_lang = $_SESSION['lang'];
@@ -174,14 +176,15 @@ $srd_lang = $_SESSION['lang'];
  */
 //사용할 언어셋을 선택 배열로 추가가능 (기본은 한국어 / 영어 / 일본어)
 $iu_lnagType = array(
-    'en_US','ja_JP','zh_CN'
+	'th_TH','en_US','ja_JP','zh_CN'
 );
 //메뉴 구성을 위한 배열 (기본은 한국어 / 영어 / 일본어)
 $iu_lnagMenu = array(
-    'ko_KR' => '한국어' ,
-    'en_US' => '영어' ,
-    'ja_JP' => '일본어' ,
-    'zh_CN' => '중국어' ,
+		'ko_KR' => _('한국어') ,
+		'th_TH' => _('태국어') ,
+    'en_US' => _('영어') ,
+    'ja_JP' => _('일본어') ,
+    'zh_CN' => _('중국어') ,
 );
 
 //언어별 배열을 만든다.
@@ -211,47 +214,8 @@ function pr_shotcode() {
 	//function add_javascript($javascript, $order=0)
 	// add_javascript(PR_AJAX_JS.'/pr_common.js', 0);
 ?>
-<!--
-	<script>
-	$(document).ready(function(){
 
-	  var html = $("#bo_v_atc").html();
-	  if ($("#bo_v_atc").lenth > 0 ) {
-	    html = html.split("[shotcode").join("<span class='pr_shotcode' ");
-	    html = html.split("/shotcode]").join("</span>");
-	    $("#bo_v_atc").html(html);
-
-	     $(".pr_shotcode").each(function(){
-	      var code_name = $(this).data("name");
-	      var code_array = $(this).data("array");
-	      $(this).html(code_name);
-	     });
-	  }
-
-	  $(".shotcode").each(function(index){
-	    var code_name = $(this).data("name");
-	    var code_array = $(this).data("array");
-
-	    var request = $.ajax({
-	      url: "<?php echo PR_AJAX_URL?>/pr_shotcode.php",
-	      method: "POST",
-	      data: {
-	        pr_shortcode : 'true'
-	        , code_name : code_name
-	        , code_array : code_array
-	      },
-	      dataType: "html"
-	    });
-
-	    request.done(function( data ) {
-	      $('.shotcode').eq(index).html( data );
-	    });
-	  });
-	});
-
-	</script>
-	=-->
-	<script src="<?php echo PR_CHILD_URL?>/js/pr_common.js"></script>
+	<!-- <script src="<?php echo PR_CHILD_URL?>/js/pr_common.js"></script> -->
 <?php
 }
 ?>

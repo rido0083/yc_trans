@@ -198,3 +198,11 @@ jQuery(function($){
 
         <h1 id="container_title"><?php echo $g5['title'] ?></h1>
         <div class="container_wr">
+
+<?php
+// pr_child
+if ($is_file_child) {
+	include_once($pr_child_file);
+}
+// pr_child
+?>
