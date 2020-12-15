@@ -14,62 +14,62 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 
     <form name="fregister" id="fregister" action="<?php echo $register_action_url ?>" onsubmit="return fregister_submit(this);" method="POST" autocomplete="off">
 	
-	<p>회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
+	<p><?php echo _('회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.') ?></p>
 	
 	<div id="fregister_chkall" class="chk_all fregister_agree">
         <input type="checkbox" name="chk_all" id="chk_all" class="selec_chk">
-        <label for="chk_all"><span></span>회원가입 약관에 모두 동의합니다</label>
+        <label for="chk_all"><span></span><?php echo _('회원가입 약관에 모두 동의합니다') ?></label>
     </div>
     
     <section id="fregister_term">
-        <h2>회원가입약관</h2>
+        <h2><?php echo _('회원가입약관') ?></h2>
         <textarea readonly><?php echo get_text($config['cf_stipulation']) ?></textarea>
         <fieldset class="fregister_agree">
             <input type="checkbox" name="agree" value="1" id="agree11" class="selec_chk">
-            <label for="agree11"><span></span><b class="sound_only">회원가입약관의 내용에 동의합니다.</b></label>
+            <label for="agree11"><span></span><b class="sound_only"><?php echo _('회원가입약관의 내용에 동의합니다.') ?></b></label>
         </fieldset>
     </section>
 
     <section id="fregister_private">
-        <h2>개인정보처리방침안내</h2>
+        <h2><?php echo _('개인정보처리방침안내') ?></h2>
         <div class="tbl_head01 tbl_wrap">
             <table>
-                <caption>개인정보처리방침안내</caption>
+                <caption><?php echo _('개인정보처리방침안내') ?></caption>
                 <thead>
                 <tr>
-                    <th colspan="2">목적</th>
+                    <th colspan="2"><?php echo _('목적') ?></th>
                 </tr>
                 <tr>
-                    <th>항목</th>
-                    <th>보유기간</th>
+                    <th><?php echo _('항목') ?></th>
+                    <th><?php echo _('보유기간') ?></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td  colspan="2">이용자 식별 및 본인여부 확인</td>
+                    <td  colspan="2"><?php echo _('이용자 식별 및 본인여부 확인') ?></td>
                 </tr>
                 <tr>
-                    <td>아이디, 이름, 비밀번호</td>
-                    <td>회원 탈퇴 시까지</td>
+                    <td><?php echo _('아이디, 이름, 비밀번호') ?></td>
+                    <td><?php echo _('회원 탈퇴 시까지') ?></td>
                 </tr>
                 <tr>
-                    <td colspan="2">고객서비스 이용에 관한 통지,<br>CS대응을 위한 이용자 식별</td>
+                    <td colspan="2"><?php echo _('고객서비스 이용에 관한 통지,<br>CS대응을 위한 이용자 식별') ?></td>
                 </tr>
                 <tr>
-                    <td>연락처 (이메일, 휴대전화번호)</td>
-                    <td>회원 탈퇴 시까지</td>
+                    <td><?php echo _('연락처 (이메일, 휴대전화번호)') ?></td>
+                    <td><?php echo _('회원 탈퇴 시까지') ?></td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <fieldset class="fregister_agree">
             <input type="checkbox" name="agree2" value="1" id="agree21" class="selec_chk">
-            <label for="agree21"><span></span><b class="sound_only">개인정보처리방침안내의 내용에 동의합니다.</b></label>
+            <label for="agree21"><span></span><b class="sound_only"><?php echo _('개인정보처리방침안내의 내용에 동의합니다.') ?></b></label>
        </fieldset>
     </section>
     
     <div class="btn_confirm">
-        <button type="submit" class="btn_submit">회원가입</button>
+        <button type="submit" class="btn_submit"><?php echo _('회원가입') ?></button>
     </div>
 
     </form>
@@ -78,13 +78,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     function fregister_submit(f)
     {
         if (!f.agree.checked) {
-            alert("회원가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다.");
+            alert("<?php echo _('회원가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다.') ?>");
             f.agree.focus();
             return false;
         }
 
         if (!f.agree2.checked) {
-            alert("개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.");
+            alert("<?php echo _('개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.') ?>");
             f.agree2.focus();
             return false;
         }
