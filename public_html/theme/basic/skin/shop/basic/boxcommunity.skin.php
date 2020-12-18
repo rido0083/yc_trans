@@ -18,7 +18,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
     }
 
     if ($i==0)
-        echo '<li id="scomm_empty">커뮤니티 준비 중</li>'.PHP_EOL;
+        echo '<li id="scomm_empty">'._('커뮤니티 준비 중').'</li>'.PHP_EOL;
     ?>
     </ul>
 </aside>

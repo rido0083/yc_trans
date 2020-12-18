@@ -20,12 +20,12 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 
 <!-- 상품 정렬 선택 시작 { -->
 <section id="sct_sort">
-    <h2>상품 정렬</h2>
-    <button type="button" class="btn_sort">상품정렬 <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+    <h2><?php echo _('상품 정렬') ?></h2>
+    <button type="button" class="btn_sort"><?php echo _('상품 정렬') ?><i class="fa fa-caret-down" aria-hidden="true"></i></button>
     <ul>
-        <li><a href="<?php echo $sct_sort_href; ?>it_price&amp;sortodr=asc" >낮은가격순</a></li>
-        <li><a href="<?php echo $sct_sort_href; ?>it_price&amp;sortodr=desc">높은가격순</a></li>
-        <li><a href="<?php echo $sct_sort_href; ?>it_name&amp;sortodr=asc">상품명순</a></li>
+        <li><a href="<?php echo $sct_sort_href; ?>it_price&amp;sortodr=asc" ><?php echo _('낮은가격순') ?></a></li>
+        <li><a href="<?php echo $sct_sort_href; ?>it_price&amp;sortodr=desc"><?php echo _('높은가격순') ?></a></li>
+        <li><a href="<?php echo $sct_sort_href; ?>it_name&amp;sortodr=asc"><?php echo _('상품명순') ?></a></li>
     </ul>
 </section>
 <!-- } 상품 정렬 선택 끝 -->

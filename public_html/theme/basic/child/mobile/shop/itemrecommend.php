@@ -2,7 +2,7 @@
 include_once('./_common.php');
 
 if (!$is_member)
-    alert_close('회원만 메일을 발송할 수 있습니다.');
+    alert_close(_('회원만 메일을 발송할 수 있습니다.'));
 
 // 스팸을 발송할 수 없도록 세션에 아무값이나 저장하여 hidden 으로 넘겨서 다음 페이지에서 비교함
 $token = md5(uniqid(rand(), true));
@@ -10,9 +10,9 @@ set_session("ss_token", $token);
 
 $it = get_shop_item($it_id, true);
 if (!$it['it_name'])
-    alert_close("등록된 상품이 아닙니다.");
+    alert_close(_("등록된 상품이 아닙니다."));
 
-$g5['title'] =  $it['it_name'].' - 추천하기';
+$g5['title'] =  $it['it_name']._(' - 추천하기');
 include_once(G5_PATH.'/head.sub.php');
 ?>
 
@@ -26,23 +26,23 @@ include_once(G5_PATH.'/head.sub.php');
     <div class="new_win_con form_01">
         <ul>
             <li>
-                <label for="to_email" class="sound_only">추천받는 분 E-mail</label>
-                <input type="email" name="to_email" id="to_email" required class="frm_input full_input" placeholder="추천받는 분 E-mail">
+                <label for="to_email" class="sound_only"><?php echo _('추천받는 분 E-mail')?></label>
+                <input type="email" name="to_email" id="to_email" required class="frm_input full_input" placeholder="<?php echo _('추천받는 분 E-mail')?>">
             </li>
             <li>
-                <label for="subject" class="sound_only">제목</label>
-                <input type="text" name="subject" id="subject" required class="frm_input full_input" placeholder="제목">
+                <label for="subject" class="sound_only"><?php echo _('제목')?></label>
+                <input type="text" name="subject" id="subject" required class="frm_input full_input" placeholder="<?php echo _('제목')?>">
             </li>
             <li>
-                <label for="content" class="sound_only">내용</label>
-                <textarea name="content" id="content" required  placeholder="내용"></textarea>
+                <label for="content" class="sound_only"><?php echo _('내용')?></label>
+                <textarea name="content" id="content" required  placeholder="<?php echo _('내용')?>"></textarea>
             </li>
         </ul>
 
     </div>
     <div class="win_btn">
         <input type="submit" id="btn_submit" value="보내기" class="btn_submit">
-        <a href="javascript:window.close();" class="btn_close">창닫기</a>
+        <a href="javascript:window.close();" class="btn_close"><?php echo _('창닫기')?></a>
     </div>
 
     </form>

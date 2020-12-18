@@ -4,7 +4,7 @@ include_once('./_common.php');
 //print_r2($_POST); exit;
 
 if ($is_admin != 'super')
-    alert("최고관리자만 접근이 가능합니다.");
+    alert(_("최고관리자만 접근이 가능합니다."));
 
 $board = array();
 $save_bo_table = array();
@@ -61,16 +61,16 @@ for($i=0;$i<count($_POST['chk_bn_id']);$i++)
             else
             {
                 // 코멘트 포인트 삭제
-                if (!delete_point($row['mb_id'], $bo_table, $row['wr_id'], '코멘트'))
+                if (!delete_point($row['mb_id'], $bo_table, $row['wr_id'], _('코멘트')))
                     insert_point($row['mb_id'], $board['bo_comment_point'] * (-1), "{$board['bo_subject']} {$write['wr_id']}-{$row['wr_id']} 코멘트삭제");
 
                 $count_comment++;
             }
         }
 
-        if ($pressed == '선택내용삭제') {
+        if ($pressed == _('선택내용삭제') {
             // 게시글 내용만 삭제
-            sql_query(" update $write_table set wr_subject =  '".G5_TIME_YMDHIS." - 본인 요청으로 인한 삭제 (냉무) ☆', wr_content = '', wr_name='본인요청삭제☆' where wr_id = '{$write['wr_id']}' ");
+            sql_query(" update $write_table set wr_subject =  '".G5_TIME_YMDHIS._(" - 본인 요청으로 인한 삭제 (냉무) ☆', wr_content = '', wr_name='본인요청삭제☆' where wr_id = '{$write['wr_id']}' "));
         } else {
             // 게시글 삭제
             sql_query(" delete from $write_table where wr_parent = '{$write['wr_id']}' ");

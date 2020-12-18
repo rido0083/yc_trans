@@ -11,9 +11,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
 <input type="hidden" name="skin_dir" value="<?php echo urlencode($skin_dir); ?>">
 <aside id="poll">
     <header>
-        <h2>설문조사</h2>
-        <a href="<?php echo G5_BBS_URL."/poll_result.php?po_id=$po_id&amp;skin_dir=".urlencode($skin_dir); ?>" target="_blank" onclick="poll_result(this.href); return false;" class="btn_result">결과보기</a>
-        <?php if ($is_admin == "super") { ?><a href="<?php echo G5_ADMIN_URL ?>/poll_form.php?w=u&amp;po_id=<?php echo $po_id ?>" class="btn_admin btn"><i class="fa fa-cog fa-spin fa-fw"></i><span class="sound_only">관리자 관리</span></a><?php } ?>
+        <h2><?php echo _('설문조사') ?></h2>
+        <a href="<?php echo G5_BBS_URL."/poll_result.php?po_id=$po_id&amp;skin_dir=".urlencode($skin_dir); ?>" target="_blank" onclick="poll_result(this.href); return false;" class="btn_result"><?php echo _('결과보기') ?></a>
+        <?php if ($is_admin == "super") { ?><a href="<?php echo G5_ADMIN_URL ?>/poll_form.php?w=u&amp;po_id=<?php echo $po_id ?>" class="btn_admin btn"><i class="fa fa-cog fa-spin fa-fw"></i><span class="sound_only"><?php echo _('관리자 관리') ?></span></a><?php } ?>
     </header>
     <div class="poll_con">
 	    <p><?php echo $po['po_subject'] ?></p>
@@ -29,7 +29,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
 	        <?php } ?>
 	    </ul>
 	    <div id="poll_btn">
-	        <button type="submit" class="btn_poll">투표하기</button>
+	        <button type="submit" class="btn_poll"><?php echo _('투표하기') ?></button>
 	    </div>
     </div>
 </aside>
@@ -40,7 +40,7 @@ function fpoll_submit(f)
 {
     <?php
     if ($member['mb_level'] < $po['po_level'])
-        echo " alert('권한 {$po['po_level']} 이상의 회원만 투표에 참여하실 수 있습니다.'); return false; ";
+        echo " alert("._('권한 {$po['po_level']} 이상의 회원만 투표에 참여하실 수 있습니다.')."); return false; ";
     ?>
 
     var chk = false;
@@ -52,7 +52,7 @@ function fpoll_submit(f)
     }
 
     if (!chk) {
-        alert("투표하실 설문항목을 선택하세요");
+        alert("<?php echo _('투표하실 설문항목을 선택하세요') ?>");
         return false;
     }
 
@@ -66,7 +66,7 @@ function poll_result(url)
 {
     <?php
     if ($member['mb_level'] < $po['po_level'])
-        echo " alert('권한 {$po['po_level']} 이상의 회원만 결과를 보실 수 있습니다.'); return false; ";
+        echo " alert("._('권한 {$po['po_level']} 이상의 회원만 결과를 보실 수 있습니다.')."); return false; ";
     ?>
 
     win_poll(url);

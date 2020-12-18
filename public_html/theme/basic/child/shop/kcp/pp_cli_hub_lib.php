@@ -214,7 +214,7 @@ class   C_PAYPLUS_CLI_T
 
           if ( $res_data == "" )
           {
-              $res_data = "res_cd=9502" . chr( 31 ) . "res_msg=연동 모듈 호출 오류";
+              $res_data = "res_cd=9502" . chr( 31 ) . _("res_msg=연동 모듈 호출 오류");
           }
         }
 

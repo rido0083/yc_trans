@@ -3,10 +3,10 @@ include_once('./_common.php');
 include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 
 if ($is_guest)
-    alert('회원만 이용하실 수 있습니다.');
+    alert(_('회원만 이용하실 수 있습니다.'));
 
 if (!chk_captcha()) {
-    alert('자동등록방지 숫자가 틀렸습니다.');
+    alert(_('자동등록방지 숫자가 틀렸습니다.'));
 }
 
 $recv_list = explode(',', trim($_POST['me_recv_mb_id']));
@@ -42,10 +42,10 @@ for ($i=0; $i<count($recv_list); $i++) {
 $error_msg = implode(",", $error_list);
 
 if ($error_msg && !$is_admin)
-    alert("회원아이디 '{$error_msg}' 은(는) 존재(또는 정보공개)하지 않는 회원아이디 이거나 탈퇴, 접근차단된 회원아이디 입니다.\\n쪽지를 발송하지 않았습니다.");
+    alert(_("회원아이디 '{$error_msg}' 은(는) 존재(또는 정보공개)하지 않는 회원아이디 이거나 탈퇴, 접근차단된 회원아이디 입니다.\\n쪽지를 발송하지 않았습니다."));
 
 if (! count($member_list['id'])){
-    alert('해당 회원이 존재하지 않습니다.');
+    alert(_('해당 회원이 존재하지 않습니다.'));
 }
 
 if (!$is_admin) {
@@ -53,7 +53,7 @@ if (!$is_admin) {
         $point = (int)$config['cf_memo_send_point'] * count($member_list['id']);
         if ($point) {
             if ($member['mb_point'] - $point < 0) {
-                alert('보유하신 포인트('.number_format($member['mb_point']).'점)가 모자라서 쪽지를 보낼 수 없습니다.');
+                alert(_('보유하신 포인트(').number_format($member['mb_point'])._('점)가 모자라서 쪽지를 보낼 수 없습니다.'));
             }
         }
     }
@@ -96,13 +96,13 @@ if ($member_list) {
 
     run_event('memo_form_update_after', $member_list, $str_nick_list, $redirect_url, $_POST['me_memo']);
 
-    alert($str_nick_list." 님께 쪽지를 전달하였습니다.", $redirect_url, false);
+    alert($str_nick_list._(" 님께 쪽지를 전달하였습니다."), $redirect_url, false);
 } else {
 
     $redirect_url = G5_HTTP_BBS_URL."/memo_form.php";
     
     run_event('memo_form_update_failed', $member_list, $redirect_url, $_POST['me_memo']);
 
-    alert("회원아이디 오류 같습니다.", $redirect_url, false);
+    alert(_("회원아이디 오류 같습니다."), $redirect_url, false);
 }
 ?>

@@ -76,18 +76,18 @@ require_once(G5_SHOP_PATH.'/settle_kcp.inc.php');
 
     if( $req_tx == "pay" )
     {
-        $req_tx_name = "등록";
+        $req_tx_name = _("등록");
     }
     else if( $req_tx == "mod" )
     {
-        $req_tx_name = "변경/조회";
+        $req_tx_name = _("변경/조회");
     }
 ?>
 <!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>현금영수증발급 <?php echo $req_tx_name; ?> | <?php echo $config['cf_title']; ?></title>
+<title><?php echo _('현금영수증발급') ?> <?php echo $req_tx_name; ?> | <?php echo $config['cf_title']; ?></title>
 <?php
 echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'default').'_shop.css">'.PHP_EOL;
 ?>
@@ -106,7 +106,7 @@ echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'defa
 <body>
 
 <div id="kcp_req_rx" class="new_win">
-    <h1 id="win_title">현금영수증 <?php echo $req_tx_name; ?> - KCP Online Payment System</h1>
+    <h1 id="win_title"><?php echo _('현금영수증') ?> <?php echo $req_tx_name; ?> - KCP Online Payment System</h1>
 
 
     <div class="tbl_head01 tbl_wrap">
@@ -125,38 +125,38 @@ echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'defa
             {
 ?>
         <tr>
-            <th scope="row">결과코드</th>
+            <th scope="row"><?php echo _('결과코드') ?></th>
             <td><?php echo $res_cd; ?></td>
         </tr>
         <tr>
-            <th scope="row">결과 메세지</th>
+            <th scope="row"><?php echo _('결과 메세지') ?></th>
             <td><?php echo $res_msg; ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 거래번호</th>
+            <th scope="row"><?php echo _('현금영수증 거래번호') ?></th>
             <td><?php echo $cash_no; ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 승인번호</th>
+            <th scope="row"><?php echo _('현금영수증 승인번호') ?></th>
             <td><?php echo $receipt_no; ?></td>
         </tr>
         <tr>
-            <th scope="row">등록 상태 코드</th>
+            <th scope="row"><?php echo _('등록 상태 코드') ?></th>
             <td><?php echo $reg_stat; ?></td>
         </tr>
         <tr>
-            <th scope="row">등록 상태 설명</th>
+            <th scope="row"><?php echo _('등록 상태 설명') ?></th>
             <td><?php echo $reg_desc; ?></td>
         </tr>
         <tr>
-            <th scope="row">승인시간</th>
+            <th scope="row"><?php echo _('승인시간') ?></th>
             <td><?php echo preg_replace("/([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/", "\\1-\\2-\\3 \\4:\\5:\\6",$app_time); ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 URL</th>
+            <th scope="row"><?php echo _('현금영수증 URL') ?></th>
             <td>
-                <button type="button" name="receiptView" class="btn_frmline" onClick="javascript:receiptView('<?php echo $receipt_no; ?>')">영수증 확인</button>
-                <p>영수증 확인은 실 등록의 경우에만 가능합니다.</p>
+                <button type="button" name="receiptView" class="btn_frmline" onClick="javascript:receiptView('<?php echo $receipt_no; ?>')"><?php echo _('영수증 확인') ?></button>
+                <p><?php echo _('영수증 확인은 실 등록의 경우에만 가능합니다.') ?></p>
             </td>
         </tr>
         <tr>
@@ -168,11 +168,11 @@ echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'defa
             {
 ?>
         <tr>
-            <th scope="row">결과코드</th>
+            <th scope="row"><?php echo _('결과코드') ?></th>
             <td><?php echo $res_cd; ?></td>
         </tr>
         <tr>
-            <th scope="row">결과 메세지</th>
+            <th scope="row"><?php echo _('결과 메세지') ?></th>
             <td><?php echo $res_msg; ?></td>
         </tr>
 <?php
@@ -183,24 +183,24 @@ echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'defa
         {
 ?>
         <tr>
-            <th scope="row">취소 결과코드</th>
+            <th scope="row"><?php echo _('취소 결과코드') ?></th>
             <td><?php echo $res_cd; ?></td>
         </tr>
         <tr>
-            <th scope="row">취소 결과 메세지</th>
+            <th scope="row"><?php echo _('취소 결과 메세지') ?></th>
             <td><?php echo $res_msg; ?></td>
         </tr>
         <tr>
-            <th scope="row">상세메세지</th>
+            <th scope="row"><?php echo _('상세메세지') ?></th>
             <td>
 <?php
             if ($res_cd == "0000")
             {
-                echo "결제는 정상적으로 이루어졌지만 쇼핑몰에서 결제 결과를 처리하는 중 오류가 발생하여 시스템에서 자동으로 취소 요청을 하였습니다. <br> 쇼핑몰로 전화하여 확인하시기 바랍니다.";
+                echo _("결제는 정상적으로 이루어졌지만 쇼핑몰에서 결제 결과를 처리하는 중 오류가 발생하여 시스템에서 자동으로 취소 요청을 하였습니다.")."<br>"._("쇼핑몰로 전화하여 확인하시기 바랍니다.");
             }
             else
             {
-                echo "결제는 정상적으로 이루어졌지만 쇼핑몰에서 결제 결과를 처리하는 중 오류가 발생하여 시스템에서 자동으로 취소 요청을 하였으나, <br> <b>취소가 실패 되었습니다.</b><br> 쇼핑몰로 전화하여 확인하시기 바랍니다.";
+                echo _("결제는 정상적으로 이루어졌지만 쇼핑몰에서 결제 결과를 처리하는 중 오류가 발생하여 시스템에서 자동으로 취소 요청을 하였으나,")." <br> <b>"._("취소가 실패 되었습니다.")>"</b><br>"._("쇼핑몰로 전화하여 확인하시기 바랍니다.");
             }
 ?>
             </td>
@@ -215,38 +215,38 @@ echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'defa
         {
 ?>
         <tr>
-            <th scope="row">결과코드</th>
+            <th scope="row"><?php echo _('결과코드') ?></th>
             <td><?php echo $res_cd; ?></td>
         </tr>
         <tr>
-            <th scope="row">결과 메세지</th>
+            <th scope="row"><?php echo _('결과 메세지') ?></th>
             <td><?php echo $res_msg; ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 거래번호</th>
+            <th scope="row"><?php echo _('현금영수증 거래번호') ?></th>
             <td><?php echo $cash_no; ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 승인번호</th>
+            <th scope="row"><?php echo _('현금영수증 승인번호') ?></th>
             <td><?php echo $receipt_no; ?></td>
         </tr>
         <tr>
-            <th scope="row">등록 상태 코드</th>
+            <th scope="row"><?php echo _('등록 상태 코드') ?></th>
             <td><?php echo $reg_stat; ?></td>
         </tr>
         <tr>
-            <th scope="row">등록 상태 설명</th>
+            <th scope="row"><?php echo _('등록 상태 설명') ?></th>
             <td><?php echo $reg_desc; ?></td>
         </tr>
         <tr>
-            <th scope="row">승인시간</th>
+            <th scope="row"><?php echo _('승인시간') ?></th>
             <td><?php echo preg_replace("/([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/", "\\1-\\2-\\3 \\4:\\5:\\6", $app_time); ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 URL</th>
+            <th scope="row"><?php echo _('현금영수증 URL') ?></th>
             <td>
                 <input type="button" name="receiptView" value="영수증 확인" class="box" onClick="javascript:receiptView('<?php echo $receipt_no; ?>')">
-                <p>영수증 확인은 실 등록의 경우에만 가능합니다.</p>
+                <p><?php echo _('영수증 확인은 실 등록의 경우에만 가능합니다.') ?></p>
             </td>
         </tr>
 <?php
@@ -255,11 +255,11 @@ echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'defa
         {
 ?>
         <tr>
-            <th scope="row">결과코드</th>
+            <th scope="row"><?php echo _('결과코드') ?></th>
             <td><?php echo $res_cd; ?></td>
         </tr>
         <tr>
-            <th scope="row">결과 메세지</th>
+            <th scope="row"><?php echo _('결과 메세지') ?></th>
             <td><?php echo $res_msg; ?></td>
         </tr>
 <?php

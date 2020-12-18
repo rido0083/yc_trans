@@ -6,7 +6,7 @@ if (G5_IS_MOBILE) {
     return;
 }
 
-$g5['title'] = '개인결제 리스트';
+$g5['title'] = _('개인결제 리스트');
 include_once('./_head.php');
 ?>
 
@@ -57,7 +57,7 @@ include_once('./_head.php');
 
     if ($i==0)
     {
-        echo '<p class="sct_noitem">등록된 개인결제가 없습니다.</p>';
+        echo '<p class="sct_noitem">'._('등록된 개인결제가 없습니다.').'</p>';
     }
     ?>
 

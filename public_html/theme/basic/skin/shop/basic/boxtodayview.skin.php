@@ -14,7 +14,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
 
 <!-- 오늘 본 상품 시작 { -->
 <div id="stv">
-    <h2 class="s_h2">오늘 본 상품 <span><?php echo get_view_today_items_count(); ?></span></h2>
+    <h2 class="s_h2"><?php echo _('오늘 본 상품') ?> <span><?php echo get_view_today_items_count(); ?></span></h2>
 
     <?php if ($tv_datas) { // 오늘 본 상품이 1개라도 있을 때 ?>
     <?php
@@ -78,7 +78,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
         $('#up').click(function() {
             if (Flag == 1)
             {
-                alert('목록의 처음입니다.');
+                alert('<?php echo _('목록의 처음입니다.') ?>');
             } else {
                 Flag--;
                 $('.c'+Flag).css('display','block');
@@ -89,7 +89,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
         $('#down').click(function() {
             if (Flag == EOFlag)
             {
-                alert('더 이상 목록이 없습니다.');
+                alert('<?php echo _('더 이상 목록이 없습니다.') ?>');
             } else {
                 Flag++;
                 $('.c'+Flag).css('display','block');
@@ -102,7 +102,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
 
     <?php } else { // 오늘 본 상품이 없을 때 ?>
 
-    <p class="li_empty">없음</p>
+    <p class="li_empty"><?php echo _('없음') ?></p>
 
     <?php } ?>
 </div>

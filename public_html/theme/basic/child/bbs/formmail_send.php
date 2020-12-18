@@ -4,20 +4,20 @@ include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 include_once(G5_LIB_PATH.'/mailer.lib.php');
 
 if (!$config['cf_email_use'])
-    alert('환경설정에서 "메일발송 사용"에 체크하셔야 메일을 발송할 수 있습니다.\\n\\n관리자에게 문의하시기 바랍니다.');
+    alert(_('환경설정에서 "메일발송 사용"에 체크하셔야 메일을 발송할 수 있습니다.\\n\\n관리자에게 문의하시기 바랍니다.'));
 
 if (!$is_member && $config['cf_formmail_is_member'])
-    alert_close('회원만 이용하실 수 있습니다.');
+    alert_close(_('회원만 이용하실 수 있습니다.'));
 
 $email_enc = new str_encrypt();
 $to = $email_enc->decrypt($to);
 
 if (!chk_captcha()) {
-    alert('자동등록방지 숫자가 틀렸습니다.');
+    alert(_('자동등록방지 숫자가 틀렸습니다.'));
 }
 
 if (!preg_match("/([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)\.([0-9a-zA-Z_-]+)/", $to)){
-    alert_close('E-mail 주소가 형식에 맞지 않아서, 메일을 보낼수 없습니다.');
+    alert_close(_('E-mail 주소가 형식에 맞지 않아서, 메일을 보낼수 없습니다.'));
 }
 
 $file = array();
@@ -50,10 +50,10 @@ if(!empty($file)) {
 }
 
 //$html_title = $tmp_to . "님께 메일발송";
-$html_title = '메일 발송중';
+$html_title = _('메일 발송중');
 include_once(G5_PATH.'/head.sub.php');
 
-alert_close('메일을 정상적으로 발송하였습니다.');
+alert_close(_('메일을 정상적으로 발송하였습니다.'));
 
 include_once(G5_PATH.'/tail.sub.php');
 ?>

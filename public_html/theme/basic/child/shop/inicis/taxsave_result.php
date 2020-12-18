@@ -18,10 +18,10 @@ if($tx == 'personalpay') {
         die('<p id="scash_empty">개인결제 내역이 존재하지 않습니다.</p>');
 
     if($od['pp_cash'] == 1)
-        alert('이미 등록된 현금영수증 입니다.');
+        alert(_('이미 등록된 현금영수증 입니다.'));
 
     $buyername = $od['pp_name'];
-    $goodname  = $od['pp_name'].'님 개인결제';
+    $goodname  = $od['pp_name']._('님 개인결제');
     $amt_tot   = (int)$od['pp_receipt_price'];
     $amt_sup   = (int)round(($amt_tot * 10) / 11);
     $amt_svc   = 0;
@@ -29,10 +29,10 @@ if($tx == 'personalpay') {
 } else {
     $od = sql_fetch(" select * from {$g5['g5_shop_order_table']} where od_id = '$od_id' ");
     if (!$od)
-        die('<p id="scash_empty">주문서가 존재하지 않습니다.</p>');
+        die('<p id="scash_empty">'._('주문서가 존재하지 않습니다.').'</p>');
 
     if($od['od_cash'] == 1)
-        alert('이미 등록된 현금영수증 입니다.');
+        alert(_('이미 등록된 현금영수증 입니다.'));
 
     $buyername = $od['od_name'];
     $goods     = get_goods($od['od_id']);
@@ -130,7 +130,7 @@ if($inipay->GetResult('ResultCode') == '00') {
         include G5_SHOP_PATH.'/inicis/inipay_cancel.php';
 }
 
-$g5['title'] = '현금영수증 발급';
+$g5['title'] = _('현금영수증 발급');
 include_once(G5_PATH.'/head.sub.php');
 ?>
 
@@ -143,7 +143,7 @@ function showreceipt() // 현금 영수증 출력
 </script>
 
 <div id="lg_req_tx" class="new_win">
-    <h1 id="win_title">현금영수증 - KG이니시스</h1>
+    <h1 id="win_title"><?php echo _('현금영수증 - KG이니시스') ?></h1>
 
     <div class="tbl_head01 tbl_wrap">
         <table>
@@ -153,30 +153,30 @@ function showreceipt() // 현금 영수증 출력
         </colgroup>
         <tbody>
         <tr>
-            <th scope="row">결과코드</th>
+            <th scope="row"><?php echo _('결과코드') ?></th>
             <td><?php echo $inipay->GetResult('ResultCode'); ?></td>
         </tr>
         <tr>
-            <th scope="row">결과 메세지</th>
+            <th scope="row"><?php echo _('결과 메세지') ?></th>
             <td><?php echo iconv_utf8($inipay->GetResult('ResultMsg')); ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 거래번호</th>
+            <th scope="row"><?php echo _('현금영수증 거래번호') ?></th>
             <td><?php echo $inipay->GetResult('TID'); ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 승인번호</th>
+            <th scope="row"><?php echo _('현금영수증 승인번호') ?></th>
             <td><?php echo $inipay->GetResult('ApplNum'); ?></td>
         </tr>
         <tr>
-            <th scope="row">승인시간</th>
+            <th scope="row"><?php echo _('승인시간') ?></th>
             <td><?php echo preg_replace("/([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/", "\\1-\\2-\\3 \\4:\\5:\\6",$inipay->GetResult('ApplDate').$inipay->GetResult('ApplTime')); ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 URL</th>
+            <th scope="row"><?php echo _('현금영수증 URL') ?></th>
             <td>
-                <button type="button" name="receiptView" class="btn_frmline" onClick="javascript:showreceipt();">영수증 확인</button>
-                <p>영수증 확인은 실 등록의 경우에만 가능합니다.</p>
+                <button type="button" name="receiptView" class="btn_frmline" onClick="javascript:showreceipt();"><?php echo _('영수증 확인') ?></button>
+                <p><?php echo _('영수증 확인은 실 등록의 경우에만 가능합니다.') ?></p>
             </td>
         </tr>
         <tr>

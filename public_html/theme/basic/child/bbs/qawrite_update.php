@@ -8,7 +8,7 @@ $w == u : 수정
 ==========================*/
 
 if($is_guest)
-    alert('회원이시라면 로그인 후 이용해 보십시오.', './login.php?url='.urlencode(G5_BBS_URL.'/qalist.php'));
+    alert(_('회원이시라면 로그인 후 이용해 보십시오.'), './login.php?url='.urlencode(G5_BBS_URL.'/qalist.php'));
 
 $msg = array();
 
@@ -20,10 +20,10 @@ if(trim($qaconfig['qa_category'])) {
     if($w != 'a') {
         $category = explode('|', $qaconfig['qa_category']);
         if(!in_array($qa_category, $category))
-            alert('분류를 올바르게 지정해 주십시오.');
+            alert(_('분류를 올바르게 지정해 주십시오.'));
     }
 } else {
-    alert('1:1문의 설정에서 분류를 설정해 주십시오');
+    alert(_('1:1문의 설정에서 분류를 설정해 주십시오'));
 }
 
 // e-mail 체크
@@ -32,7 +32,7 @@ if(isset($_POST['qa_email']) && $_POST['qa_email'])
     $qa_email = get_email_address(trim($_POST['qa_email']));
 
 if($w != 'a' && $qaconfig['qa_req_email'] && !$qa_email)
-    $msg[] = '이메일을 입력하세요.';
+    $msg[] = _('이메일을 입력하세요.');
 
 $qa_subject = '';
 if (isset($_POST['qa_subject'])) {
@@ -40,7 +40,7 @@ if (isset($_POST['qa_subject'])) {
     $qa_subject = preg_replace("#[\\\]+$#", "", $qa_subject);
 }
 if ($qa_subject == '') {
-    $msg[] = '<strong>제목</strong>을 입력하세요.';
+    $msg[] = '<strong>'._('제목').'</strong>'._('을 입력하세요.');
 }
 
 $qa_content = '';
@@ -49,7 +49,7 @@ if (isset($_POST['qa_content'])) {
     $qa_content = preg_replace("#[\\\]+$#", "", $qa_content);
 }
 if ($qa_content == '') {
-    $msg[] = '<strong>내용</strong>을 입력하세요.';
+    $msg[] = '<strong>'._('내용').'</strong>'._('을 입력하세요.');
 }
 
 if (!empty($msg)) {
@@ -62,14 +62,14 @@ if($qa_hp)
 
 // 090710
 if (substr_count($qa_content, '&#') > 50) {
-    alert('내용에 올바르지 않은 코드가 다수 포함되어 있습니다.');
+    alert(_('내용에 올바르지 않은 코드가 다수 포함되어 있습니다.'));
     exit;
 }
 
 $upload_max_filesize = ini_get('upload_max_filesize');
 
 if (empty($_POST)) {
-    alert("파일 또는 글내용의 크기가 서버에서 설정한 값을 넘어 오류가 발생하였습니다.\\npost_max_size=".ini_get('post_max_size')." , upload_max_filesize=".$upload_max_filesize."\\n게시판관리자 또는 서버관리자에게 문의 바랍니다.");
+    alert(_("파일 또는 글내용의 크기가 서버에서 설정한 값을 넘어 오류가 발생하였습니다.")."\\npost_max_size=".ini_get('post_max_size')." , upload_max_filesize=".$upload_max_filesize."\\n"._("게시판관리자 또는 서버관리자에게 문의 바랍니다."));
 }
 
 for ($i=1; $i<=5; $i++) {
@@ -82,7 +82,7 @@ for ($i=1; $i<=5; $i++) {
 
 if($w == 'u' || $w == 'a' || $w == 'r') {
     if($w == 'a' && !$is_admin)
-        alert('답변은 관리자만 등록할 수 있습니다.');
+        alert(_('답변은 관리자만 등록할 수 있습니다.'));
 
     $sql = " select * from {$g5['qa_content_table']} where qa_id = '$qa_id' ";
     if(!$is_admin) {
@@ -93,23 +93,23 @@ if($w == 'u' || $w == 'a' || $w == 'r') {
 
     if($w == 'u') {
         if(!$write['qa_id'])
-            alert('게시글이 존재하지 않습니다.\\n삭제되었거나 자신의 글이 아닌 경우입니다.');
+            alert(_('게시글이 존재하지 않습니다.').'\\n'_('삭제되었거나 자신의 글이 아닌 경우입니다.'));
 
         if(!$is_admin) {
             if($write['qa_type'] == 0 && $write['qa_status'] == 1)
                 alert('답변이 등록된 문의글은 수정할 수 없습니다.');
 
             if($write['mb_id'] != $member['mb_id'])
-                alert('게시글을 수정할 권한이 없습니다.\\n\\n올바른 방법으로 이용해 주십시오.', G5_URL);
+                alert(_('게시글을 수정할 권한이 없습니다.').'\\n\\n'._('올바른 방법으로 이용해 주십시오.'), G5_URL);
         }
     }
 
     if($w == 'a') {
         if(!$write['qa_id'])
-            alert('문의글이 존재하지 않아 답변글을 등록할 수 없습니다.');
+            alert(_('문의글이 존재하지 않아 답변글을 등록할 수 없습니다.'));
 
         if($write['qa_type'] == 1)
-            alert('답변글에는 다시 답변을 등록할 수 없습니다.');
+            alert(_('답변글에는 다시 답변을 등록할 수 없습니다.'));
     }
 }
 
@@ -123,7 +123,7 @@ for ($i=1; $i<=$upload_count; $i++) {
 }
 
 if($file_count > 2)
-    alert('첨부파일을 2개 이하로 업로드 해주십시오.');
+    alert(_('첨부파일을 2개 이하로 업로드 해주십시오.'));
 
 // 디렉토리가 없다면 생성합니다. (퍼미션도 변경하구요.)
 @mkdir(G5_DATA_PATH.'/qa', G5_DIR_PERMISSION);
@@ -157,11 +157,11 @@ for ($i=1; $i<=count($_FILES['bf_file']['name']); $i++) {
     // 서버에 설정된 값보다 큰파일을 업로드 한다면
     if ($filename) {
         if ($_FILES['bf_file']['error'][$i] == 1) {
-            $file_upload_msg .= '\"'.$filename.'\" 파일의 용량이 서버에 설정('.$upload_max_filesize.')된 값보다 크므로 업로드 할 수 없습니다.\\n';
+            $file_upload_msg .= '\"'.$filename.'_(\" 파일의 용량이 서버에 설정(').$upload_max_filesize._(')된 값보다 크므로 업로드 할 수 없습니다.').'\\n';
             continue;
         }
         else if ($_FILES['bf_file']['error'][$i] != 0) {
-            $file_upload_msg .= '\"'.$filename.'\" 파일이 정상적으로 업로드 되지 않았습니다.\\n';
+            $file_upload_msg .= '\"'.$filename.'_(\" 파일이 정상적으로 업로드 되지 않았습니다.').'\\n';
             continue;
         }
     }
@@ -169,7 +169,7 @@ for ($i=1; $i<=count($_FILES['bf_file']['name']); $i++) {
     if (is_uploaded_file($tmp_file)) {
         // 관리자가 아니면서 설정한 업로드 사이즈보다 크다면 건너뜀
         if (!$is_admin && $filesize > $qaconfig['qa_upload_size']) {
-            $file_upload_msg .= '\"'.$filename.'\" 파일의 용량('.number_format($filesize).' 바이트)이 게시판에 설정('.number_format($qaconfig['qa_upload_size']).' 바이트)된 값보다 크므로 업로드 하지 않습니다.\\n';
+            $file_upload_msg .= '\"'.$filename._('\" 파일의 용량(').number_format($filesize)._(' 바이트)이 게시판에 설정(').number_format($qaconfig['qa_upload_size'])._(' 바이트)된 값보다 크므로 업로드 하지 않습니다.').'\\n';
             continue;
         }
 
@@ -331,7 +331,7 @@ if($config['cf_sms_use'] == 'icode' && $qaconfig['qa_use_sms']) {
         if($port_setting !== false) {
             // 답변글은 질문 등록자에게 전송
             if($w == 'a' && $write['qa_sms_recv'] && trim($write['qa_hp'])) {
-                $sms_content = $config['cf_title'].' '.$qaconfig['qa_title'].'에 답변이 등록되었습니다.';
+                $sms_content = $config['cf_title'].' '.$qaconfig['qa_title']._('에 답변이 등록되었습니다.');
                 $send_number = preg_replace('/[^0-9]/', '', $qaconfig['qa_send_number']);
                 $recv_number = preg_replace('/[^0-9]/', '', $write['qa_hp']);
 
@@ -360,7 +360,7 @@ if($config['cf_sms_use'] == 'icode' && $qaconfig['qa_use_sms']) {
 
             // 문의글 등록시 관리자에게 전송
             if(($w == '' || $w == 'r') && trim($qaconfig['qa_admin_hp'])) {
-                $sms_content = $config['cf_title'].' '.$qaconfig['qa_title'].'에 문의글이 등록되었습니다.';
+                $sms_content = $config['cf_title'].' '.$qaconfig['qa_title']._('에 문의글이 등록되었습니다.');
                 $send_number = preg_replace('/[^0-9]/', '', $qaconfig['qa_send_number']);
                 $recv_number = preg_replace('/[^0-9]/', '', $qaconfig['qa_admin_hp']);
 
@@ -392,7 +392,7 @@ if($config['cf_sms_use'] == 'icode' && $qaconfig['qa_use_sms']) {
 
         // 답변글은 질문 등록자에게 전송
         if($w == 'a' && $write['qa_sms_recv'] && trim($write['qa_hp'])) {
-            $sms_content = $config['cf_title'].' '.$qaconfig['qa_title'].'에 답변이 등록되었습니다.';
+            $sms_content = $config['cf_title'].' '.$qaconfig['qa_title']._('에 답변이 등록되었습니다.');
             $send_number = preg_replace('/[^0-9]/', '', $qaconfig['qa_send_number']);
             $recv_number = preg_replace('/[^0-9]/', '', $write['qa_hp']);
 
@@ -406,7 +406,7 @@ if($config['cf_sms_use'] == 'icode' && $qaconfig['qa_use_sms']) {
 
         // 문의글 등록시 관리자에게 전송
         if(($w == '' || $w == 'r') && trim($qaconfig['qa_admin_hp'])) {
-            $sms_content = $config['cf_title'].' '.$qaconfig['qa_title'].'에 문의글이 등록되었습니다.';
+            $sms_content = $config['cf_title'].' '.$qaconfig['qa_title']._('에 문의글이 등록되었습니다.');
             $send_number = preg_replace('/[^0-9]/', '', $qaconfig['qa_send_number']);
             $recv_number = preg_replace('/[^0-9]/', '', $qaconfig['qa_admin_hp']);
 
@@ -424,7 +424,7 @@ if($config['cf_sms_use'] == 'icode' && $qaconfig['qa_use_sms']) {
 if($w == 'a' && $write['qa_email_recv'] && trim($write['qa_email'])) {
     include_once(G5_LIB_PATH.'/mailer.lib.php');
 
-    $subject = $config['cf_title'].' '.$qaconfig['qa_title'].' 답변 알림 메일';
+    $subject = $config['cf_title'].' '.$qaconfig['qa_title']._(' 답변 알림 메일');
     $content = nl2br(conv_unescape_nl(stripslashes($qa_content)));
 
     mailer($config['cf_admin_email_name'], $config['cf_admin_email'], $write['qa_email'], $subject, $content, 1);
@@ -434,7 +434,7 @@ if($w == 'a' && $write['qa_email_recv'] && trim($write['qa_email'])) {
 if(($w == '' || $w == 'r') && trim($qaconfig['qa_admin_email'])) {
     include_once(G5_LIB_PATH.'/mailer.lib.php');
 
-    $subject = $config['cf_title'].' '.$qaconfig['qa_title'].' 질문 알림 메일';
+    $subject = $config['cf_title'].' '.$qaconfig['qa_title']._(' 질문 알림 메일');
     $content = nl2br(conv_unescape_nl(stripslashes($qa_content)));
 
     mailer($config['cf_admin_email_name'], $qa_email, $qaconfig['qa_admin_email'], $subject, $content, 1);

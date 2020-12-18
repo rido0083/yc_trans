@@ -57,7 +57,7 @@ if($cancelFlag == "true")
             $tno = trim($_REQUEST['TID']);
 
             $db_check = 0;
-            $cancel_msg = isset($_REQUEST['CancelMsg']) ? iconv_euckr($_REQUEST['CancelMsg']) : iconv_euckr('관리자 승인 취소');
+            $cancel_msg = isset($_REQUEST['CancelMsg']) ? iconv_euckr($_REQUEST['CancelMsg']) : iconv_euckr(_('관리자 승인 취소'));
         }
 
     }

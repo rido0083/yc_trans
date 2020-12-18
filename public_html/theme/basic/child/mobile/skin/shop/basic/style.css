@@ -90,7 +90,7 @@
 .sct_10 {margin:10px}
 .sct_10 .sct_li {float:left;text-align:left;padding:5px;margin-bottom:10px}
 .sct_10 .sct_li .li_wr {position:relative}
-.sct_10 .sct_img {margin-bottom:10px;font-size:0}
+.sct_10 .sct_img {position:relative;margin-bottom:10px;font-size:0}
 .sct_10 .sct_img img {width:100%;height:auto}
 .sct_10 .sct_clear {clear:both}
 .sct_10 .sct_id {margin:5px 0;font-size:0.92em;color:#666}

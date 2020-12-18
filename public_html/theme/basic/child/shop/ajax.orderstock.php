@@ -7,7 +7,7 @@ else
     $tmp_cart_id = get_session('ss_cart_id');
 
 if (get_cart_count($tmp_cart_id) == 0)// 장바구니에 담기
-    die("장바구니가 비어 있습니다.\n\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.");
+    die(_("장바구니가 비어 있습니다.")."\n\n"._("이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다."));
 
 $keep_term = $default['de_cart_keep_term'];
 if(!$keep_term)
@@ -34,7 +34,7 @@ if($cart_stock_limit > 0) {
     $row = sql_fetch($sql);
 
     if(!$row['cnt'])
-        die("주문 요청 때까지 ".$cart_stock_limit."시간 이상 경과되어 주문 상품이 초기화 됐습니다.\n\n 장바구니에서 주문하실 상품을 다시 확인해 주십시오.");
+        die(_("주문 요청 때까지 ").$cart_stock_limit._("시간 이상 경과되어 주문 상품이 초기화 됐습니다.")."\n\n"._("장바구니에서 주문하실 상품을 다시 확인해 주십시오."));
 }
 
 if (function_exists('before_check_cart_price')) {
@@ -66,7 +66,7 @@ for($i=0; $row=sql_fetch_array($result); $i++) {
         while($ca=sql_fetch_array($result2)){
             if ( ! $ca['ca_use']) {
                 $item['it_use'] = false;
-                $category_str = '분류에서 ';
+                $category_str = _('분류에서 ');
             }
         }
     }
@@ -74,12 +74,12 @@ for($i=0; $row=sql_fetch_array($result); $i++) {
     // 해당 상품이 품절 상태 또는 판매중지이면
     if( $item['it_soldout'] || !$item['it_use'] ){
 
-        $soldout_txt = $item['it_soldout'] ? '품절' : $category_str.'판매중지';
+        $soldout_txt = $item['it_soldout'] ? _('품절') : $category_str._('판매중지');
         $item_option = $row['it_name'];
         if($row['io_id'])
             $item_option .= '('.$row['ct_option'].')';
 
-        die( $item_option." 상품이 ".$soldout_txt." 되었습니다.\n\n장바구니에서 해당 상품을 삭제후 다시 주문해 주세요." );
+        die( $item_option._(" 상품이 ").$soldout_txt._(" 되었습니다.")."\n\n"._("장바구니에서 해당 상품을 삭제후 다시 주문해 주세요." ));
     }
 
     if(!$row['io_id'])
@@ -93,7 +93,7 @@ for($i=0; $row=sql_fetch_array($result); $i++) {
         if($row['io_id'])
             $item_option .= '('.$row['ct_option'].')';
 
-        die($item_option." 의 재고수량이 부족합니다.\n\n현재 재고수량 : " . number_format($it_stock_qty) . " 개");
+        die($item_option._(" 의 재고수량이 부족합니다.")."\n\n"._("현재 재고수량 : " ). number_format($it_stock_qty) ._(" 개"));
     }
 }
 

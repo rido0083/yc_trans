@@ -14,7 +14,7 @@ include_once(G5_MSHOP_PATH.'/_head.php');
 
     <?php if($default['de_mobile_type1_list_use']) { ?>
     <div class="sct_wrap">
-            <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=1">히트상품</a></h2>
+            <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=1"><?php echo _('히트상품')?></a></h2>
         <?php
         $list = new item_list();
         $list->set_mobile(true);
@@ -34,7 +34,7 @@ include_once(G5_MSHOP_PATH.'/_head.php');
 
     <?php if($default['de_mobile_type2_list_use']) { ?>
     <div class="sct_wrap">
-        <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=2">추천상품</a></h2>
+        <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=2"><?php echo _('추천상품')?></a></h2>
         <?php
         $list = new item_list();
         $list->set_mobile(true);
@@ -53,7 +53,7 @@ include_once(G5_MSHOP_PATH.'/_head.php');
 
     <?php if($default['de_mobile_type3_list_use']) { ?>
     <div class="sct_wrap">
-        <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=3">최신상품</a></h2>
+        <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=3"><?php echo _('최신상품')?></a></h2>
         <?php
         $list = new item_list();
         $list->set_mobile(true);
@@ -71,7 +71,7 @@ include_once(G5_MSHOP_PATH.'/_head.php');
 
     <?php if($default['de_mobile_type4_list_use']) { ?>
     <div class="sct_wrap">
-        <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=4">인기상품</a></h2>
+        <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=4"><?php echo _('인기상품')?></a></h2>
         <?php
         $list = new item_list();
         $list->set_mobile(true);
@@ -89,7 +89,7 @@ include_once(G5_MSHOP_PATH.'/_head.php');
 
     <?php if($default['de_mobile_type5_list_use']) { ?>
     <div class="sct_wrap">
-        <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=5">할인상품</a></h2>
+        <h2><a href="<?php echo G5_SHOP_URL; ?>/listtype.php?type=5"><?php echo _('할인상품')?></a></h2>
         <?php
         $list = new item_list();
         $list->set_mobile(true);

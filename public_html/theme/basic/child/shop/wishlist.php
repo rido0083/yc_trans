@@ -19,7 +19,7 @@ if(defined('G5_THEME_SHOP_PATH')) {
     }
 }
 
-$g5['title'] = "위시리스트";
+$g5['title'] = _("위시리스트");
 include_once('./_head.php');
 ?>
 
@@ -61,7 +61,7 @@ include_once('./_head.php');
                     if(is_soldout($row['it_id']))
                     {
                     ?>
-                    품절
+                    <?php echo _('품절') ?>
                     <?php } else { //품절이 아니면 체크할수 있도록한다 ?>
                     <div class="chk_box">
                     	<input type="checkbox" name="chk_it_id[<?php echo $i; ?>]" value="1" id="chk_it_id_<?php echo $i; ?>" onclick="out_cd_check(this, '<?php echo $out_cd; ?>');" class="selec_chk">
@@ -83,14 +83,14 @@ include_once('./_head.php');
         }
 
         if ($i == 0)
-            echo '<li class="empty_table">보관함이 비었습니다.</li>';
+            echo '<li class="empty_table">'._('보관함이 비었습니다.').'</li>';
         ?>
         </ul>
     </div>
 
     <div id="sod_ws_act">
-        <button type="submit" class="btn01" onclick="return fwishlist_check(document.fwishlist,'');">장바구니 담기</button>
-        <button type="submit" class="btn02" onclick="return fwishlist_check(document.fwishlist,'direct_buy');">주문하기</button>
+        <button type="submit" class="btn01" onclick="return fwishlist_check(document.fwishlist,'');"><?php echo _('장바구니 담기') ?></button>
+        <button type="submit" class="btn02" onclick="return fwishlist_check(document.fwishlist,'direct_buy');"><?php echo _('주문하기') ?></button>
     </div>
     </form>
 </div>
@@ -100,13 +100,13 @@ include_once('./_head.php');
     function out_cd_check(fld, out_cd)
     {
         if (out_cd == 'no'){
-            alert("옵션이 있는 상품입니다.\n\n상품을 클릭하여 상품페이지에서 옵션을 선택한 후 주문하십시오.");
+            alert("<?php echo _('옵션이 있는 상품입니다.') ?>\n\n<?php echo _('상품을 클릭하여 상품페이지에서 옵션을 선택한 후 주문하십시오..') ?>");
             fld.checked = false;
             return;
         }
 
         if (out_cd == 'tel_inq'){
-            alert("이 상품은 전화로 문의해 주십시오.\n\n장바구니에 담아 구입하실 수 없습니다.");
+            alert("<?php echo _('이 상품은 전화로 문의해 주십시오.') ?>\n\n<?php echo _('장바구니에 담아 구입하실 수 없습니다.') ?>");
             fld.checked = false;
             return;
         }
@@ -125,7 +125,7 @@ include_once('./_head.php');
 
         if(k == 0)
         {
-            alert("상품을 하나 이상 체크 하십시오");
+            alert("<?php echo _('상품을 하나 이상 체크 하십시오') ?>");
             return false;
         }
 

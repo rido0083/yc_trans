@@ -11,7 +11,7 @@ $is_cart = false;       //장바구니 체크 변수 초기화
 
 if($_POST['naverpay_form'] == 'cart.php') {
     if(!count($_POST['ct_chk']))
-        return_error2json('구매하실 상품을 하나이상 선택해 주십시오.');
+        return_error2json(_('구매하실 상품을 하나이상 선택해 주십시오.'));
 
     $s_cart_id = get_session('ss_cart_id');
     $fldcnt = count($_POST['it_id']);
@@ -78,7 +78,7 @@ if( $is_cart && $is_prepay && $is_collect ){
 
 $count = count($_POST['it_id']);
 if ($count < 1)
-    return_error2json('구매하실 상품을 선택하여 주십시오.');
+    return_error2json(_('구매하실 상품을 선택하여 주십시오.'));
 
 $itm_ids     = array();
 $sel_options = array();
@@ -98,20 +98,20 @@ for($i=0; $i<$count; $i++) {
     $opt_count = count($_POST['io_id'][$it_id]);
 
     if($opt_count && $_POST['io_type'][$it_id][0] != 0)
-        return_error2json('상품의 선택옵션을 선택해 주십시오.');
+        return_error2json(_('상품의 선택옵션을 선택해 주십시오.'));
 
     for($k=0; $k<$opt_count; $k++) {
         if ($_POST['ct_qty'][$it_id][$k] < 1)
-            return_error2json('수량은 1 이상 입력해 주십시오.');
+            return_error2json(_('수량은 1 이상 입력해 주십시오.'));
     }
 
     // 상품정보
     $it = get_shop_item($it_id, true);
     if(!$it['it_id'])
-        return_error2json('상품정보가 존재하지 않습니다.');
+        return_error2json(_('상품정보가 존재하지 않습니다.'));
 
     if(!$it['it_use'] || $it['it_soldout'] || $it['it_tel_inq'])
-        return_error2json($it['it_name'].' 는(은) 구매할 수 없는 상품입니다.');
+        return_error2json($it['it_name']._(' 는(은) 구매할 수 없는 상품입니다.'));
 
     // 최소, 최대 수량 체크
     if($it['it_buy_min_qty'] || $it['it_buy_max_qty']) {
@@ -122,10 +122,10 @@ for($i=0; $i<$count; $i++) {
         }
 
         if($it['it_buy_min_qty'] > 0 && $sum_qty < $it['it_buy_min_qty'])
-            return_error2json($it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_min_qty']).'개 이상 주문해 주십시오.');
+            return_error2json($it['it_name']._('의 선택옵션 개수 총합 ').number_format($it['it_buy_min_qty'])._('개 이상 주문해 주십시오.'));
 
         if($it['it_buy_max_qty'] > 0 && $sum_qty > $it['it_buy_max_qty'])
-            return_error2json($it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_max_qty']).'개 이하로 주문해 주십시오.');
+            return_error2json($it['it_name']._('의 선택옵션 개수 총합 ').number_format($it['it_buy_max_qty'])._('개 이하로 주문해 주십시오.'));
     }
 
     // 옵션정보를 얻어서 배열에 저장
@@ -162,7 +162,7 @@ for($i=0; $i<$count; $i++) {
 
         if ($ct_qty > $it_stock_qty)
         {
-            return_error2json($io_value." 의 재고수량이 부족합니다.\\n\\n현재 재고수량 : " . number_format($it_stock_qty) . " 개");
+            return_error2json($io_value._(" 의 재고수량이 부족합니다.")."\\n\\n"._("현재 재고수량 : ") . number_format($it_stock_qty) ._(" 개"));
         }
     }
     //--------------------------------------------------------
@@ -195,11 +195,11 @@ for($i=0; $i<$count; $i++) {
             }
             */
             if((int)$io_price < 0) {
-                return_error2json('구매금액이 0원 미만인 상품은 구매할 수 없습니다.');
+                return_error2json(_('구매금액이 0원 미만인 상품은 구매할 수 없습니다.'));
             }
         } else {
             if((int)$it_price + (int)$io_price <= 0)
-                return_error2json('구매금액이 음수 또는 0원인 상품은 구매할 수 없습니다.');
+                return_error2json(_('구매금액이 음수 또는 0원인 상품은 구매할 수 없습니다.'));
         }
         
         $ct_send_cost = 0;

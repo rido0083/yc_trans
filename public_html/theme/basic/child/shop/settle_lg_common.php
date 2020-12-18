@@ -57,7 +57,7 @@ $LGD_HASHDATA2 = md5($LGD_MID.$LGD_OID.$LGD_AMOUNT.$LGD_RESPCODE.$LGD_TIMESTAMP.
  *
  * ※ 주의사항 : 성공시 'OK' 문자이외의 다른문자열이 포함되면 실패처리 되오니 주의하시기 바랍니다.
  */
-$resultMSG = "결제결과 상점 DB처리(LGD_CASNOTEURL) 결과값을 입력해 주시기 바랍니다.";
+$resultMSG = _("결제결과 상점 DB처리")."(LGD_CASNOTEURL)"._("결과값을 입력해 주시기 바랍니다.");
 
 
 if ( $LGD_HASHDATA2 == $LGD_HASHDATA ) { //해쉬값 검증이 성공이면
@@ -171,7 +171,7 @@ if ( $LGD_HASHDATA2 == $LGD_HASHDATA ) { //해쉬값 검증이 성공이면
     /*
      * hashdata검증 실패 로그를 처리하시기 바랍니다.
      */
-    $resultMSG = "결제결과 상점 DB처리(LGD_CASNOTEURL) 해쉬값 검증이 실패하였습니다.";
+    $resultMSG = _("결제결과 상점 DB처리"),"(LGD_CASNOTEURL)"._("해쉬값 검증이 실패하였습니다.");
 }
 
 echo $resultMSG;

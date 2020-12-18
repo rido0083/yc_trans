@@ -2,13 +2,13 @@
 include_once('./_common.php');
 
 if (!$member['mb_id'])
-    alert('회원만 접근하실 수 있습니다.');
+    alert(_('회원만 접근하실 수 있습니다.'));
 
 if ($is_admin == 'super')
-    alert('최고 관리자는 탈퇴할 수 없습니다');
+    alert(_('최고 관리자는 탈퇴할 수 없습니다'));
 
 if (!($_POST['mb_password'] && check_password($_POST['mb_password'], $member['mb_password'])))
-    alert('비밀번호가 틀립니다.');
+    alert(_('비밀번호가 틀립니다.'));
 
 // 회원탈퇴일을 저장
 $date = date("Ymd");
@@ -26,5 +26,5 @@ if(function_exists('social_member_link_delete')){
     social_member_link_delete($member['mb_id']);
 }
 
-alert(''.$member['mb_nick'].'님께서는 '. date("Y년 m월 d일") .'에 회원에서 탈퇴 하셨습니다.', $url);
+alert(''.$member['mb_nick']._('님께서는 '). date("Y년 m월 d일") ._('에 회원에서 탈퇴 하셨습니다.'), $url);
 ?>

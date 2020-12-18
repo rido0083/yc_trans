@@ -24,7 +24,7 @@ $result = sql_query($sql);
 $itemuse_skin = G5_MSHOP_SKIN_PATH.'/itemuse.skin.php';
 
 if(!file_exists($itemuse_skin)) {
-    echo str_replace(G5_PATH.'/', '', $itemuse_skin).' 스킨 파일이 존재하지 않습니다.';
+    echo str_replace(G5_PATH.'/', '', $itemuse_skin)._(' 스킨 파일이 존재하지 않습니다.');
 } else {
     include_once($itemuse_skin);
 }

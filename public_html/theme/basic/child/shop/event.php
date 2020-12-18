@@ -18,13 +18,13 @@ $sql = " select * from {$g5['g5_shop_event_table']}
             and ev_use = 1 ";
 $ev = sql_fetch($sql);
 if (!$ev['ev_id'])
-    alert('등록된 이벤트가 없습니다.');
+    alert(_('등록된 이벤트가 없습니다.'));
 
 $g5['title'] = $ev['ev_subject'];
 include_once('./_head.php');
 
 if ($is_admin)
-    echo '<div class="sev_admin"><a href="'.G5_ADMIN_URL.'/shop_admin/itemeventform.php?w=u&amp;ev_id='.$ev['ev_id'].'" class="btn_admin btn"><span class="sound_only">이벤트 관리</span><i class="fa fa-cog fa-spin fa-fw"></i></a></div>';
+    echo '<div class="sev_admin"><a href="'.G5_ADMIN_URL.'/shop_admin/itemeventform.php?w=u&amp;ev_id='.$ev['ev_id'].'" class="btn_admin btn"><span class="sound_only">'._('이벤트 관리').'</span><i class="fa fa-cog fa-spin fa-fw"></i></a></div>';
 ?>
 
 <script>
@@ -95,7 +95,7 @@ if (file_exists($list_file))
 }
 else
 {
-    echo '<div align="center">'.$ev['ev_skin'].' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</div>';
+    echo '<div align="center">'.$ev['ev_skin']._(' 파일을 찾을 수 없습니다.').'<br>'._('관리자에게 알려주시면 감사하겠습니다.').'</div>';
 }
 ?>
 

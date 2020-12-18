@@ -19,7 +19,7 @@ if(defined('G5_THEME_SHOP_PATH')) {
     }
 }
 
-$g5['title'] = '마이페이지';
+$g5['title'] = _('마이페이지');
 include_once('./_head.php');
 
 // 쿠폰
@@ -42,7 +42,7 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
 
     <!-- 회원정보 개요 시작 { -->
     <section id="smb_my_ov">
-        <h2>회원정보 개요</h2>
+        <h2><?php echo _('회원정보 개요') ?></h2>
         <strong class="my_ov_name"><?php echo get_member_profile_img($member['mb_id']); ?> <?php echo $member['mb_name']; ?></strong>
         <dl class="cou_pt">
             <dt>보유포인트</dt>
@@ -52,26 +52,26 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
         </dl>
         <div id="smb_my_act">
             <ul>
-                <?php if ($is_admin == 'super') { ?><li><a href="<?php echo G5_ADMIN_URL; ?>/" class="btn_admin">관리자</a></li><?php } ?>
-                <li><a href="<?php echo G5_BBS_URL; ?>/memo.php" target="_blank" class="win_memo btn01">쪽지함</a></li>
-                <li><a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=register_form.php" class="btn01">회원정보수정</a></li>
-                <li><a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=member_leave.php" onclick="return member_leave();" class="btn01">회원탈퇴</a></li>
+                <?php if ($is_admin == 'super') { ?><li><a href="<?php echo G5_ADMIN_URL; ?>/" class="btn_admin"><?php echo _('관리자') ?></a></li><?php } ?>
+                <li><a href="<?php echo G5_BBS_URL; ?>/memo.php" target="_blank" class="win_memo btn01"><?php echo _('쪽지함') ?></a></li>
+                <li><a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=register_form.php" class="btn01"><?php echo _('회원정보수정') ?></a></li>
+                <li><a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=member_leave.php" onclick="return member_leave();" class="btn01"><?php echo _('회원탈퇴') ?></a></li>
             </ul>
         </div>
 
         <dl class="op_area">
-            <dt>연락처</dt>
+            <dt><?php echo _('연락처') ?></dt>
             <dd><?php echo ($member['mb_tel'] ? $member['mb_tel'] : '미등록'); ?></dd>
             <dt>E-Mail</dt>
             <dd><?php echo ($member['mb_email'] ? $member['mb_email'] : '미등록'); ?></dd>
-            <dt>최종접속일시</dt>
+            <dt><?php echo _('최종접속일시') ?></dt>
             <dd><?php echo $member['mb_today_login']; ?></dd>
-            <dt>회원가입일시</dt>
+            <dt><?php echo _('회원가입일시') ?></dt>
             <dd><?php echo $member['mb_datetime']; ?></dd>
-            <dt id="smb_my_ovaddt">주소</dt>
+            <dt id="smb_my_ovaddt"><?php echo _('주소') ?></dt>
             <dd id="smb_my_ovaddd"><?php echo sprintf("(%s%s)", $member['mb_zip1'], $member['mb_zip2']).' '.print_address($member['mb_addr1'], $member['mb_addr2'], $member['mb_addr3'], $member['mb_addr_jibeon']); ?></dd>
         </dl>
-        <div class="my_ov_btn"><button type="button" class="btn_op_area"><i class="fa fa-caret-up" aria-hidden="true"></i><span class="sound_only">상세정보 보기</span></button></div>
+        <div class="my_ov_btn"><button type="button" class="btn_op_area"><i class="fa fa-caret-up" aria-hidden="true"></i><span class="sound_only"><?php echo _('상세정보 보기') ?></span></button></div>
 
     </section>
     <script>
@@ -86,7 +86,7 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
 
     <!-- 최근 주문내역 시작 { -->
     <section id="smb_my_od">
-        <h2>최근 주문내역</h2>
+        <h2><?php echo _('최근 주문내역') ?></h2>
         <?php
         // 최근 주문내역
         define("_ORDERINQUIRY_", true);
@@ -96,14 +96,14 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
         ?>
 
         <div class="smb_my_more">
-            <a href="./orderinquiry.php">더보기</a>
+            <a href="./orderinquiry.php"><?php echo _('더보기') ?></a>
         </div>
     </section>
     <!-- } 최근 주문내역 끝 -->
 
     <!-- 최근 위시리스트 시작 { -->
     <section id="smb_my_wish">
-        <h2>최근 위시리스트</h2>
+        <h2><?php echo _('최근 위시리스트') ?></h2>
 
         <div class="list_02">
             <ul>
@@ -132,13 +132,13 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
             }
 
             if ($i == 0)
-                echo '<li class="empty_li">보관 내역이 없습니다.</li>';
+                echo '<li class="empty_li">'._('보관 내역이 없습니다.').'</li>';
             ?>
             </ul>
         </div>
 
         <div class="smb_my_more">
-            <a href="./wishlist.php">더보기</a>
+            <a href="./wishlist.php"><?php echo _('더보기') ?></a>
         </div>
     </section>
     <!-- } 최근 위시리스트 끝 -->
@@ -148,7 +148,7 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
 <script>
 function member_leave()
 {
-    return confirm('정말 회원에서 탈퇴 하시겠습니까?')
+    return confirm('<?php echo _('정말 회원에서 탈퇴 하시겠습니까?') ?>')
 }
 </script>
 <!-- } 마이페이지 끝 -->

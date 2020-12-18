@@ -9,7 +9,7 @@ $mshop_categories = get_shop_category_array(true);
 
 <!-- 쇼핑몰 카테고리 시작 { -->
 <nav id="gnb">
-    <h2>쇼핑몰 카테고리</h2>
+    <h2><?php echo _('쇼핑몰 카테고리') ?></h2>
     <ul id="gnb_1dul">
         <?php
         // 1단계 분류 판매 가능한 것만

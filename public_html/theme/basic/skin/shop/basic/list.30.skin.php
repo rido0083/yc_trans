@@ -112,6 +112,6 @@ foreach((array) $list as $row){
 
 if ($i >= 1) echo "</ul>\n";
 
-if($i == 0) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
+if($i == 0) echo "<p class=\"sct_noitem\">"._("등록된 상품이 없습니다.")."</p>\n";
 ?>
 <!-- } 상품진열 12 끝 -->

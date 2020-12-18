@@ -5,7 +5,7 @@ $is_mobile_order = true;
 include_once(G5_SHOP_PATH.'/settle_kakaopay.inc.php');
 
 // 카카오페이를 사용하지 않을 경우
-if( ! $default['de_kakaopay_enckey'] ) die('카카오페이를 사용하지 않습니다.');
+if( ! $default['de_kakaopay_enckey'] ) die(_('카카오페이를 사용하지 않습니다.'));
 
 // 세션 초기화
 set_session('P_TID',  '');
@@ -16,7 +16,7 @@ $oid  = trim($_REQUEST['P_NOTI']);
 $p_req_url = trim($_REQUEST['P_REQ_URL']);
 
 if( ! $p_req_url || !preg_match('/^https\:\/\//i', $p_req_url)){
-    alert("잘못된 요청 URL 입니다.");
+    alert(_("잘못된 요청 URL 입니다."));
 }
 
 $sql = " select * from {$g5['g5_shop_order_data_table']} where od_id = '$oid' ";
@@ -44,7 +44,7 @@ if(isset($data['pp_id']) && $data['pp_id']) {
         $tmp_cart_id = get_session('ss_cart_id');
 
     if (get_cart_count($tmp_cart_id) == 0)// 장바구니에 담기
-        alert('세션을 잃거나 다른 브라우저에서 데이터가 변경된 경우입니다. 장바구니 상태를 확인후에 다시 시도해 주세요.', G5_SHOP_URL.'/cart.php');
+        alert(_('세션을 잃거나 다른 브라우저에서 데이터가 변경된 경우입니다. 장바구니 상태를 확인후에 다시 시도해 주세요.'), G5_SHOP_URL.'/cart.php');
 
     $error = "";
     // 장바구니 상품 재고 검사
@@ -68,21 +68,21 @@ if(isset($data['pp_id']) && $data['pp_id']) {
         }
         // 장바구니 수량이 재고수량보다 많다면 오류
         if ($row['ct_qty'] > $it_stock_qty)
-            $error .= "{$row['ct_option']} 의 재고수량이 부족합니다. 현재고수량 : $it_stock_qty 개\\n\\n";
+            $error .= "{$row['ct_option']}"._("의 재고수량이 부족합니다. 현재고수량 : ")."$it_stock_qty"._("개")."\\n\\n";
     }
 
     if($i == 0)
-        alert('장바구니가 비어 있습니다.', G5_SHOP_URL.'/cart.php');
+        alert(_('장바구니가 비어 있습니다.'), G5_SHOP_URL.'/cart.php');
 
     if ($error != "")
     {
-        $error .= "결제진행이 중단 되었습니다.";
+        $error .= _("결제진행이 중단 되었습니다.");
         alert($error, G5_SHOP_URL.'/cart.php');
     }
 }
 
 if($_REQUEST['P_STATUS'] != '00') {
-    alert('오류 : '.iconv_utf8($_REQUEST['P_RMESG1']).' 코드 : '.$_REQUEST['P_STATUS'], $page_return_url);
+    alert(_('오류 : ').'iconv_utf8($_REQUEST['P_RMESG1'])'._(' 코드 : ').'$_REQUEST['P_STATUS'], $page_return_url');
 } else {
     $post_data = array(
         'P_MID' => $default['de_kakaopay_mid'],
@@ -98,7 +98,7 @@ if($_REQUEST['P_STATUS'] != '00') {
     $return = curl_exec($ch);
 
     if(!$return)
-        alert('KG이니시스와 통신 오류로 결제등록 요청을 완료하지 못했습니다.\\n결제등록 요청을 다시 시도해 주십시오.', $page_return_url);
+        alert(_('KG이니시스와 통신 오류로 결제등록 요청을 완료하지 못했습니다.').'\\n'._('결제등록 요청을 다시 시도해 주십시오.'), $page_return_url);
 
     // 결과를 배열로 변환
     parse_str($return, $ret);
@@ -107,7 +107,7 @@ if($_REQUEST['P_STATUS'] != '00') {
     $PAY = array_map('get_search_string', $PAY);
 
     if($PAY['P_STATUS'] != '00')
-        alert('오류 : '.iconv_utf8($PAY['P_RMESG1']).' 코드 : '.$PAY['P_STATUS'], $page_return_url);
+        alert(_('오류 : ').'iconv_utf8($PAY['P_RMESG1'])'._(' 코드 : ').'$PAY['P_STATUS'], $page_return_url');
 
     // TID, AMT 를 세션으로 주문완료 페이지 전달
     $hash = md5($PAY['P_TID'].$PAY['P_MID'].$PAY['P_AMT']);

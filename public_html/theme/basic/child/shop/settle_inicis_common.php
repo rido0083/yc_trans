@@ -72,7 +72,7 @@ if( $PG_IP == "203.238.37.3" || $PG_IP == "203.238.37.15" || $PG_IP == "203.238.
                 $sql = " update {$g5['g5_shop_order_table']}
                             set od_receipt_price = od_receipt_price + '$amt_input',
                                 od_receipt_time = '$receipt_time',
-                                od_shop_memo = concat(od_shop_memo, \"\\n개인결제 ".$row['pp_id']." 로 결제완료 - ".$receipt_time."\")
+                                od_shop_memo = concat(od_shop_memo, \"\\n"._("개인결제 ").$row['pp_id']._(" 로 결제완료")." - ".$receipt_time."\")
                           where od_id = '{$row['od_id']}' ";
                 $result = sql_query($sql, FALSE);
             }
@@ -96,7 +96,7 @@ if( $PG_IP == "203.238.37.3" || $PG_IP == "203.238.37.15" || $PG_IP == "203.238.
             $sql = " select count(od_id) as cnt
                         from {$g5['g5_shop_order_table']}
                         where od_id = '$od_id'
-                          and od_status = '주문' ";
+                          and od_status = _('주문') ";
             $row = sql_fetch($sql);
 
             if($row['cnt'] == 1) {
@@ -106,14 +106,14 @@ if( $PG_IP == "203.238.37.3" || $PG_IP == "203.238.37.15" || $PG_IP == "203.238.
                 $sql = " update {$g5['g5_shop_order_table']}
                             set od_misu = '{$info['od_misu']}' ";
                 if($info['od_misu'] == 0)
-                    $sql .= " , od_status = '입금' ";
+                    $sql .= " , od_status = _('입금') ";
                 $sql .= " where od_id = '$od_id' ";
                 sql_query($sql, FALSE);
 
                 // 장바구니 상태변경
                 if($info['od_misu'] == 0) {
                     $sql = " update {$g5['g5_shop_cart_table']}
-                                set ct_status = '입금'
+                                set ct_status = _('입금')
                                 where od_id = '$od_id' ";
                     sql_query($sql, FALSE);
                 }

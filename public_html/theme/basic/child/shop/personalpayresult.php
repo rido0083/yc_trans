@@ -9,13 +9,13 @@ if (G5_IS_MOBILE) {
 $sql = "select * from {$g5['g5_shop_personalpay_table']} where pp_id = '$pp_id' ";
 $pp = sql_fetch($sql);
 if (!$pp['pp_id'] || (md5($pp['pp_id'].$pp['pp_time'].$_SERVER['REMOTE_ADDR']) != get_session('ss_personalpay_uid'))) {
-    alert("조회하실 개인결제 내역이 없습니다.", G5_SHOP_URL);
+    alert(_("조회하실 개인결제 내역이 없습니다."), G5_SHOP_URL);
 }
 
 // 결제방법
 $settle_case = $pp['pp_settle_case'];
 
-$g5['title'] = '개인결제상세내역';
+$g5['title'] = _('개인결제상세내역');
 include_once('./_head.php');
 
 // LG 현금영수증 JS
@@ -31,15 +31,15 @@ if($pp['pp_pg'] == 'lg') {
 <!-- 주문상세내역 시작 { -->
 <div id="sod_fin">
 
-    <p id="sod_fin_no">개인결제번호 <strong><?php echo $pp_id; ?></strong></p>
+    <p id="sod_fin_no"><?php echo _('개인결제번호') ?> <strong><?php echo $pp_id; ?></strong></p>
 
     <section id="sod_fin_view">
-        <h2>결제 정보</h2>
+        <h2><?php echo _('결제 정보') ?></h2>
         <?php
         $misu = true;
 
         if ($pp['pp_price'] == $pp['pp_receipt_price']) {
-            $wanbul = " (완불)";
+            $wanbul = " ("._("완불").")";
             $misu = false; // 미수금 없음
         }
         else
@@ -53,29 +53,29 @@ if($pp['pp_pg'] == 'lg') {
         if($pp['pp_receipt_price'] > 0)
             $pp_receipt_price = display_price($pp['pp_receipt_price']);
         else
-            $pp_receipt_price = '아직 입금되지 않았거나 입금정보를 입력하지 못하였습니다.';
+            $pp_receipt_price = _('아직 입금되지 않았거나 입금정보를 입력하지 못하였습니다.');
 
         $app_no_subj = '';
         $disp_bank = true;
         $disp_receipt = false;
-        if($pp['pp_settle_case'] == '신용카드') {
-            $app_no_subj = '승인번호';
+        if($pp['pp_settle_case'] == _('신용카드')) {
+            $app_no_subj = _('승인번호');
             $app_no = $pp['pp_app_no'];
             $disp_bank = false;
             $disp_receipt = true;
-        } else if($pp['pp_settle_case'] == '휴대폰') {
-            $app_no_subj = '휴대폰번호';
+        } else if($pp['pp_settle_case'] == _('휴대폰')) {
+            $app_no_subj = _('휴대폰번호');
             $app_no = $pp['pp_bank_account'];
             $disp_bank = false;
             $disp_receipt = true;
-        } else if($pp['pp_settle_case'] == '가상계좌' || $pp['pp_settle_case'] == '계좌이체') {
-            $app_no_subj = '거래번호';
+        } else if($pp['pp_settle_case'] == _('가상계좌') || $pp['pp_settle_case'] == _('계좌이체')) {
+            $app_no_subj = _('거래번호');
             $app_no = $pp['pp_tno'];
         }
         ?>
 
         <section id="sod_fin_pay">
-            <h3>결제정보</h3>
+            <h3><?php echo _('결제정보') ?></h3>
 
             <div class="tbl_head01 tbl_wrap">
                 <table>
@@ -86,21 +86,21 @@ if($pp['pp_pg'] == 'lg') {
                 <tbody>
                 <?php if($pp['od_id']) { ?>
                 <tr>
-                    <th scope="row">주문번호</th>
+                    <th scope="row"><?php echo _('주문번호') ?></th>
                     <td><?php echo $pp['od_id']; ?></td>
                 </tr>
                 <?php } ?>
                 <tr>
-                    <th scope="row">결제방식</th>
+                    <th scope="row"><?php echo _('결제방식') ?></th>
                     <td><?php echo $pp['pp_settle_case']; ?></td>
                 </tr>
                 <?php if($pp_receipt_price) { ?>
                 <tr>
-                    <th scope="row">결제금액</th>
+                    <th scope="row"><?php echo _('결제금액') ?></th>
                     <td><?php echo $pp_receipt_price; ?></td>
                 </tr>
                 <tr>
-                    <th scope="row">결제일시</th>
+                    <th scope="row"><?php echo _('결제일시') ?></th>
                     <td><?php echo is_null_time($pp['pp_receipt_time']) ? '' : $pp['pp_receipt_time']; ?></td>
                 </tr>
                 <?php
@@ -122,11 +122,11 @@ if($pp['pp_pg'] == 'lg') {
                 {
                 ?>
                 <tr>
-                    <th scope="row">입금자명</th>
+                    <th scope="row"><?php echo _('입금자명') ?></th>
                     <td><?php echo get_text($pp['pp_deposit_name']); ?></td>
                 </tr>
                 <tr>
-                    <th scope="row">입금계좌</th>
+                    <th scope="row"><?php echo _('입금계좌') ?></th>
                     <td><?php echo get_text($pp['pp_bank_account']); ?></td>
                 </tr>
                 <?php
@@ -135,10 +135,10 @@ if($pp['pp_pg'] == 'lg') {
                 if($disp_receipt) {
                 ?>
                 <tr>
-                    <th scope="row">영수증</th>
+                    <th scope="row"><?php echo _('영수증') ?></th>
                     <td>
                         <?php
-                        if($pp['pp_settle_case'] == '휴대폰')
+                        if($pp['pp_settle_case'] == _('휴대폰'))
                         {
                             if($pp['pp_pg'] == 'lg') {
                                 require_once G5_SHOP_PATH.'/settle_lg.inc.php';
@@ -153,11 +153,11 @@ if($pp['pp_pg'] == 'lg') {
                                 $hp_receipt_script = 'window.open(\''.G5_BILL_RECEIPT_URL.'mcash_bill&tno='.$pp['pp_tno'].'&order_no='.$pp['pp_id'].'&trade_mony='.$pp['pp_receipt_price'].'\', \'winreceipt\', \'width=500,height=690,scrollbars=yes,resizable=yes\');';
                             }
                         ?>
-                        <a href="javascript:;" onclick="<?php echo $hp_receipt_script; ?>">영수증 출력</a>
+                        <a href="javascript:;" onclick="<?php echo $hp_receipt_script; ?>"><?php echo _('영수증 출력') ?></a>
                         <?php
                         }
 
-                        if($pp['pp_settle_case'] == '신용카드')
+                        if($pp['pp_settle_case'] == _('신용카드'))
                         {
                             if($pp['pp_pg'] == 'lg') {
                                 require_once G5_SHOP_PATH.'/settle_lg.inc.php';
@@ -172,7 +172,7 @@ if($pp['pp_pg'] == 'lg') {
                                 $card_receipt_script = 'window.open(\''.G5_BILL_RECEIPT_URL.'card_bill&tno='.$pp['pp_tno'].'&order_no='.$pp['pp_id'].'&trade_mony='.$pp['pp_receipt_price'].'\', \'winreceipt\', \'width=470,height=815,scrollbars=yes,resizable=yes\');';
                             }
                         ?>
-                        <a href="javascript:;" onclick="<?php echo $card_receipt_script; ?>">영수증 출력</a>
+                        <a href="javascript:;" onclick="<?php echo $card_receipt_script; ?>"><?php echo _('영수증 출력') ?></a>
                         <?php
                         }
                         ?>
@@ -196,10 +196,10 @@ if($pp['pp_pg'] == 'lg') {
                     }
 
                     // 미수금이 없고 현금일 경우에만 현금영수증을 발급 할 수 있습니다.
-                    if ($is_cash_receipt && $misu_price == 0 && $pp['pp_receipt_price'] && ($pp['pp_settle_case'] == '계좌이체' || $pp['pp_settle_case'] == '가상계좌')) {
+                    if ($is_cash_receipt && $misu_price == 0 && $pp['pp_receipt_price'] && ($pp['pp_settle_case'] == _('계좌이체') || $pp['pp_settle_case'] == _('가상계좌'))) {
                 ?>
                 <tr>
-                    <th scope="row">현금영수증</th>
+                    <th scope="row"><?php echo _('현금영수증') ?></th>
                     <td>
                     <?php
                     if ($pp['pp_cash'])
@@ -208,10 +208,10 @@ if($pp['pp_pg'] == 'lg') {
                             require_once G5_SHOP_PATH.'/settle_lg.inc.php';
 
                             switch($pp['pp_settle_case']) {
-                                case '계좌이체':
+                                case _('계좌이체'):
                                     $trade_type = 'BANK';
                                     break;
-                                case '가상계좌':
+                                case _('가상계좌'):
                                     $trade_type = 'CAS';
                                     break;
                                 default:
@@ -229,13 +229,13 @@ if($pp['pp_pg'] == 'lg') {
                             $cash_receipt_script = 'window.open(\''.G5_CASH_RECEIPT_URL.$default['de_kcp_mid'].'&orderid='.$pp_id.'&bill_yn=Y&authno='.$cash['receipt_no'].'\', \'taxsave_receipt\', \'width=360,height=647,scrollbars=0,menus=0\');';
                         }
                     ?>
-                        <a href="javascript:;" onclick="<?php echo $cash_receipt_script; ?>" class="btn_frmline">현금영수증 확인하기</a>
+                        <a href="javascript:;" onclick="<?php echo $cash_receipt_script; ?>" class="btn_frmline"><?php echo _('현금영수증 확인하기') ?></a>
                     <?php
                     }
                     else
                     {
                     ?>
-                        <a href="javascript:;" onclick="window.open('<?php echo G5_SHOP_URL; ?>/taxsave.php?tx=personalpay&od_id=<?php echo $pp_id; ?>', 'taxsave', 'width=550,height=400,scrollbars=1,menus=0');" class="btn_frmline">현금영수증을 발급하시려면 클릭하십시오.</a>
+                        <a href="javascript:;" onclick="window.open('<?php echo G5_SHOP_URL; ?>/taxsave.php?tx=personalpay&od_id=<?php echo $pp_id; ?>', 'taxsave', 'width=550,height=400,scrollbars=1,menus=0');" class="btn_frmline"><?php echo _('현금영수증을 발급하시려면 클릭하십시오.') ?></a>
                     <?php } ?>
                     </td>
                 </tr>
@@ -250,56 +250,56 @@ if($pp['pp_pg'] == 'lg') {
     </section>
 
     <section id="sod_fin_tot">
-        <h2>결제합계</h2>
+        <h2><?php echo _('결제합계') ?></h2>
 
         <ul>
             <li>
-                총 주문액
+                <?php echo _('총 주문액') ?>
                 <strong><?php echo display_price($pp['pp_price']); ?></strong>
             </li>
             <?php
             if ($misu_price > 0) {
             echo '<li>';
-            echo '미결제액'.PHP_EOL;
+            echo _('미결제액').PHP_EOL;
             echo '<strong>'.display_price($misu_price).'</strong>';
             echo '</li>';
             }
             ?>
             <li id="alrdy">
-                결제액
+                <?php echo _('결제액') ?>
                 <strong><?php echo $wanbul; ?></strong>
             </li>
         </ul>
     </section>
 
-    <?php if ($pp['pp_settle_case'] == '가상계좌'  && $pp['pp_receipt_price'] == 0 && $default['de_card_test'] && $is_admin && $pp['pp_pg'] == 'kcp') {
+    <?php if ($pp['pp_settle_case'] == _('가상계좌')  && $pp['pp_receipt_price'] == 0 && $default['de_card_test'] && $is_admin && $pp['pp_pg'] == 'kcp') {
     preg_match("/\s{1}([^\s]+)\s?/", $pp['pp_bank_account'], $matchs);
     $deposit_no = trim($matchs[1]);
     ?>
     <div class="tbl_frm01 tbl_wrap">
         <form method="post" action="http://devadmin.kcp.co.kr/Modules/Noti/TEST_Vcnt_Noti_Proc.jsp" target="_blank">
-        <p>관리자가 가상계좌 테스트를 한 경우에만 보입니다.</p>
+        <p><?php echo _('관리자가 가상계좌 테스트를 한 경우에만 보입니다.') ?></p>
         <table>
-        <caption>모의입금처리</caption>
+        <caption><?php echo _('모의입금처리') ?></caption>
         <colgroup>
             <col class="grid_3">
             <col>
         </colgroup>
         <tbody>
         <tr>
-            <th scope="col"><label for="e_trade_no">KCP 거래번호</label></th>
+            <th scope="col"><label for="e_trade_no"><?php echo _('KCP 거래번호') ?></label></th>
             <td><input type="text" name="e_trade_no" value="<?php echo $pp['pp_tno']; ?>" size="80"></td>
         </tr>
         <tr>
-            <th scope="col"><label for="deposit_no">입금계좌</label></th>
+            <th scope="col"><label for="deposit_no"><?php echo _('입금계좌') ?></label></th>
             <td><input type="text" name="deposit_no" value="<?php echo $deposit_no; ?>" size="80"></td>
         </tr>
         <tr>
-            <th scope="col"><label for="req_name">입금자명</label></th>
+            <th scope="col"><label for="req_name"><?php echo _('입금자명') ?></label></th>
             <td><input type="text" name="req_name" value="<?php echo $pp['pp_deposit_name']; ?>" size="80"></td>
         </tr>
         <tr>
-            <th scope="col"><label for="noti_url">입금통보 URL</label></th>
+            <th scope="col"><label for="noti_url"><?php echo _('입금통보 URL') ?></label></th>
             <td><input type="text" name="noti_url" value="<?php echo G5_SHOP_URL; ?>/settle_kcp_common.php" size="80"></td>
         </tr>
         </tbody>

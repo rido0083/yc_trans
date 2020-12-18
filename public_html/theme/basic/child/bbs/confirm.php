@@ -32,16 +32,16 @@ if (confirm(conf)) {
 <header>
     <hgroup>
         <h1><?php echo get_text(strip_tags($header)); ?></h1> <!-- 수행 중이던 작업 내용 -->
-        <h2>아래 내용을 확인해 주세요.</h2>
+        <h2><?php echo _('아래 내용을 확인해 주세요.') ?></h2>
     </hgroup>
 </header>
 <p>
     <?php echo get_text(strip_tags($msg)); ?>
 </p>
 
-<a href="<?php echo $url1; ?>">확인</a>
-<a href="<?php echo $url2; ?>">취소</a><br><br>
-<a href="<?php echo $url3; ?>">돌아가기</a>
+<a href="<?php echo $url1; ?>"><?php echo _('확인') ?></a>
+<a href="<?php echo $url2; ?>"><?php echo _('취소') ?></a><br><br>
+<a href="<?php echo $url3; ?>"><?php echo _('돌아가기') ?></a>
 </article>
 </noscript>
 

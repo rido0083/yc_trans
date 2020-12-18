@@ -187,3 +187,11 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     		<a href="javascript:history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="sound_only">뒤로가기</span></a> <?php echo get_head_title($g5['title']); ?>
     	</h2>
     <?php } ?>
+
+<?php
+// pr-child
+if ($is_file_child) {
+    include_once($pr_child_file);    
+}
+// pr-child
+?>                

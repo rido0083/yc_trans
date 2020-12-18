@@ -3,7 +3,7 @@ include_once('./_common.php');
 include_once(G5_EDITOR_LIB);
 
 if (!$is_member) {
-    alert_close("사용후기는 회원만 작성 가능합니다.");
+    alert_close(_("사용후기는 회원만 작성 가능합니다."));
 }
 
 $w     = preg_replace('/[^0-9a-z]/i', '', trim($_REQUEST['w']));
@@ -13,7 +13,7 @@ $is_id = preg_replace('/[^0-9]/', '', trim($_REQUEST['is_id']));
 // 상품정보체크
 $row = get_shop_item($it_id, true);
 if(!$row['it_id'])
-    alert_close('상품정보가 존재하지 않습니다.');
+    alert_close(_('상품정보가 존재하지 않습니다.'));
 
 if ($w == "") {
     $is_score = 5;
@@ -23,14 +23,14 @@ if ($w == "") {
 } else if ($w == "u") {
     $use = sql_fetch(" select * from {$g5['g5_shop_item_use_table']} where is_id = '$is_id' ");
     if (!$use) {
-        alert_close("사용후기 정보가 없습니다.");
+        alert_close(_("사용후기 정보가 없습니다."));
     }
 
     $it_id    = $use['it_id'];
     $is_score = $use['is_score'];
 
     if (!$is_admin && $use['mb_id'] != $member['mb_id']) {
-        alert_close("자신의 사용후기만 수정이 가능합니다.");
+        alert_close(_("자신의 사용후기만 수정이 가능합니다."));
     }
 }
 
@@ -49,7 +49,7 @@ $editor_js .= chk_editor_js('is_content', $is_dhtml_editor);
 $itemuseform_skin = G5_MSHOP_SKIN_PATH.'/itemuseform.skin.php';
 
 if(!file_exists($itemuseform_skin)) {
-    echo str_replace(G5_PATH.'/', '', $itemuseform_skin).' 스킨 파일이 존재하지 않습니다.';
+    echo str_replace(G5_PATH.'/', '', $itemuseform_skin)._(' 스킨 파일이 존재하지 않습니다.');
 } else {
     include_once($itemuseform_skin);
 }

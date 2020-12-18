@@ -5,7 +5,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 //add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">', 0);
 
 // 장바구니 또는 위시리스트 ajax 스크립트
-add_javascript('<script src="'.G5_JS_URL.'/shop.list.action.js"></script>', 10);
+add_javascript('<script src="'.G5_THEME_JS_URL.'/theme.shop.list.js"></script>', 10);
 ?>
 
 <script src="<?php echo G5_JS_URL ?>/jquery.fancylist.js"></script>
@@ -116,7 +116,7 @@ foreach((array) $list as $row){
 
 if ($i > 0) echo "</ul>\n";
 
-if($i == 0) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
+if($i == 0) echo "<p class=\"sct_noitem\">"._("등록된 상품이 없습니다.")."</p>\n";
 ?>
 <!-- } 상품진열 20 끝 -->
 

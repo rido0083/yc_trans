@@ -6,7 +6,7 @@ include_once(G5_SHOP_PATH.'/settle_kakaopay.inc.php');
 // 세션비교
 $hash = md5(get_session('P_TID').$default['de_kakaopay_mid'].get_session('P_AMT'));
 if($hash != $_POST['P_HASH'])
-    alert('결제 정보가 일치하지 않습니다. 올바른 방법으로 이용해 주십시오.');
+    alert(_('결제 정보가 일치하지 않습니다. 올바른 방법으로 이용해 주십시오.'));
 
 //최종결제요청 결과 성공 DB처리
 $tno             = get_session('P_TID');

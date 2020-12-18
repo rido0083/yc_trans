@@ -27,7 +27,7 @@ else if ($od_id && $od_pwd) // 비회원인 경우 주문서번호와 비밀번�
         $order_info = get_shop_order_data($od_id);
         if (!check_password($request_pwd, $order_info['od_pwd'])) {
             run_event('password_is_wrong', 'shop', $order_info);
-            alert('주문이 존재하지 않습니다.');
+            alert(_('주문이 존재하지 않습니다.'));
             exit;
         }
 
@@ -48,9 +48,9 @@ $total_count = $row['cnt'];
 if ($total_count == 0)
 {
     if ($is_member) // 회원일 경우는 메인으로 이동
-        alert('주문이 존재하지 않습니다.', G5_SHOP_URL);
+        alert(_('주문이 존재하지 않습니다.'), G5_SHOP_URL);
     else // 비회원일 경우는 이전 페이지로 이동
-        alert('주문이 존재하지 않습니다.');
+        alert(_('주문이 존재하지 않습니다.'));
 }
 
 $rows = $config['cf_page_rows'];
@@ -78,7 +78,7 @@ if (!$is_member)
     }
 }
 
-$g5['title'] = '주문내역조회';
+$g5['title'] = _('주문내역조회');
 include_once('./_head.php');
 ?>
 

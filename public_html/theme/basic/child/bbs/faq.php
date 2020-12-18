@@ -3,7 +3,7 @@ include_once('./_common.php');
 
 //dbconfig파일에 $g5['faq_table'] , $g5['faq_master_table'] 배열변수가 있는지 체크
 if( !isset($g5['faq_table']) || !isset($g5['faq_master_table']) ){
-    die('<meta charset="utf-8">관리자 모드에서 게시판관리->FAQ관리를 먼저 확인해 주세요.');
+    die('<meta charset="utf-8">'._('관리자 모드에서 게시판관리->FAQ관리를 먼저 확인해 주세요.'));
 }
 
 // FAQ MASTER
@@ -23,7 +23,7 @@ if ($fm_id){
 
 $fm = $faq_master_list[$fm_id];
 if (!$fm['fm_id'])
-    alert('등록된 내용이 없습니다.');
+    alert(_('등록된 내용이 없습니다.'));
 
 $g5['title'] = $fm['fm_subject'];
 
@@ -91,7 +91,7 @@ if(is_file($skin_file)) {
     }
     include_once($skin_file);
 } else {
-    echo '<p>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</p>';
+    echo '<p>'.str_replace(G5_PATH.'/', '', $skin_file)._('이 존재하지 않습니다.').'</p>';
 }
 
 include_once('./_tail.php');

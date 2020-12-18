@@ -28,7 +28,7 @@ if(!$default['de_card_test']) {
                        . "POST[" . serialize($_POST) . "]"
                        . "COOKIE[" . serialize($_COOKIE) . "]"
                        . "SESSION[" . serialize($_SESSION) . "]";
-            mailer('경고', 'waring', $super_admin['mb_email'], '올바르지 않은 접속 보고', "{$_SERVER['SCRIPT_NAME']} 에 {$_SERVER['REMOTE_ADDR']} 이 ".G5_TIME_YMDHIS." 에 접속을 시도하였습니다.\n\n" . $egpcs_str, 2);
+            mailer(_('경고'), 'waring', $super_admin['mb_email'], _('올바르지 않은 접속 보고'), "{$_SERVER['SCRIPT_NAME']} 에 {$_SERVER['REMOTE_ADDR']} 이 ".G5_TIME_YMDHIS._(" 에 접속을 시도하였습니다.")."\n\n" . $egpcs_str, 2);
             exit;
     }
 }
@@ -164,7 +164,7 @@ if(!$default['de_card_test']) {
                 $sql = " update {$g5['g5_shop_order_table']}
                             set od_receipt_price = od_receipt_price + '$ipgm_mnyx',
                                 od_receipt_time = '$tx_tm',
-                                od_shop_memo = concat(od_shop_memo, \"\\n개인결제 ".$row['pp_id']." 로 결제완료 - ".$receipt_time."\")
+                                od_shop_memo = concat(od_shop_memo, \"\\n"._("개인결제 ").$row['pp_id']._(" 로 결제완료")." - ".$receipt_time."\")
                           where od_id = '{$row['od_id']}' ";
                 $result = sql_query($sql, FALSE);
             }

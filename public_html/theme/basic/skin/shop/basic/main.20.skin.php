@@ -12,8 +12,8 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
 
 <!-- 이전 재생 정지 다음 버튼 시작 { -->
 <ul id="btn_smt_<?php echo $this->type; ?>" class="sctrl">
-    <li><button type="button" class="sctrl_play">효과재생<span></span></button></li>
-    <li><button type="button" class="sctrl_stop">효과정지<span></span></button></li>
+    <li><button type="button" class="sctrl_play"><?php echo _('효과재생')?><span></span></button></li>
+    <li><button type="button" class="sctrl_stop"><?php echo _('효과정지')?><span></span></button></li>
 </ul>
 <!-- } 이전 재생 정지 다음 버튼 끝 -->
 
@@ -119,7 +119,7 @@ if ($i >= 1) {
     echo "</div>\n";
 }
 
-if($i == 0) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
+if($i == 0) echo "<p class=\"sct_noitem\">"._('등록된 상품이 없습니다.')."</p>\n";
 ?>
 
 <script>

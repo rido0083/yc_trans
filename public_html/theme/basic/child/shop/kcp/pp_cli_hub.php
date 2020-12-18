@@ -9,7 +9,7 @@ else
 
 $row = sql_fetch($sql);
 if ($row['cnt']) {
-    alert('이미 등록된 현금영수증 입니다.');
+    alert(_('이미 등록된 현금영수증 입니다.'));
 }
 
 // locale ko_KR.euc-kr 로 설정

@@ -7,14 +7,15 @@ if( isset($sort) && ! in_array($sort, array('it_sum_qty', 'it_price', 'it_use_av
 }
 
 if (G5_IS_MOBILE) {
-    include_once(G5_MSHOP_PATH.'/list.php');
+    // include_once(G5_MSHOP_PATH.'/list.php');    
+    include_once(PR_MSHOP_PATH.'/list.php');    
     return;
 }
 
 $sql = " select * from {$g5['g5_shop_category_table']} where ca_id = '$ca_id' and ca_use = '1'  ";
 $ca = sql_fetch($sql);
 if (!$ca['ca_id'])
-    alert('등록된 분류가 없습니다.');
+    alert(_('등록된 분류가 없습니다.'));
 
 // 테마미리보기 스킨 등의 변수 재설정
 if(defined('_THEME_PREVIEW_') && _THEME_PREVIEW_ === true) {
@@ -32,7 +33,7 @@ if(!$is_admin) {
         alert($msg, G5_SHOP_URL);
 }
 
-$g5['title'] = $ca['ca_name'].' 상품리스트';
+$g5['title'] = $ca['ca_name']._(' 상품리스트');
 
 if ($ca['ca_include_head'] && is_include_path_check($ca['ca_include_head']))
     @include_once($ca['ca_include_head']);
@@ -61,7 +62,7 @@ if($ca['ca_skin_dir']) {
 define('G5_SHOP_CSS_URL', str_replace(G5_PATH, G5_URL, $skin_dir));
 
 if ($is_admin)
-    echo '<div class="sct_admin"><a href="'.G5_ADMIN_URL.'/shop_admin/categoryform.php?w=u&amp;ca_id='.$ca_id.'" class="btn_admin btn"><span class="sound_only">분류 관리</span><i class="fa fa-cog fa-spin fa-fw"></i></a></div>';
+    echo '<div class="sct_admin"><a href="'.G5_ADMIN_URL.'/shop_admin/categoryform.php?w=u&amp;ca_id='.$ca_id.'" class="btn_admin btn"><span class="sound_only">'._('분류 관리').'</span><i class="fa fa-cog fa-spin fa-fw"></i></a></div>';
 ?>
 
 <script>
@@ -92,7 +93,7 @@ var itemlist_ca_id = "<?php echo $ca_id; ?>";
     else
         $order_by = 'it_order, it_id desc';
 
-    $error = '<p class="sct_noitem">등록된 상품이 없습니다.</p>';
+    $error = '<p class="sct_noitem">'._('등록된 상품이 없습니다.').'</p>';
 
     // 리스트 스킨
     $skin_file = is_include_path_check($skin_dir.'/'.$ca['ca_skin']) ? $skin_dir.'/'.$ca['ca_skin'] : $skin_dir.'/list.10.skin.php';
@@ -143,7 +144,7 @@ var itemlist_ca_id = "<?php echo $ca_id; ?>";
     }
     else
     {
-        echo '<div class="sct_nofile">'.str_replace(G5_PATH.'/', '', $skin_file).' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</div>';
+        echo '<div class="sct_nofile">'.str_replace(G5_PATH.'/', '', $skin_file)._(' 파일을 찾을 수 없습니다.').'<br>'._('관리자에게 알려주시면 감사하겠습니다.').'</div>';
     }
     ?>
 
@@ -168,4 +169,7 @@ else
     include_once(G5_SHOP_PATH.'/_tail.php');
 
 echo "\n<!-- {$ca['ca_skin']} -->\n";
+
+//pr_child
+exit;
 ?>

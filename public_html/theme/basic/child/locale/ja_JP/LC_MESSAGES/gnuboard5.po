@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-12-14 11:15+0900\n"
-"PO-Revision-Date: 2020-12-14 11:16+0900\n"
+"POT-Creation-Date: 2020-12-16 09:55+0900\n"
+"PO-Revision-Date: 2020-12-16 10:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -38,23 +38,23 @@ msgstr "分前"
 msgid "초 전"
 msgstr "秒前"
 
-#: child/lib/pr_common_lib.php:181
+#: child/lib/pr_common_lib.php:183
 msgid "한국어"
 msgstr "Korean"
 
-#: child/lib/pr_common_lib.php:182
+#: child/lib/pr_common_lib.php:184
 msgid "태국어"
 msgstr "タイ語。"
 
-#: child/lib/pr_common_lib.php:183
+#: child/lib/pr_common_lib.php:185
 msgid "영어"
 msgstr "英語。"
 
-#: child/lib/pr_common_lib.php:184
+#: child/lib/pr_common_lib.php:186
 msgid "일본어"
 msgstr "日本語。"
 
-#: child/lib/pr_common_lib.php:185
+#: child/lib/pr_common_lib.php:187
 msgid "중국어"
 msgstr "中国語。"
 
@@ -62,19 +62,20 @@ msgstr "中国語。"
 msgid "그룹은 모바일에서만 접근할 수 있습니다."
 msgstr "グループにはモバイル デバイスからのみアクセスできます。"
 
-#: head.php:26
+#: head.php:26 mobile/head.php:22 mobile/shop/shop.head.php:15
+#: shop/shop.head.php:24
 msgid "본문 바로가기"
 msgstr "本文に移動します"
 
-#: head.php:37
+#: head.php:37 mobile/shop/category.php:137 shop/shop.head.php:33
 msgid "커뮤니티"
 msgstr "コミュニティ。"
 
-#: head.php:38
+#: head.php:38 mobile/head.php:72 shop/shop.head.php:34
 msgid "쇼핑몰"
 msgstr "ショッピングセンター"
 
-#: head.php:51
+#: head.php:51 mobile/head.php:76 mobile/shop/category.php:134
 msgid "FAQ"
 msgstr "よく寄せられる質問です。"
 
@@ -82,15 +83,16 @@ msgstr "よく寄せられる質問です。"
 msgid "Q&A"
 msgstr "Q&A。"
 
-#: head.php:53
+#: head.php:53 mobile/head.php:79 mobile/skin/board/basic/list.skin.php:93
+#: mobile/skin/board/gallery/list.skin.php:126
 msgid "새글"
 msgstr "サテン"
 
-#: head.php:54
+#: head.php:54 mobile/head.php:78
 msgid "접속자"
 msgstr "訪問者"
 
-#: head.php:66
+#: head.php:66 mobile/head.php:87
 msgid "사이트 내 전체검색"
 msgstr "サイト内で完全に検索します"
 
@@ -98,39 +100,64 @@ msgstr "サイト内で完全に検索します"
 msgid "검색어 필수"
 msgstr "検索語句は必須です"
 
-#: head.php:71
+#: head.php:71 mobile/head.php:91 mobile/shop/shop.head.php:37
+#: shop/shop.head.php:63 skin/board/basic/list.skin.php:188
+#: skin/board/gallery/list.skin.php:198
 msgid "검색어를 입력해주세요"
 msgstr "検索語句を入力してください"
 
-#: head.php:72
+#: head.php:72 mobile/head.php:92 mobile/skin/board/basic/list.skin.php:149
+#: mobile/skin/board/basic/view.skin.php:34
+#: mobile/skin/board/gallery/list.skin.php:174
+#: mobile/skin/board/gallery/view.skin.php:34
+#: mobile/skin/faq/basic/list.skin.php:23
+#: mobile/skin/qa/basic/list.skin.php:119
+#: mobile/skin/shop/basic/itemqalist.skin.php:27
+#: mobile/skin/shop/basic/itemuselist.skin.php:26
+#: skin/board/basic/list.skin.php:177 skin/board/basic/list.skin.php:189
+#: skin/board/basic/view.skin.php:54 skin/board/gallery/list.skin.php:199
 msgid "검색"
 msgstr "検索します"
 
-#: head.php:79
+#: head.php:79 mobile/head.php:99 mobile/shop/shop.head.php:48
+#: mobile/skin/search/basic/search.skin.php:49 shop/shop.head.php:69
+#: shop/shop.head.php:88
 msgid "검색어는 두글자 이상 입력하십시오."
 msgstr "少なくとも 2 文字の検索語句を入力してください。"
 
-#: head.php:93
+#: head.php:93 mobile/head.php:113 mobile/skin/search/basic/search.skin.php:63
 msgid "빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다."
 msgstr "検索を高速化するために、検索語句に入力できるスペースは 1 つのみです。"
 
-#: head.php:109
+#: head.php:109 mobile/skin/outlogin/basic/outlogin.skin.2.php:15
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:15 shop/mypage.php:31
 msgid "정보수정"
 msgstr "情報を変更します"
 
-#: head.php:110
+#: head.php:110 mobile/skin/outlogin/basic/outlogin.skin.2.php:20
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:22 shop/mypage.php:32
 msgid "로그아웃"
 msgstr "サインアウトします"
 
-#: head.php:112
+#: head.php:112 mobile/skin/board/basic/list.skin.php:25
+#: mobile/skin/board/gallery/list.skin.php:23
+#: mobile/skin/outlogin/basic/outlogin.skin.2.php:19
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:21
+#: mobile/skin/qa/basic/list.skin.php:10 skin/board/basic/list.skin.php:49
+#: skin/board/basic/list.skin.php:165 skin/board/gallery/list.skin.php:40
+#: skin/board/gallery/list.skin.php:175
 msgid "관리자"
 msgstr "管理者"
 
-#: head.php:115
+#: head.php:115 mobile/skin/member/basic/register.skin.php:72
+#: mobile/skin/outlogin/basic/outlogin.skin.1.php:11
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.1.php:12
 msgid "회원가입"
 msgstr "会員登録をします"
 
-#: head.php:116
+#: head.php:116 mobile/skin/member/basic/login.skin.php:24
+#: mobile/skin/outlogin/basic/outlogin.skin.1.php:10
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.1.php:11 shop/shop.head.php:90
 msgid "로그인"
 msgstr "サインインします"
 
@@ -138,7 +165,7 @@ msgstr "サインインします"
 msgid "메인메뉴"
 msgstr "メインメニュー"
 
-#: head.php:125 head.php:163
+#: head.php:125 head.php:163 shop/category.php:20
 msgid "전체메뉴"
 msgstr "完全なメニュー"
 
@@ -146,11 +173,11 @@ msgstr "完全なメニュー"
 msgid "전체메뉴열기"
 msgstr "完全なメニューを開きます"
 
-#: head.php:143
+#: head.php:143 mobile/head.php:54
 msgid "하위분류"
 msgstr "サブ分類"
 
-#: head.php:159 head.php:192
+#: head.php:159 head.php:192 mobile/head.php:70
 msgid "메뉴 준비 중입니다."
 msgstr "メニューは準備中です。"
 
@@ -162,29 +189,3434 @@ msgstr "管理者モード/環境設定/メニューで設定できます。"
 msgid "그룹은 PC에서만 접근할 수 있습니다."
 msgstr "グループには PC からのみアクセスできます。"
 
-#: shop/_common.php:18
+#: mobile/head.php:35
+#, fuzzy
+#| msgid "전체메뉴열기"
+msgid "메뉴열기"
+msgstr "完全なメニューを開きます"
+
+#: mobile/head.php:38 mobile/head.php:85
+msgid "메뉴 닫기"
+msgstr ""
+
+#: mobile/head.php:70
+#, fuzzy
+#| msgid "관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다."
+msgid "관리자모드 &gt; 환경설정 &gt; 메뉴설정"
+msgstr "管理者モード/環境設定/メニューで設定できます。"
+
+#: mobile/head.php:70
+msgid "에서 설정하세요."
+msgstr ""
+
+#: mobile/head.php:77 mobile/shop/category.php:135 shop/shop.head.php:45
+#: shop/shop.head.php:127
+msgid "1:1문의"
+msgstr "1:1 相談"
+
+#: mobile/head.php:83
+msgid "사용자메뉴"
+msgstr ""
+
+#: mobile/head.php:189
+msgid "뒤로가기"
+msgstr ""
+
+#: mobile/shop/_common.php:5 shop/_common.php:18
 msgid "<p>쇼핑몰 설치 후 이용해 주십시오.</p>"
 msgstr "<p>モールの設置後にご使用ください。</p>"
 
+#: mobile/shop/category.php:38 mobile/shop/category.php:53
+#: mobile/shop/category.php:79
+msgid "하위분류 열기"
+msgstr "サブ分類を開きます"
+
+#: mobile/shop/category.php:68
+msgid " 하위분류 열기"
+msgstr "サブ分類"
+
+#: mobile/shop/category.php:132 shop/shop.head.php:49 shop/shop.head.php:131
+msgid "쿠폰존"
+msgstr "クーポンエリア"
+
+#: mobile/shop/category.php:133 mobile/skin/shop/basic/item.form.skin.php:71
+#: mobile/skin/shop/basic/item.form.skin.php:350
+#: mobile/skin/shop/basic/item.form.skin.php:402
+#: mobile/skin/shop/basic/itemuselist.skin.php:69 shop/shop.head.php:47
+#: shop/shop.head.php:129
+msgid "사용후기"
+msgstr "評価"
+
+#: mobile/shop/category.php:136 shop/shop.head.php:46 shop/shop.head.php:128
+msgid "개인결제"
+msgstr "個人的な支払い"
+
+#: mobile/shop/index.php:16 shop/index.php:22 shop/shop.head.php:99
+msgid "히트상품"
+msgstr "人気商品です"
+
+#: mobile/shop/index.php:36 shop/index.php:83 shop/shop.head.php:100
+msgid "추천상품"
+msgstr "おすすめ商品です"
+
+#: mobile/shop/index.php:54 shop/index.php:60 shop/shop.head.php:101
+msgid "최신상품"
+msgstr "最新の製品"
+
+#: mobile/shop/index.php:73 shop/shop.head.php:102 shop/shop.head.php:228
+msgid "인기상품"
+msgstr "人気商品です"
+
+#: mobile/shop/index.php:91 shop/index.php:108 shop/shop.head.php:103
+msgid "할인상품"
+msgstr "割引オファー"
+
+#: mobile/shop/shop.head.php:24 mobile/skin/board/basic/write.skin.php:54
+#: mobile/skin/board/gallery/write.skin.php:54
+#: mobile/skin/qa/basic/write.skin.php:33 skin/board/basic/write.skin.php:55
+msgid "분류"
+msgstr "分類"
+
+#: mobile/shop/shop.head.php:25
+msgid "검색열기"
+msgstr "検索を開きます"
+
+#: mobile/shop/shop.head.php:26 shop/shop.head.php:123
+msgid "마이페이지"
+msgstr "私のページ"
+
+#: mobile/shop/shop.head.php:27 shop/mypage.php:155 shop/shop.head.php:113
+msgid "장바구니"
+msgstr ""
+
+#: mobile/shop/shop.head.php:36 mobile/skin/shop/basic/itemqalist.skin.php:17
+#: mobile/skin/shop/basic/itemuselist.skin.php:17
+#: mobile/skin/shop/basic/search.skin.php:28 shop/orderinquiryview.php:39
+msgid "상품명"
+msgstr ""
+
+#: mobile/shop/shop.head.php:36 mobile/skin/board/basic/write.skin.php:54
+#: mobile/skin/board/basic/write.skin.php:64
+#: mobile/skin/board/basic/write.skin.php:71
+#: mobile/skin/board/basic/write.skin.php:100
+#: mobile/skin/board/basic/write.skin.php:105
+#: mobile/skin/board/gallery/view_comment.skin.php:122
+#: mobile/skin/board/gallery/view_comment.skin.php:124
+#: mobile/skin/board/gallery/write.skin.php:54
+#: mobile/skin/board/gallery/write.skin.php:64
+#: mobile/skin/board/gallery/write.skin.php:71
+#: mobile/skin/board/gallery/write.skin.php:100
+#: mobile/skin/board/gallery/write.skin.php:105
+#: mobile/skin/member/basic/formmail.skin.php:24
+#: mobile/skin/member/basic/formmail.skin.php:28
+#: mobile/skin/member/basic/formmail.skin.php:33
+#: mobile/skin/member/basic/formmail.skin.php:48
+#: mobile/skin/member/basic/login.skin.php:15
+#: mobile/skin/member/basic/login.skin.php:17
+#: mobile/skin/member/basic/login.skin.php:89
+#: mobile/skin/member/basic/login.skin.php:91
+#: mobile/skin/member/basic/memo_form.skin.php:23
+#: mobile/skin/member/basic/register_form.skin.php:31
+#: mobile/skin/member/basic/register_form.skin.php:37
+#: mobile/skin/member/basic/register_form.skin.php:41
+#: mobile/skin/member/basic/register_form.skin.php:51
+#: mobile/skin/member/basic/register_form.skin.php:80
+#: mobile/skin/member/basic/register_form.skin.php:93
+#: mobile/skin/member/basic/register_form.skin.php:106
+#: mobile/skin/member/basic/register_form.skin.php:113
+#: mobile/skin/member/basic/register_form.skin.php:120
+#: mobile/skin/member/basic/register_form.skin.php:133
+#: mobile/skin/member/basic/register_form.skin.php:138
+#: mobile/skin/member/basic/register_form.skin.php:157
+#: mobile/skin/new/basic/new.skin.php:20
+#: mobile/skin/poll/basic/poll_result.skin.php:73
+#: mobile/skin/poll/basic/poll_result.skin.php:79
+#: mobile/skin/qa/basic/list.skin.php:117
+#: mobile/skin/qa/basic/view.answerform.skin.php:45
+#: mobile/skin/qa/basic/write.skin.php:33
+#: mobile/skin/qa/basic/write.skin.php:75
+#: mobile/skin/qa/basic/write.skin.php:80
+#: mobile/skin/search/basic/search.skin.php:41
+#: mobile/skin/shop/basic/itemqalist.skin.php:25
+#: mobile/skin/shop/basic/itemuselist.skin.php:24 shop/shop.head.php:62
+#: skin/board/basic/list.skin.php:186
+#: skin/board/basic/view_comment.skin.php:143
+#: skin/board/basic/view_comment.skin.php:145
+#: skin/board/basic/write.skin.php:55 skin/board/basic/write.skin.php:65
+#: skin/board/basic/write.skin.php:70 skin/board/basic/write.skin.php:96
+#: skin/board/basic/write.skin.php:115 skin/board/gallery/list.skin.php:196
+#: skin/board/gallery/view_comment.skin.php:144
+#: skin/board/gallery/view_comment.skin.php:146
+msgid "필수"
+msgstr ""
+
+#: mobile/shop/shop.head.php:40 mobile/skin/faq/basic/list.skin.php:66
+#: mobile/skin/shop/basic/couponzone.10.skin.php:79
+#: mobile/skin/shop/basic/couponzone.10.skin.php:171
+#: mobile/skin/shop/basic/itemqaform.skin.php:46
+#: mobile/skin/shop/basic/itemuseform.skin.php:63
+#: mobile/skin/shop/basic/main.10.skin.php:113 shop/ajax.action.php:292
+#: shop/orderinquiryview.php:598 skin/board/basic/list.skin.php:191
+#: skin/board/basic/write.skin.php:107 skin/board/gallery/list.skin.php:201
+msgid "닫기"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:12
+#, fuzzy
+#| msgid "정보수정"
+msgid "정보"
+msgstr "情報を変更します"
+
+#: mobile/shop/shop.tail.php:14 mobile/tail.php:21 shop/shop.tail.php:23
 #: tail.php:32
 msgid "회사소개"
 msgstr "私たちについて。"
 
-#: tail.php:33
+#: mobile/shop/shop.tail.php:15
+#, fuzzy
+#| msgid "개인정보처리방침"
+msgid "개인정보"
+msgstr "プライバシーポリシー"
+
+#: mobile/shop/shop.tail.php:16
+#, fuzzy
+#| msgid "서비스이용약관"
+msgid "이용약관"
+msgstr "サービス利用規約"
+
+#: mobile/shop/shop.tail.php:21 shop/shop.tail.php:31
+msgid "회사명"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:22
+#: mobile/skin/member/basic/register_form.skin.php:138
+#: mobile/skin/member/basic/register_form.skin.php:139 shop/mypage.php:72
+#: shop/shop.tail.php:32
+msgid "주소"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:23 shop/shop.tail.php:33
+msgid "사업자 등록번호"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:24 shop/shop.tail.php:34
+msgid "대표"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:25 shop/shop.tail.php:35
+msgid "전화"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:26 shop/shop.tail.php:36
+msgid "팩스"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:28 shop/shop.tail.php:38
+msgid "통신판매업신고번호"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:29 shop/shop.tail.php:39
+msgid "개인정보 보호책임자"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:31
+msgid "<b>부가통신사업신고번호</b>"
+msgstr ""
+
+#: mobile/shop/shop.tail.php:36
+msgid "PC 버전"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:26
+#: mobile/skin/board/gallery/list.skin.php:24
+msgid "RSS"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:29
+#: mobile/skin/board/basic/view.skin.php:26
+#: mobile/skin/board/gallery/list.skin.php:27
+#: mobile/skin/board/gallery/view.skin.php:26
+#: mobile/skin/qa/basic/list.skin.php:13
+#: mobile/skin/qa/basic/view.answer.skin.php:17
+#: mobile/skin/qa/basic/view.skin.php:17 skin/board/basic/list.skin.php:57
+#: skin/board/basic/view.skin.php:48 skin/board/gallery/list.skin.php:48
+msgid "게시판 리스트 옵션"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:32
+#: mobile/skin/board/basic/list.skin.php:187
+#: mobile/skin/board/gallery/list.skin.php:30
+#: mobile/skin/board/gallery/list.skin.php:212
+#: mobile/skin/qa/basic/list.skin.php:16 skin/board/basic/list.skin.php:60
+#: skin/board/basic/list.skin.php:250 skin/board/gallery/list.skin.php:51
+#: skin/board/gallery/list.skin.php:258
+msgid "선택삭제"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:33
+#: mobile/skin/board/basic/list.skin.php:177
+#: mobile/skin/board/gallery/list.skin.php:31
+#: mobile/skin/board/gallery/list.skin.php:202
+#: skin/board/basic/list.skin.php:61 skin/board/basic/list.skin.php:240
+#: skin/board/gallery/list.skin.php:52 skin/board/gallery/list.skin.php:248
+msgid "선택복사"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:34
+#: mobile/skin/board/basic/list.skin.php:182
+#: mobile/skin/board/gallery/list.skin.php:32
+#: mobile/skin/board/gallery/list.skin.php:207
+#: skin/board/basic/list.skin.php:62 skin/board/basic/list.skin.php:245
+#: skin/board/gallery/list.skin.php:53 skin/board/gallery/list.skin.php:253
+msgid "선택이동"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:39
+#: mobile/skin/board/basic/view.skin.php:23
+#: mobile/skin/board/gallery/list.skin.php:37
+#: mobile/skin/board/gallery/view.skin.php:23
+#: mobile/skin/qa/basic/view.skin.php:14 skin/board/basic/list.skin.php:54
+#: skin/board/basic/list.skin.php:167 skin/board/basic/view.skin.php:45
+#: skin/board/gallery/list.skin.php:45 skin/board/gallery/list.skin.php:177
+msgid "글쓰기"
+msgstr "書き込み"
+
+#: mobile/skin/board/basic/list.skin.php:47
+#: mobile/skin/board/gallery/list.skin.php:46
+#: mobile/skin/qa/basic/list.skin.php:36 shop/shop.head.php:96
+#: skin/board/gallery/list.skin.php:15
+msgid "카테고리"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:60
+#: mobile/skin/board/gallery/list.skin.php:60
+#: mobile/skin/qa/basic/list.skin.php:54 skin/board/gallery/list.skin.php:67
+msgid "현재 페이지 게시물"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:60
+msgid " 전체선택"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:80
+#: mobile/skin/board/basic/write.skin.php:26
+#: mobile/skin/board/gallery/list.skin.php:91
+#: mobile/skin/board/gallery/write.skin.php:26
+#: skin/board/basic/write.skin.php:30 skin/board/gallery/list.skin.php:113
+msgid "공지"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:101
+#: mobile/skin/board/basic/view.skin.php:13
+#: mobile/skin/board/basic/view.skin.php:73
+#: mobile/skin/board/gallery/list.skin.php:119
+#: mobile/skin/board/gallery/view.skin.php:13
+#: mobile/skin/board/gallery/view.skin.php:75
+#: mobile/skin/member/basic/scrap_popin.skin.php:22
+#: mobile/skin/qa/basic/view.skin.php:48 skin/board/basic/view.skin.php:32
+#: skin/board/basic/view_comment.skin.php:10
+#: skin/board/basic/view_comment.skin.php:38
+#: skin/board/gallery/list.skin.php:146
+#: skin/board/gallery/view_comment.skin.php:10
+#: skin/board/gallery/view_comment.skin.php:38
+msgid "댓글"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:103
+#: mobile/skin/board/gallery/list.skin.php:121
+#: mobile/skin/search/basic/search.skin.php:15
+#: mobile/skin/search/basic/search.skin.php:16
+#: mobile/skin/shop/basic/item.form.skin.php:60
+#: mobile/skin/shop/basic/item.form.skin.php:69
+#: mobile/skin/shop/basic/item.form.skin.php:209
+#: mobile/skin/shop/basic/item.form.skin.php:215
+#: skin/board/gallery/list.skin.php:146
+msgid "개"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:109
+#: mobile/skin/board/basic/view.skin.php:70
+#: mobile/skin/board/gallery/list.skin.php:133
+#: mobile/skin/board/gallery/view.skin.php:72
+#: mobile/skin/qa/basic/list.skin.php:84 mobile/skin/qa/basic/view.skin.php:45
+#: mobile/skin/shop/basic/itemqa.skin.php:66
+#: mobile/skin/shop/basic/itemqalist.skin.php:87
+#: mobile/skin/shop/basic/itemuse.skin.php:43
+#: mobile/skin/shop/basic/itemuselist.skin.php:74
+#: mobile/skin/shop/basic/itemuselist.skin.php:124
+#: skin/board/basic/view.skin.php:31 skin/board/gallery/list.skin.php:152
+#, fuzzy
+#| msgid "접속자"
+msgid "작성자"
+msgstr "訪問者"
+
+#: mobile/skin/board/basic/list.skin.php:111 skin/board/basic/view.skin.php:33
+msgid "회"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:112
+#: mobile/skin/board/basic/view.skin.php:102
+#: mobile/skin/board/basic/view.skin.php:117
+#: mobile/skin/board/gallery/list.skin.php:136
+#: mobile/skin/board/gallery/view.skin.php:104
+#: mobile/skin/board/gallery/view.skin.php:119
+#: skin/board/basic/list.skin.php:89 skin/board/basic/view.skin.php:117
+#: skin/board/basic/view.skin.php:132 skin/board/gallery/list.skin.php:157
+msgid "추천"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:113
+#: mobile/skin/board/basic/view.skin.php:108
+#: mobile/skin/board/basic/view.skin.php:118
+#: mobile/skin/board/gallery/list.skin.php:137
+#: mobile/skin/board/gallery/view.skin.php:110
+#: mobile/skin/board/gallery/view.skin.php:120
+#: skin/board/basic/list.skin.php:90 skin/board/basic/view.skin.php:123
+#: skin/board/basic/view.skin.php:133 skin/board/gallery/list.skin.php:158
+msgid "비추천"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:117
+#: mobile/skin/board/gallery/list.skin.php:143
+#: mobile/skin/latest/basic/latest.skin.php:73
+#: mobile/skin/latest/comment/latest.skin.php:28
+#: mobile/skin/latest/notice/latest.skin.php:40
+#: mobile/skin/latest/shop_basic/latest.skin.php:38
+#: mobile/skin/qa/basic/list.skin.php:92 skin/board/basic/list.skin.php:153
+#: skin/board/gallery/list.skin.php:164
+msgid "게시물이 없습니다."
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:126
+#: mobile/skin/board/gallery/list.skin.php:151
+#: mobile/skin/qa/basic/list.skin.php:100 skin/board/basic/list.skin.php:212
+#: skin/board/gallery/list.skin.php:220
+msgid ""
+"자바스크립트를 사용하지 않는 경우<br>별도의 확인 절차 없이 바로 선택삭제 처리"
+"하므로 주의하시기 바랍니다."
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:134
+#: mobile/skin/board/gallery/list.skin.php:159
+#: mobile/skin/member/basic/memo.skin.php:12
+#: mobile/skin/poll/basic/poll_result.skin.php:21
+#: mobile/skin/qa/basic/list.skin.php:108
+#, fuzzy
+#| msgid "전체메뉴"
+msgid "전체"
+msgstr "完全なメニュー"
+
+#: mobile/skin/board/basic/list.skin.php:134
+#: mobile/skin/board/gallery/list.skin.php:159
+#: mobile/skin/qa/basic/list.skin.php:108
+#: mobile/skin/shop/basic/search.skin.php:8 skin/board/basic/list.skin.php:44
+#: skin/board/basic/view.skin.php:32 skin/board/gallery/list.skin.php:35
+msgid "건"
+msgstr "銃"
+
+#: mobile/skin/board/basic/list.skin.php:135
+#: mobile/skin/board/gallery/list.skin.php:160
+#: mobile/skin/qa/basic/list.skin.php:109 skin/board/basic/list.skin.php:45
+#: skin/board/gallery/list.skin.php:36
+msgid "페이지"
+msgstr "ページ"
+
+#: mobile/skin/board/basic/list.skin.php:139
+#: mobile/skin/board/gallery/list.skin.php:164
+#: mobile/skin/qa/basic/list.skin.php:114
+msgid "게시물 검색"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:144
+#: mobile/skin/board/gallery/list.skin.php:169
+#: mobile/skin/new/basic/new.skin.php:13 skin/board/basic/list.skin.php:182
+#: skin/board/gallery/list.skin.php:192
+msgid "검색대상"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:148
+#: mobile/skin/board/gallery/list.skin.php:173
+#: mobile/skin/new/basic/new.skin.php:21 mobile/skin/qa/basic/list.skin.php:118
+#, fuzzy
+#| msgid "검색어를 입력해주세요"
+msgid "검색어를 입력하세요"
+msgstr "検索語句を入力してください"
+
+#: mobile/skin/board/basic/list.skin.php:173
+#: mobile/skin/board/gallery/list.skin.php:198
+#: mobile/skin/qa/basic/list.skin.php:144 skin/board/basic/list.skin.php:236
+#: skin/board/gallery/list.skin.php:244
+msgid "할 게시물을 하나 이상 선택하세요."
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:188
+#: skin/board/gallery/list.skin.php:259
+msgid "선택한 게시물을 정말 삭제하시겠습니까?"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:188
+#: skin/board/gallery/list.skin.php:259
+msgid "한번 삭제한 자료는 복구할 수 없습니다"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:188
+#: skin/board/gallery/list.skin.php:259
+msgid "답변글이 있는 게시글을 선택하신 경우"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:188
+#: skin/board/gallery/list.skin.php:259
+msgid "답변글도 선택하셔야 게시글이 삭제됩니다."
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:203
+#: mobile/skin/board/basic/view.skin.php:32
+#: mobile/skin/board/gallery/list.skin.php:228
+#: mobile/skin/board/gallery/view.skin.php:32
+#: skin/board/basic/list.skin.php:266 skin/board/basic/view.skin.php:52
+msgid "복사"
+msgstr ""
+
+#: mobile/skin/board/basic/list.skin.php:205
+#: mobile/skin/board/basic/view.skin.php:33
+#: mobile/skin/board/gallery/list.skin.php:230
+#: mobile/skin/board/gallery/view.skin.php:33
+#: skin/board/basic/list.skin.php:268 skin/board/basic/view.skin.php:53
+msgid "이동"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:16
+#: mobile/skin/board/gallery/view.skin.php:16
+msgid "공유"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:18
+#: mobile/skin/board/gallery/view.skin.php:18
+#: mobile/skin/outlogin/basic/outlogin.skin.2.php:41 shop/mypage.php:56
+#: skin/board/basic/view.skin.php:87
+msgid "스크랩"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:29
+#: mobile/skin/board/basic/view_comment.skin.php:45
+#: mobile/skin/board/gallery/view.skin.php:29
+#: mobile/skin/board/gallery/view_comment.skin.php:45
+#: mobile/skin/qa/basic/view.answer.skin.php:7
+#: mobile/skin/shop/basic/itemqa.skin.php:84
+#: mobile/skin/shop/basic/itemqalist.skin.php:102
+#: mobile/skin/shop/basic/itemuse.skin.php:65 skin/board/basic/view.skin.php:44
+#: skin/board/basic/view_comment.skin.php:78
+#: skin/board/gallery/view_comment.skin.php:78
+msgid "답변"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:30
+#: mobile/skin/board/basic/view_comment.skin.php:46
+#: mobile/skin/board/gallery/view.skin.php:30
+#: mobile/skin/board/gallery/view_comment.skin.php:46
+#: mobile/skin/qa/basic/view.skin.php:21
+#: mobile/skin/shop/basic/itemqa.skin.php:92
+#: mobile/skin/shop/basic/itemuse.skin.php:58 skin/board/basic/view.skin.php:50
+#: skin/board/basic/view_comment.skin.php:79
+#: skin/board/gallery/view_comment.skin.php:79
+#, fuzzy
+#| msgid "정보수정"
+msgid "수정"
+msgstr "情報を変更します"
+
+#: mobile/skin/board/basic/view.skin.php:31
+msgid " 삭제"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:35
+#: mobile/skin/board/gallery/view.skin.php:35
+#: mobile/skin/faq/basic/list.skin.php:52
+#: mobile/skin/member/basic/memo_view.skin.php:41
+#: mobile/skin/qa/basic/view.skin.php:12 skin/board/basic/list.skin.php:73
+#: skin/board/basic/view.skin.php:43
+msgid "목록"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:69
+#: mobile/skin/qa/basic/view.skin.php:44 skin/board/basic/view.skin.php:27
+msgid "페이지 정보"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:71
+#: mobile/skin/board/basic/view_comment.skin.php:36
+#: mobile/skin/board/gallery/list.skin.php:134
+#: mobile/skin/board/gallery/view.skin.php:73
+#: mobile/skin/board/gallery/view_comment.skin.php:36
+#: mobile/skin/qa/basic/view.skin.php:46
+#: mobile/skin/shop/basic/itemqa.skin.php:68
+#: mobile/skin/shop/basic/itemqalist.skin.php:89
+#: mobile/skin/shop/basic/itemuse.skin.php:45
+#: mobile/skin/shop/basic/itemuselist.skin.php:76
+#: mobile/skin/shop/basic/itemuselist.skin.php:126
+#: skin/board/basic/view.skin.php:34 skin/board/basic/view_comment.skin.php:44
+#: skin/board/gallery/list.skin.php:153
+#: skin/board/gallery/view_comment.skin.php:44
+msgid "작성일"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:72
+#: mobile/skin/board/gallery/list.skin.php:135
+#: mobile/skin/board/gallery/view.skin.php:74
+#: mobile/skin/qa/basic/view.skin.php:47 skin/board/basic/list.skin.php:88
+#: skin/board/basic/view.skin.php:33 skin/board/gallery/list.skin.php:154
+msgid "조회"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:78
+#: mobile/skin/board/gallery/view.skin.php:80
+#: mobile/skin/qa/basic/view.skin.php:68 skin/board/basic/view.skin.php:84
+msgid "본문"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:103
+#: mobile/skin/board/gallery/view.skin.php:105
+msgid "이 글을 추천하셨습니다"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:138
+#: mobile/skin/board/gallery/view.skin.php:140
+#: mobile/skin/qa/basic/view.skin.php:95 skin/board/basic/view.skin.php:155
+msgid "첨부파일"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:151
+#: mobile/skin/board/gallery/view.skin.php:153
+msgid "회 다운로드"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:165
+#: mobile/skin/board/gallery/view.skin.php:167
+#: skin/board/basic/view.skin.php:182
+msgid "관련링크"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:180
+#: mobile/skin/board/gallery/view.skin.php:182
+#: skin/board/basic/view.skin.php:198
+msgid "회 연결"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:193
+#: mobile/skin/board/gallery/view.skin.php:195
+#: mobile/skin/qa/basic/view.skin.php:118 skin/board/basic/view.skin.php:211
+#, fuzzy
+#| msgid "일 전"
+msgid "이전글"
+msgstr "一日前"
+
+#: mobile/skin/board/basic/view.skin.php:194
+#: mobile/skin/board/gallery/view.skin.php:196
+#: mobile/skin/qa/basic/view.skin.php:119 skin/board/basic/view.skin.php:212
+msgid "다음글"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:210
+#: mobile/skin/board/gallery/view.skin.php:211
+#: skin/board/basic/view.skin.php:228
+msgid "다운로드 권한이 없습니다.\\n회원이시라면 로그인 후 이용해 보십시오."
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:214
+#: mobile/skin/board/gallery/view.skin.php:215
+#: skin/board/basic/view.skin.php:232
+msgid "파일을 다운로드 하시면 포인트가 차감("
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:214
+#: mobile/skin/board/gallery/view.skin.php:215
+#: skin/board/basic/view.skin.php:232
+msgid ""
+"점)됩니다.\\n\\n포인트는 게시물당 한번만 차감되며 다음에 다시 다운로드 하셔"
+"도 중복하여 차감하지 않습니다.\\n\\n그래도 다운로드 하시겠습니까?"
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:273
+#: mobile/skin/board/gallery/view.skin.php:274
+#: skin/board/basic/view.skin.php:289
+msgid "이 글을 비추천하셨습니다."
+msgstr ""
+
+#: mobile/skin/board/basic/view.skin.php:276
+#: mobile/skin/board/gallery/view.skin.php:277
+#: skin/board/basic/view.skin.php:292
+msgid "이 글을 추천하셨습니다."
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:13
+#: mobile/skin/board/gallery/view_comment.skin.php:13
+#: skin/board/basic/view_comment.skin.php:13
+#: skin/board/gallery/view_comment.skin.php:13
+msgid "댓글목록"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:30
+#: mobile/skin/board/gallery/view_comment.skin.php:30
+msgid "님의 댓글"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:30
+#: mobile/skin/board/gallery/view_comment.skin.php:30
+msgid "의 댓글"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:33
+#: mobile/skin/board/gallery/view_comment.skin.php:33
+#: skin/board/basic/view_comment.skin.php:41
+#: skin/board/gallery/view_comment.skin.php:41
+msgid "아이피"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:43
+#: mobile/skin/board/gallery/view_comment.skin.php:43
+#: skin/board/basic/view_comment.skin.php:76
+#: skin/board/gallery/view_comment.skin.php:76
+msgid "댓글 옵션"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:92
+#: mobile/skin/board/gallery/view_comment.skin.php:92
+#: skin/board/basic/view_comment.skin.php:101
+#: skin/board/gallery/view_comment.skin.php:102
+msgid "등록된 댓글이 없습니다."
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:114
+#: mobile/skin/board/basic/write.skin.php:113
+#: mobile/skin/board/gallery/view_comment.skin.php:114
+#: mobile/skin/board/gallery/write.skin.php:113
+#: skin/board/basic/view_comment.skin.php:126
+#: skin/board/basic/write.skin.php:124
+#: skin/board/gallery/view_comment.skin.php:127
+#, fuzzy
+#| msgid "관리자"
+msgid "글자"
+msgstr "管理者"
+
+#: mobile/skin/board/basic/view_comment.skin.php:115
+msgid "댓글 내용"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:116
+#: mobile/skin/board/gallery/view_comment.skin.php:116
+#: skin/board/basic/view_comment.skin.php:127
+#: skin/board/gallery/view_comment.skin.php:128
+#, fuzzy
+#| msgid "검색어를 입력해주세요"
+msgid "댓글내용을 입력해주세요"
+msgstr "検索語句を入力してください"
+
+#: mobile/skin/board/basic/view_comment.skin.php:122
+#: mobile/skin/board/basic/write.skin.php:64
+#: mobile/skin/board/basic/write.skin.php:65
+#: mobile/skin/board/gallery/view_comment.skin.php:122
+#: mobile/skin/board/gallery/view_comment.skin.php:123
+#: mobile/skin/board/gallery/write.skin.php:64
+#: mobile/skin/board/gallery/write.skin.php:65
+#: mobile/skin/member/basic/formmail.skin.php:24
+#: mobile/skin/member/basic/formmail.skin.php:25
+#: mobile/skin/member/basic/register_form.skin.php:51
+#: mobile/skin/member/basic/register_form.skin.php:52
+#: mobile/skin/poll/basic/poll_result.skin.php:79
+#: mobile/skin/poll/basic/poll_result.skin.php:80
+#: mobile/skin/search/basic/search.skin.php:38
+#: skin/board/basic/view_comment.skin.php:143
+#: skin/board/basic/view_comment.skin.php:144
+#: skin/board/basic/write.skin.php:65 skin/board/basic/write.skin.php:66
+#: skin/board/gallery/view_comment.skin.php:144
+#: skin/board/gallery/view_comment.skin.php:145
+msgid "이름"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:122
+#: mobile/skin/board/basic/view_comment.skin.php:124
+#: mobile/skin/faq/basic/list.skin.php:21
+#, fuzzy
+#| msgid "검색어 필수"
+msgid " 필수"
+msgstr "検索語句は必須です"
+
+#: mobile/skin/board/basic/view_comment.skin.php:123
+msgid " 이름"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:124
+#: mobile/skin/board/basic/write.skin.php:71
+#: mobile/skin/board/basic/write.skin.php:72
+#: mobile/skin/board/gallery/view_comment.skin.php:124
+#: mobile/skin/board/gallery/view_comment.skin.php:125
+#: mobile/skin/board/gallery/write.skin.php:71
+#: mobile/skin/board/gallery/write.skin.php:72
+#: mobile/skin/member/basic/login.skin.php:17
+#: mobile/skin/member/basic/login.skin.php:18
+#: mobile/skin/member/basic/login.skin.php:91
+#: mobile/skin/member/basic/login.skin.php:92
+#: mobile/skin/member/basic/login.skin.php:99
+#: mobile/skin/member/basic/register_form.skin.php:37
+#: mobile/skin/member/basic/register_form.skin.php:38
+#: skin/board/basic/view_comment.skin.php:145
+#: skin/board/basic/view_comment.skin.php:146
+#: skin/board/basic/write.skin.php:70 skin/board/basic/write.skin.php:71
+#: skin/board/gallery/view_comment.skin.php:146
+#: skin/board/gallery/view_comment.skin.php:147
+msgid "비밀번호"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:125
+msgid " 비밀번호"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:135
+#: mobile/skin/board/gallery/view_comment.skin.php:135
+#: skin/board/basic/view_comment.skin.php:153
+#: skin/board/gallery/view_comment.skin.php:154
+msgid "SNS 동시등록"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:142
+#: mobile/skin/board/basic/write.skin.php:37
+#: mobile/skin/board/gallery/view_comment.skin.php:142
+#: mobile/skin/board/gallery/write.skin.php:37
+#: mobile/skin/shop/basic/itemqaform.skin.php:23
+#: skin/board/basic/view_comment.skin.php:163
+#: skin/board/basic/write.skin.php:41
+#: skin/board/gallery/view_comment.skin.php:164
+msgid "비밀글"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:147
+#: mobile/skin/board/gallery/view_comment.skin.php:147
+#: skin/board/basic/view_comment.skin.php:165
+#: skin/board/gallery/view_comment.skin.php:166
+msgid "댓글등록"
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:204
+#: mobile/skin/board/basic/write.skin.php:214
+#: mobile/skin/board/gallery/write.skin.php:214
+#: mobile/skin/qa/basic/view.answerform.skin.php:99
+#: mobile/skin/qa/basic/write.skin.php:160
+msgid "내용에 금지단어("
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:218
+#: mobile/skin/board/gallery/view_comment.skin.php:218
+#: skin/board/basic/view_comment.skin.php:225
+msgid "댓글은 \"+char_min+\"글자 이상 쓰셔야 합니다."
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:222
+#: mobile/skin/board/gallery/view_comment.skin.php:222
+#: skin/board/basic/view_comment.skin.php:229
+msgid "댓글은 \"+char_max+\"글자 이하로 쓰셔야 합니다."
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:228
+#: mobile/skin/board/gallery/view_comment.skin.php:228
+#: skin/board/basic/view_comment.skin.php:235
+#, fuzzy
+#| msgid "검색어는 두글자 이상 입력하십시오."
+msgid "댓글을 입력하여 주십시오."
+msgstr "少なくとも 2 文字の検索語句を入力してください。"
+
+#: mobile/skin/board/basic/view_comment.skin.php:237
+#: mobile/skin/board/gallery/view_comment.skin.php:237
+#: skin/board/basic/view_comment.skin.php:244
+msgid "이름이 입력되지 않았습니다."
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:248
+#: mobile/skin/board/gallery/view_comment.skin.php:248
+#: skin/board/basic/view_comment.skin.php:255
+msgid "비밀번호가 입력되지 않았습니다."
+msgstr ""
+
+#: mobile/skin/board/basic/view_comment.skin.php:316
+#: mobile/skin/board/gallery/view_comment.skin.php:316
+#: skin/board/basic/view_comment.skin.php:323
+msgid "이 댓글을 삭제하시겠습니까?"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:43
+#: mobile/skin/board/gallery/write.skin.php:43
+#: skin/board/basic/write.skin.php:47
+msgid "답변메일받기"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:56
+#: mobile/skin/board/gallery/write.skin.php:56
+#: mobile/skin/qa/basic/write.skin.php:35
+msgid "선택하세요"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:78
+#: mobile/skin/board/basic/write.skin.php:79
+#: mobile/skin/board/gallery/write.skin.php:78
+#: mobile/skin/board/gallery/write.skin.php:79
+#: mobile/skin/qa/basic/view.skin.php:55 mobile/skin/qa/basic/write.skin.php:52
+#: mobile/skin/qa/basic/write.skin.php:53
+#: mobile/skin/shop/basic/itemqaform.skin.php:26
+#: mobile/skin/shop/basic/itemqaform.skin.php:27
+#: skin/board/basic/write.skin.php:75 skin/board/basic/write.skin.php:76
+msgid "이메일"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:85
+#: mobile/skin/board/basic/write.skin.php:86
+#: mobile/skin/board/gallery/write.skin.php:85
+#: mobile/skin/board/gallery/write.skin.php:86
+#: mobile/skin/member/basic/profile.skin.php:24
+#: mobile/skin/member/basic/register_form.skin.php:106
+#: mobile/skin/member/basic/register_form.skin.php:107
+#: skin/board/basic/write.skin.php:81 skin/board/basic/write.skin.php:82
+msgid "홈페이지"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:92
+#: mobile/skin/board/gallery/write.skin.php:92
+#: mobile/skin/qa/basic/view.answerform.skin.php:36
+#: mobile/skin/qa/basic/write.skin.php:43
+#: mobile/skin/shop/basic/itemqaform.skin.php:21
+#: skin/board/basic/write.skin.php:88
+msgid "옵션"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:100
+#: mobile/skin/board/basic/write.skin.php:101
+#: mobile/skin/board/gallery/write.skin.php:100
+#: mobile/skin/board/gallery/write.skin.php:101
+#: mobile/skin/member/basic/formmail.skin.php:33
+#: mobile/skin/member/basic/formmail.skin.php:34
+#: mobile/skin/member/basic/scrap_popin.skin.php:18
+#: mobile/skin/qa/basic/view.answerform.skin.php:41
+#: mobile/skin/qa/basic/view.answerform.skin.php:42
+#: mobile/skin/qa/basic/write.skin.php:75
+#: mobile/skin/qa/basic/write.skin.php:76
+#: mobile/skin/search/basic/search.skin.php:35
+#: mobile/skin/shop/basic/itemqaform.skin.php:34
+#: mobile/skin/shop/basic/itemqaform.skin.php:35
+#: mobile/skin/shop/basic/itemuseform.skin.php:21
+#: mobile/skin/shop/basic/itemuseform.skin.php:22
+#: skin/board/basic/list.skin.php:86 skin/board/basic/write.skin.php:96
+#: skin/board/basic/write.skin.php:99
+#, fuzzy
+#| msgid "제목</"
+msgid "제목"
+msgstr "Title </"
+
+#: mobile/skin/board/basic/write.skin.php:105
+#: mobile/skin/board/gallery/write.skin.php:105
+#: mobile/skin/member/basic/formmail.skin.php:48
+#: mobile/skin/member/basic/formmail.skin.php:49
+#: mobile/skin/member/basic/memo_form.skin.php:31
+#: mobile/skin/qa/basic/view.answerform.skin.php:45
+#: mobile/skin/qa/basic/write.skin.php:80
+#: mobile/skin/search/basic/search.skin.php:36
+#: mobile/skin/shop/basic/itemuseform.skin.php:25
+#: skin/board/basic/write.skin.php:115
+#: skin/board/gallery/view_comment.skin.php:126
+msgid "내용"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:108
+#: mobile/skin/board/gallery/write.skin.php:108
+#: skin/board/basic/write.skin.php:119
+msgid "이 게시판은 최소"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:108
+#: skin/board/basic/write.skin.php:119
+msgid "글자 이상, 최대"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:108
+#: mobile/skin/board/gallery/write.skin.php:108
+#: skin/board/basic/write.skin.php:119
+msgid "글자 이하까지 글을 쓰실 수 있습니다."
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:119
+#: mobile/skin/board/gallery/write.skin.php:119
+msgid "링크 #"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:120
+#: mobile/skin/board/gallery/write.skin.php:120
+#, fuzzy
+#| msgid "검색어를 입력해주세요"
+msgid "링크를 입력하세요"
+msgstr "検索語句を入力してください"
+
+#: mobile/skin/board/basic/write.skin.php:127
+#: mobile/skin/board/gallery/write.skin.php:127
+#: mobile/skin/qa/basic/write.skin.php:88
+#: mobile/skin/qa/basic/write.skin.php:98
+msgid "파일을 첨부하세요"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:128
+#: mobile/skin/board/gallery/write.skin.php:128
+#: skin/board/basic/write.skin.php:140
+msgid "파일 #"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:128
+#: mobile/skin/board/gallery/write.skin.php:128
+#: mobile/skin/qa/basic/write.skin.php:89
+#: mobile/skin/qa/basic/write.skin.php:99
+msgid "파일첨부"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:129
+#: mobile/skin/board/gallery/write.skin.php:129
+msgid ": 용량"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:129
+msgid "이하만 업로드 가능"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:132
+#: mobile/skin/board/gallery/write.skin.php:132
+#: skin/board/basic/write.skin.php:144
+#, fuzzy
+#| msgid "검색어를 입력해주세요"
+msgid "파일 설명을 입력해주세요."
+msgstr "検索語句を入力してください"
+
+#: mobile/skin/board/basic/write.skin.php:137
+#: mobile/skin/board/gallery/write.skin.php:137
+#: mobile/skin/qa/basic/write.skin.php:93 skin/board/basic/write.skin.php:149
+msgid "파일 삭제"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:145
+#: mobile/skin/board/gallery/write.skin.php:145
+#: mobile/skin/member/basic/formmail.skin.php:66
+#: mobile/skin/member/basic/memo_form.skin.php:35
+#: mobile/skin/member/basic/register_form.skin.php:263
+msgid "자동등록방지"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:152
+#: mobile/skin/board/gallery/write.skin.php:152
+#: mobile/skin/member/basic/register_form.skin.php:270
+#: mobile/skin/qa/basic/write.skin.php:112 skin/board/basic/write.skin.php:164
+msgid "취소"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:153
+#: mobile/skin/board/gallery/write.skin.php:153
+#: mobile/skin/qa/basic/write.skin.php:113
+#: mobile/skin/shop/basic/itemqaform.skin.php:45
+#: mobile/skin/shop/basic/itemuseform.skin.php:62
+#: skin/board/basic/write.skin.php:165
+msgid "작성완료"
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:175
+#: mobile/skin/board/gallery/write.skin.php:175
+#: mobile/skin/qa/basic/write.skin.php:121
+msgid ""
+"자동 줄바꿈을 하시겠습니까?\\n\\n자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>"
+"태그로 변환하는 기능입니다."
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:208
+#: mobile/skin/board/gallery/write.skin.php:208
+#: mobile/skin/qa/basic/view.answerform.skin.php:93
+#: mobile/skin/qa/basic/write.skin.php:154
+msgid "제목에 금지단어("
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:226
+#: mobile/skin/board/gallery/write.skin.php:226
+msgid "내용은 \"+char_min+\"글자 이상 쓰셔야 합니다."
+msgstr ""
+
+#: mobile/skin/board/basic/write.skin.php:230
+#: mobile/skin/board/gallery/write.skin.php:230
+msgid "내용은 \"+char_max+\"글자 이하로 쓰셔야 합니다."
+msgstr ""
+
+#: mobile/skin/board/gallery/list.skin.php:53
+msgid "이미지 목록"
+msgstr ""
+
+#: mobile/skin/board/gallery/list.skin.php:60
+#: mobile/skin/qa/basic/list.skin.php:54 skin/board/gallery/list.skin.php:67
+msgid "전체선택"
+msgstr ""
+
+#: mobile/skin/board/gallery/list.skin.php:82
+#: skin/board/gallery/list.skin.php:102
+msgid "열람중"
+msgstr ""
+
+#: mobile/skin/board/gallery/list.skin.php:213
+#: skin/board/basic/list.skin.php:251
+msgid ""
+"선택한 게시물을 정말 삭제하시겠습니까?\\n\\n한번 삭제한 자료는 복구할 수 없습"
+"니다\\n\\n답변글이 있는 게시글을 선택하신 경우\\n답변글도 선택하셔야 게시글"
+"이 삭제됩니다."
+msgstr ""
+
+#: mobile/skin/board/gallery/view.skin.php:31
+#: mobile/skin/board/gallery/view_comment.skin.php:47
+#: mobile/skin/member/basic/memo.skin.php:39
+#: mobile/skin/member/basic/memo_view.skin.php:42
+#: mobile/skin/member/basic/register_form.skin.php:181
+#: mobile/skin/member/basic/register_form.skin.php:198
+#: mobile/skin/poll/basic/poll_result.skin.php:56
+#: mobile/skin/qa/basic/view.skin.php:20
+#: mobile/skin/shop/basic/itemqa.skin.php:93
+#: mobile/skin/shop/basic/itemuse.skin.php:59 skin/board/basic/view.skin.php:51
+#: skin/board/basic/view_comment.skin.php:80
+#: skin/board/gallery/view_comment.skin.php:80
+msgid "삭제"
+msgstr ""
+
+#: mobile/skin/board/gallery/view_comment.skin.php:101
+#: skin/board/basic/view_comment.skin.php:112
+msgid "댓글쓰기"
+msgstr ""
+
+#: mobile/skin/board/gallery/view_comment.skin.php:204
+msgid "용에 금지단어("
+msgstr ""
+
+#: mobile/skin/board/gallery/write.skin.php:108
+msgid "글자 이상, 최대 "
+msgstr ""
+
+#: mobile/skin/board/gallery/write.skin.php:129
+msgid " 이하만 업로드 가능"
+msgstr ""
+
+#: mobile/skin/connect/basic/current_connect.skin.php:29
+msgid "현재 접속자가 없습니다."
+msgstr ""
+
+#: mobile/skin/faq/basic/list.skin.php:21 mobile/skin/new/basic/new.skin.php:20
+#: mobile/skin/qa/basic/list.skin.php:117
+#: mobile/skin/search/basic/search.skin.php:41
+#: mobile/skin/shop/basic/itemqalist.skin.php:25
+#: mobile/skin/shop/basic/itemuselist.skin.php:24 shop/shop.head.php:62
+#: skin/board/basic/list.skin.php:186 skin/board/gallery/list.skin.php:196
+#, fuzzy
+#| msgid "검색"
+msgid "검색어"
+msgstr "検索します"
+
+#: mobile/skin/faq/basic/list.skin.php:28
+msgid "자주하시는질문 분류"
+msgstr ""
+
+#: mobile/skin/faq/basic/list.skin.php:36
+msgid "열린 분류"
+msgstr ""
+
+#: mobile/skin/faq/basic/list.skin.php:62
+msgid "열기"
+msgstr ""
+
+#: mobile/skin/faq/basic/list.skin.php:78
+msgid "검색된 게시물이 없습니다."
+msgstr ""
+
+#: mobile/skin/faq/basic/list.skin.php:80
+msgid "등록된 FAQ가 없습니다."
+msgstr ""
+
+#: mobile/skin/faq/basic/list.skin.php:82
+msgid "FAQ를 새로 등록하시려면 FAQ관리</a> 메뉴를 이용하십시오."
+msgstr ""
+
+#: mobile/skin/latest/basic/latest.skin.php:79
+msgid "이전페이지"
+msgstr ""
+
+#: mobile/skin/latest/basic/latest.skin.php:81
+msgid "다음페이지"
+msgstr ""
+
+#: mobile/skin/latest/basic/latest.skin.php:84
+#: mobile/skin/latest/shop_basic/latest.skin.php:41
+#: mobile/skin/shop/basic/itemqalist.skin.php:29
+#: mobile/skin/shop/basic/itemuselist.skin.php:28
+msgid "전체보기"
+msgstr ""
+
+#: mobile/skin/latest/comment/latest.skin.php:10
+msgid "최신댓글"
+msgstr ""
+
+#: mobile/skin/latest/comment/latest.skin.php:31
+#: mobile/skin/shop/basic/itemqa.skin.php:11 shop/mypage.php:93
+#: shop/mypage.php:151
+msgid "더보기"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:9
+msgid "님께 메일보내기"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:20
+msgid "메일쓰기"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:28
+#: mobile/skin/member/basic/formmail.skin.php:29
+#: mobile/skin/member/basic/register_form.skin.php:93
+msgid "E-mail"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:37
+msgid "형식"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:54
+msgid "첨부파일 1"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:57
+msgid ""
+"첨부 파일은 누락될 수 있으므로 메일을 보낸 후 파일이 첨부 되었는지 반드시 확"
+"인해 주시기 바랍니다."
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:61
+msgid ">첨부 파일 2"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:71
+msgid "메일발송"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:72
+#: mobile/skin/member/basic/memo.skin.php:53
+#: mobile/skin/member/basic/memo_form.skin.php:45
+#: mobile/skin/member/basic/memo_view.skin.php:60
+#: mobile/skin/member/basic/password_lost.skin.php:23
+#: mobile/skin/member/basic/point.skin.php:78
+#: mobile/skin/member/basic/profile.skin.php:46
+#: mobile/skin/member/basic/scrap.skin.php:26
+#: mobile/skin/poll/basic/poll_result.skin.php:104
+#: mobile/skin/shop/basic/largeimage.skin.php:49
+msgid "창닫기"
+msgstr ""
+
+#: mobile/skin/member/basic/formmail.skin.php:92
+msgid ""
+"첨부파일의 용량이 큰경우 전송시간이 오래 걸립니다.\\n\\n메일보내기가 완료되"
+"기 전에 창을 닫거나 새로고침 하지 마십시오."
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:15
+#: mobile/skin/member/basic/login.skin.php:16
+#: mobile/skin/member/basic/register_form.skin.php:31
+#: mobile/skin/member/basic/register_form.skin.php:32
+#: mobile/skin/member/basic/register_result.skin.php:20
+msgid "아이디"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:22
+msgid "자동로그인"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:33
+msgid "회원로그인 안내"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:35
+msgid "회원정보찾기"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:36
+msgid "회원 가입"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:47
+msgid "비회원 구매"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:48
+msgid "비회원으로 주문하시는 경우 포인트는 지급하지 않습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:56
+msgid "개인정보수집에 대한 내용을 읽었으며 이에 동의합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:60
+msgid "비회원으로 구매하기"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:68
+msgid "개인정보수집에 대한 내용을 읽고 이에 동의하셔야 합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:82
+#: mobile/skin/member/basic/login.skin.php:85
+msgid "비회원 주문조회"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:89
+#: mobile/skin/member/basic/login.skin.php:90
+#: mobile/skin/member/basic/login.skin.php:99 shop/orderinquiryview.php:19
+#: shop/orderinquiryview.php:136 shop/orderinquiryview.php:396
+msgid "주문번호"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:93
+msgid "확인"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:99
+msgid "메일로 발송해드린 주문서의"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:99
+msgid "및 주문 시 입력하신"
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:99
+msgid "를 정확히 입력해주십시오."
+msgstr ""
+
+#: mobile/skin/member/basic/login.skin.php:112
+msgid ""
+"자동로그인을 사용하시면 다음부터 회원아이디와 비밀번호를 입력하실 필요가 없습"
+"니다.\\n\\n공공장소에서는 개인정보가 유출될 수 있으니 사용을 자제하여 주십시"
+"오.\\n\\n자동로그인을 사용하시겠습니까?"
+msgstr ""
+
+#: mobile/skin/member/basic/member_confirm.skin.php:12
+msgid "비밀번호를 한번 더 입력해주세요."
+msgstr ""
+
+#: mobile/skin/member/basic/member_confirm.skin.php:14
+msgid "비밀번호를 입력하시면 회원탈퇴가 완료됩니다."
+msgstr ""
+
+#: mobile/skin/member/basic/member_confirm.skin.php:16
+msgid "회원님의 정보를 안전하게 보호하기 위해 비밀번호를 한번 더 확인합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/member_confirm.skin.php:25
+#: mobile/skin/search/basic/search.skin.php:37
+msgid "회원아이디"
+msgstr ""
+
+#: mobile/skin/member/basic/member_confirm.skin.php:27
+#: mobile/skin/member/basic/password.skin.php:38
+msgid "비밀번호(필수)"
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:12
+#: mobile/skin/outlogin/basic/outlogin.skin.2.php:28
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:30 shop/mypage.php:50
+msgid "쪽지"
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:12
+msgid "통"
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:16
+#: mobile/skin/member/basic/memo_form.skin.php:13
+#: mobile/skin/member/basic/memo_view.skin.php:23
+msgid "받은쪽지"
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:17
+#: mobile/skin/member/basic/memo_form.skin.php:14
+#: mobile/skin/member/basic/memo_view.skin.php:24
+msgid "보낸쪽지"
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:18
+#: mobile/skin/member/basic/memo_form.skin.php:15
+#: mobile/skin/member/basic/memo_form.skin.php:20
+#: mobile/skin/member/basic/memo_view.skin.php:25
+msgid "쪽지쓰기"
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:30
+msgid "안 읽은 쪽지"
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:42
+#: mobile/skin/member/basic/point.skin.php:61
+#: mobile/skin/shop/basic/itemqalist.skin.php:117
+msgid "자료가 없습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:49
+msgid "쪽지 보관일수는 최장"
+msgstr ""
+
+#: mobile/skin/member/basic/memo.skin.php:49
+msgid "일 입니다."
+msgstr ""
+
+#: mobile/skin/member/basic/memo_form.skin.php:23
+msgid "받는 회원아이디"
+msgstr ""
+
+#: mobile/skin/member/basic/memo_form.skin.php:26
+msgid "여러 회원에게 보낼때는 컴마(,)로 구분하세요."
+msgstr ""
+
+#: mobile/skin/member/basic/memo_form.skin.php:27
+msgid "쪽지 보낼때 회원당"
+msgstr ""
+
+#: mobile/skin/member/basic/memo_form.skin.php:27
+msgid "점의 포인트를 차감합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/memo_form.skin.php:44
+msgid "보내기"
+msgstr ""
+
+#: mobile/skin/member/basic/memo_view.skin.php:40
+#, fuzzy
+#| msgid "시간 전"
+msgid "시간"
+msgstr "時間の前に"
+
+#: mobile/skin/member/basic/memo_view.skin.php:46
+msgid "이전쪽지"
+msgstr ""
+
+#: mobile/skin/member/basic/memo_view.skin.php:49
+msgid "다음쪽지"
+msgstr ""
+
+#: mobile/skin/member/basic/memo_view.skin.php:59
+msgid "답장"
+msgstr ""
+
+#: mobile/skin/member/basic/password.skin.php:17
+#, fuzzy
+#| msgid "그룹은 PC에서만 접근할 수 있습니다."
+msgid "작성자만 글을 수정할 수 있습니다."
+msgstr "グループには PC からのみアクセスできます。"
+
+#: mobile/skin/member/basic/password.skin.php:18
+msgid ""
+"작성자 본인이라면, 글 작성시 입력한 비밀번호를 입력하여 글을 수정할 수 있습니"
+"다."
+msgstr ""
+
+#: mobile/skin/member/basic/password.skin.php:20
+#, fuzzy
+#| msgid "그룹은 PC에서만 접근할 수 있습니다."
+msgid "작성자만 글을 삭제할 수 있습니다."
+msgstr "グループには PC からのみアクセスできます。"
+
+#: mobile/skin/member/basic/password.skin.php:21
+msgid ""
+"작성자 본인이라면, 글 작성시 입력한 비밀번호를 입력하여 글을 삭제할 수 있습니"
+"다."
+msgstr ""
+
+#: mobile/skin/member/basic/password.skin.php:23
+msgid "비밀글 기능으로 보호된 글입니다."
+msgstr ""
+
+#: mobile/skin/member/basic/password.skin.php:24
+msgid ""
+"작성자와 관리자만 열람하실 수 있습니다. 본인이라면 비밀번호를 입력하세요."
+msgstr ""
+
+#: mobile/skin/member/basic/password_lost.skin.php:10
+msgid "아이디 / 비밀번호 찾기"
+msgstr ""
+
+#: mobile/skin/member/basic/password_lost.skin.php:15
+msgid ""
+"회원가입 시 등록하신 이메일 주소를 입력해 주세요.<br>\n"
+"                해당 이메일로 아이디와 비밀번호 정보를 보내드립니다."
+msgstr ""
+
+#: mobile/skin/member/basic/password_lost.skin.php:18
+msgid "이메일주소(필수)"
+msgstr ""
+
+#: mobile/skin/member/basic/password_lost.skin.php:22
+msgid "정보찾기"
+msgstr ""
+
+#: mobile/skin/member/basic/point.skin.php:14
+msgid "보유포인트"
+msgstr ""
+
+#: mobile/skin/member/basic/point.skin.php:53
+msgid "만료"
+msgstr ""
+
+#: mobile/skin/member/basic/profile.skin.php:9
+msgid "님의 프로필"
+msgstr ""
+
+#: mobile/skin/member/basic/profile.skin.php:15
+msgid "회원권한"
+msgstr ""
+
+#: mobile/skin/member/basic/profile.skin.php:19
+#: mobile/skin/outlogin/basic/outlogin.skin.2.php:35
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:18
+#: mobile/skin/shop/basic/item.form.skin.php:170 shop/mypage.php:38
+#: shop/orderinquiryview.php:42
+msgid "포인트"
+msgstr ""
+
+#: mobile/skin/member/basic/profile.skin.php:29
+#, fuzzy
+#| msgid "회원가입"
+msgid "회원가입일"
+msgstr "会員登録をします"
+
+#: mobile/skin/member/basic/profile.skin.php:33
+msgid "최종접속일"
+msgstr ""
+
+#: mobile/skin/member/basic/profile.skin.php:41
+msgid "인사말"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:17
+msgid ""
+"회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있"
+"습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:21
+msgid "회원가입 약관에 모두 동의합니다"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:25
+#, fuzzy
+#| msgid "회원가입"
+msgid "회원가입약관"
+msgstr "会員登録をします"
+
+#: mobile/skin/member/basic/register.skin.php:29
+msgid "회원가입약관의 내용에 동의합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:34
+#: mobile/skin/member/basic/register.skin.php:37
+#, fuzzy
+#| msgid "개인정보처리방침"
+msgid "개인정보처리방침안내"
+msgstr "プライバシーポリシー"
+
+#: mobile/skin/member/basic/register.skin.php:40
+msgid "목적"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:43
+msgid "항목"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:44
+msgid "보유기간"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:49
+msgid "이용자 식별 및 본인여부 확인"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:52
+msgid "아이디, 이름, 비밀번호"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:53
+#: mobile/skin/member/basic/register.skin.php:60
+msgid "회원 탈퇴 시까지"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:56
+msgid "고객서비스 이용에 관한 통지,<br>CS대응을 위한 이용자 식별"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:59
+msgid "연락처 (이메일, 휴대전화번호)"
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:67
+msgid "개인정보처리방침안내의 내용에 동의합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:81
+msgid "회원가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register.skin.php:87
+msgid "개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:28
+#, fuzzy
+#| msgid "사이트 정보"
+msgid "사이트 이용정보 입력"
+msgstr "サイト内で完全に検索します"
+
+#: mobile/skin/member/basic/register_form.skin.php:34
+msgid "영문자, 숫자, _ 만 입력 가능. 최소 3자이상 입력하세요."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:41
+#: mobile/skin/member/basic/register_form.skin.php:42
+msgid "비밀번호 확인"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:48
+#, fuzzy
+#| msgid "개인정보처리방침"
+msgid "개인정보 입력"
+msgstr "プライバシーポリシー"
+
+#: mobile/skin/member/basic/register_form.skin.php:56
+msgid "아이핀 본인확인"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:58
+msgid "휴대폰 본인확인"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:60
+msgid "본인확인을 위해서는 자바스크립트 사용이 가능해야합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:71
+msgid ""
+"아이핀 본인확인 후에는 이름이 자동 입력되고 휴대폰 본인확인 후에는 이름과 휴"
+"대폰번호가 자동 입력되어 수동으로 입력할수 없게 됩니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:74
+msgid "본인확인"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:74
+msgid "및"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:74
+msgid "성인인증"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:74
+#: shop/orderinquiryview.php:148
+msgid "완료"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:80
+#: mobile/skin/member/basic/register_form.skin.php:87
+msgid "닉네임"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:83
+msgid ""
+"공백없이 한글,영문,숫자만 입력 가능 (한글2자, 영문4자 이상)<br>\n"
+"\t                닉네임을 바꾸시면 앞으로"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:84
+msgid "일 이내에는 변경 할 수 없습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:96
+msgid "E-mail 로 발송된 내용을 확인한 후 인증하셔야 회원가입이 완료됩니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:97
+msgid "E-mail 주소를 변경하시면 다시 인증하셔야 합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:113
+#: mobile/skin/member/basic/register_form.skin.php:114
+#: shop/orderinquiryview.php:224 shop/orderinquiryview.php:256
+msgid "전화번호"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:120
+#: mobile/skin/member/basic/register_form.skin.php:122
+#: shop/orderinquiryview.php:198
+msgid "휴대폰번호"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:134
+#: mobile/skin/member/basic/register_form.skin.php:135
+msgid "우편번호"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:136
+msgid "주소검색"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:140
+#: mobile/skin/member/basic/register_form.skin.php:141
+msgid "상세주소"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:143
+#: mobile/skin/member/basic/register_form.skin.php:144
+msgid "참고항목"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:153
+msgid "기타 개인설정"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:157
+#: mobile/skin/member/basic/register_form.skin.php:158
+msgid "서명"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:164
+#: mobile/skin/member/basic/register_form.skin.php:165
+msgid "자기소개"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:171
+#: mobile/skin/member/basic/register_form.skin.php:172
+msgid "회원아이콘"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:172
+#: mobile/skin/member/basic/register_form.skin.php:189
+msgid "이미지선택"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:175
+#: mobile/skin/member/basic/register_form.skin.php:192
+msgid "이미지 크기는 가로"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:175
+#: mobile/skin/member/basic/register_form.skin.php:192
+msgid "픽셀, 세로"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:175
+#: mobile/skin/member/basic/register_form.skin.php:192
+msgid ""
+"픽셀 이하로 해주세요.<br>\n"
+"\t                gif, jpg, png파일만 가능하며 용량"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:176
+#: mobile/skin/member/basic/register_form.skin.php:193
+msgid "바이트 이하만 등록됩니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:188
+#: mobile/skin/member/basic/register_form.skin.php:189
+msgid "회원이미지"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:207
+msgid "메일링서비스"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:209
+msgid "정보 메일을 받겠습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:217
+msgid "SMS 수신여부"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:219
+msgid "휴대폰 문자메세지를 받겠습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:228
+#: mobile/skin/member/basic/register_form.skin.php:238
+msgid "정보공개"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:230
+msgid "다른분들이 나의 정보를 볼 수 있도록 합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:232
+msgid "정보공개를 바꾸시면 앞으로"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:232
+msgid "일 이내에는 변경이 안됩니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:242
+msgid "정보공개는 수정후"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:242
+msgid "일 이내,"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:242
+msgid ""
+"까지는 변경이 안됩니다.<br>\n"
+"\t                이렇게 하는 이유는 잦은 정보공개 수정으로 인하여 쪽지를 보"
+"낸 후 받지 않는 경우를 막기 위해서 입니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:257
+#: mobile/skin/member/basic/register_form.skin.php:258
+msgid "추천인아이디"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:312
+msgid "기본환경설정에서 휴대폰 본인확인 설정을 해주십시오"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:341
+msgid ""
+"이미 \"+type+\"으로 본인확인을 완료하셨습니다.\\n\\n이전 인증을 취소하고 다"
+"시 인증하시겠습니까?"
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:362
+#: mobile/skin/member/basic/register_form.skin.php:376
+#, fuzzy
+#| msgid "검색어는 두글자 이상 입력하십시오."
+msgid "비밀번호를 3글자 이상 입력하십시오."
+msgstr "少なくとも 2 文字の検索語句を入力してください。"
+
+#: mobile/skin/member/basic/register_form.skin.php:369
+msgid "비밀번호가 같지 않습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:385
+#, fuzzy
+#| msgid "검색어는 두글자 이상 입력하십시오."
+msgid "이름을 입력하십시오."
+msgstr "少なくとも 2 文字の検索語句を入力してください。"
+
+#: mobile/skin/member/basic/register_form.skin.php:394
+msgid "회원가입을 위해서는 본인확인을 해주셔야 합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:432
+msgid "회원아이콘이 이미지 파일이 아닙니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:442
+msgid "회원이미지가 이미지 파일이 아닙니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_form.skin.php:451
+#, fuzzy
+#| msgid "그룹은 PC에서만 접근할 수 있습니다."
+msgid "본인을 추천할 수 없습니다."
+msgstr "グループには PC からのみアクセスできます。"
+
+#: mobile/skin/member/basic/register_result.skin.php:8
+#, fuzzy
+#| msgid "회원가입"
+msgid "회원가입이 완료"
+msgstr "会員登録をします"
+
+#: mobile/skin/member/basic/register_result.skin.php:8
+msgid "되었습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_result.skin.php:11
+msgid "님의 회원가입을 진심으로 축하합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_result.skin.php:16
+msgid ""
+"회원 가입 시 입력하신 이메일 주소로 인증메일이 발송되었습니다.<br>\n"
+"            발송된 인증메일을 확인하신 후 인증처리를 하시면 사이트를 원활하"
+"게 이용하실 수 있습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_result.skin.php:22
+msgid "이메일 주소"
+msgstr ""
+
+#: mobile/skin/member/basic/register_result.skin.php:26
+msgid ""
+"이메일 주소를 잘못 입력하셨다면, 사이트 관리자에게 문의해주시기 바랍니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_result.skin.php:31
+msgid ""
+"회원님의 비밀번호는 아무도 알 수 없는 암호화 코드로 저장되므로 안심하셔도 좋"
+"습니다.<br>\n"
+"            아이디, 비밀번호 분실시에는 회원가입시 입력하신 이메일 주소를 이"
+"용하여 찾을 수 있습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_result.skin.php:36
+msgid ""
+"회원 탈퇴는 언제든지 가능하며 일정기간이 지난 후, 회원님의 정보는 삭제하고 있"
+"습니다.<br>\n"
+"            감사합니다."
+msgstr ""
+
+#: mobile/skin/member/basic/register_result.skin.php:42
+msgid "메인으로"
+msgstr ""
+
+#: mobile/skin/member/basic/scrap_popin.skin.php:9
+msgid "스크랩하기"
+msgstr ""
+
+#: mobile/skin/member/basic/scrap_popin.skin.php:15
+msgid "제목 확인 및 댓글 쓰기"
+msgstr ""
+
+#: mobile/skin/member/basic/scrap_popin.skin.php:27
+msgid "스크랩을 하시면서 감사 혹은 격려의 댓글을 남기실 수 있습니다."
+msgstr ""
+
+#: mobile/skin/member/basic/scrap_popin.skin.php:30
+msgid "스크랩 확인"
+msgstr ""
+
+#: mobile/skin/new/basic/new.skin.php:10
+#: mobile/skin/search/basic/search.skin.php:27
+msgid "상세검색"
+msgstr ""
+
+#: mobile/skin/new/basic/new.skin.php:15
+msgid "전체게시물"
+msgstr ""
+
+#: mobile/skin/new/basic/new.skin.php:16
+msgid "원글만"
+msgstr ""
+
+#: mobile/skin/new/basic/new.skin.php:17
+msgid "코멘트만"
+msgstr ""
+
+#: mobile/skin/new/basic/new.skin.php:25
+msgid "회원 아이디만 검색 가능"
+msgstr ""
+
+#: mobile/skin/new/basic/new.skin.php:59
+msgid "게시물이 없습니다.)</li>"
+msgstr ""
+
+#: mobile/skin/outlogin/basic/outlogin.skin.2.php:11
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:11
+msgid "나의 회원정보"
+msgstr ""
+
+#: mobile/skin/outlogin/basic/outlogin.skin.2.php:17
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:17
+msgid "님"
+msgstr ""
+
+#: mobile/skin/outlogin/basic/outlogin.skin.2.php:28 shop/mypage.php:50
+msgid "안 읽은"
+msgstr ""
+
+#: mobile/skin/outlogin/basic/outlogin.skin.2.php:52
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:44 shop/mypage.php:167
+msgid "정말 회원에서 탈퇴 하시겠습니까?"
+msgstr ""
+
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.1.php:9
+msgid "회원로그인"
+msgstr ""
+
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.1.php:14
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:24
+msgid "카테고리닫기"
+msgstr ""
+
+#: mobile/skin/outlogin/shop_basic/outlogin.skin.2.php:35 shop/mypage.php:44
+msgid "쿠폰"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll.skin.php:14
+msgid "설문조사"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll.skin.php:15
+msgid "결과보기"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll.skin.php:16
+msgid "관리자 관리"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll.skin.php:32
+msgid "투표하기"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll.skin.php:43
+#: mobile/skin/poll/basic/poll.skin.php:69
+msgid "권한 {$po["
+msgstr ""
+
+#: mobile/skin/poll/basic/poll.skin.php:55
+msgid "투표하실 설문항목을 선택하세요"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:21
+#: mobile/skin/poll/basic/poll_result.skin.php:36
+msgid "표"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:23
+msgid "결과"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:48
+msgid "이 설문에 대한 기타의견"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:53
+msgid "님의 의견"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:71
+msgid "기타의견"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:73
+msgid "의견"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:74
+#, fuzzy
+#| msgid "검색어를 입력해주세요"
+msgid "의견을 입력해주세요"
+msgstr "検索語句を入力してください"
+
+#: mobile/skin/poll/basic/poll_result.skin.php:84
+msgid "의견남기기"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:94
+msgid "다른 투표 결과 보기"
+msgstr ""
+
+#: mobile/skin/poll/basic/poll_result.skin.php:112
+msgid "해당 기타의견을 삭제하시겠습니까?"
+msgstr ""
+
+#: mobile/skin/popular/basic/popular.skin.php:9
+msgid "인기검색어"
+msgstr ""
+
+#: mobile/skin/qa/basic/list.skin.php:28
+msgid "문의등록"
+msgstr ""
+
+#: mobile/skin/qa/basic/list.skin.php:149
+msgid ""
+"선택한 게시물을 정말 삭제하시겠습니까?\\n\\n한번 삭제한 자료는 복구할 수 없습"
+"니다"
+msgstr ""
+
+#: mobile/skin/qa/basic/view.answer.skin.php:20
+msgid "답변수정"
+msgstr ""
+
+#: mobile/skin/qa/basic/view.answer.skin.php:23
+msgid "답변삭제"
+msgstr ""
+
+#: mobile/skin/qa/basic/view.answer.skin.php:27
+#: mobile/skin/qa/basic/view.skin.php:89
+msgid "추가질문"
+msgstr ""
+
+#: mobile/skin/qa/basic/view.answerform.skin.php:60
+msgid ""
+"동 줄바꿈을 하시겠습니까?\\n\\n자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>태"
+"그로 변환하는 기능입니다."
+msgstr ""
+
+#: mobile/skin/qa/basic/view.answerform.skin.php:117
+msgid "고객님의 문의에 대한 답변을 준비 중입니다."
+msgstr ""
+
+#: mobile/skin/qa/basic/view.skin.php:52
+msgid "연락처정보"
+msgstr ""
+
+#: mobile/skin/qa/basic/view.skin.php:59 mobile/skin/qa/basic/write.skin.php:63
+#: mobile/skin/qa/basic/write.skin.php:64
+#: mobile/skin/shop/basic/itemqaform.skin.php:30
+#: mobile/skin/shop/basic/itemqaform.skin.php:31 shop/orderinquiryview.php:197
+#: shop/orderinquiryview.php:454
+msgid "휴대폰"
+msgstr ""
+
+#: mobile/skin/qa/basic/view.skin.php:137
+msgid "연관질문"
+msgstr ""
+
+#: mobile/skin/qa/basic/write.skin.php:56
+msgid "답변받기"
+msgstr ""
+
+#: mobile/skin/qa/basic/write.skin.php:68
+msgid "답변등록 SMS알림 수신"
+msgstr ""
+
+#: mobile/skin/qa/basic/write.skin.php:103
+msgid "파일삭제"
+msgstr ""
+
+#: mobile/skin/qa/basic/write.skin.php:171
+msgid "휴대폰번호는 숫자, - 으로만 입력해 주십시오."
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:13
+msgid "전체검색 결과"
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:15
+msgid "게시판"
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:16
+msgid "게시물"
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:17
+msgid "페이지 열람 중"
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:32
+msgid "검색조건"
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:34
+msgid "제목+내용"
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:89
+msgid "전체게시판"
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:95
+msgid "검색된 자료가 하나도 없습니다."
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:105
+msgid "게시판 내 결과"
+msgstr ""
+
+#: mobile/skin/search/basic/search.skin.php:133
+msgid "결과 더보기"
+msgstr ""
+
+#: mobile/skin/shop/basic/boxbanner.skin.php:12
+msgid "쇼핑몰 배너"
+msgstr ""
+
+#: mobile/skin/shop/basic/boxtodayview.skin.php:53
+#, fuzzy
+#| msgid "일 전"
+msgid "이전"
+msgstr "一日前"
+
+#: mobile/skin/shop/basic/boxtodayview.skin.php:53
+msgid "다음"
+msgstr ""
+
+#: mobile/skin/shop/basic/boxtodayview.skin.php:67
+#, fuzzy
+#| msgid "메뉴 준비 중입니다."
+msgid "목록의 처음입니다."
+msgstr "メニューは準備中です。"
+
+#: mobile/skin/shop/basic/boxtodayview.skin.php:78
+msgid "더 이상 목록이 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/boxtodayview.skin.php:91
+msgid "없음"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:9
+msgid "다운로드 쿠폰"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:10
+msgid "회원이시라면 쿠폰 다운로드 후 바로 사용하실 수 있습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:32
+#: mobile/skin/shop/basic/couponzone.10.skin.php:125
+msgid "개별상품할인"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:39
+#: mobile/skin/shop/basic/couponzone.10.skin.php:132
+msgid "카테고리할인"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:44
+#: mobile/skin/shop/basic/couponzone.10.skin.php:136
+msgid "주문금액할인"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:48
+#: mobile/skin/shop/basic/couponzone.10.skin.php:140
+msgid "배송비할인"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:59
+#: mobile/skin/shop/basic/couponzone.10.skin.php:75
+#: mobile/skin/shop/basic/couponzone.10.skin.php:151
+#: mobile/skin/shop/basic/couponzone.10.skin.php:167
+#: mobile/skin/shop/basic/search.skin.php:37 shop/orderinquiryview.php:386
+msgid "원"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:68
+#: mobile/skin/shop/basic/couponzone.10.skin.php:160
+msgid "적용"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:75
+#: mobile/skin/shop/basic/couponzone.10.skin.php:167
+msgid "최소주문금액 :"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:82
+#: mobile/skin/shop/basic/couponzone.10.skin.php:174
+msgid "기한"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:82
+msgid "다운로드 후"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:82
+#: mobile/skin/shop/basic/couponzone.10.skin.php:174
+#, fuzzy
+#| msgid "일 전"
+msgid "일"
+msgstr "一日前"
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:89
+msgid "쿠폰다운로드"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:96
+#: mobile/skin/shop/basic/couponzone.10.skin.php:183
+msgid "사용할 수 있는 쿠폰이 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:101
+msgid "포인트 쿠폰"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:102
+msgid "보유하신"
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:102
+msgid "회원 포인트를 쿠폰으로 교환하실 수 있습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/couponzone.10.skin.php:175
+msgid "점 차감"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:55
+msgid "상품간략정보 및 구매기능"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:60
+msgid "상품 선택옵션"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:60
+msgid "개, 추가옵션"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:69
+#: mobile/skin/shop/basic/list.10.skin.php:76
+msgid "고객평점"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:75
+#: mobile/skin/shop/basic/item.form.skin.php:327
+#: mobile/skin/shop/basic/list.10.skin.php:106
+#: mobile/skin/shop/basic/main.10.skin.php:98 shop/shop.head.php:114
+msgid "위시리스트"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:76
+msgid "sns 공유"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:85
+msgid "추천하기"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:109
+msgid "제조사"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:116
+msgid "원산지"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:123
+msgid "브랜드"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:129
+msgid "모델"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:135
+#: mobile/skin/shop/basic/item.form.skin.php:140
+#: mobile/skin/shop/basic/item.form.skin.php:151
+msgid "판매가격"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:136
+msgid "판매중지"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:141
+msgid "전화문의"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:146
+msgid "시중가격"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:174
+msgid "구매금액(추가옵션 제외)의 "
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:177 shop/orderinquiryview.php:385
+msgid "점"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:184
+#: mobile/skin/shop/basic/item.form.skin.php:192
+msgid "배송비결제"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:187
+msgid "무료배송"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:190
+#: mobile/skin/shop/basic/item.form.skin.php:195
+msgid "수령후 지불"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:194
+#: mobile/skin/shop/basic/item.form.skin.php:199
+msgid "주문시 결제"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:208
+msgid "최소구매수량"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:214
+msgid "최대구매수량"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:233
+msgid "이 분류에 등록된 다른 상품이 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:236
+msgid "확대보기"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:243
+msgid "구매하기"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:252
+msgid "선택옵션"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:267
+msgid "추가옵션"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:298
+msgid "감소"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:300
+msgid "증가"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:301
+msgid "+0원"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:317
+msgid "상품의 재고가 부족하여 구매할 수 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:325
+msgid "재입고알림"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:349
+#: mobile/skin/shop/basic/item.form.skin.php:358
+msgid "상품정보"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:351
+#: mobile/skin/shop/basic/item.form.skin.php:409 shop/shop.head.php:48
+#: shop/shop.head.php:130
+msgid "상품문의"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:352
+msgid "배송/교환"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:361
+msgid "상품 상세설명"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:374
+msgid "상품 정보 고시"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:393
+#: mobile/skin/shop/basic/iteminfo.info.skin.php:50
+msgid ""
+"<p>상품 정보 고시 정보가 올바르게 저장되지 않았습니다.<br>config.php 파일의 "
+"G5_ESCAPE_FUNCTION 설정을 addslashes 로<br>변경하신 후 관리자 &gt; 상품정보 "
+"수정에서 상품 정보를 다시 저장해주세요. </p>"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:417
+msgid "배송/교환정보"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:420
+#: mobile/skin/shop/basic/iteminfo.delivery.skin.php:8
+#: shop/orderinquiryview.php:291
+msgid "배송정보"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:429
+#: mobile/skin/shop/basic/iteminfo.change.skin.php:8
+#: mobile/skin/shop/basic/iteminfo.delivery.skin.php:14
+msgid "교환/반품"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:455
+#: mobile/skin/shop/basic/iteminfo.relation.skin.php:40
+msgid "관련상품"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:531
+#, fuzzy
+#| msgid "그룹은 PC에서만 접근할 수 있습니다."
+msgid "회원만 추천하실 수 있습니다."
+msgstr "グループには PC からのみアクセスできます。"
+
+#: mobile/skin/shop/basic/item.form.skin.php:554
+#: mobile/skin/shop/basic/item.form.skin.php:626
+msgid "전화로 문의해 주시면 감사하겠습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:559
+#: mobile/skin/shop/basic/item.form.skin.php:631 shop/ajax.action.php:106
+msgid "상품의 선택옵션을 선택해 주십시오."
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:573
+#: mobile/skin/shop/basic/item.form.skin.php:645
+msgid "수량을 입력해 주십시오."
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:579
+#: mobile/skin/shop/basic/item.form.skin.php:651
+msgid "수량은 숫자로 입력해 주십시오."
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:585
+#: mobile/skin/shop/basic/item.form.skin.php:657
+#, fuzzy
+#| msgid "검색어는 두글자 이상 입력하십시오."
+msgid "수량은 1이상 입력해 주십시오."
+msgstr "少なくとも 2 文字の検索語句を入力してください。"
+
+#: mobile/skin/shop/basic/item.form.skin.php:600
+msgid "선택옵션 개수 총합."
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:600
+#: mobile/skin/shop/basic/item.form.skin.php:672 shop/ajax.action.php:126
+msgid "개 이상 주문해 주십시오."
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:605
+#: mobile/skin/shop/basic/item.form.skin.php:672
+#: mobile/skin/shop/basic/item.form.skin.php:677
+msgid "선택옵션 개수 총합"
+msgstr ""
+
+#: mobile/skin/shop/basic/item.form.skin.php:605
+#: mobile/skin/shop/basic/item.form.skin.php:677 shop/ajax.action.php:129
+msgid "개 이하로 주문해 주십시오."
+msgstr ""
+
+#: mobile/skin/shop/basic/iteminfo.info.skin.php:10
+msgid "상품설명"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:10
+#: mobile/skin/shop/basic/itemqaform.skin.php:10
+msgid "상품문의 쓰기"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:10
+#: mobile/skin/shop/basic/itemuse.skin.php:11
+msgid "새 창"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:33
+#: mobile/skin/shop/basic/itemqalist.skin.php:52
+msgid "비밀글로 보호된 문의입니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:50
+#: mobile/skin/shop/basic/itemqalist.skin.php:64
+msgid "답변완료"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:54
+#: mobile/skin/shop/basic/itemqalist.skin.php:68
+msgid "답변대기"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:56
+#: mobile/skin/shop/basic/itemqalist.skin.php:70
+msgid "답변이 등록되지 않았습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:70 shop/orderinquiryview.php:45
+msgid "상태"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:78
+#: mobile/skin/shop/basic/itemqalist.skin.php:20
+#: mobile/skin/shop/basic/itemqalist.skin.php:96
+msgid "문의내용"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:105
+msgid "상품문의가 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqa.skin.php:121
+#: mobile/skin/shop/basic/itemuse.skin.php:100
+msgid "정말 삭제 하시겠습니까?\\n\\n삭제후에는 되돌릴수 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqaform.skin.php:27
+msgid "이메일을 입력하시면 답변 등록 시 답변이 이메일로 전송됩니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqaform.skin.php:31
+msgid "휴대폰번호를 입력하시면 답변 등록 시 답변등록 알림이 SMS로 전송됩니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqaform.skin.php:38
+msgid "질문"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqalist.skin.php:14
+#: mobile/skin/shop/basic/itemuselist.skin.php:14
+msgid "검색항목"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqalist.skin.php:16
+#: mobile/skin/shop/basic/itemuselist.skin.php:16
+msgid "선택"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqalist.skin.php:18
+#: mobile/skin/shop/basic/itemuselist.skin.php:18
+msgid "상품코드"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqalist.skin.php:19
+msgid "문의제목"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqalist.skin.php:21
+#: mobile/skin/shop/basic/itemuselist.skin.php:21
+msgid "작성자명"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqalist.skin.php:22
+#: mobile/skin/shop/basic/itemuselist.skin.php:22
+msgid "작성자아이디"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqalist.skin.php:109
+#: mobile/skin/shop/basic/itemqalist.skin.php:130
+msgid "내용보기"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemqalist.skin.php:139
+msgid "내용닫기"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuse.skin.php:11
+#: mobile/skin/shop/basic/itemuseform.skin.php:10
+msgid "사용후기 쓰기"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuse.skin.php:84
+msgid "사용후기가 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuseform.skin.php:29
+msgid "평가"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuseform.skin.php:33
+msgid "매우만족"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuseform.skin.php:38
+msgid "만족"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuseform.skin.php:43
+msgid "보통"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuseform.skin.php:48
+msgid "불만"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuseform.skin.php:53
+msgid "매우불만"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuselist.skin.php:19
+msgid "후기제목"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuselist.skin.php:20
+msgid "후기내용"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuselist.skin.php:60
+#: mobile/skin/shop/basic/itemuselist.skin.php:85
+msgid "평가점수"
+msgstr ""
+
+#: mobile/skin/shop/basic/itemuselist.skin.php:116
+msgid "후기 상세보기 팝업 닫기"
+msgstr ""
+
+#: mobile/skin/shop/basic/largeimage.skin.php:9
+msgid "상품 이미지 새창 보기"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.10.skin.php:108
+#: mobile/skin/shop/basic/main.10.skin.php:100
+msgid "공유하기"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.10.skin.php:116
+#: mobile/skin/shop/basic/main.10.skin.php:108
+msgid "SNS 공유"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.10.skin.php:142
+#: mobile/skin/shop/basic/main.20.skin.php:119
+#: mobile/skin/shop/basic/main.event.skin.php:58
+msgid "등록된 상품이 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/list.best.10.skin.php:13
+#: mobile/skin/shop/basic/list.best.10.skin.php:31
+msgid "번째 리스트"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.best.10.skin.php:21
+msgid "베스트상품"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.sort.skin.php:23
+#: mobile/skin/shop/basic/list.sort.skin.php:24
+msgid "상품 정렬"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.sort.skin.php:26
+#: mobile/skin/shop/basic/search.skin.php:61
+msgid "낮은가격순"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.sort.skin.php:27
+#: mobile/skin/shop/basic/search.skin.php:62
+msgid "높은가격순"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.sort.skin.php:28
+msgid "상품명순"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.sub.skin.php:9
+msgid "리스트뷰"
+msgstr ""
+
+#: mobile/skin/shop/basic/list.sub.skin.php:10
+msgid "갤러리뷰"
+msgstr ""
+
+#: mobile/skin/shop/basic/listcategory.skin.php:29
+msgid "현재 상품 분류와 관련된 분류"
+msgstr ""
+
+#: mobile/skin/shop/basic/main.10.skin.php:133
+#: mobile/skin/shop/basic/main.30.skin.php:122
+msgid "등록된 상품이 없습니다.</p>\n"
+msgstr ""
+
+#: mobile/skin/shop/basic/main.event.skin.php:66
+msgid "이벤트 없음"
+msgstr ""
+
+#: mobile/skin/shop/basic/personalpay.skin.php:35
+msgid "등록된 개인결제가 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/relation.10.skin.php:82
+msgid "등록된 관련상품이 없습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:8
+msgid "검색 결과"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:22
+msgid ""
+"상세검색을 선택하지 않거나, 상품가격을 입력하지 않으면 전체에서 검색합니다."
+"<br>\n"
+"                검색어는 최대 30글자까지, 여러개의 검색어를 공백으로 구분하"
+"여 입력 할수 있습니다."
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:27
+msgid "검색범위"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:29
+#: mobile/skin/shop/basic/search.skin.php:31
+msgid "상품"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:29
+msgid "설명"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:30
+msgid "기본설명"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:31
+msgid "코드"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:33
+msgid "상품가격 (원)"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:34
+msgid "최소 가격"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:35
+msgid "원 ~"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:36
+msgid "최대 가격"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:58
+msgid "상품정렬"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:60
+msgid "판매많은순"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:63
+msgid "평점높은순"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:64
+msgid "후기많은순"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:65
+msgid "최근등록순"
+msgstr ""
+
+#: mobile/skin/shop/basic/search.skin.php:92
+msgid "파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다."
+msgstr ""
+
+#: mobile/skin/visit/basic/visit.skin.php:22
+msgid "상세보기"
+msgstr ""
+
+#: mobile/tail.php:22 shop/shop.tail.php:25 tail.php:33
 msgid "개인정보처리방침"
 msgstr "プライバシーポリシー"
 
-#: tail.php:34
+#: mobile/tail.php:23 shop/shop.tail.php:24 tail.php:34
 msgid "서비스이용약관"
 msgstr "サービス利用規約"
 
-#: tail.php:35
+#: mobile/tail.php:25
+msgid "Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.<br>"
+msgstr ""
+
+#: mobile/tail.php:28 shop/shop.tail.php:29 tail.php:38
+msgid "사이트 정보"
+msgstr "サイト内で完全に検索します"
+
+#: mobile/tail.php:30
+msgid ""
+"회사명 : 회사명 / 대표 : 대표자명<br>\n"
+"\t\t\t주소  : OO도 OO시 OO구 OO동 123-45<br>\n"
+"\t\t\t사업자 등록번호  : 123-45-67890<br>\n"
+"\t\t\t전화 :  02-123-4567  팩스  : 02-123-4568<br>\n"
+"\t\t\t통신판매업신고번호 :  제 OO구 - 123호<br>\n"
+"\t\t\t개인정보관리책임자 :  정보책임자명<br>"
+msgstr ""
+
+#: mobile/tail.php:38 shop/shop.head.php:116 tail.php:63
+msgid "상단으로"
+msgstr ""
+
+#: mobile/tail.php:41
+msgid "PC 버전으로 보기"
+msgstr ""
+
+#: shop/ajax.action.php:64
+msgid ""
+"더 이상 작업을 진행할 수 없습니다.\\n\\n브라우저의 쿠키 허용을 사용하지 않음"
+"으로 설정한것 같습니다.\\n\\n브라우저의 인터넷 옵션에서 쿠키 허용을 사용으로 "
+"설정해 주십시오.\\n\\n그래도 진행이 되지 않는다면 쇼핑몰 운영자에게 문의 바랍"
+"니다."
+msgstr ""
+
+#: shop/ajax.action.php:72
+msgid "상품을 구입할 수 있는 권한이 없습니다."
+msgstr ""
+
+#: shop/ajax.action.php:77
+msgid "장바구니에 담을 상품을 선택하여 주십시오."
+msgstr ""
+
+#: shop/ajax.action.php:87 shop/ajax.action.php:248 shop/ajax.action.php:322
+msgid "상품정보가 존재하지 않습니다."
+msgstr ""
+
+#: shop/ajax.action.php:110
+#, fuzzy
+#| msgid "검색어는 두글자 이상 입력하십시오."
+msgid "수량은 1 이상 입력해 주십시오."
+msgstr "少なくとも 2 文字の検索語句を入力してください。"
+
+#: shop/ajax.action.php:126 shop/ajax.action.php:142
+msgid "의 선택옵션 개수 총합 "
+msgstr ""
+
+#: shop/ajax.action.php:129
+msgid "의 선택옵션 개수 총합 )"
+msgstr ""
+
+#: shop/ajax.action.php:176 shop/ajax.action.php:179
+msgid "구매금액이 음수인 상품은 구매할 수 없습니다."
+msgstr ""
+
+#: shop/ajax.action.php:200
+msgid ""
+" 의 재고수량이 부족합니다.\n"
+"\n"
+"현재 재고수량 : "
+msgstr ""
+
+#: shop/ajax.action.php:200
+msgid " 개"
+msgstr ""
+
+#: shop/ajax.action.php:256
+msgid "상품을 구매할 수 없습니다."
+msgstr ""
+
+#: shop/ajax.action.php:291
+msgid "장바구니 담기"
+msgstr ""
+
+#: shop/ajax.action.php:313
+msgid "회원 전용 서비스 입니다."
+msgstr ""
+
+#: shop/ajax.action.php:316
+msgid "상품 코드가 올바르지 않습니다."
+msgstr ""
+
+#: shop/ajax.action.php:338
+msgid "위시리스트에 이미 등록된 상품입니다."
+msgstr ""
+
+#: shop/ajax.action.php:142
+msgid "개 이하로 주문해 주십시오.), "
+msgstr ""
+
+#: shop/category.php:59
+msgid "등록된 분류가 없습니다."
+msgstr ""
+
+#: shop/category.php:61
+msgid "카테고리 닫기"
+msgstr ""
+
+#: shop/mypage.php:27
+msgid "회원정보 개요"
+msgstr ""
+
+#: shop/mypage.php:62
+#, fuzzy
+#| msgid "사이트 정보"
+msgid "내정보"
+msgstr "サイト内で完全に検索します"
+
+#: shop/mypage.php:64
+msgid "연락처"
+msgstr ""
+
+#: shop/mypage.php:68
+msgid "최종접속일시"
+msgstr ""
+
+#: shop/mypage.php:70
+#, fuzzy
+#| msgid "회원가입"
+msgid "회원가입일시"
+msgstr "会員登録をします"
+
+#: shop/mypage.php:76
+msgid "회원탈퇴"
+msgstr ""
+
+#: shop/mypage.php:83
+msgid "주문내역조회"
+msgstr ""
+
+#: shop/mypage.php:100
+msgid "최근 위시리스트"
+msgstr ""
+
+#: shop/mypage.php:122
+msgid "품절"
+msgstr ""
+
+#: shop/mypage.php:146
+msgid "보관 내역이 없습니다."
+msgstr ""
+
+#: shop/mypage.php:156
+msgid "주문하기"
+msgstr ""
+
+#: shop/mypage.php:173
+msgid ""
+"옵션이 있는 상품입니다.\\n\\n상품을 클릭하여 상품페이지에서 옵션을 선택한 후 "
+"주문하십시오."
+msgstr ""
+
+#: shop/mypage.php:179
+msgid ""
+"이 상품은 전화로 문의해 주십시오.\\n\\n장바구니에 담아 구입하실 수 없습니다."
+msgstr ""
+
+#: shop/mypage.php:198
+msgid "상품을 하나 이상 체크 하십시오"
+msgstr ""
+
+#: shop/orderinquiryview.php:21
+msgid "주문하신 상품"
+msgstr ""
+
+#: shop/orderinquiryview.php:40
+msgid "총수량"
+msgstr ""
+
+#: shop/orderinquiryview.php:41
+msgid "판매가"
+msgstr ""
+
+#: shop/orderinquiryview.php:43 shop/orderinquiryview.php:340
+msgid "배송비"
+msgstr ""
+
+#: shop/orderinquiryview.php:44
+msgid "소계"
+msgstr ""
+
+#: shop/orderinquiryview.php:73
+msgid "착불"
+msgstr ""
+
+#: shop/orderinquiryview.php:76 shop/orderinquiryview.php:88
+msgid "무료"
+msgstr ""
+
+#: shop/orderinquiryview.php:79
+msgid "선불"
+msgstr ""
+
+#: shop/orderinquiryview.php:122 shop/orderinquiryview.php:140
+msgid "주문"
+msgstr ""
+
+#: shop/orderinquiryview.php:137 shop/orderinquiryview.php:673
+#: shop/orderinquiryview.php:686
+msgid "상태설명보기"
+msgstr ""
+
+#: shop/orderinquiryview.php:141
+msgid "주문이 접수되었습니다."
+msgstr ""
+
+#: shop/orderinquiryview.php:142
+msgid "입금"
+msgstr ""
+
+#: shop/orderinquiryview.php:143
+msgid "입금(결제)이 완료 되었습니다."
+msgstr ""
+
+#: shop/orderinquiryview.php:144
+msgid "준비"
+msgstr ""
+
+#: shop/orderinquiryview.php:145
+#, fuzzy
+#| msgid "메뉴 준비 중입니다."
+msgid "상품 준비 중입니다."
+msgstr "メニューは準備中です。"
+
+#: shop/orderinquiryview.php:146
+msgid "배송"
+msgstr ""
+
+#: shop/orderinquiryview.php:147
+msgid "상품 배송 중입니다."
+msgstr ""
+
+#: shop/orderinquiryview.php:149
+msgid "상품 배송이 완료 되었습니다."
+msgstr ""
+
+#: shop/orderinquiryview.php:151 shop/orderinquiryview.php:676
+msgid "상태설명닫기"
+msgstr ""
+
+#: shop/orderinquiryview.php:156
+msgid "결제/배송 정보"
+msgstr ""
+
+#: shop/orderinquiryview.php:183
+msgid "아직 입금되지 않았거나 입금정보를 입력하지 못하였습니다."
+msgstr ""
+
+#: shop/orderinquiryview.php:188 shop/orderinquiryview.php:473
+msgid "신용카드"
+msgstr ""
+
+#: shop/orderinquiryview.php:189 shop/orderinquiryview.php:194
+msgid "승인번호"
+msgstr ""
+
+#: shop/orderinquiryview.php:193
+msgid "간편결제"
+msgstr ""
+
+#: shop/orderinquiryview.php:202 shop/orderinquiryview.php:530
+#: shop/orderinquiryview.php:545
+msgid "가상계좌"
+msgstr ""
+
+#: shop/orderinquiryview.php:202 shop/orderinquiryview.php:530
+#: shop/orderinquiryview.php:542
+msgid "계좌이체"
+msgstr ""
+
+#: shop/orderinquiryview.php:203
+msgid "거래번호"
+msgstr ""
+
+#: shop/orderinquiryview.php:213
+msgid "주문하신 분"
+msgstr ""
+
+#: shop/orderinquiryview.php:220 shop/orderinquiryview.php:252
+msgid "이 름"
+msgstr ""
+
+#: shop/orderinquiryview.php:228 shop/orderinquiryview.php:260
+msgid "핸드폰"
+msgstr ""
+
+#: shop/orderinquiryview.php:232 shop/orderinquiryview.php:264
+msgid "주 소"
+msgstr ""
+
+#: shop/orderinquiryview.php:245
+msgid "받으시는 분"
+msgstr ""
+
+#: shop/orderinquiryview.php:273
+msgid "희망배송일"
+msgstr ""
+
+#: shop/orderinquiryview.php:281
+msgid "전하실 말씀"
+msgstr ""
+
+#: shop/orderinquiryview.php:298
+msgid "배송회사"
+msgstr ""
+
+#: shop/orderinquiryview.php:302
+msgid "운송장번호"
+msgstr ""
+
+#: shop/orderinquiryview.php:306
+msgid "배송일시"
+msgstr ""
+
+#: shop/orderinquiryview.php:311
+msgid "아직 배송하지 않았거나 배송정보를 입력하지 못하였습니다."
+msgstr ""
+
+#: shop/orderinquiryview.php:323
+msgid "주문총액"
+msgstr ""
+
+#: shop/orderinquiryview.php:324 shop/orderinquiryview.php:329
+#: shop/orderinquiryview.php:335 shop/orderinquiryview.php:341
+#: shop/orderinquiryview.php:347 shop/orderinquiryview.php:353
+#: shop/orderinquiryview.php:359 shop/orderinquiryview.php:364
+msgid " 원"
+msgstr ""
+
+#: shop/orderinquiryview.php:328
+msgid "개별상품 쿠폰할인"
+msgstr ""
+
+#: shop/orderinquiryview.php:334
+msgid "주문금액 쿠폰할인"
+msgstr ""
+
+#: shop/orderinquiryview.php:346
+msgid "배송비 쿠폰할인"
+msgstr ""
+
+#: shop/orderinquiryview.php:352
+msgid "추가배송비"
+msgstr ""
+
+#: shop/orderinquiryview.php:358
+msgid "취소금액"
+msgstr ""
+
+#: shop/orderinquiryview.php:363
+msgid "총계"
+msgstr ""
+
+#: shop/orderinquiryview.php:367
+msgid "적립포인트"
+msgstr ""
+
+#: shop/orderinquiryview.php:368
+msgid " 점"
+msgstr ""
+
+#: shop/orderinquiryview.php:371
+msgid "총 구매액"
+msgstr ""
+
+#: shop/orderinquiryview.php:375
+msgid "미결제액"
+msgstr ""
+
+#: shop/orderinquiryview.php:381
+msgid "결제액"
+msgstr ""
+
+#: shop/orderinquiryview.php:385
+msgid "포인트 결제"
+msgstr ""
+
+#: shop/orderinquiryview.php:386
+#, fuzzy
+#| msgid "시간 전"
+msgid "실결제"
+msgstr "時間の前に"
+
+#: shop/orderinquiryview.php:393
+msgid "결제정보"
+msgstr ""
+
+#: shop/orderinquiryview.php:400
+msgid "주문일시"
+msgstr ""
+
+#: shop/orderinquiryview.php:404
+msgid "결제방식"
+msgstr ""
+
+#: shop/orderinquiryview.php:408
+msgid "결제금액"
+msgstr ""
+
+#: shop/orderinquiryview.php:416
+msgid "결제일시"
+msgstr ""
+
+#: shop/orderinquiryview.php:438 shop/orderinquiryview.php:645
+msgid "입금자명"
+msgstr ""
+
+#: shop/orderinquiryview.php:442 shop/orderinquiryview.php:641
+msgid "입금계좌"
+msgstr ""
+
+#: shop/orderinquiryview.php:451
+msgid "영수증"
+msgstr ""
+
+#: shop/orderinquiryview.php:510
+msgid "포인트사용"
+msgstr ""
+
+#: shop/orderinquiryview.php:521
+msgid "환불 금액"
+msgstr ""
+
+#: shop/orderinquiryview.php:530
+msgid "무통장"
+msgstr ""
+
+#: shop/orderinquiryview.php:533
+msgid "현금영수증"
+msgstr ""
+
+#: shop/orderinquiryview.php:563
+msgid "현금영수증 확인하기"
+msgstr ""
+
+#: shop/orderinquiryview.php:569
+msgid "현금영수증을 발급하시려면 클릭하십시오."
+msgstr ""
+
+#: shop/orderinquiryview.php:586
+msgid "주문 취소하기"
+msgstr ""
+
+#: shop/orderinquiryview.php:589
+msgid "주문취소"
+msgstr ""
+
+#: shop/orderinquiryview.php:594 shop/orderinquiryview.php:595
+msgid "취소사유"
+msgstr ""
+
+#: shop/orderinquiryview.php:617
+msgid "주문 취소, 반품, 품절된 내역이 있습니다."
+msgstr ""
+
+#: shop/orderinquiryview.php:626
+msgid "관리자가 가상계좌 테스트를 한 경우에만 보입니다."
+msgstr ""
+
+#: shop/orderinquiryview.php:630
+msgid "모의입금처리"
+msgstr ""
+
+#: shop/orderinquiryview.php:637
+msgid "KCP 거래번호"
+msgstr ""
+
+#: shop/orderinquiryview.php:649
+msgid "입금통보 URL"
+msgstr ""
+
+#: shop/orderinquiryview.php:692
+msgid "주문을 정말 취소하시겠습니까?"
+msgstr ""
+
+#: shop/orderinquiryview.php:697
+msgid "취소사유를 입력해 주십시오."
+msgstr ""
+
+#: shop/shop.head.php:60
+#, fuzzy
+#| msgid "사이트 내 전체검색"
+msgid "쇼핑몰 전체검색"
+msgstr "サイト内で完全に検索します"
+
+#: shop/shop.head.php:111
+msgid "마이메뉴"
+msgstr ""
+
+#: shop/shop.head.php:112
+msgid "오늘 본 상품"
+msgstr ""
+
+#: shop/shop.head.php:125
+msgid "주문내역"
+msgstr ""
+
+#: shop/shop.head.php:134
+msgid "나의정보 닫기"
+msgstr ""
+
+#: shop/shop.head.php:140
+msgid "오늘 본 상품 닫기"
+msgstr ""
+
+#: shop/shop.head.php:146
+msgid "장바구니 닫기"
+msgstr ""
+
+#: shop/shop.head.php:152
+msgid "위시리스트 닫기"
+msgstr ""
+
+#: shop/shop.head.php:267
+msgid "작게"
+msgstr ""
+
+#: shop/shop.head.php:268
+msgid "기본"
+msgstr ""
+
+#: shop/shop.head.php:269
+msgid "크게"
+msgstr ""
+
+#: shop/shop.tail.php:26 tail.php:35
 msgid "모바일버전"
 msgstr "モバイル版"
 
-#: tail.php:38
-msgid "사이트 정보"
-msgstr "サイト内で完全に検索します"
+#: shop/shop.tail.php:40
+msgid "부가통신사업신고번호"
+msgstr ""
+
+#: skin/board/basic/list.skin.php:52 skin/board/gallery/list.skin.php:43
+msgid "게시판 검색"
+msgstr ""
+
+#: skin/board/basic/list.skin.php:81
+msgid "현재 페이지 게시물  전체선택"
+msgstr ""
+
+#: skin/board/basic/list.skin.php:85
+msgid "번호"
+msgstr ""
+
+#: skin/board/basic/list.skin.php:87
+msgid "글쓴이"
+msgstr ""
+
+#: skin/board/basic/list.skin.php:91
+msgid "날짜"
+msgstr ""
+
+#: skin/board/basic/view.skin.php:168
+msgid "회 다운로드 | DATE :"
+msgstr ""
+
+#: skin/board/basic/view_comment.skin.php:38
+#: skin/board/gallery/view_comment.skin.php:38
+msgid "댓글의"
+msgstr ""
+
+#: skin/board/basic/view_comment.skin.php:211
+#: skin/board/basic/write.skin.php:225
+msgid "내용에 금지단어"
+msgstr ""
+
+#: skin/board/basic/view_comment.skin.php:211
+#: skin/board/basic/write.skin.php:219 skin/board/basic/write.skin.php:225
+msgid "가 포함되어있습니다"
+msgstr ""
+
+#: skin/board/basic/write.skin.php:57
+msgid "분류를 선택하세요"
+msgstr ""
+
+#: skin/board/basic/write.skin.php:103
+msgid "임시저장된 글"
+msgstr ""
+
+#: skin/board/basic/write.skin.php:105
+msgid "임시저장된 글 목록"
+msgstr ""
+
+#: skin/board/basic/write.skin.php:132
+msgid "링크  #"
+msgstr ""
+
+#: skin/board/basic/write.skin.php:186
+msgid "자동 줄바꿈을 하시겠습니까?"
+msgstr ""
+
+#: skin/board/basic/write.skin.php:186
+msgid "자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>태그로 변환하는 기능입니다."
+msgstr ""
+
+#: skin/board/basic/write.skin.php:219
+msgid "제목에 금지단어"
+msgstr ""
+
+#: skin/board/basic/write.skin.php:237 skin/board/basic/write.skin.php:241
+msgid "내용은"
+msgstr ""
+
+#: skin/board/basic/write.skin.php:237 skin/board/basic/write.skin.php:241
+msgid "글자 이상 쓰셔야 합니다."
+msgstr ""
+
+#: skin/board/gallery/view_comment.skin.php:38
+msgid "님의"
+msgstr ""
 
 #: tail.php:40
 msgid ""
@@ -199,22 +3631,3 @@ msgstr ""
 #: tail.php:59
 msgid "소유하신 도메인."
 msgstr ""
-
-#: tail.php:63
-msgid "상단으로"
-msgstr ""
-
-#~ msgid "1:1문의"
-#~ msgstr "1:1 相談"
-
-#~ msgid "건"
-#~ msgstr "銃"
-
-#~ msgid "페이지"
-#~ msgstr "ページ"
-
-#~ msgid "글쓰기"
-#~ msgstr "書き込み"
-
-#~ msgid "제목</"
-#~ msgstr "Title </"

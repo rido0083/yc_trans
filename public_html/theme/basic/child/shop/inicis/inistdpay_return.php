@@ -10,21 +10,21 @@ require_once(G5_SHOP_PATH.'/inicis/libs/json_lib.php');
 $request_mid = isset($_POST['mid']) ? clean_xss_tags($_POST['mid']) : '';
 
 if( ($request_mid != $default['de_inicis_mid']) ){
-    alert("요청된 mid 와 설정된 mid 가 틀립니다.");
+    alert(_("요청된 mid 와 설정된 mid 가 틀립니다."));
 }
 
 $orderNumber = isset($_POST['orderNumber']) ? preg_replace("/[ #\&\+%@=\/\\\:;,\.'\"\^`~|\!\?\*$#<>()\[\]\{\}]/i", "", strip_tags($_POST['orderNumber'])) : 0;
 $session_order_num = get_session('ss_order_inicis_id');
 
 if( !$orderNumber ){
-    alert("주문번호가 없습니다.");
+    alert(_("주문번호가 없습니다."));
 }
 
 $sql = " select * from {$g5['g5_shop_order_data_table']} where od_id = '$orderNumber' ";
 $row = sql_fetch($sql);
 
 if( empty($row) ){
-    alert("임시 주문정보가 저장되지 않았습니다.");
+    alert(_("임시 주문정보가 저장되지 않았습니다."));
 }
 
 $data = unserialize(base64_decode($row['dt_data']));

@@ -21,6 +21,9 @@ $li_width = intval(100 / $this->list_mod);
 $li_width_style = ' style="width:'.$li_width.'%;"';
 
 for ($i=0; $row=sql_fetch_array($result); $i++) {
+
+	$item_link_href = shop_item_url($row['it_id']);
+
     if ($i == 0) {
         if ($this->css) {
             echo "<ul id=\"sct_wrap\" class=\"{$this->css}\">\n";
@@ -37,7 +40,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
     echo "<li class=\"sct_li{$li_clear}\"$li_width_style><div class=\"li_wr\">\n";
 
     if ($this->href) {
-        echo "<div class=\"sct_img\"><a href=\"{$this->href}{$row['it_id']}\">\n";
+        echo "<div class=\"sct_img\"><a href=\"{$item_link_href}\">\n";
     }
 
     if ($this->view_it_img) {
@@ -54,7 +57,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
     }
 
     if ($this->href) {
-        echo "<a href=\"{$this->href}{$row['it_id']}\" class=\"sct_txt\">\n";
+        echo "<a href=\"{$item_link_href}\" class=\"sct_txt\">\n";
     }
 
     if ($this->view_it_name) {
@@ -76,7 +79,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 
 if ($i > 0) echo "</ul>\n";
 
-if($i == 0) echo "<p class=\"sct_noitem\">등록된 관련상품이 없습니다.</p>\n";
+if($i == 0) echo "<p class=\"sct_noitem\">"._("등록된 관련상품이 없습니다.")."</p>\n";
 ?>
 <!-- } 상품진열 10 끝 -->
 

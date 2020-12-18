@@ -20,15 +20,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     <div class="new_win_con2">
         <!-- 쪽지함 선택 시작 { -->
         <ul class="win_ul">
-            <li class="<?php if ($kind == 'recv') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=recv">받은쪽지</a></li>
-            <li class="<?php if ($kind == 'send') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=send">보낸쪽지</a></li>
-            <li><a href="./memo_form.php">쪽지쓰기</a></li>
+            <li class="<?php if ($kind == 'recv') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=recv"><?php echo _('받은쪽지') ?></a></li>
+            <li class="<?php if ($kind == 'send') {  ?>selected<?php }  ?>"><a href="./memo.php?kind=send"><?php echo _('보낸쪽지') ?></a></li>
+            <li><a href="./memo_form.php"><?php echo _('쪽지쓰기') ?></a></li>
         </ul>
         <!-- } 쪽지함 선택 끝 -->
 
         <article id="memo_view_contents">
             <header>
-                <h2>쪽지 내용</h2>
+                <h2><?php echo _('쪽지 내용') ?></h2>
             </header>
             <div id="memo_view_ul">
                 <div class="memo_view_li memo_view_name">
@@ -37,16 +37,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 				            <?php echo get_member_profile_img($mb['mb_id']); ?>
 				        </li>
 						<li class="memo_view_nick"><?php echo $nick ?></li>
-						<li class="memo_view_date"><span class="sound_only"><?php echo $kind_date ?>시간</span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $memo['me_send_datetime'] ?></li> 
-						<li class="memo_op_btn list_btn"><a href="<?php echo $list_link ?>" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i><span class="sound_only">목록</span></a></li>
-						<li class="memo_op_btn del_btn"><a href="<?php echo $del_link; ?>" onclick="del(this.href); return false;" class="memo_del btn_b01 btn"><i class="fa fa-trash-o" aria-hidden="true"></i> <span class="sound_only">삭제</span></a></li>	
+						<li class="memo_view_date"><span class="sound_only"><?php echo $kind_date ?><?php echo _('시간') ?></span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $memo['me_send_datetime'] ?></li> 
+						<li class="memo_op_btn list_btn"><a href="<?php echo $list_link ?>" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i><span class="sound_only"><?php echo _('목록') ?></span></a></li>
+						<li class="memo_op_btn del_btn"><a href="<?php echo $del_link; ?>" onclick="del(this.href); return false;" class="memo_del btn_b01 btn"><i class="fa fa-trash-o" aria-hidden="true"></i> <span class="sound_only"><?php echo _('삭제') ?></span></a></li>	
 					</ul>
                     <div class="memo_btn">
                     	<?php if($prev_link) {  ?>
-			            <a href="<?php echo $prev_link ?>" class="btn_left"><i class="fa fa-chevron-left" aria-hidden="true"></i> 이전쪽지</a>
+			            <a href="<?php echo $prev_link ?>" class="btn_left"><i class="fa fa-chevron-left" aria-hidden="true"></i> <?php echo _('이전쪽지') ?></a>
 			            <?php }  ?>
 			            <?php if($next_link) {  ?>
-			            <a href="<?php echo $next_link ?>" class="btn_right">다음쪽지 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+			            <a href="<?php echo $next_link ?>" class="btn_right"><?php echo _('다음쪽지') ?> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			            <?php }  ?>  
                     </div>
                 </div>
@@ -56,8 +56,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             </p>
         </article>
 		<div class="win_btn">
-			<?php if ($kind == 'recv') {  ?><a href="./memo_form.php?me_recv_mb_id=<?php echo $mb['mb_id'] ?>&amp;me_id=<?php echo $memo['me_id'] ?>" class="reply_btn">답장</a><?php }  ?>
-			<button type="button" onclick="window.close();" class="btn_close">창닫기</button>
+			<?php if ($kind == 'recv') {  ?><a href="./memo_form.php?me_recv_mb_id=<?php echo $mb['mb_id'] ?>&amp;me_id=<?php echo $memo['me_id'] ?>" class="reply_btn"><?php echo _('답장') ?></a><?php }  ?>
+			<button type="button" onclick="window.close();" class="btn_close"><?php echo _('창닫기') ?></button>
     	</div>
     </div>
 </div>

@@ -6,17 +6,17 @@ require_once(G5_SHOP_PATH.'/settle_lg.inc.php');
 if($tx == 'personalpay') {
     $od = sql_fetch(" select * from {$g5['g5_shop_personalpay_table']} where pp_id = '$od_id' ");
     if (!$od)
-        die('<p id="scash_empty">개인결제 내역이 존재하지 않습니다.</p>');
+        die('<p id="scash_empty">'_('개인결제 내역이 존재하지 않습니다.').'</p>');
 
     $od_tno      = $od['pp_tno'];
-    $goods_name  = $od['pp_name'].'님 개인결제';
+    $goods_name  = $od['pp_name']._('님 개인결제');
     $settle_case = $od['pp_settle_case'];
     $order_price = $od['pp_receipt_price'];
     $od_casseqno = $od['pp_casseqno'];
 } else {
     $od = sql_fetch(" select * from {$g5['g5_shop_order_table']} where od_id = '$od_id' ");
     if (!$od)
-        die('<p id="scash_empty">주문서가 존재하지 않습니다.</p>');
+        die('<p id="scash_empty">'_('주문서가 존재하지 않습니다.').'</p>');
 
     $od_tno      = $od['od_tno'];
     $goods       = get_goods($od['od_id']);
@@ -27,17 +27,17 @@ if($tx == 'personalpay') {
 }
 
 switch($settle_case) {
-    case '가상계좌':
+    case _('가상계좌'):
         $pay_type = 'SC0040';
         break;
-    case '계좌이체':
+    case _('계좌이체'):
         $pay_type = 'SC0030';
         break;
-    case '무통장':
+    case _('무통장'):
         $pay_type = 'SC0100';
         break;
     default:
-        die('<p id="scash_empty">현금영수증은 무통장, 가상계좌, 계좌이체에 한해 발급요청이 가능합니다.</p>');
+        die('<p id="scash_empty">'._('현금영수증은 무통장, 가상계좌, 계좌이체에 한해 발급요청이 가능합니다.').'</p>');
         break;
 }
 
@@ -161,9 +161,9 @@ if ($xpay->TX()) {
                 echo "거래번호 : " . $xpay->Response("LGD_TID",0) . "<p>";
                 */
             } else {
-                $msg = '현금영수증 취소 요청처리가 정상적으로 완료되지 않았습니다.';
+                $msg = _('현금영수증 취소 요청처리가 정상적으로 완료되지 않았습니다.');
                 if(!$is_admin)
-                    $msg .= '쇼핑몰 관리자에게 문의해 주십시오.';
+                    $msg .= _('쇼핑몰 관리자에게 문의해 주십시오.');
 
                 alert_close($msg);
             }
@@ -178,7 +178,7 @@ if ($xpay->TX()) {
     echo "TX Response_msg = " . $xpay->Response_Msg() . "<p>";
     */
 
-    $msg = '현금영수증 발급 요청처리가 정상적으로 완료되지 않았습니다.';
+    $msg = _('현금영수증 발급 요청처리가 정상적으로 완료되지 않았습니다.');
     $msg .= '\\nTX Response_code = '.$xpay->Response_Code();
     $msg .= '\\nTX Response_msg = '.$xpay->Response_Msg();
 
@@ -208,7 +208,7 @@ switch($LGD_PAYTYPE) {
 ?>
 
 <div id="lg_req_tx" class="new_win">
-    <h1 id="win_title">현금영수증 - 토스페이먼츠 eCredit</h1>
+    <h1 id="win_title"><?php echo _('현금영수증 - 토스페이먼츠 eCredit') ?></h1>
 
     <div class="tbl_head01 tbl_wrap">
         <table>
@@ -218,30 +218,30 @@ switch($LGD_PAYTYPE) {
         </colgroup>
         <tbody>
         <tr>
-            <th scope="row">결과코드</th>
+            <th scope="row"><?php echo _('결과코드') ?></th>
             <td><?php echo $xpay->Response_Code(); ?></td>
         </tr>
         <tr>
-            <th scope="row">결과 메세지</th>
+            <th scope="row"><?php echo _('결과 메세지') ?></th>
             <td><?php echo $xpay->Response_Msg(); ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 거래번호</th>
+            <th scope="row"><?php echo _('현금영수증 거래번호') ?></th>
             <td><?php echo $xpay->Response("LGD_TID",0); ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 승인번호</th>
+            <th scope="row"><?php echo _('현금영수증 승인번호') ?></th>
             <td><?php echo $xpay->Response("LGD_CASHRECEIPTNUM",0); ?></td>
         </tr>
         <tr>
-            <th scope="row">승인시간</th>
+            <th scope="row"><?php echo _('승인시간') ?></th>
             <td><?php echo preg_replace("/([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/", "\\1-\\2-\\3 \\4:\\5:\\6",$xpay->Response("LGD_RESPDATE",0)); ?></td>
         </tr>
         <tr>
-            <th scope="row">현금영수증 URL</th>
+            <th scope="row"><?php echo _('현금영수증 URL') ?></th>
             <td>
                 <button type="button" name="receiptView" class="btn_frmline" onClick="javascript:showCashReceipts('<?php echo $LGD_MID; ?>','<?php echo $LGD_OID; ?>','<?php echo $od_casseqno; ?>','<?php echo $trade_type; ?>','<?php echo $CST_PLATFORM; ?>');">영수증 확인</button>
-                <p>영수증 확인은 실 등록의 경우에만 가능합니다.</p>
+                <p><?php echo _('영수증 확인은 실 등록의 경우에만 가능합니다.') ?></p>
             </td>
         </tr>
         <tr>

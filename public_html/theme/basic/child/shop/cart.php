@@ -51,14 +51,14 @@ include_once('./_head.php');
         <tr>
             <th scope="col" class="chk_box">
                 <input type="checkbox" name="ct_all" value="1" id="ct_all" checked="checked" class="selec_chk">
-                <label for="ct_all"><span></span><b class="sound_only">상품 전체</b></label>
+                <label for="ct_all"><span></span><b class="sound_only"><?php echo _('상품 전체') ?></b></label>
             </th>
-            <th scope="col">상품명</th>
-            <th scope="col">총수량</th>
-            <th scope="col">판매가</th>
-            <th scope="col">포인트</th>
-            <th scope="col">배송비</th>
-            <th scope="col">소계</th>
+            <th scope="col"><?php echo _('상품명') ?></th>
+            <th scope="col"><?php echo _('총수량') ?></th>
+            <th scope="col"><?php echo _('판매가') ?></th>
+            <th scope="col"><?php echo _('포인트') ?></th>
+            <th scope="col"><?php echo _('배송비') ?></th>
+            <th scope="col"><?php echo _('소계') ?></th>
         </tr>
         </thead>
         <tbody>
@@ -117,13 +117,13 @@ include_once('./_head.php');
             switch($row['ct_send_cost'])
             {
                 case 1:
-                    $ct_send_cost = '착불';
+                    $ct_send_cost = _('착불');
                     break;
                 case 2:
-                    $ct_send_cost = '무료';
+                    $ct_send_cost = _('무료');
                     break;
                 default:
-                    $ct_send_cost = '선불';
+                    $ct_send_cost = _('선불');
                     break;
             }
 
@@ -132,7 +132,7 @@ include_once('./_head.php');
                 $sendcost = get_item_sendcost($row['it_id'], $sum['price'], $sum['qty'], $s_cart_id);
 
                 if($sendcost == 0)
-                    $ct_send_cost = '무료';
+                    $ct_send_cost = _('무료');
             }
 
             $point      = $sum['point'];
@@ -142,7 +142,7 @@ include_once('./_head.php');
         <tr>
             <td class="td_chk chk_box">
                 <input type="checkbox" name="ct_chk[<?php echo $i; ?>]" value="1" id="ct_chk_<?php echo $i; ?>" checked="checked" class="selec_chk">
-            	<label for="ct_chk_<?php echo $i; ?>"><span></span><b class="sound_only">상품</b></label>
+            	<label for="ct_chk_<?php echo $i; ?>"><span></span><b class="sound_only"><?php echo _('상품') ?></b></label>
             </td> 
             
             <td class="td_prd">
@@ -175,8 +175,8 @@ include_once('./_head.php');
         </tbody>
         </table>
         <div class="btn_cart_del">
-            <button type="button" onclick="return form_check('seldelete');">선택삭제</button>
-            <button type="button" onclick="return form_check('alldelete');">비우기</button>
+            <button type="button" onclick="return form_check('seldelete');"><?php echo _('선탠삭제') ?></button>
+            <button type="button" onclick="return form_check('alldelete');"><?php echo _('비우기') ?></button>
         </div>
     </div>
 
@@ -187,17 +187,17 @@ include_once('./_head.php');
     <div id="sod_bsk_tot">
         <ul>
             <li class="sod_bsk_dvr">
-                <span>배송비</span>
+                <span><?php echo _('배송비') ?></span>
                 <strong><?php echo number_format($send_cost); ?></strong> 원
             </li>
 
             <li class="sod_bsk_pt">
-                <span>포인트</span>
+                <span><?php echo _('포인트') ?></span>
                 <strong><?php echo number_format($tot_point); ?></strong> 점
             </li>
 
             <li class="sod_bsk_cnt">
-                <span>총계 가격</span>
+                <span><?php echo _('총계 가격') ?></span>
                 <strong><?php echo number_format($tot_price); ?></strong> 원 
             </li>
         </ul>
@@ -206,13 +206,13 @@ include_once('./_head.php');
 
     <div id="sod_bsk_act">
         <?php if ($i == 0) { ?>
-        <a href="<?php echo G5_SHOP_URL; ?>/" class="btn01">쇼핑 계속하기</a>
+        <a href="<?php echo G5_SHOP_URL; ?>/" class="btn01"><?php echo _('쇼핑 계속하기') ?></a>
         <?php } else { ?>
         <input type="hidden" name="url" value="./orderform.php">
         <input type="hidden" name="records" value="<?php echo $i; ?>">
         <input type="hidden" name="act" value="">
-        <a href="<?php echo shop_category_url($continue_ca_id); ?>" class="btn01">쇼핑 계속하기</a>
-        <button type="button" onclick="return form_check('buy');" class="btn_submit">주문하기</button>
+        <a href="<?php echo shop_category_url($continue_ca_id); ?>" class="btn01"><?php echo _('쇼핑 계속하기') ?></a>
+        <button type="button" onclick="return form_check('buy');" class="btn_submit"><?php echo _('주문하기') ?></button>
 
         <?php if ($naverpay_button_js) { ?>
         <div class="cart-naverpay"><?php echo $naverpay_request_js.$naverpay_button_js; ?></div>
@@ -266,7 +266,7 @@ $(function() {
 
 function fsubmit_check(f) {
     if($("input[name^=ct_chk]:checked").length < 1) {
-        alert("구매하실 상품을 하나이상 선택해 주십시오.");
+        alert("<?php echo _('구매하실 상품을 하나이상 선택해 주십시오.') ?>");
         return false;
     }
 
@@ -280,7 +280,7 @@ function form_check(act) {
     if (act == "buy")
     {
         if($("input[name^=ct_chk]:checked").length < 1) {
-            alert("주문하실 상품을 하나이상 선택해 주십시오.");
+            alert("<?php echo _('주문하실 상품을 하나이상 선택해 주십시오.') ?>");
             return false;
         }
 
@@ -295,7 +295,7 @@ function form_check(act) {
     else if (act == "seldelete")
     {
         if($("input[name^=ct_chk]:checked").length < 1) {
-            alert("삭제하실 상품을 하나이상 선택해 주십시오.");
+            alert("<?php echo _('삭제하실 상품을 하나이상 선택해 주십시오.') ?>");
             return false;
         }
 

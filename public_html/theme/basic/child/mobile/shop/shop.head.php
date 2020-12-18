@@ -121,3 +121,11 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
 ?>
 <div id="container" class="<?php echo implode(' ', $container_class); ?>">
     <?php if ((!$bo_table || $w == 's' ) && !defined('_INDEX_')) { ?><h1 id="container_title"><a href="javascript:history.back()" class="btn_back"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="sound_only">뒤로</span></a> <?php echo $g5['title'] ?></h1><?php } ?>
+
+<?php
+// pr-child
+if ($is_file_child) {
+    include_once($pr_child_file);    
+}
+// pr-child
+?>                

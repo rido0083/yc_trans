@@ -3,24 +3,24 @@ include_once('./_common.php');
 include_once(G5_LIB_PATH.'/mailer.lib.php');
 
 if($default['de_pg_service'] == 'lg' && !$_POST['LGD_PAYKEY'])
-    alert('결제등록 요청 후 결제해 주십시오.');
+    alert(_('결제등록 요청 후 결제해 주십시오.'));
 
 // 개인결제 정보
 $pp_check = false;
 $sql = " select * from {$g5['g5_shop_personalpay_table']} where pp_id = '{$_POST['pp_id']}' and pp_use = '1' ";
 $pp = sql_fetch($sql);
 if(!$pp['pp_id'])
-    alert('개인결제 정보가 존재하지 않습니다.');
+    alert(_('개인결제 정보가 존재하지 않습니다.');
 
 if($pp['pp_tno'])
-    alert('이미 결제하신 개인결제 내역입니다.');
+    alert(_('이미 결제하신 개인결제 내역입니다.'));
 
 $hash_data = md5($_POST['pp_id'].$_POST['good_mny'].$pp['pp_time']);
 if($_POST['pp_id'] != get_session('ss_personalpay_id') || $hash_data != get_session('ss_personalpay_hash'))
-    die('개인결제 정보가 올바르지 않습니다.');
+    die(_('개인결제 정보가 올바르지 않습니다.'));
 
 
-if ($pp_settle_case == "계좌이체")
+if ($pp_settle_case == _("계좌이체"))
 {
     switch($default['de_pg_service']) {
         case 'lg':
@@ -42,7 +42,7 @@ if ($pp_settle_case == "계좌이체")
     $pp_bank_account    = $bank_name;
     $pg_price           = $amount;
 }
-else if ($pp_settle_case == "가상계좌")
+else if ($pp_settle_case == _("가상계좌"))
 {
     switch($default['de_pg_service']) {
         case 'lg':
@@ -64,7 +64,7 @@ else if ($pp_settle_case == "가상계좌")
     $pp_deposit_name    = $depositor;
     $pg_price           = $amount;
 }
-else if ($pp_settle_case == "휴대폰")
+else if ($pp_settle_case == _("휴대폰"))
 {
     switch($default['de_pg_service']) {
         case 'lg':
@@ -84,7 +84,7 @@ else if ($pp_settle_case == "휴대폰")
     $pp_bank_account    = $commid.' '.$mobile_no;
     $pg_price           = $amount;
 }
-else if ($pp_settle_case == "신용카드")
+else if ($pp_settle_case == _("신용카드")
 {
     switch($default['de_pg_service']) {
         case 'lg':
@@ -112,7 +112,7 @@ else
 
 // 주문금액과 결제금액이 일치하는지 체크
 if((int)$pp['pp_price'] !== (int)$pg_price) {
-    $cancel_msg = '결제금액 불일치';
+    $cancel_msg = _('결제금액 불일치');
     switch($default['de_pg_service']) {
         case 'lg':
             include G5_SHOP_PATH.'/lg/xpay_cancel.php';
@@ -149,7 +149,7 @@ $result = sql_query($sql, false);
 
 // 결제정보 입력 오류시 결제 취소
 if(!$result) {
-    $cancel_msg = '결제정보 입력 오류';
+    $cancel_msg = _('결제정보 입력 오류');
     switch($default['de_pg_service']) {
         case 'lg':
             include G5_SHOP_PATH.'/lg/xpay_cancel.php';
@@ -187,7 +187,7 @@ if($pp_receipt_price > 0 && $pp['pp_id'] && $pp['od_id']) {
 
     // 결제정보 입력 오류시 결제 취소
     if(!$result) {
-        $cancel_msg = '결제정보 입력 오류';
+        $cancel_msg = _('결제정보 입력 오류');
         switch($default['de_pg_service']) {
             case 'lg':
                 include G5_SHOP_PATH.'/lg/xpay_cancel.php';
@@ -234,7 +234,7 @@ goto_url(G5_SHOP_URL.'/personalpayresult.php?pp_id='.$pp['pp_id'].'&amp;uid='.$u
 
 <html>
     <head>
-        <title>개인결제정보 기록</title>
+        <title><?php echo _('개인결제정보 기록') ?></title>
         <script>
             // 결제 중 새로고침 방지 샘플 스크립트 (중복결제 방지)
             function noRefresh()

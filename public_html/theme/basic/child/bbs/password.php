@@ -1,7 +1,7 @@
 <?php
 include_once('./_common.php');
 
-$g5['title'] = '비밀번호 입력';
+$g5['title'] = _('비밀번호 입력');
 
 if( isset($comment_id) ){
     $comment_id = (int) $comment_id;
@@ -42,7 +42,7 @@ switch ($w) {
         }
         break;
     default :
-        alert('w 값이 제대로 넘어오지 않았습니다.');
+        alert(_('w 값이 제대로 넘어오지 않았습니다.'));
 }
 
 include_once(G5_PATH.'/head.sub.php');

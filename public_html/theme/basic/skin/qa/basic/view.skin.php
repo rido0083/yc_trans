@@ -23,16 +23,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     </header>
 
     <section id="bo_v_info">
-        <h2>페이지 정보</h2>
-        <span class="sound_only">작성자</span><strong><?php echo $view['name'] ?></strong>
-        <span class="sound_only">작성일</span><strong class="bo_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $view['datetime']; ?></strong>
+        <h2><?php echo _('페이지 정보') ?></h2>
+        <span class="sound_only"><?php echo _('작성자') ?></span><strong><?php echo $view['name'] ?></strong>
+        <span class="sound_only"><?php echo _('작성일') ?></span><strong class="bo_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $view['datetime']; ?></strong>
         <?php if($view['email'] || $view['hp']) { ?>
             <?php if($view['email']) { ?>
-            <span class="sound_only">이메일</span>
+            <span class="sound_only"><?php echo _('이메일') ?></span>
             <strong><i class="fa fa-envelope-o" aria-hidden="true"></i> <?php echo $view['email']; ?></strong>
             <?php } ?>
             <?php if($view['hp']) { ?>
-            <span class="sound_only">휴대폰</span>
+            <span class="sound_only"><?php echo _('휴대폰') ?></span>
             <strong><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $view['hp']; ?></strong>
             <?php } ?>
         <?php } ?>
@@ -44,14 +44,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 			?>
 
 	        <ul class="bo_v_com">
-				<li><a href="<?php echo $list_href ?>" class="btn_b01 btn" title="목록"><i class="fa fa-list" aria-hidden="true"></i><span class="sound_only">목록</span></a></li>
-	            <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_b01 btn" title="글쓰기"><i class="fa fa-pencil" aria-hidden="true"></i><span class="sound_only">글쓰기</span></a></li><?php } ?>
+				<li><a href="<?php echo $list_href ?>" class="btn_b01 btn" title="목록"><i class="fa fa-list" aria-hidden="true"></i><span class="sound_only"><?php echo _('목록') ?></span></a></li>
+	            <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_b01 btn" title="글쓰기"><i class="fa fa-pencil" aria-hidden="true"></i><span class="sound_only"><?php echo _('글쓰기') ?></span></a></li><?php } ?>
                 <?php if ($update_href || $delete_href) { ?>
 	        	<li>
-	        		<button type="button" class="btn_more_opt btn_b01 btn" title="게시판 읽기 옵션"><i class="fa fa-ellipsis-v" aria-hidden="true"></i><span class="sound_only">게시판 읽기 옵션</span></button>
+	        		<button type="button" class="btn_more_opt btn_b01 btn" title="게시판 읽기 옵션"><i class="fa fa-ellipsis-v" aria-hidden="true"></i><span class="sound_only"><?php echo _('게시판 읽기 옵션') ?></span></button>
 	        		<ul class="more_opt">
-	        			<?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01 btn" title="수정">수정<i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li><?php } ?>
-	            		<?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" class="btn_b01 btn" onclick="del(this.href); return false;" title="삭제">삭제<i class="fa fa-trash-o" aria-hidden="true"></i></a></li><?php } ?>
+	        			<?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01 btn" title="수정"><?php echo _('수정') ?><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li><?php } ?>
+	            		<?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" class="btn_b01 btn" onclick="del(this.href); return false;" title="삭제"><?php echo _('삭제') ?><i class="fa fa-trash-o" aria-hidden="true"></i></a></li><?php } ?>
 	        		</ul>
 	        	</li>
                 <?php } ?>
@@ -71,7 +71,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 	</section>
 
     <section id="bo_v_atc">
-        <h2 id="bo_v_atc_title">본문</h2>
+        <h2 id="bo_v_atc_title"><?php echo _('본문') ?></h2>
 
         <?php
         // 파일 출력
@@ -92,14 +92,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
         <!-- } 본문 내용 끝 -->
 
         <?php if($view['qa_type']) { ?>
-        <div id="bo_v_addq"><a href="<?php echo $rewrite_href; ?>" class="btn_b01">추가질문</a></div>
+        <div id="bo_v_addq"><a href="<?php echo $rewrite_href; ?>" class="btn_b01"><?php echo _('추가질문') ?></a></div>
         <?php } ?>
 
         <?php if($view['download_count']) { ?>
 
         <!-- 첨부파일 시작 { -->
         <section id="bo_v_file">
-            <h2>첨부파일</h2>
+            <h2><?php echo _('첨부파일') ?></h2>
             <ul>
             <?php
             // 가변 파일
@@ -122,8 +122,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     
     <?php if ($prev_href || $next_href) { ?>
     <ul class="bo_v_nb">
-        <?php if ($prev_href) { ?><li><a href="<?php echo $prev_href ?>" class="btn_b01 btn"><i class="fa fa-chevron-left" aria-hidden="true"></i> 이전글</a></li><?php } ?>
-        <?php if ($next_href) { ?><li><a href="<?php echo $next_href ?>" class="btn_b01 btn">다음글 <i class="fa fa-chevron-right" aria-hidden="true"></i></i></a></li><?php } ?>
+        <?php if ($prev_href) { ?><li><a href="<?php echo $prev_href ?>" class="btn_b01 btn"><i class="fa fa-chevron-left" aria-hidden="true"></i> <?php echo _('이전글') ?></a></li><?php } ?>
+        <?php if ($next_href) { ?><li><a href="<?php echo $next_href ?>" class="btn_b01 btn"><?php echo _('다음글') ?> <i class="fa fa-chevron-right" aria-hidden="true"></i></i></a></li><?php } ?>
     </ul>
     <?php } ?>
 
@@ -139,15 +139,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 
     <?php if($view['rel_count']) { ?>
     <section id="bo_v_rel">
-        <h2>연관질문</h2>
+        <h2><?php echo _('연관질문') ?></h2>
 
         <div class="tbl_head01 tbl_wrap">
             <table>
             <thead>
             <tr>
-                <th scope="col">제목</th>
-                <th scope="col">등록일</th>
-                <th scope="col">상태</th>
+                <th scope="col"><?php echo _('제목') ?></th>
+                <th scope="col"><?php echo _('등록일') ?></th>
+                <th scope="col"><?php echo _('상태') ?></th>
             </tr>
             </thead>
             <tbody>
@@ -163,7 +163,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
                     </a>
                 </td>
                 <td class="td_date"><?php echo $rel_list[$i]['date']; ?></td>
-                <td class="td_stat"><span class="<?php echo ($rel_list[$i]['qa_status'] ? 'txt_done' : 'txt_rdy'); ?>"><?php echo ($rel_list[$i]['qa_status'] ? '<i class="fa fa-check-circle" aria-hidden="true"></i> 답변완료' : '<i class="fa fa-times-circle" aria-hidden="true"></i> 답변대기'); ?></span></td>
+                <td class="td_stat"><span class="<?php echo ($rel_list[$i]['qa_status'] ? 'txt_done' : 'txt_rdy'); ?>"><?php echo ($rel_list[$i]['qa_status'] ? '<i class="fa fa-check-circle" aria-hidden="true"></i>'_('답변완료') : '<i class="fa fa-times-circle" aria-hidden="true"></i>'._('답변대기')); ?></span></td>
             </tr>
             <?php
             }

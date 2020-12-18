@@ -11,7 +11,7 @@ if(sql_num_rows($hresult)) {
 ?>
 <div id="sev">
 	<header>
-    	<h2>이벤트</h2>
+    	<h2><?php echo _('이벤트') ?></h2>
     </header>
     <ul>
     <?php
@@ -69,7 +69,7 @@ if(sql_num_rows($hresult)) {
     }
 
     if ($i==0)
-        echo '<li id="sev_empty">이벤트 없음</li>'.PHP_EOL;
+        echo '<li id="sev_empty">'._('이벤트 없음').'</li>'.PHP_EOL;
     ?>
     </ul>
 </div>

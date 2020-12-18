@@ -5,7 +5,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <div id="ssch">
 
     <div id="ssch_ov">
-        검색 결과 <b><?php echo $total_count; ?></b>건
+        <?php echo _('검색 결과') ?> <b><?php echo $total_count; ?></b><?php echo _('건') ?>
     </div>
 
     <!-- 상세검색 항목 시작 { -->
@@ -19,22 +19,22 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
             <input type="text" name="q" value="<?php echo $q; ?>" id="ssch_q" class="frm_input" maxlength="30">
             <button type="submit" class="sch_submit"><span class="sound_only">검색</span><i class="fa fa-search"></i></button>
             <p>
-                상세검색을 선택하지 않거나, 상품가격을 입력하지 않으면 전체에서 검색합니다.<br>
-                검색어는 최대 30글자까지, 여러개의 검색어를 공백으로 구분하여 입력 할수 있습니다.
+                <?php echo _('상세검색을 선택하지 않거나, 상품가격을 입력하지 않으면 전체에서 검색합니다.<br>
+                검색어는 최대 30글자까지, 여러개의 검색어를 공백으로 구분하여 입력 할수 있습니다.') ?>
             </p> 
         </div> 
         <div class="chk_box">
-            <strong class="sound_only">검색범위</strong>
-            <input type="checkbox" name="qname" id="ssch_qname" <?php echo $qname_check?'checked="checked"':'';?> class="selec_chk"> <label for="ssch_qname"><span></span>상품명</label>
-            <input type="checkbox" name="qexplan" id="ssch_qexplan" <?php echo $qexplan_check?'checked="checked"':'';?> class="selec_chk"> <label for="ssch_qexplan"><span></span> <span class="sound_only">상품</span>설명</label>
-            <input type="checkbox" name="qbasic" id="ssch_qbasic" value="1" <?php echo $qbasic_check?'checked="checked"':'';?> class="selec_chk"> <label for="ssch_qbasic"><span></span> 기본설명</label>
-            <input type="checkbox" name="qid" id="ssch_qid" <?php echo $qid_check?'checked="checked"':'';?> class="selec_chk"> <label for="ssch_qid"><span></span><span class="sound_only"> 상품</span>코드</label>
+            <strong class="sound_only"><?php echo _('검색범위') ?></strong>
+            <input type="checkbox" name="qname" id="ssch_qname" <?php echo $qname_check?'checked="checked"':'';?> class="selec_chk"> <label for="ssch_qname"><span></span><?php echo _('상품명') ?></label>
+            <input type="checkbox" name="qexplan" id="ssch_qexplan" <?php echo $qexplan_check?'checked="checked"':'';?> class="selec_chk"> <label for="ssch_qexplan"><span></span> <span class="sound_only"><?php echo _('상품') ?></span><?php echo _('설명') ?></label>
+            <input type="checkbox" name="qbasic" id="ssch_qbasic" value="1" <?php echo $qbasic_check?'checked="checked"':'';?> class="selec_chk"> <label for="ssch_qbasic"><span></span> <?php echo _('기본설명') ?></label>
+            <input type="checkbox" name="qid" id="ssch_qid" <?php echo $qid_check?'checked="checked"':'';?> class="selec_chk"> <label for="ssch_qid"><span></span><span class="sound_only"> <?php echo _('상품') ?></span><?php echo _('코드') ?></label>
             <br>
-            <strong class="sound_only">상품가격 (원)</strong>
-            <label for="ssch_qfrom" class="sound_only">최소 가격</label>
-            <input type="text" name="qfrom" value="<?php echo $qfrom; ?>" id="ssch_qfrom" class="frm_input" size="6"> 원 ~
-            <label for="ssch_qto" class="sound_only">최대 가격</label>
-            <input type="text" name="qto" value="<?php echo $qto; ?>" id="ssch_qto" class="frm_input" size="6"> 원<br>
+            <strong class="sound_only"><?php echo _('상품가격 (원)') ?></strong>
+            <label for="ssch_qfrom" class="sound_only"><?php echo _('최소 가격') ?></label>
+            <input type="text" name="qfrom" value="<?php echo $qfrom; ?>" id="ssch_qfrom" class="frm_input" size="6"> <?php echo _('원 ~') ?>
+            <label for="ssch_qto" class="sound_only"><?php echo _('최대 가격') ?></label>
+            <input type="text" name="qto" value="<?php echo $qto; ?>" id="ssch_qto" class="frm_input" size="6"><?php echo _('원') ?><br>
         </div>
         </form>
     </div>
@@ -55,14 +55,14 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     </div>
     <!-- } 검색된 분류 끝 -->  
     <div id="ssch_sort">
-        <button type="button" class="btn_sort">상품정렬 <i class="fa fa-caret-down" aria-hidden="true"></i> </button>
+        <button type="button" class="btn_sort"><?php echo _('상품정렬') ?> <i class="fa fa-caret-down" aria-hidden="true"></i> </button>
         <ul>
-            <li><a href="#" class="btn01" onclick="set_sort('it_sum_qty', 'desc'); return false;">판매많은순</a></li>
-            <li><a href="#" class="btn01" onclick="set_sort('it_price', 'asc'); return false;">낮은가격순</a></li>
-            <li><a href="#" class="btn01" onclick="set_sort('it_price', 'desc'); return false;">높은가격순</a></li>
-            <li><a href="#" class="btn01" onclick="set_sort('it_use_avg', 'desc'); return false;">평점높은순</a></li>
-            <li><a href="#" class="btn01" onclick="set_sort('it_use_cnt', 'desc'); return false;">후기많은순</a></li>
-            <li><a href="#" class="btn01" onclick="set_sort('it_update_time', 'desc'); return false;">최근등록순</a></li>
+            <li><a href="#" class="btn01" onclick="set_sort('it_sum_qty', 'desc'); return false;"><?php echo _('판매많은순') ?></a></li>
+            <li><a href="#" class="btn01" onclick="set_sort('it_price', 'asc'); return false;"><?php echo _('낮은가격순') ?></a></li>
+            <li><a href="#" class="btn01" onclick="set_sort('it_price', 'desc'); return false;"><?php echo _('높은가격순') ?></a></li>
+            <li><a href="#" class="btn01" onclick="set_sort('it_use_avg', 'desc'); return false;"><?php echo _('평점높은순') ?></a></li>
+            <li><a href="#" class="btn01" onclick="set_sort('it_use_cnt', 'desc'); return false;"><?php echo _('후기많은순') ?></a></li>
+            <li><a href="#" class="btn01" onclick="set_sort('it_update_time', 'desc'); return false;"><?php echo _('최근등록순') ?></a></li>
         </ul>
     </div>
     <!-- 검색결과 시작 { -->
@@ -89,7 +89,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
         else
         {
             $i = 0;
-            $error = '<p class="sct_nofile">'.$list_file.' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</p>';
+            $error = '<p class="sct_nofile">'.$list_file._('파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.').'</p>';
         }
 
         if ($i==0)

@@ -5,13 +5,13 @@ $act = isset($act) ? strip_tags($act) : '';
 
 // 게시판 관리자 이상 복사, 이동 가능
 if ($is_admin != 'board' && $is_admin != 'group' && $is_admin != 'super')
-    alert_close('게시판 관리자 이상 접근이 가능합니다.');
+    alert_close(_('게시판 관리자 이상 접근이 가능합니다.'));
 
 if ($sw != 'move' && $sw != 'copy')
-    alert('sw 값이 제대로 넘어오지 않았습니다.');
+    alert(_('sw 값이 제대로 넘어오지 않았습니다.'));
 
 if(!count($_POST['chk_bo_table']))
-    alert('게시물을 '.$act.'할 게시판을 한개 이상 선택해 주십시오.', $url);
+    alert(_('게시물을 ').$act._('할 게시판을 한개 이상 선택해 주십시오.'), $url);
 
 // 원본 파일 디렉토리
 $src_dir = G5_DATA_PATH.'/file/'.$bo_table;
@@ -66,7 +66,7 @@ while ($row = sql_fetch_array($result))
                     $log_tag2 = '';
                 }
 
-                $row2['wr_content'] .= "\n".$log_tag1.'[이 게시물은 '.$nick.'님에 의해 '.G5_TIME_YMDHIS.' '.$board['bo_subject'].'에서 '.($sw == 'copy' ? '복사' : '이동').' 됨]'.$log_tag2;
+                $row2['wr_content'] .= "\n".$log_tag1._('[이 게시물은 ').$nick._('님에 의해 ').G5_TIME_YMDHIS.' '.$board['bo_subject']._('에서 ').($sw == 'copy' ? '복사' : '이동').' 됨]'.$log_tag2;
             }
 
             // 게시글 추천, 비추천수
@@ -236,7 +236,7 @@ if ($sw == 'move')
     sql_query(" update {$g5['board_table']} set bo_count_write = bo_count_write - '$save_count_write', bo_count_comment = bo_count_comment - '$save_count_comment' where bo_table = '$bo_table' ");
 }
 
-$msg = '해당 게시물을 선택한 게시판으로 '.$act.' 하였습니다.';
+$msg = _('해당 게시물을 선택한 게시판으로 ').$act._(' 하였습니다.');
 $opener_href  = get_pretty_url($bo_table,'','&amp;page='.$page.'&amp;'.$qstr);
 $opener_href1 = str_replace('&amp;', '&', $opener_href);
 

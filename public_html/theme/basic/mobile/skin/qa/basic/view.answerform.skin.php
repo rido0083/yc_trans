@@ -33,16 +33,16 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
         <ul>
             <?php if ($option) { ?>
             <li>
-                <span class="sound_only">옵션</span>
+                <span class="sound_only"><?php echo _('옵션') ?></span>
                 <?php echo $option; ?>
             </li>
             <?php } ?>
             <li>
-                <label for="qa_subject" class="sound_only">제목</label>
-                <input type="text" name="qa_subject" value="" id="qa_subject" required class="frm_input required" size="50" maxlength="255" placeholder="제목">
+                <label for="qa_subject" class="sound_only"><?php echo _('제목') ?></label>
+                <input type="text" name="qa_subject" value="" id="qa_subject" required class="frm_input required" size="50" maxlength="255" placeholder="<?php echo _('제목') ?>">
             </li>
             <li>
-                <label for="qa_content" class="sound_only">내용<strong>필수</strong></label>
+                <label for="qa_content" class="sound_only"<?php echo _('내용') ?><strong><?php echo _('필수') ?></strong></label>
                 <?php echo $editor_html; // 에디터 사용시는 에디터로, 아니면 textarea 로 노출 ?>
             </li>
         </ul>
@@ -57,7 +57,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
     function html_auto_br(obj)
     {
         if (obj.checked) {
-            result = confirm("자동 줄바꿈을 하시겠습니까?\n\n자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>태그로 변환하는 기능입니다.");
+            result = confirm("<?php echo _('동 줄바꿈을 하시겠습니까?\n\n자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>태그로 변환하는 기능입니다.') ?>");
             if (result)
                 obj.value = "2";
             else
@@ -90,13 +90,13 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
         });
 
         if (subject) {
-            alert("제목에 금지단어('"+subject+"')가 포함되어있습니다");
+            alert("<?php echo _('제목에 금지단어('"+subject+"')가 포함되어있습니다') ?>");
             f.qa_subject.focus();
             return false;
         }
 
         if (content) {
-            alert("내용에 금지단어('"+content+"')가 포함되어있습니다");
+            alert("<?php echo _('내용에 금지단어('"+subject+"')가 포함되어있습니다') ?>");
             if (typeof(ed_qa_content) != "undefined")
                 ed_qa_content.returnFalse();
             else
@@ -114,7 +114,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
     else
     {
     ?>
-    <p id="ans_msg">고객님의 문의에 대한 답변을 준비 중입니다.</p>
+    <p id="ans_msg"><?php echo _('고객님의 문의에 대한 답변을 준비 중입니다.') ?></p>
     <?php
     }
     ?>

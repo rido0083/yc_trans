@@ -10,7 +10,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 <?php if ($default['de_rel_list_use']) { ?>
 <!-- 관련상품 시작 { -->
 <section id="sit_rel">
-    <h2>관련상품</h2>
+    <h2><?php echo _('관련상품') ?></h2>
     <?php
     $rel_skin_file = $skin_dir.'/'.$default['de_rel_list_skin'];
     if(!is_file($rel_skin_file))
@@ -28,19 +28,19 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 <section id="sit_info">
 	<div id="sit_tab">
 	    <ul class="tab_tit">
-	        <li><button type="button" rel="#sit_inf" class="selected">상품정보</button></li>
-	        <li><button type="button" rel="#sit_use">사용후기 <span class="item_use_count"><?php echo $item_use_count; ?></span></button></li>
-	        <li><button type="button" rel="#sit_qa">상품문의  <span class="item_qa_count"><?php echo $item_qa_count; ?></span></button></li>
-	        <li><button type="button" rel="#sit_dex">배송/교환</button></li>
+	        <li><button type="button" rel="#sit_inf" class="selected"><?php echo _('상품정보') ?></button></li>
+	        <li><button type="button" rel="#sit_use"><?php echo _('사용후기') ?> <span class="item_use_count"><?php echo $item_use_count; ?></span></button></li>
+	        <li><button type="button" rel="#sit_qa"><?php echo _('상품문의') ?>  <span class="item_qa_count"><?php echo $item_qa_count; ?></span></button></li>
+	        <li><button type="button" rel="#sit_dex"><?php echo _('배송/교환') ?></button></li>
 	    </ul>
 	    <ul class="tab_con">
 	
 	        <!-- 상품 정보 시작 { -->
 	        <li id="sit_inf">
-	            <h2 class="contents_tit"><span>상품 정보</span></h2>
+	            <h2 class="contents_tit"><span><?php echo _('상품 정보') ?></span></h2>
 	
 	            <?php if ($it['it_explan']) { // 상품 상세설명 ?>
-	            <h3>상품 상세설명</h3>
+	            <h3><?php echo _('상품 상세설명') ?></h3>
 	            <div id="sit_inf_explan">
 	                <?php echo conv_content($it['it_explan'], 1); ?>
 	            </div>
@@ -53,7 +53,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	                    $gubun = $it['it_info_gubun'];
 	                    $info_array = $item_info[$gubun]['article'];
 	            ?>
-	            <h3>상품 정보 고시</h3>
+	            <h3><?php echo _('상품 정보 고시') ?></h3>
 	            <table id="sit_inf_open">
 	            <tbody>
 	            <?php
@@ -72,7 +72,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	            <?php
 	                } else {
 	                    if($is_admin) {
-	                        echo '<p>상품 정보 고시 정보가 올바르게 저장되지 않았습니다.<br>config.php 파일의 G5_ESCAPE_FUNCTION 설정을 addslashes 로<br>변경하신 후 관리자 &gt; 상품정보 수정에서 상품 정보를 다시 저장해주세요. </p>';
+	                        echo '<p>'._('상품 정보 고시 정보가 올바르게 저장되지 않았습니다.'.'<br>'._('config.php 파일의 G5_ESCAPE_FUNCTION 설정을 addslashes 로'),'<br>'._('변경하신 후 관리자')'&gt;'._('상품정보 수정에서 상품 정보를 다시 저장해주세요. ').'</p>';
 	                    }
 	                }
 	            } //if
@@ -81,26 +81,26 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	        </li>
 	        <!-- 사용후기 시작 { -->
 	        <li id="sit_use">
-	            <h2>사용후기</h2>
+	            <h2><?php echo _('사용후기') ?></h2>
 	            <div id="itemuse"><?php include_once(G5_SHOP_PATH.'/itemuse.php'); ?></div>
 	        </li>
 	        <!-- } 사용후기 끝 -->
 	
 	        <!-- 상품문의 시작 { -->
 	        <li id="sit_qa">
-	            <h2>상품문의</h2>
+	            <h2><?php echo _('상품문의') ?></h2>
 	            <div id="itemqa"><?php include_once(G5_SHOP_PATH.'/itemqa.php'); ?></div>
 	        </li>
 	        <!-- } 상품문의 끝 -->
 	        
 	        <!-- 배송/교환 시작 { -->
 	        <li id="sit_dex">
-	            <h2>배송/교환정보</h2>
+	            <h2><?php echo _('배송/교환정보') ?></h2>
 	            
 	            <?php if ($default['de_baesong_content']) { // 배송정보 내용이 있다면 ?>
 	            <!-- 배송 시작 { -->
 	            <div id="sit_dvr">
-	                <h3>배송</h3>
+	                <h3><?php echo _('배송') ?></h3>
 	                <?php echo conv_content($default['de_baesong_content'], 1); ?>
 	            </div>
 	            <!-- } 배송 끝 -->
@@ -109,7 +109,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	            <?php if ($default['de_change_content']) { // 교환/반품 내용이 있다면 ?>
 	            <!-- 교환 시작 { -->
 	            <div id="sit_ex" >
-	                <h3>교환</h3>
+	                <h3><?php echo _('교환') ?></h3>
 	                <?php echo conv_content($default['de_change_content'], 1); ?>
 	            </div>
 	            <!-- } 교환 끝 -->
@@ -136,7 +136,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 	        <?php if($option_item) {    // 선택옵션이 있다면 ?>
 	        <!-- 선택옵션 시작 { -->
 	        <section class="sit_side_option">
-	            <h3>선택옵션</h3>
+	            <h3><?php echo _('선택옵션') ?></h3>
 	            <?php // 선택옵션
 	            echo str_replace(array('class="get_item_options"', 'id="it_option_', 'class="it_option"'), array('class="get_side_item_options"', 'id="it_side_option_', 'class="it_side_option"'), $option_item);
 	            ?>
@@ -147,7 +147,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
             <?php if($supply_item) {    // 추가옵션이 있다면 ?>
 	        <!-- 추가옵션 시작 { -->
 	        <section class="sit_side_option">
-	            <h3>추가옵션</h3>
+	            <h3><?php echo _('추가옵션') ?></h3>
 	            <?php // 추가옵션
 	            echo str_replace(array('id="it_supply_', 'class="it_supply"'), array('id="it_side_supply_', 'class="it_side_supply"'), $supply_item);
 	            ?>
@@ -158,7 +158,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
             <?php if ($is_orderable) { ?>
 	        <!-- 선택된 옵션 시작 { -->
 	        <section class="sit_sel_option">
-	            <h3>선택된 옵션</h3>
+	            <h3><?php echo _('선택된 옵션') ?></h3>
 	            <ul class="sit_opt_added">
                     <?php if( !$option_item ){ ?>
                     <li>
@@ -166,11 +166,11 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
                             <span class="sit_opt_subj"><?php echo $it['it_name']; ?></span>
                         </div>
                         <div class="opt_count">
-                            <label for="ct_qty_<?php echo $i; ?>" class="sound_only">수량</label>
-                            <button type="button" class="sit_qty_minus"><i class="fa fa-minus" aria-hidden="true"></i><span class="sound_only">감소</span></button>
+                            <label for="ct_qty_<?php echo $i; ?>" class="sound_only"><?php echo _('수량') ?></label>
+                            <button type="button" class="sit_qty_minus"><i class="fa fa-minus" aria-hidden="true"></i><span class="sound_only"><?php echo _('감소') ?></span></button>
                             <input type="text" name="ct_copy_qty[<?php echo $it_id; ?>][]" value="<?php echo $it['it_buy_min_qty']; ?>" id="ct_qty_<?php echo $i; ?>" class="num_input" size="5">
-                            <button type="button" class="sit_qty_plus"><i class="fa fa-plus" aria-hidden="true"></i><span class="sound_only">증가</span></button>
-                            <span class="sit_opt_prc">+0원</span>
+                            <button type="button" class="sit_qty_plus"><i class="fa fa-plus" aria-hidden="true"></i><span class="sound_only"><?php echo _('증가') ?></span></button>
+                            <span class="sit_opt_prc"><?php echo _('+0원') ?></span>
                         </div>
                     </li>
                     <?php } ?>
@@ -182,8 +182,8 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
 		        <div class="sit_tot_price"></div>
 				
 				<div class="sit_order_btn">
-					<button type="submit" onclick="document.pressed=this.value;" value="장바구니" class="sit_btn_cart">장바구니</button>
-		            <button type="submit" onclick="document.pressed=this.value;" value="바로구매" class="sit_btn_buy">바로구매</button> 
+					<button type="submit" onclick="document.pressed=this.value;" value="장바구니" class="sit_btn_cart"><?php echo _('장바구니') ?></button>
+		            <button type="submit" onclick="document.pressed=this.value;" value="바로구매" class="sit_btn_buy"><?php echo _('바로구매') ?></button> 
 		       </div>
 			</div>
             <?php } ?>
@@ -269,18 +269,18 @@ jQuery(function($){
             li_parent_index = $this.closest('li').index();
         
         if( ! $sit_sel_el.length ){
-            alert("el 에러");
+            alert(_("el 에러"));
             return false;
         }
 
         switch(mode) {
-            case "증가":
+            case _("증가"):
                 $sit_sel_el.find("li").eq(li_parent_index).find(".sit_qty_plus").trigger("click");
                 break;
-            case "감소":
+            case _("감소"):
                 $sit_sel_el.find("li").eq(li_parent_index).find(".sit_qty_minus").trigger("click");
                 break;
-            case "삭제":
+            case _("삭제"):
                 $sit_sel_el.find("li").eq(li_parent_index).find(".sit_opt_del").trigger("click");
                 break;
         }
@@ -291,11 +291,11 @@ jQuery(function($){
         var ori_index = $othis.closest('li').index();
 
         switch(mode) {
-            case "증가":
-            case "감소":
+            case _("증가"):
+            case _("감소"):
                 $(".sit_opt_added li").eq(ori_index).find("input[name^=ct_copy_qty]").val(this_qty);
                 break;
-            case "삭제":
+            case _("삭제"):
                 $(".sit_opt_added li").eq(ori_index).remove();
                 break;
         }

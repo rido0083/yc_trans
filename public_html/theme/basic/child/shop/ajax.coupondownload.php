@@ -3,29 +3,29 @@ include_once('./_common.php');
 include_once(G5_LIB_PATH.'/json.lib.php');
 
 if(!$member['mb_id'])
-    die(json_encode(array('error' => '회원 로그인 후 이용해 주십시오.')));
+    die(json_encode(array('error' => _('회원 로그인 후 이용해 주십시오.'))));
 
 $cz_id = preg_replace('#[^0-9]#', '', $_GET['cz_id']);
 
 if(!$cz_id)
-    die(json_encode(array('error' => '올바른 방법으로 이용해 주십시오.')));
+    die(json_encode(array('error' => _('올바른 방법으로 이용해 주십시오.'))));
 
 $sql = " select * from {$g5['g5_shop_coupon_zone_table']} where cz_id = '$cz_id' ";
 $cp = sql_fetch($sql);
 
 if(!$cp['cz_id'])
-    die(json_encode(array('error' => '쿠폰정보가 존재하지 않습니다.')));
+    die(json_encode(array('error' => _('쿠폰정보가 존재하지 않습니다.'))));
 
 if(!($cp['cz_start'] <= G5_TIME_YMD && $cp['cz_end'] >= G5_TIME_YMD))
-    die(json_encode(array('error' => '다운로드할 수 없는 쿠폰입니다.')));
+    die(json_encode(array('error' => _('다운로드할 수 없는 쿠폰입니다.'))));
 
 // 발급여부
 if(is_coupon_downloaded($member['mb_id'], $cp['cz_id']))
-    die(json_encode(array('error' => '이미 다운로드하신 쿠폰입니다.')));
+    die(json_encode(array('error' => _('이미 다운로드하신 쿠폰입니다.'))));
 
 // 포인트 쿠폰은 회원포인트 체크
 if($cp['cz_type'] && ($member['mb_point'] - $cp['cz_point']) < 0)
-    die(json_encode(array('error' => '보유하신 포인트가 부족하여 쿠폰을 다운로드할 수 없습니다.')));
+    die(json_encode(array('error' => _('보유하신 포인트가 부족하여 쿠폰을 다운로드할 수 없습니다.'))));
 
 // 쿠폰발급
 $j = 0;

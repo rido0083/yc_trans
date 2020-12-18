@@ -4,7 +4,7 @@ include_once('./_common.php');
 //$sfl = trim($_REQUEST['sfl']);
 //$stx = trim($_REQUEST['stx']);
 
-$g5['title'] = '상품문의';
+$g5['title'] = _('상품문의');
 include_once(G5_MSHOP_PATH.'/_head.php');
 
 $sql_common = " from `{$g5['g5_shop_item_qa_table']}` a join `{$g5['g5_shop_item_table']}` b on (a.it_id=b.it_id) ";
@@ -58,7 +58,7 @@ $result = sql_query($sql);
 $itemqalist_skin = G5_MSHOP_SKIN_PATH.'/itemqalist.skin.php';
 
 if(!file_exists($itemqalist_skin)) {
-    echo str_replace(G5_PATH.'/', '', $itemqalist_skin).' 스킨 파일이 존재하지 않습니다.';
+    echo str_replace(G5_PATH.'/', '', $itemqalist_skin)._(' 스킨 파일이 존재하지 않습니다.');
 } else {
     include_once($itemqalist_skin);
 }

@@ -4,13 +4,13 @@ include_once(G5_LIB_PATH.'/json.lib.php');
 include_once(G5_SHOP_PATH.'/settle_inicis.inc.php');
 
 if($default['de_pg_service'] != 'inicis' && ! ($default['de_inicis_lpay_use'] || $default['de_inicis_kakaopay_use']) )
-    die(json_encode(array('error'=>'올바른 방법으로 이용해 주십시오.')));
+    die(json_encode(array('error'=>_('올바른 방법으로 이용해 주십시오.'))));
 
 $orderNumber = get_session('ss_order_inicis_id');
 $price = preg_replace('#[^0-9]#', '', $_POST['price']);
 
 if(strlen($price) < 1)
-    die(json_encode(array('error'=>'가격이 올바르지 않습니다.')));
+    die(json_encode(array('error'=>_('가격이 올바르지 않습니다.'))));
 
 //
 //###################################

@@ -162,7 +162,7 @@ var g5_shop_url = "<?php echo G5_SHOP_URL; ?>";
     }
     else
     {
-        echo '<div class="sct_nofile">'.str_replace(G5_PATH.'/', '', $skin_file).' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</div>';
+        echo '<div class="sct_nofile">'.str_replace(G5_PATH.'/', '', $skin_file)._(' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.').'</div>';
     }
     ?>
 
@@ -173,9 +173,9 @@ var g5_shop_url = "<?php echo G5_SHOP_URL; ?>";
         $ajax_url = G5_SHOP_URL.'/ajax.list.php?'.$qstr1.'&use_sns=1';
     ?>
     <div class="li_more">
-        <p id="item_load_msg"><img src="<?php echo G5_SHOP_CSS_URL; ?>/img/loading.gif" alt="로딩이미지" ><br>잠시만 기다려주세요.</p>
+        <p id="item_load_msg"><img src="<?php echo G5_SHOP_CSS_URL; ?>/img/loading.gif" alt="<?php echo _('로딩이미지')?>" ><br><?php echo _('잠시만 기다려주세요.')?></p>
         <div class="li_more_btn">
-            <button type="button" id="btn_more_item" data-url="<?php echo $ajax_url; ?>" data-page="<?php echo $page; ?>">더보기 +</button>
+            <button type="button" id="btn_more_item" data-url="<?php echo $ajax_url; ?>" data-page="<?php echo $page; ?>"><?php echo _('더보기')?> +</button>
         </div>
     </div>
     <?php } ?>
@@ -190,4 +190,7 @@ var g5_shop_url = "<?php echo G5_SHOP_URL; ?>";
 include_once(G5_MSHOP_PATH.'/_tail.php');
 
 echo "\n<!-- {$ca['ca_mobile_skin']} -->\n";
+
+// pr_child
+exit;
 ?>

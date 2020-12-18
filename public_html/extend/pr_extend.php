@@ -43,6 +43,10 @@ define('PR_PLUGIN_PATH', PR_THEME_CHILD.'/plugin');         //사용하는 플�
 define('PR_AJAX_URL', PR_CHILD_URL.'/ajax');         //사용하는 플러그인 path
 define('PR_AJAX_JS', PR_CHILD_URL.'/js');         //사용하는 플러그인 path
 
+define('PR_SHOP_PATH', PR_THEME_CHILD.'/shop');         //
+define('PR_MSHOP_PATH', PR_THEME_CHILD.'/moble/shop');         //
+define('PR_BBS_DIR', G5_THEME_DIR.'/child/bbs');         //
+
 
 //기본설정 변수설정
 $pr = array();

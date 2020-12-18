@@ -5,7 +5,7 @@ $co_id = preg_replace('/[^a-z0-9_]/i', '', $co_id);
 
 //dbconfig파일에 $g5['content_table'] 배열변수가 있는지 체크
 if( !isset($g5['content_table']) ){
-    die('<meta charset="utf-8">관리자 모드에서 게시판관리->내용 관리를 먼저 확인해 주세요.');
+    die('<meta charset="utf-8">'._('관리자 모드에서 게시판관리->내용 관리를 먼저 확인해 주세요.'));
 }
 
 // 내용
@@ -26,7 +26,7 @@ if (G5_IS_MOBILE) {
 }
 
 if (!$co['co_id'])
-    alert('등록된 내용이 없습니다.');
+    alert(_('등록된 내용이 없습니다.'));
 
 $g5['title'] = $co['co_subject'];
 
@@ -95,7 +95,7 @@ if(is_file($skin_file)) {
     if (file_exists($timg)) // 하단 이미지
         echo '<div id="ctt_timg" class="ctt_img"><img src="'.G5_DATA_URL.'/content/'.$co_id.'_t" alt=""></div>';
 } else {
-    echo '<p>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</p>';
+    echo '<p>'.str_replace(G5_PATH.'/', '', $skin_file)._('이 존재하지 않습니다.').'</p>';
 }
 
 if ($co['co_include_tail'] && is_include_path_check($co['co_include_tail']))

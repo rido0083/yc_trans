@@ -26,7 +26,7 @@ if (preg_match("/^T000/", $g_conf_site_cd) || $default['de_card_test']) {
 else {
     $g_conf_gw_url  = "paygw.kcp.co.kr";
     if (!preg_match("/^SR/", $g_conf_site_cd)) {
-        alert("SR 로 시작하지 않는 KCP SITE CODE 는 지원하지 않습니다.");
+        alert(_("SR 로 시작하지 않는 KCP SITE CODE 는 지원하지 않습니다."));
     }
 }
 
@@ -40,7 +40,7 @@ $rem_mny        = (int)$od['od_receipt_price'] - (int)$od['od_refund_price'];
 $mod_mny        = (int)$tax_mny;
 $mod_free_mny   = (int)$free_mny;
 $mod_type       = 'RN07';
-if($od['od_settle_case'] == '계좌이체')
+if($od['od_settle_case'] == _('계좌이체'))
     $mod_type   = 'STPA';
 
 if($od['od_tax_flag']) {
@@ -89,7 +89,7 @@ if ( $tran_cd != "" )
 else
 {
     $c_PayPlus->m_res_cd  = "9562";
-    $c_PayPlus->m_res_msg = "연동 오류|Payplus Plugin이 설치되지 않았거나 tran_cd값이 설정되지 않았습니다.";
+    $c_PayPlus->m_res_msg = _("연동 오류|Payplus Plugin이 설치되지 않았거나 tran_cd값이 설정되지 않았습니다.");
 }
 
 if ($res_cd != '0000')

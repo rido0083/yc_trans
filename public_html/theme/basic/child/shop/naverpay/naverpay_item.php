@@ -16,7 +16,7 @@ foreach(explode('&', $query) as $pair) {
 $itemIds = $vars['ITEM_ID'];
 
 if (count($itemIds) < 1) {
-    exit('ITEM_ID 는 필수입니다.');
+    exit(_('ITEM_ID 는 필수입니다.'));
 }
 
 header('Content-Type: application/xml;charset=utf-8');

@@ -61,7 +61,7 @@ switch ($action) {
         // 브라우저에서 쿠키를 허용하지 않은 경우라고 볼 수 있음.
         if (!$tmp_cart_id)
         {
-            die(json_encode(array('error' => '더 이상 작업을 진행할 수 없습니다.\n\n브라우저의 쿠키 허용을 사용하지 않음으로 설정한것 같습니다.\n\n브라우저의 인터넷 옵션에서 쿠키 허용을 사용으로 설정해 주십시오.\n\n그래도 진행이 되지 않는다면 쇼핑몰 운영자에게 문의 바랍니다.')));
+            die(json_encode(array('error' => _('더 이상 작업을 진행할 수 없습니다.\n\n브라우저의 쿠키 허용을 사용하지 않음으로 설정한것 같습니다.\n\n브라우저의 인터넷 옵션에서 쿠키 허용을 사용으로 설정해 주십시오.\n\n그래도 진행이 되지 않는다면 쇼핑몰 운영자에게 문의 바랍니다.'))));
         }
         
         $tmp_cart_id = preg_replace('/[^a-z0-9_\-]/i', '', $tmp_cart_id);
@@ -69,12 +69,12 @@ switch ($action) {
         // 레벨(권한)이 상품구입 권한보다 작다면 상품을 구입할 수 없음.
         if ($member['mb_level'] < $default['de_level_sell'])
         {
-            die(json_encode(array('error' => '상품을 구입할 수 있는 권한이 없습니다.')));
+            die(json_encode(array('error' => _('상품을 구입할 수 있는 권한이 없습니다.'))));
         }
 
         $count = count($_POST['it_id']);
         if ($count < 1)
-            die(json_encode(array('error' => '장바구니에 담을 상품을 선택하여 주십시오.')));
+            die(json_encode(array('error' => _('장바구니에 담을 상품을 선택하여 주십시오.'))));
 
         $ct_count = 0;
         for($i=0; $i<$count; $i++) {
@@ -84,7 +84,7 @@ switch ($action) {
             // 상품정보
             $it = get_shop_item($it_id, false);
             if(!$it['it_id'])
-                die(json_encode(array('error' => '상품정보가 존재하지 않습니다.')));
+                die(json_encode(array('error' => _('상품정보가 존재하지 않습니다.'))));
 
             // 옵션정보를 얻어서 배열에 저장
             $opt_list = array();
@@ -103,11 +103,11 @@ switch ($action) {
             }
 
             if($lst_count > 0 && !trim($_POST['io_id'][$it_id][$i]) && $_POST['io_type'][$it_id][$i] == 0)
-                die(json_encode(array('error' => '상품의 선택옵션을 선택해 주십시오.')));
+                die(json_encode(array('error' => _('상품의 선택옵션을 선택해 주십시오.'))));
 
             for($k=0; $k<$opt_count; $k++) {
                 if ($_POST['ct_qty'][$it_id][$k] < 1)
-                    die(json_encode(array('error' => '수량은 1 이상 입력해 주십시오.')));
+                    die(json_encode(array('error' => _('수량은 1 이상 입력해 주십시오.'))));
             }
 
             // 바로구매에 있던 장바구니 자료를 지운다.
@@ -123,10 +123,10 @@ switch ($action) {
                 }
 
                 if($it['it_buy_min_qty'] > 0 && $sum_qty < $it['it_buy_min_qty'])
-                    die(json_encode(array('error' => $it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_min_qty']).'개 이상 주문해 주십시오.')));
+                    die(json_encode(array('error' => $it['it_name']._('의 선택옵션 개수 총합 ').number_format($it['it_buy_min_qty'])._('개 이상 주문해 주십시오.'))));
 
                 if($it['it_buy_max_qty'] > 0 && $sum_qty > $it['it_buy_max_qty'])
-                    die(json_encode(array('error' => $it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_max_qty']).'개 이하로 주문해 주십시오.')));
+                    die(json_encode(array('error' => $it['it_name']._('의 선택옵션 개수 총합 )'.number_format($it['it_buy_max_qty'])._('개 이하로 주문해 주십시오.'))));
 
                 // 기존에 장바구니에 담긴 상품이 있는 경우에 최대 구매수량 체크
                 if($it['it_buy_max_qty'] > 0) {
@@ -139,7 +139,7 @@ switch ($action) {
                     $row4 = sql_fetch($sql4);
 
                     if(($sum_qty + $row4['ct_sum']) > $it['it_buy_max_qty'])
-                        die(json_encode(array('error' => $it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_max_qty']).'개 이하로 주문해 주십시오.', './cart.php')));
+                        die(json_encode(array('error' => $it['it_name']._('의 선택옵션 개수 총합 ').number_format($it['it_buy_max_qty'])._('개 이하로 주문해 주십시오.), './cart.php')));
                 }
             }
 
@@ -173,10 +173,10 @@ switch ($action) {
                 // 구매가격이 음수인지 체크
                 if($io_type) {
                     if((int)$io_price < 0)
-                        die(json_encode(array('error' => '구매금액이 음수인 상품은 구매할 수 없습니다.')));
+                        die(json_encode(array('error' => _('구매금액이 음수인 상품은 구매할 수 없습니다.'))));
                 } else {
                     if((int)$it['it_price'] + (int)$io_price < 0)
-                        die(json_encode(array('error' => '구매금액이 음수인 상품은 구매할 수 없습니다.')));
+                        die(json_encode(array('error' => _('구매금액이 음수인 상품은 구매할 수 없습니다.'))));
                 }
 
                 // 동일옵션의 상품이 있으면 수량 더함
@@ -197,7 +197,7 @@ switch ($action) {
 
                     if ($tmp_ct_qty + $ct_qty > $tmp_it_stock_qty)
                     {
-                        die(json_encode(array('error' => $io_value." 의 재고수량이 부족합니다.\n\n현재 재고수량 : " . number_format($tmp_it_stock_qty) . " 개")));
+                        die(json_encode(array('error' => $io_value._(" 의 재고수량이 부족합니다.\n\n현재 재고수량 : ") . number_format($tmp_it_stock_qty) . _(" 개"))));
                     }
 
                     $sql3 = " update {$g5['g5_shop_cart_table']}
@@ -245,7 +245,7 @@ switch ($action) {
         $it = get_shop_item($it_id, true);
 
         if(!$it['it_id'])
-            die(json_encode(array('error' => '상품정보가 존재하지 않습니다.')));
+            die(json_encode(array('error' => _('상품정보가 존재하지 않습니다.'))));
 
         // 상품품절체크
         $is_soldout = is_soldout($it['it_id']);
@@ -253,7 +253,7 @@ switch ($action) {
         // 주문가능체크
         $is_orderable = true;
         if(!$it['it_use'] || $it['it_tel_inq'] || $is_soldout)
-            die(json_encode(array('error' => '상품을 구매할 수 없습니다.')));
+            die(json_encode(array('error' => _('상품을 구매할 수 없습니다.'))));
 
         $item_ct_qty = 1;
         if($it['it_buy_min_qty'] > 1)
@@ -288,8 +288,8 @@ switch ($action) {
                     echo $option_item;
                 ?>
 
-                <button type="button" class="cartopt_cart_btn">장바구니 담기</button>
-                <button type="button" class="cartopt_close_btn">닫기</button>
+                <button type="button" class="cartopt_cart_btn"><?php echo _('장바구니 담기') ?></button>
+                <button type="button" class="cartopt_close_btn"><?php echo _('닫기') ?></button>
 
                 <?php } ?>
             </form>
@@ -310,16 +310,16 @@ switch ($action) {
     case 'wish_update' :
 
         if (!$is_member)
-            die('회원 전용 서비스 입니다.');
+            die(_('회원 전용 서비스 입니다.'));
 
         if(!$it_id)
-            die('상품 코드가 올바르지 않습니다.');
+            die(_('상품 코드가 올바르지 않습니다.'));
 
         // 상품정보 체크
         $row = get_shop_item($it_id, true);
 
         if(!$row['it_id'])
-            die('상품정보가 존재하지 않습니다.');
+            die(_('상품정보가 존재하지 않습니다.'));
 
         $sql = " select wi_id from {$g5['g5_shop_wish_table']}
                   where mb_id = '{$member['mb_id']}' and it_id = '$it_id' ";
@@ -335,7 +335,7 @@ switch ($action) {
 
             die('OK');
         } else {
-            die('위시리스트에 이미 등록된 상품입니다.');
+            die(_('위시리스트에 이미 등록된 상품입니다.'));
         }
 
         break;

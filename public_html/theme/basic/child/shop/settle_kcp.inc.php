@@ -41,7 +41,7 @@ $g_conf_site_cd  = $default['de_kcp_mid'];
 $g_conf_site_key = $default['de_kcp_site_key'];
 
 // 테스트 결제 때 PAYCO site_cd, site_key 재설정
-if($default['de_card_test'] && isset($_POST['od_settle_case']) && $_POST['od_settle_case'] == '간편결제') {
+if($default['de_card_test'] && isset($_POST['od_settle_case']) && $_POST['od_settle_case'] == _('간편결제')) {
     $g_conf_site_cd = 'S6729';
     $g_conf_site_key = '';
 }
@@ -59,7 +59,7 @@ else {
 // KCP SITE KEY 입력 체크
 if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] || $default['de_card_use']) {
     if(trim($default['de_kcp_site_key']) == '')
-        alert('KCP SITE KEY를 입력해 주십시오.');
+        alert(_('KCP SITE KEY를 입력해 주십시오.'));
 }
 
 $g_conf_site_name = $default['de_admin_company_name'];

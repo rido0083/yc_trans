@@ -37,7 +37,7 @@ define('G5_SHOP_CSS_URL', str_replace(G5_PATH, G5_URL, $skin_dir));
 add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0);
 ?>
 
-<h1 id="win_title">관련상품</h1>
+<h1 id="win_title"><?php echo _('관련상품') ?></h1>
 
 <div class="sct_wrap">
     <?php

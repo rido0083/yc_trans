@@ -11,21 +11,21 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 <form method="get" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 <div id="sps_sch">
     <div class="sch_wr">
-        <label for="sfl" class="sound_only">검색항목</label>
+        <label for="sfl" class="sound_only"><?php echo _('검색항목') ?></label>
         <select name="sfl" id="sfl" required>
-            <option value="">선택</option>
-            <option value="b.it_name"   <?php echo get_selected($sfl, "b.it_name"); ?>>상품명</option>
-            <option value="a.it_id"     <?php echo get_selected($sfl, "a.it_id"); ?>>상품코드</option>
-            <option value="a.is_subject"<?php echo get_selected($sfl, "a.is_subject"); ?>>후기제목</option>
-            <option value="a.is_content"<?php echo get_selected($sfl, "a.is_content"); ?>>후기내용</option>
-            <option value="a.is_name"   <?php echo get_selected($sfl, "a.is_name"); ?>>작성자명</option>
-            <option value="a.mb_id"     <?php echo get_selected($sfl, "a.mb_id"); ?>>작성자아이디</option>
+            <option value=""><?php echo _('선택') ?></option>
+            <option value="b.it_name"   <?php echo get_selected($sfl, "b.it_name"); ?>><?php echo _('상품명') ?></option>
+            <option value="a.it_id"     <?php echo get_selected($sfl, "a.it_id"); ?>><?php echo _('상품코드') ?></option>
+            <option value="a.is_subject"<?php echo get_selected($sfl, "a.is_subject"); ?>><?php echo _('후기제목') ?></option>
+            <option value="a.is_content"<?php echo get_selected($sfl, "a.is_content"); ?>><?php echo _('후기내용') ?></option>
+            <option value="a.is_name"   <?php echo get_selected($sfl, "a.is_name"); ?>><?php echo _('작성자명') ?></option>
+            <option value="a.mb_id"     <?php echo get_selected($sfl, "a.mb_id"); ?>><?php echo _('작성자아이디') ?></option>
         </select>
-        <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+        <label for="stx" class="sound_only"><?php echo _('검색어') ?><strong class="sound_only"> <?php echo _('필수') ?></strong></label>
         <input type="text" name="stx" value="<?php echo $stx; ?>" id="stx" required class="sch_input" size="10">
-        <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
+        <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only"><?php echo _('검색') ?></span></button>
     </div>
-    <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>">전체보기</a>
+    <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>"><?php echo _('전체보기') ?></a>
 </div>
 </form>
 
@@ -57,7 +57,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 
         <section class="sps_section">
 			<div class="sps_star">
-				<span class="sound_only">평가점수</span><img src="<?php echo G5_SHOP_URL; ?>/img/s_star<?php echo $star; ?>.png" alt="별<?php echo $star; ?>개" width="80">
+				<span class="sound_only"><?php echo _('평가점수') ?></span><img src="<?php echo G5_SHOP_URL; ?>/img/s_star<?php echo $star; ?>.png" alt="별<?php echo $star; ?>개" width="80">
 			</div>
 
 			<div class="sps_con_btn">
@@ -66,14 +66,14 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 				<div class="review_detail_cnt">
 	            	<div class="review_detail_in">
 	            		<div class="review_detail_inner">
-	            		<h3>사용후기</h3>
+	            		<h3><?php echo _('사용후기') ?></h3>
 	            		<div class="review_cnt">
 	            			<div class="review_tp_cnt">
 	            				<span><?php echo get_text($row['is_subject']); ?></span>
 	            				<dl class="sps_dl">
-					                <dt class="sound_only">작성자</dt>
+					                <dt class="sound_only"><?php echo _('작성자') ?></dt>
 					                <dd class="sps_dd_wt"><?php echo $row['is_name']; ?></dd>
-					                <dt class="sound_only">작성일</dt>
+					                <dt class="sound_only"><?php echo _('작성일') ?></dt>
 					                <dd><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo substr($row['is_time'],0,10); ?></dd>
 					            </dl>
 	            			</div>
@@ -82,7 +82,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 	            				<?php echo get_itemuselist_thumbnail($row['it_id'], $row['is_content'], 50, 50); ?>
 	            				<p>
 	            					<span><?php echo get_text($row['is_subject']); ?></span>
-	            					<span class="sound_only">평가점수</span><img src="<?php echo G5_URL; ?>/shop/img/s_star<?php echo $star; ?>.png" alt="별<?php echo $star; ?>개" width="80">
+	            					<span class="sound_only"><?php echo _('평가점수') ?></span><img src="<?php echo G5_URL; ?>/shop/img/s_star<?php echo $star; ?>.png" alt="별<?php echo $star; ?>개" width="80">
 	            				</p>
 	            			</div>
 	            			
@@ -113,7 +113,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 				                <?php } //end if ?>
 				            </div>
 	            		</div>
-	            		<button class="rd_cls"><span class="sound_only">후기 상세보기 팝업 닫기</span><i class="fa fa-times" aria-hidden="true"></i></button>
+	            		<button class="rd_cls"><span class="sound_only"><?php echo _('후기 상세보기 팝업 닫기') ?></span><i class="fa fa-times" aria-hidden="true"></i></button>
 	            		</div>
 	            	</div>
 				</div>
@@ -121,9 +121,9 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 			</div>
 			
 			<div class="sps_info">
-    			<span class="sound_only">작성자</span>
+    			<span class="sound_only"><?php echo _('작성자') ?></span>
                 <span class="sps_if_wt"><?php echo get_text($row['is_name']); ?></span>
-                <span class="sound_only">작성일</span>
+                <span class="sound_only"><?php echo _('작성일') ?></span>
                 <span><?php echo substr($row['is_time'],2,8); ?></span>
     		</div>
         </section>

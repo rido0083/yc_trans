@@ -220,7 +220,7 @@ if ( $tran_cd != "" )
 else
 {
     $c_PayPlus->m_res_cd  = "9562";
-    $c_PayPlus->m_res_msg = "연동 오류|Payplus Plugin이 설치되지 않았거나 tran_cd값이 설정되지 않았습니다.";
+    $c_PayPlus->m_res_msg = _("연동 오류|Payplus Plugin이 설치되지 않았거나 tran_cd값이 설정되지 않았습니다.");
 }
 
 if ($res_cd != '0000')

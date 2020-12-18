@@ -74,6 +74,6 @@ $inipay->startAction();
                 where od_id = '$od_id' ";
     sql_query($sql);
  } else {
-     alert(iconv_utf8($inipay->GetResult("ResultMsg")).' 코드 : '.$inipay->GetResult("ResultCode"));
+     alert(iconv_utf8($inipay->GetResult("ResultMsg"))._(' 코드 : ').$inipay->GetResult("ResultCode"));
  }
 ?>

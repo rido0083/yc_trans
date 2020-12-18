@@ -121,7 +121,7 @@ $pr_updatepage_ar = array(
 if (in_array($pr_this_page , $pr_updatepage_ar)) {
 	if ($is_file_child) {
 		include_once($pr_child_file);
-		exit;
+		//exit;
 	}
 }
 
@@ -162,14 +162,25 @@ function lang_ch ($l) {
 //기본언어를 한국어로 선택
 if (!$_SESSION['lang']) {
     $_SESSION['lang'] = 'ko_KR';
-		$_SESSION['locale'] = 'ko_KR';		
+		$_SESSION['locale'] = 'ko_KR';				
 }
+
+//해당하는 다국어 인자가 있다면 해당언어로 처리함
+if ($_GET['l']) {
+	$_SESSION['lang'] = $_GET['l'];
+	$_SESSION['locale'] = $_GET['l'];			
+	if ($_SESSION['lang'] != $_GET['l']) {
+		header("Refresh:0");
+	}	
+}
+
 
 $srd_lang = $_SESSION['lang'];
 //echo $srd_lang;
 //언어분류 (기본 언어는 추가해서 사용가능) 한국어는 기본언어라 생략 아래는 언어셋 이름 예제
 /*
-    ko
+		ko
+		th_TH
     en_US
     ja_JP
     zh_CN
@@ -219,3 +230,6 @@ function pr_shotcode() {
 <?php
 }
 ?>
+<script>
+console.log('<?php echo $pr_child_file ?>');
+</script>

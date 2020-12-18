@@ -93,7 +93,7 @@ for ($i=1; $row=sql_fetch_array($result); $i++) {
 
 if ($i > 1) echo "</ul>\n";
 
-if($i == 1) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
+if($i == 1) echo "<p class=\"sct_noitem\">"._('등록된 상품이 없습니다.')."</p>\n";
 ?>
 <!-- } 관련상품 10 끝 -->
 <script>

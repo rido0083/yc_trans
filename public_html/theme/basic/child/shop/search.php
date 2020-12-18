@@ -8,7 +8,7 @@ if (G5_IS_MOBILE) {
     return;
 }
 
-$g5['title'] = "상품 검색 결과";
+$g5['title'] = _("상품 검색 결과");
 include_once('./_head.php');
 
 // QUERY 문에 공통적으로 들어가는 내용

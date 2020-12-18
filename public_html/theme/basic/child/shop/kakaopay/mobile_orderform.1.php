@@ -87,7 +87,7 @@ function getTxnId(pf) {
     inicis_kakaopay_form.P_RESERVED.value = inicis_kakaopay_form.P_RESERVED.value.replace("&useescrow=Y", "")+"&d_kakaopay=Y";
 
     if( ! jQuery("form[name='sm_form']").length ){
-        alert("해당 폼이 존재 하지 않는 결제오류입니다.");
+        alert(_("해당 폼이 존재 하지 않는 결제오류입니다."));
         return false;
     }
 

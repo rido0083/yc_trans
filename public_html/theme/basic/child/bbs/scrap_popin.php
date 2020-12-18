@@ -30,7 +30,7 @@ echo <<<HEREDOC
 HEREDOC;
 
 if ($write['wr_is_comment'])
-    alert_close('코멘트는 스크랩 할 수 없습니다.');
+    alert_close(_('코멘트는 스크랩 할 수 없습니다.'));
 
 $sql = " select count(*) as cnt from {$g5['scrap_table']}
             where mb_id = '{$member['mb_id']}'

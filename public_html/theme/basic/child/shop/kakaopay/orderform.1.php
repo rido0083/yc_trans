@@ -13,7 +13,7 @@ if( $default['de_inicis_lpay_use'] || $default['de_inicis_kakaopay_use'] || ('in
 ?>
 <script>
 function getTxnId(frm) {
-    alert('결제 설정에 문제가 있습니다. ( 중복설정문제 )');
+    alert('<?php echo _('결제 설정에 문제가 있습니다. ( 중복설정문제 )') ?>');
     return false;
 }
 </script>

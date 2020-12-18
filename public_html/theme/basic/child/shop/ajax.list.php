@@ -12,7 +12,7 @@ $sql = " select *
             and ca_use = '1'  ";
 $ca = sql_fetch($sql);
 if (!$ca['ca_id'])
-    die(json_encode($data['error'] = '등록된 분류가 없습니다.'));
+    die(json_encode($data['error'] = _('등록된 분류가 없습니다.')));
 
 // 스킨경로
 $skin_dir = G5_MSHOP_SKIN_PATH;

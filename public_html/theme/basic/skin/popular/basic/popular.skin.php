@@ -9,7 +9,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 
 <!-- 인기검색어 시작 { -->
 <section id="popular">
-    <h2>인기검색어</h2>
+    <h2><?php echo _('인기검색어') ?></h2>
     <div class="popular_inner">
 	    <ul>
 	    <?php

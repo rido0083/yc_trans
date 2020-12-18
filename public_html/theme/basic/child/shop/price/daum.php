@@ -87,7 +87,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
 
     $point = get_item_point($row);
     if( $point ){
-        $point .= '원';
+        $point .= _('원');
     }
 
     // 배송비계산

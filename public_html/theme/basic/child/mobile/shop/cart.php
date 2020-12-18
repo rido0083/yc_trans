@@ -11,7 +11,7 @@ if(defined('G5_THEME_MSHOP_PATH')) {
     }
 }
 
-$g5['title'] = '장바구니';
+$g5['title'] = _('장바구니');
 include_once(G5_MSHOP_PATH.'/_head.php');
 
 // $s_cart_id 로 현재 장바구니 자료 쿼리
@@ -44,7 +44,7 @@ $cart_count = sql_num_rows($result);
     <?php if($cart_count) { ?>
     <div id="sod_chk" class="chk_box">
         <input type="checkbox" name="ct_all" value="1" id="ct_all" class="selec_chk" checked>
-        <label for="ct_all"><span></span>상품 전체</label>
+        <label for="ct_all"><span></span><?php echo _('상품 전체')?></label>
     </div>
     <?php } ?>
 
@@ -86,13 +86,13 @@ $cart_count = sql_num_rows($result);
             switch($row['ct_send_cost'])
             {
                 case 1:
-                    $ct_send_cost = '착불';
+                    $ct_send_cost = _('착불');
                     break;
                 case 2:
-                    $ct_send_cost = '무료';
+                    $ct_send_cost = _('무료');
                     break;
                 default:
-                    $ct_send_cost = '선불';
+                    $ct_send_cost = _('선불');
                     break;
             }
 
@@ -101,7 +101,7 @@ $cart_count = sql_num_rows($result);
                 $sendcost = get_item_sendcost($row['it_id'], $sum['price'], $sum['qty'], $s_cart_id);
 
                 if($sendcost == 0)
-                    $ct_send_cost = '무료';
+                    $ct_send_cost = _('무료');
             }
 
             $point      = $sum['point'];
@@ -115,7 +115,7 @@ $cart_count = sql_num_rows($result);
             <div class="li_op_wr">
                 <div class="li_chk chk_box">
                     <input type="checkbox" name="ct_chk[<?php echo $i; ?>]" value="1" id="ct_chk_<?php echo $i; ?>" class="selec_chk" checked>
-                    <label for="ct_chk_<?php echo $i; ?>"><span></span><b class="sound_only">상품선택</b></label>
+                    <label for="ct_chk_<?php echo $i; ?>"><span></span><b class="sound_only"><?php echo _('상품선택')?></b></label>
                 </div> 
                 <div class="li_name"><?php echo $it_name; ?></div>
                 <div class="total_img"><?php echo $image; ?></div>
@@ -123,12 +123,12 @@ $cart_count = sql_num_rows($result);
             </div> 
             <div class="sod_opt"><?php echo $it_options; ?></div>
             <div class="li_prqty">
-                <span class="prqty_price li_prqty_sp"><span>판매가 </span><?php echo number_format($row['ct_price']); ?></span>
-                <span class="prqty_qty li_prqty_sp"><span>수량 </span><?php echo number_format($sum['qty']); ?></span>
-                <span class="prqty_sc li_prqty_sp"><span>배송비 </span><?php echo $ct_send_cost; ?></span>
-                <span class="total_point li_prqty_sp"><span>적립포인트 </span><strong><?php echo number_format($sum['point']); ?></strong></span>
+                <span class="prqty_price li_prqty_sp"><span><?php echo _('판매가')?></span><?php echo number_format($row['ct_price']); ?></span>
+                <span class="prqty_qty li_prqty_sp"><span><?php echo _('수량')?> </span><?php echo number_format($sum['qty']); ?></span>
+                <span class="prqty_sc li_prqty_sp"><span><?php echo _('배송비')?> </span><?php echo $ct_send_cost; ?></span>
+                <span class="total_point li_prqty_sp"><span><?php echo _('적립포인트')?> </span><strong><?php echo number_format($sum['point']); ?></strong></span>
             </div>
-             <div class="total_price total_span"><span>소계 </span><strong><?php echo number_format($sell_price); ?></strong>원</div>
+             <div class="total_price total_span"><span><?php echo _('소계')?> </span><strong><?php echo number_format($sell_price); ?></strong>원</div>
         </li>
 
         <?php
@@ -137,7 +137,7 @@ $cart_count = sql_num_rows($result);
         } // for 끝
 
         if ($i == 0) {
-            echo '<li class="empty_list">장바구니에 담긴 상품이 없습니다.</li>';
+            echo '<li class="empty_list">'._('장바구니에 담긴 상품이 없습니다.').'</li>';
         } else {
             // 배송비 계산
             $send_cost = get_sendcost($s_cart_id, 0);
@@ -146,12 +146,12 @@ $cart_count = sql_num_rows($result);
     </ul>
 
     <div class="btn_del_wr">
-        <button type="button" onclick="return form_check('seldelete');" class="btn01">선택삭제</button>
-        <button type="button" onclick="return form_check('alldelete');" class="btn01">비우기</button>
+        <button type="button" onclick="return form_check('seldelete');" class="btn01"><?php echo _('선택삭제')?></button>
+        <button type="button" onclick="return form_check('alldelete');" class="btn01"><?php echo _('비우기')?></button>
     </div>
 
     <?php if ($i == 0) { ?>
-    <div class="go_shopping"><a href="<?php echo G5_SHOP_URL; ?>/" class="btn01">쇼핑 계속하기</a></div>
+    <div class="go_shopping"><a href="<?php echo G5_SHOP_URL; ?>/" class="btn01"><?php echo _('쇼핑 계속하기')?></a></div>
     <?php } else { ?>
     <div class="sod_ta_wr">
     <?php
@@ -160,26 +160,26 @@ $cart_count = sql_num_rows($result);
     ?>
     <dl id="m_sod_bsk_tot">
         <?php if ($send_cost > 0) { // 배송비가 0 보다 크다면 (있다면) ?>
-        <dt class="sod_bsk_dvr">배송비</dt>
-        <dd class="sod_bsk_dvr"><strong><?php echo number_format($send_cost); ?> 원</strong></dd>
+        <dt class="sod_bsk_dvr"><?php echo _('배송비')?></dt>
+        <dd class="sod_bsk_dvr"><strong><?php echo number_format($send_cost); ?> <?php echo _('원')?></strong></dd>
         <?php } ?>
 
         <?php if ($tot_price > 0) { ?>
-        <dt>포인트</dt>
-        <dd><strong><?php echo number_format($tot_point); ?> 점</strong></dd>
-        <dt class="sod_bsk_cnt">총계</dt>
-        <dd class="sod_bsk_cnt"><strong><?php echo number_format($tot_price); ?></strong> 원</dd>
+        <dt><?php echo _('')?>포인트</dt>
+        <dd><strong><?php echo number_format($tot_point); ?> <?php echo _('점')?></strong></dd>
+        <dt class="sod_bsk_cnt"><?php echo _('총계')?></dt>
+        <dd class="sod_bsk_cnt"><strong><?php echo number_format($tot_price); ?></strong> <?php echo _('원')?></dd>
         <?php } ?>
     </dl>
     <?php } ?>
 
     <div id="sod_bsk_act" class="btn_confirm">
-        <div class="total">총계 <strong class="total_cnt"><?php echo number_format($tot_price); ?>원</strong>
+        <div class="total"><?php echo _('총계')?> <strong class="total_cnt"><?php echo number_format($tot_price); ?><?php echo _('원')?></strong>
         </div>
         <input type="hidden" name="url" value="<?php echo G5_SHOP_URL; ?>/orderform.php">
         <input type="hidden" name="act" value="">
         <input type="hidden" name="records" value="<?php echo $i; ?>">
-        <button type="button" onclick="return form_check('buy');" class="btn_submit">주문하기</button>
+        <button type="button" onclick="return form_check('buy');" class="btn_submit"><?php echo _('주문하기')?></button>
     </div>
     <?php } ?>
         <?php if ($naverpay_button_js) { ?>
@@ -235,7 +235,7 @@ $(function() {
 
 function fsubmit_check(f) {
     if($("input[name^=ct_chk]:checked").length < 1) {
-        alert("구매하실 상품을 하나이상 선택해 주십시오.");
+        alert("<?php echo _('구매하실 상품을 하나이상 선택해 주십시오.')?>");
         return false;
     }
 
@@ -259,7 +259,7 @@ function form_check(act) {
     else if (act == "seldelete")
     {
         if($("input[name^=ct_chk]:checked").length < 1) {
-            alert("삭제하실 상품을 하나이상 선택해 주십시오.");
+            alert("<?php echo _('삭제하실 상품을 하나이상 선택해 주십시오.')?>");
             return false;
         }
 

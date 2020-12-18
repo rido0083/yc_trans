@@ -12,13 +12,13 @@ if (G5_IS_MOBILE) {
 }
 
 $type = preg_replace("/[\<\>\'\"\\\'\\\"\%\=\(\)\s]/", "", $_REQUEST['type']);
-if ($type == 1)      $g5['title'] = '히트상품';
-else if ($type == 2) $g5['title'] = '추천상품';
-else if ($type == 3) $g5['title'] = '최신상품';
-else if ($type == 4) $g5['title'] = '인기상품';
-else if ($type == 5) $g5['title'] = '할인상품';
+if ($type == 1)      $g5['title'] = _('히트상품');
+else if ($type == 2) $g5['title'] = _('추천상품');
+else if ($type == 3) $g5['title'] = _('최신상품');
+else if ($type == 4) $g5['title'] = _('인기상품');
+else if ($type == 5) $g5['title'] = _('할인상품');
 else
-    alert('상품유형이 아닙니다.');
+    alert(_('상품유형이 아닙니다.'));
 
 include_once('./_head.php');
 
@@ -80,7 +80,7 @@ if (file_exists($list_file)) {
 }
 else
 {
-    echo '<div align="center">'.$skin.' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</div>';
+    echo '<div align="center">'.$skin._(' 파일을 찾을 수 없습니다.').'<br>'._('관리자에게 알려주시면 감사하겠습니다.').'</div>';
 }
 ?>
 

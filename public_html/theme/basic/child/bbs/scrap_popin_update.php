@@ -12,7 +12,7 @@ if (!$is_member)
 
 // 게시글 존재하는지
 if(!$write['wr_id'])
-    alert_close('스크랩하시려는 게시글이 존재하지 않습니다.');
+    alert_close(_('스크랩하시려는 게시글이 존재하지 않습니다.'));
 
 $sql = " select count(*) as cnt from {$g5['scrap_table']}
             where mb_id = '{$member['mb_id']}'
@@ -49,7 +49,7 @@ if ($wr_content && ($member['mb_level'] >= $board['bo_comment_level']))
         // 세션의 시간 검사
         // 4.00.15 - 댓글 수정시 연속 게시물 등록 메시지로 인한 오류 수정
         if ($w == 'c' && $_SESSION['ss_datetime'] >= (G5_SERVER_TIME - $config['cf_delay_sec']) && !$is_admin)
-            alert('너무 빠른 시간내에 게시물을 연속해서 올릴 수 없습니다.');
+            alert(_('너무 빠른 시간내에 게시물을 연속해서 올릴 수 없습니다.'));
         
         set_session('ss_datetime', G5_SERVER_TIME);
 

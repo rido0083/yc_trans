@@ -14,7 +14,7 @@ if ($w == 's') {
 
     if (!check_password($wr_password, $wr['wr_password'])) {
         run_event('password_is_wrong', 'bbs', $wr, $qstr);
-        alert('비밀번호가 틀립니다.');
+        alert(_('비밀번호가 틀립니다.'));
     }
 
     // 세션에 아래 정보를 저장. 하위번호는 비밀번호없이 보아야 하기 때문임.
@@ -36,7 +36,7 @@ if ($w == 's') {
 
     if (!check_password($wr_password, $wr['wr_password'])){
         run_event('password_is_wrong', 'bbs', $wr, $qstr);
-        alert('비밀번호가 틀립니다.');
+        alert(_('비밀번호가 틀립니다.'));
     }
 
     // 세션에 아래 정보를 저장. 하위번호는 비밀번호없이 보아야 하기 때문임.
@@ -45,7 +45,7 @@ if ($w == 's') {
     set_session($ss_name, TRUE);
 
 } else
-    alert('w 값이 제대로 넘어오지 않았습니다.');
+    alert(_('w 값이 제대로 넘어오지 않았습니다.'));
 
 goto_url(short_url_clean(G5_HTTP_BBS_URL.'/board.php?'.$qstr));
 ?>

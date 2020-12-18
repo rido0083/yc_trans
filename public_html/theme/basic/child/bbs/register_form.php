@@ -35,11 +35,11 @@ if ($w == "") {
     referer_check();
 
     if (!isset($_POST['agree']) || !$_POST['agree']) {
-        alert('회원가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다.', G5_BBS_URL.'/register.php');
+        alert(_('회원가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다.'), G5_BBS_URL.'/register.php');
     }
 
     if (!isset($_POST['agree2']) || !$_POST['agree2']) {
-        alert('개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.', G5_BBS_URL.'/register.php');
+        alert(_('개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.'), G5_BBS_URL.'/register.php');
     }
 
     $agree  = preg_replace('#[^0-9]#', '', $_POST['agree']);
@@ -58,18 +58,18 @@ if ($w == "") {
         $member['mb_name']  = $_POST['mb_name'];
     }
 
-    $g5['title'] = '회원 가입';
+    $g5['title'] = _('회원 가입');
 
 } else if ($w == 'u') {
 
     if ($is_admin == 'super')
-        alert('관리자의 회원정보는 관리자 화면에서 수정해 주십시오.', G5_URL);
+        alert(_('관리자의 회원정보는 관리자 화면에서 수정해 주십시오.'), G5_URL);
 
     if (!$is_member)
-        alert('로그인 후 이용하여 주십시오.', G5_URL);
+        alert(_('로그인 후 이용하여 주십시오.'), G5_URL);
 
     if ($member['mb_id'] != $_POST['mb_id'])
-        alert('로그인된 회원과 넘어온 정보가 서로 다릅니다.');
+        alert(_('로그인된 회원과 넘어온 정보가 서로 다릅니다.'));
 
     /*
     if (!($member[mb_password] == sql_password($_POST[mb_password]) && $_POST[mb_password]))
@@ -81,7 +81,7 @@ if ($w == "") {
     
     if($_POST['mb_id'] && ! (isset($_POST['mb_password']) && $_POST['mb_password'])){
         if( ! $is_social_login_modify ){
-            alert('비밀번호를 입력해 주세요.');
+            alert(_('비밀번호를 입력해 주세요.'));
         }
     }
 
@@ -95,10 +95,10 @@ if ($w == "") {
         }
 
         if (!$pass_check)
-            alert('비밀번호가 틀립니다.');
+            alert(_('비밀번호가 틀립니다.'));
     }
 
-    $g5['title'] = '회원 정보 수정';
+    $g5['title'] = _('회원 정보 수정');
 
     set_session("ss_reg_mb_name", $member['mb_name']);
     set_session("ss_reg_mb_hp", $member['mb_hp']);
@@ -124,7 +124,7 @@ if ($w == "") {
     $member['mb_9']           = get_text($member['mb_9']);
     $member['mb_10']          = get_text($member['mb_10']);
 } else {
-    alert('w 값이 제대로 넘어오지 않았습니다.');
+    alert(_('w 값이 제대로 넘어오지 않았습니다.'));
 }
 
 include_once('./_head.php');

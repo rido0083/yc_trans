@@ -15,7 +15,7 @@ function get_mshop_category($ca_id, $len)
 }
 ?>
 <div id="category">
-    <button type="button" class="close_btn"><i class="fa fa-times" aria-hidden="true"></i> 카테고리<span class="sound_only">닫기</span></button>
+    <button type="button" class="close_btn"><i class="fa fa-times" aria-hidden="true"></i> <?php echo _('카테고리') ?><span class="sound_only"><?php echo _('닫기') ?</span></button>
 
     <div class="ct_wr">
         <?php
@@ -49,7 +49,7 @@ function get_mshop_category($ca_id, $len)
         if($i > 0)
             echo '</ul>'.PHP_EOL;
         else
-            echo '<p class="no-cate">등록된 분류가 없습니다.</p>'.PHP_EOL;
+            echo '<p class="no-cate">'._('등록된 분류가 없습니다.').'</p>'.PHP_EOL;
         ?>
     </div>
 </div>

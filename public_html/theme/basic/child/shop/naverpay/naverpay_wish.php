@@ -5,7 +5,7 @@ include_once(G5_LIB_PATH.'/naverpay.lib.php');
 
 $count = count($_POST['it_id']);
 if ($count < 1)
-    alert_close('찜하실 상품을 선택하여 주십시오.');
+    alert_close(_('찜하실 상품을 선택하여 주십시오.'));
 
 $query = '';
 $item  = '';
@@ -16,7 +16,7 @@ for($i=0; $i<$count; $i++) {
     // 상품정보
     $it = get_shop_item($it_id, true);
     if(!$it['it_id'])
-        alert_close('상품정보가 존재하지 않습니다.');
+        alert_close(_('상품정보가 존재하지 않습니다.'));
 
     $id          = urlencode($it['it_id']);
     $name        = urlencode($it['it_name']);

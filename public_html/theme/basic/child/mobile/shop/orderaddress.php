@@ -11,13 +11,13 @@ if(defined('G5_THEME_MSHOP_PATH')) {
     }
 }
 
-$g5['title'] = '배송지 목록';
+$g5['title'] = _('배송지 목록');
 include_once(G5_PATH.'/head.sub.php');
 ?>
 
 <form name="forderaddress" method="post" action="<?php echo $order_action_url; ?>" autocomplete="off">
 <div id="sod_addr" class="new_win">
-    <h1 id="win_title">배송지 목록</h1>
+    <h1 id="win_title"><?php echo _('배송지 목록')?></h1>
 
     <div class="list_01">
         <ul>
@@ -31,8 +31,8 @@ include_once(G5_PATH.'/head.sub.php');
                 <div class="addr_title chk_box">
                     <input type="hidden" name="ad_id[<?php echo $i; ?>]" value="<?php echo $row['ad_id'];?>">
                     <input type="checkbox" name="chk[]" value="<?php echo $i;?>" id="chk_<?php echo $i;?>" class="ad_chk selec_chk">
-                    <label for="chk_<?php echo $i;?>"><span></span><strong class="sound_only">배송지선택</strong></label>
-                    <label for="ad_subject<?php echo $i;?>" class="sound_only">배송지명</label>
+                    <label for="chk_<?php echo $i;?>"><span></span><strong class="sound_only"><?php echo _('배송지선택')?></strong></label>
+                    <label for="ad_subject<?php echo $i;?>" class="sound_only"><?php echo _('배송지명')?></label>
                     <input type="text" name="ad_subject[<?php echo $i; ?>]" value="<?php echo $row['ad_subject']; ?>" class="ad_subject" maxlength="20">
                 </div>
                 <div class="addr_info">
@@ -42,10 +42,10 @@ include_once(G5_PATH.'/head.sub.php');
                 </div>
                 <div class="addr_btn">
                     <input type="hidden" value="<?php echo $addr; ?>">
-                    <button type="button" class="btn_sel sel_address">선택</button>
-                    <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?w=d&amp;ad_id=<?php echo $row['ad_id']; ?>" id="btn_del" class="del_address">삭제</a>
+                    <button type="button" class="btn_sel sel_address"><?php echo _('선택')?></button>
+                    <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?w=d&amp;ad_id=<?php echo $row['ad_id']; ?>" id="btn_del" class="del_address"><?php echo _('삭제')?></a>
                     <input type="radio" name="ad_default" value="<?php echo $row['ad_id'];?>" id="ad_default<?php echo $i;?>" <?php if($row['ad_default']) echo 'checked="checked"';?>>
-                    <label for="ad_default<?php echo $i;?>" class="add_lb">기본배송지</label>
+                    <label for="ad_default<?php echo $i;?>" class="add_lb"><?php echo _('기본배송지')?></label>
                 </div>
             </li>
             <?php
@@ -55,8 +55,8 @@ include_once(G5_PATH.'/head.sub.php');
     </div>
 
     <div class="win_btn">
-        <input type="submit" name="act_button" value="선택수정" class="btn_submit">
-        <button type="button" onclick="self.close();" class="btn_close">닫기</button>
+        <input type="submit" name="act_button" value="<?php echo _('선택수정')?>" class="btn_submit">
+        <button type="button" onclick="self.close();" class="btn_close"><?php echo _('닫기')?></button>
     </div>
 </div>
 </form>
@@ -95,7 +95,7 @@ $(function() {
     });
 
     $(".del_address").on("click", function() {
-        return confirm("배송지 목록을 삭제하시겠습니까?");
+        return confirm(<?php echo _("배송지 목록을 삭제하시겠습니까?")?>);
     });
 
     // 전체선택 부분
@@ -109,7 +109,7 @@ $(function() {
 
     $(".btn_submit").on("click", function() {
         if($("input[name^='chk[']:checked").length==0 ){
-            alert("수정하실 항목을 하나 이상 선택하세요.");
+            alert(<?php echo _("수정하실 항목을 하나 이상 선택하세요.")?>);
             return false;
         }
     });

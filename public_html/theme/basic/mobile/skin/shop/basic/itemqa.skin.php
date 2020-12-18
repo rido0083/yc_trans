@@ -7,8 +7,8 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 <div id="sit_qa_wbtn">
-    <a href="<?php echo $itemqa_form; ?>" class="itemqa_form qa_wr">상품문의 쓰기<span class="sound_only"> 새 창</span></a>
-    <a href="<?php echo $itemqa_list; ?>" id="itemqa_list" class="btn01">더보기</a>
+    <a href="<?php echo $itemqa_form; ?>" class="itemqa_form qa_wr"><?php echo _('상품문의 쓰기') ?><span class="sound_only"> <?php echo _('새 창') ?></span></a>
+    <a href="<?php echo $itemqa_list; ?>" id="itemqa_list" class="btn01"><?php echo _('더보기') ?></a>
 </div>
 
 <!-- 상품문의 목록 시작 { -->
@@ -30,7 +30,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
             if($is_admin || $member['mb_id' ] == $row['mb_id']) {
                 $iq_question = get_view_thumbnail(conv_content($row['iq_question'], 1), $thumbnail_width);
             } else {
-                $iq_question = '비밀글로 보호된 문의입니다.';
+                $iq_question = _('비밀글로 보호된 문의입니다.');
                 $is_secret = true;
             }
         } else {
@@ -47,13 +47,13 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
         if ($row['iq_answer'])
         {
             $iq_answer = get_view_thumbnail(conv_content($row['iq_answer'], 1), $thumbnail_width);
-            $iq_stats = '답변완료';
+            $iq_stats = _('답변완료');
             $iq_style = 'sit_qaa_done';
             $is_answer = true;
         } else {
-            $iq_stats = '답변대기';
+            $iq_stats = _('답변대기');
             $iq_style = 'sit_qaa_yet';
-            $iq_answer = '답변이 등록되지 않았습니다.';
+            $iq_answer = _('답변이 등록되지 않았습니다.');
             $is_answer = false;
         }
 
@@ -63,11 +63,11 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
         <li class="sit_qa_li">
             <button type="button" class="sit_qa_li_title"><?php echo $iq_subject; ?></button>
             <dl class="sit_qa_dl">
-                <dt>작성자</dt>
+                <dt><?php echo _('작성자') ?></dt>
                 <dd><?php echo $iq_name; ?></dd>
-                <dt>작성일</dt>
+                <dt><?php echo _('작성일') ?></dt>
                 <dd><i class="fa fa-clock-o" aria-hidden="true"></i>  <?php echo $iq_time; ?></dd>
-                <dt>상태</dt>
+                <dt><?php echo _('상태') ?></dt>
                 <dd class="<?php echo $iq_style; ?>"><?php echo $iq_stats; ?></dd>
             </dl>
 
@@ -75,13 +75,13 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
                 <div class="sit_qa_p">
                     <div class="sit_qa_qaq">
                         <span class="sit_alp">Q</span>
-                        <strong>문의내용</strong>
+                        <strong><?php echo _('문의내용') ?></strong>
                         <?php echo $iq_question; // 상품 문의 내용 ?>
                     </div>
                     <?php if(!$is_secret) { ?>
                     <div class="sit_qa_qaa">
                         <span class="sit_alp">A</span>
-                        <strong>답변</strong>
+                        <strong><?php echo _('답변') ?></strong>
                         <?php echo $iq_answer; ?>
                     </div>
                     <?php } ?>
@@ -89,8 +89,8 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 
                 <?php if ($is_admin || ($row['mb_id'] == $member['mb_id'] && !$is_answer)) { ?>
                 <div class="sit_qa_cmd">
-                    <a href="<?php echo $itemqa_form."&amp;iq_id={$row['iq_id']}&amp;w=u"; ?>" class="itemqa_form btn01" onclick="return false;">수정</a>
-                    <a href="<?php echo $itemqa_formupdate."&amp;iq_id={$row['iq_id']}&amp;w=d&amp;hash={$hash}"; ?>" class="itemqa_delete btn01">삭제</a>
+                    <a href="<?php echo $itemqa_form."&amp;iq_id={$row['iq_id']}&amp;w=u"; ?>" class="itemqa_form btn01" onclick="return false;"><?php echo _('수정') ?></a>
+                    <a href="<?php echo $itemqa_formupdate."&amp;iq_id={$row['iq_id']}&amp;w=d&amp;hash={$hash}"; ?>" class="itemqa_delete btn01"><?php echo _('삭제') ?></a>
                 </div>
                 <?php } ?>
             </div>
@@ -102,7 +102,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 
     if ($i > 0) echo '</ol>';
 
-    if (!$i) echo '<p class="sit_empty">상품문의가 없습니다.</p>';
+    if (!$i) echo '<p class="sit_empty">'._('상품문의가 없습니다.').'</p>';
     ?>
 </div>
 
@@ -118,7 +118,7 @@ $(function(){
     });
 
     $(".itemqa_delete").click(function(){
-        return confirm("정말 삭제 하시겠습니까?\n\n삭제후에는 되돌릴수 없습니다.");
+        return confirm("<?php echo _('정말 삭제 하시겠습니까?\n\n삭제후에는 되돌릴수 없습니다.') ?>");
     });
 
     $(".sit_qa_li_title").click(function(){

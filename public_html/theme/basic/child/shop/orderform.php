@@ -22,10 +22,10 @@ else {
 }
 
 if (get_cart_count($tmp_cart_id) == 0)
-    alert('장바구니가 비어 있습니다.', G5_SHOP_URL.'/cart.php');
+    alert(_('장바구니가 비어 있습니다.'), G5_SHOP_URL.'/cart.php');
 
 if (function_exists('before_check_cart_price')) {
-    if(! before_check_cart_price($tmp_cart_id) ) alert('장바구니 금액에 변동사항이 있습니다.\n장바구니를 다시 확인해 주세요.', G5_SHOP_URL.'/cart.php');
+    if(! before_check_cart_price($tmp_cart_id) ) alert(_('장바구니 금액에 변동사항이 있습니다.').'\n'._('장바구니를 다시 확인해 주세요.'), G5_SHOP_URL.'/cart.php');
 }
 
 // 새로운 주문번호 생성
@@ -35,7 +35,7 @@ $s_cart_id = $tmp_cart_id;
 if($default['de_pg_service'] == 'inicis' || $default['de_inicis_lpay_use'] || $default['de_inicis_kakaopay_use'])
     set_session('ss_order_inicis_id', $od_id);
 
-$g5['title'] = '주문서 작성';
+$g5['title'] = _('주문서 작성');
 
 if(G5_IS_MOBILE)
     include_once(G5_MSHOP_PATH.'/_head.php');
