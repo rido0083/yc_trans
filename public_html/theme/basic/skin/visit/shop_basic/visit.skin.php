@@ -9,17 +9,17 @@ add_stylesheet('<link rel="stylesheet" href="'.$visit_skin_url.'/style.css">', 0
 
 <!-- 접속자집계 시작 { -->
 <section id="visit" class="ft_cnt">
-    <h2><?php echo _('접속자집계') ?></h2>
+    <h2>접속자집계</h2>
     <dl>
-        <dt><span></span> <?php echo _('오늘') ?></dt>
+        <dt><span></span> 오늘</dt>
         <dd><strong><?php echo number_format($visit[1]) ?></strong></dd>
-        <dt><span></span> <?php echo _('어제') ?></dt>
+        <dt><span></span> 어제</dt>
         <dd><strong><?php echo number_format($visit[2]) ?></strong></dd>
-        <dt><span></span> <?php echo _('최대') ?></dt>
+        <dt><span></span> 최대</dt>
         <dd><strong><?php echo number_format($visit[3]) ?></strong></dd>
-        <dt><span></span> <?php echo _('전체') ?></dt>
+        <dt><span></span> 전체</dt>
         <dd><strong><?php echo number_format($visit[4]) ?></strong></dd>
     </dl>
-    <?php if ($is_admin == "super") {  ?><a href="<?php echo G5_ADMIN_URL ?>/visit_list.php" class="btn_admin btn"><i class="fa fa-cog fa-spin fa-fw"></i><span class="sound_only"><?php echo _('관리자') ?></span></a><?php } ?>
+    <?php if ($is_admin == "super") {  ?><a href="<?php echo G5_ADMIN_URL ?>/visit_list.php" class="btn_admin btn"><i class="fa fa-cog fa-spin fa-fw"></i><span class="sound_only">관리자</span></a><?php } ?>
 </section>
 <!-- } 접속자집계 끝 -->

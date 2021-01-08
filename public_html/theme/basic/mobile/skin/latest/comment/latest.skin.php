@@ -7,7 +7,7 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
 ?>
 
 <div class="cm_lt">
-    <h2 class="cm_lt_title"><a href="<?php echo get_pretty_url($bo_table); ?>"><?php echo _('최신댓글') ?></a></h2>
+    <h2 class="cm_lt_title"><a href="<?php echo get_pretty_url($bo_table); ?>">최신댓글</a></h2>
     <ul>
     <?php
     for ($i=0; $i<$list_count; $i++) {
@@ -25,9 +25,9 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
     }
 
     if($list_count ==0)
-        echo '<li class="empty_li">'._('게시물이 없습니다.').'</li>'.PHP_EOL;
+        echo '<li class="empty_li">게시물이 없습니다.</li>'.PHP_EOL;
     ?>
     </ul>
-    <a href="<?php echo get_pretty_url($bo_table); ?>" class="lt_more"><span class="sound_only"><?php echo $bo_subject ?></span><?php echo _('더보기') ?></a>
+    <a href="<?php echo get_pretty_url($bo_table); ?>" class="lt_more"><span class="sound_only"><?php echo $bo_subject ?></span>더보기</a>
 
 </div>

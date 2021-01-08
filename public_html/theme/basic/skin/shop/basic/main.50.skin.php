@@ -41,7 +41,7 @@ foreach((array) $list as $row){
 	
 	// 사용후기 평점표시
 	if ($this->view_star && $star_score) {
-        echo "<span class=\"sound_only\">"._('고객평점')."</span><img src=\"".G5_SHOP_URL."/img/s_star".$star_score.".png\" alt=\"별 ".$star_score."개\" class=\"sit_star\" width=\"100\">\n";
+        echo "<span class=\"sound_only\">고객평점</span><img src=\"".G5_SHOP_URL."/img/s_star".$star_score.".png\" alt=\"별 ".$star_score."개\" class=\"sit_star\" width=\"100\">\n";
     }
        
     if ($this->href) {
@@ -67,7 +67,7 @@ foreach((array) $list as $row){
     echo "</li>\n";
 }
 if ($i >= 1) echo "</ul>\n";
-if($i == 0) echo "<p class=\"sct_noitem\">"._('등록된 상품이 없습니다.')."</p>\n";
+if($i == 0) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
 ?>
 
 <script>

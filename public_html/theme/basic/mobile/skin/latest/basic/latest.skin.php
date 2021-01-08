@@ -70,16 +70,16 @@ $is_show_next_prev = ($list_count > 4) ? 1 : 0;
             </li>
             <?php }     //end for ?>
             <?php if ($list_count == 0) { //게시물이 없을 때 ?>
-            <li class="empty_li"><?php echo _('게시물이 없습니다.') ?></li>
+            <li class="empty_li">게시물이 없습니다.</li>
             <?php }     //end if ?>
         </ul>
     </div>
     <?php if ($is_show_next_prev){  // $divisor_count 이상의 값이 있을경우에만 출력 ?>
 	<div class="lt_page">
-		<button class="lt_page_prev"><span class="sound_only"><?php echo _('이전페이지') ?></span><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+		<button class="lt_page_prev"><span class="sound_only">이전페이지</span><i class="fa fa-caret-left" aria-hidden="true"></i></button>
 		<span class="page_print"><b><?php echo $start_page_num; ?></b>/<?php echo $start_page_num; ?></span>
-		<button class="lt_page_next"><span class="sound_only"><?php echo _('다음페이지') ?></span><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+		<button class="lt_page_next"><span class="sound_only">다음페이지</span><i class="fa fa-caret-right" aria-hidden="true"></i></button>
 	</div>
     <?php } ?>
-    <a href="<?php echo get_pretty_url($bo_table); ?>" class="lt_more"><span class="sound_only"><?php echo $bo_subject ?></span><?php echo _('전체보기') ?></a>
+    <a href="<?php echo get_pretty_url($bo_table); ?>" class="lt_more"><span class="sound_only"><?php echo $bo_subject ?></span>전체보기</a>
 </div>

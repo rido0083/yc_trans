@@ -9,21 +9,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 
 <ul class="btn_top top btn_bo_user"> 
-	<li><a href="<?php echo $list_href ?>" class="btn_b03 btn"><i class="fa fa-list" aria-hidden="true"></i><span class="sound_only"><?php echo _('목록') ?></span></a></li>
+	<li><a href="<?php echo $list_href ?>" class="btn_b03 btn"><i class="fa fa-list" aria-hidden="true"></i><span class="sound_only">목록</span></a></li>
     <?php if ($write_href) { ?>
-    <li><a href="<?php echo $write_href ?>" class="btn_b03 btn"><i class="fa fa-pencil" aria-hidden="true"></i><span class="sound_only"><?php echo _('글쓰기') ?></a></li>
+    <li><a href="<?php echo $write_href ?>" class="btn_b03 btn"><i class="fa fa-pencil" aria-hidden="true"></i><span class="sound_only">글쓰기</a></li>
     <?php } ?>
 	<li>
-		<button type="button" class="btn_more_opt btn_b03 btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i><span class="sound_only"><?php echo _('게시판 리스트 옵션') ?></span></button>
-    	<?php ob_start(); ?>
+		<button type="button" class="btn_more_opt btn_b03 btn"><i class="fa fa-ellipsis-v" aria-hidden="true"></i><span class="sound_only">게시판 리스트 옵션</span></button>
         <ul class="more_opt">
-        	<?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" onclick="del(this.href); return false;"><i class="fa fa-trash-o" aria-hidden="true"></i><?php echo _('삭제') ?></a></li><?php } ?>
-			<?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <?php echo _('수정') ?></a></li><?php } ?>
+            <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 수정</a></li><?php } ?>
+        	<?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" onclick="del(this.href); return false;"><i class="fa fa-trash-o" aria-hidden="true"></i> 삭제</a></li><?php } ?>
 		</ul>
-		<?php
-        $link_buttons = ob_get_contents();
-        ob_end_flush();
-		?>
 	</li>
 </ul>
 <script>
@@ -41,22 +36,20 @@ $(".btn_more_opt").on("click", function() {
             <span class="bo_v_tit"><?php echo $view['subject']; // 글제목 출력  ?></span>
         </h2>
         <div id="bo_v_info">
-	        <h2><?php echo _('페이지 정보') ?></h2>
-	        <span class="sound_only"><?php echo _('작성자') ?></span><strong><?php echo $view['name'] ?></strong>
-	        <span class="sound_only"><?php echo _('작성일') ?></span><strong><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $view['datetime']; ?></strong>
-	    	<span class="sound_only"><?php echo _('조회') ?></span><strong><i class="fa fa-eye" aria-hidden="true"></i> <?php echo number_format($view['wr_hit']) ?></strong>
-			<span class="sound_only"><?php echo _('댓글') ?></span><strong><i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo number_format($view['wr_comment']) ?></strong>
+	        <h2>페이지 정보</h2>
+	        <span class="sound_only">작성자</span><strong><?php echo $view['name'] ?></strong>
+	        <span class="sound_only">작성일</span><strong><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $view['datetime']; ?></strong>
 		</div>
 		<?php if($view['email'] || $view['hp']) { ?>
         <div id="bo_v_contact">
-            <h2><?php echo _('연락처정보') ?></h2>
+            <h2>연락처정보</h2>
             <dl>
                 <?php if($view['email']) { ?>
-                <dt><i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sound_only"><?php echo _('이메일') ?></span></dt>
+                <dt><i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sound_only">이메일</span></dt>
                 <dd><?php echo $view['email']; ?></dd>
                 <?php } ?>
                 <?php if($view['hp']) { ?>
-                <dt><i class="fa fa fa-phone" aria-hidden="true"></i><span class="sound_only"><?php echo _('휴대폰') ?></span></dt>
+                <dt><i class="fa fa fa-phone" aria-hidden="true"></i><span class="sound_only">휴대폰</span></dt>
                 <dd><?php echo $view['hp']; ?></dd>
                 <?php } ?>
             </dl>
@@ -65,7 +58,7 @@ $(".btn_more_opt").on("click", function() {
     </header>
 
     <section id="bo_v_atc">
-        <h2 id="bo_v_atc_title"><?php echo _('본문') ?></h2>
+        <h2 id="bo_v_atc_title">본문</h2>
 
         <?php
         // 파일 출력
@@ -86,13 +79,13 @@ $(".btn_more_opt").on("click", function() {
         <!-- } 본문 내용 끝 -->
 
         <?php if($view['qa_type']) { ?>
-        <div><a href="<?php echo $rewrite_href; ?>" class="btn_b01"><?php echo _('추가질문') ?></a></div>
+        <div><a href="<?php echo $rewrite_href; ?>" class="btn_b01">추가질문</a></div>
         <?php } ?>
 
         <?php if($view['download_count']) { ?>
         <!-- 첨부파일 시작 { -->
         <section id="bo_v_file">
-            <h2><?php echo _('첨부파일') ?></h2>
+            <h2>첨부파일</h2>
             <ul>
             <?php
             // 가변 파일
@@ -115,8 +108,8 @@ $(".btn_more_opt").on("click", function() {
     
     <?php if ($prev_href || $next_href) { ?>
     <ul class="bo_v_nb">
-        <?php if ($prev_href) { ?><li class="bo_v_prev"><a href="<?php echo $prev_href ?>"><i class="fa fa-chevron-up" aria-hidden="true"></i><span class="sound_only"><?php echo _('이전글') ?></span> <?php echo $prev_wr_subject;?></a></li><?php } ?>
-        <?php if ($next_href) { ?><li class="bo_v_next"><a href="<?php echo $next_href ?>"><i class="fa fa-chevron-down" aria-hidden="true"></i><span class="sound_only"><?php echo _('다음글') ?></span> <?php echo $next_wr_subject;?></a></li><?php } ?>
+        <?php if ($prev_href) { ?><li class="bo_v_prev"><a href="<?php echo $prev_href ?>"><i class="fa fa-chevron-up" aria-hidden="true"></i><span class="sound_only">이전글</span> <?php echo $prev_qa_subject;?></a></li><?php } ?>
+        <?php if ($next_href) { ?><li class="bo_v_next"><a href="<?php echo $next_href ?>"><i class="fa fa-chevron-down" aria-hidden="true"></i><span class="sound_only">다음글</span> <?php echo $next_qa_subject;?></a></li><?php } ?>
     </ul>
     <?php } ?>
 </article>
@@ -134,7 +127,7 @@ if(!$view['qa_type']) {
 
 <?php if($view['rel_count']) { ?>
 <section id="bo_v_rel">
-    <h2><?php echo _('연관질문') ?></h2>
+    <h2>연관질문</h2>
 
     <div class="list_01">
 

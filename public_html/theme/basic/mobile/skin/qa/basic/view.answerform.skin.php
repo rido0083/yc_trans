@@ -9,12 +9,13 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
     ?>
     <h2>답변등록</h2>
 
-    <form name="fanswer" method="post" action="./qawrite_update.php" autocomplete="off">
+    <form name="fanswer" method="post" action="./qawrite_update.php" onsubmit="return fwrite_submit(this);" autocomplete="off">
     <input type="hidden" name="qa_id" value="<?php echo $view['qa_id']; ?>">
     <input type="hidden" name="w" value="a">
     <input type="hidden" name="sca" value="<?php echo $sca ?>">
     <input type="hidden" name="stx" value="<?php echo $stx; ?>">
     <input type="hidden" name="page" value="<?php echo $page; ?>">
+    <input type="hidden" name="token" value="<?php echo $token ?>">
     <?php
     $option = '';
     $option_hidden = '';
@@ -33,16 +34,16 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
         <ul>
             <?php if ($option) { ?>
             <li>
-                <span class="sound_only"><?php echo _('옵션') ?></span>
+                <span class="sound_only">옵션</span>
                 <?php echo $option; ?>
             </li>
             <?php } ?>
             <li>
-                <label for="qa_subject" class="sound_only"><?php echo _('제목') ?></label>
-                <input type="text" name="qa_subject" value="" id="qa_subject" required class="frm_input required" size="50" maxlength="255" placeholder="<?php echo _('제목') ?>">
+                <label for="qa_subject" class="sound_only">제목</label>
+                <input type="text" name="qa_subject" value="" id="qa_subject" required class="frm_input required" size="50" maxlength="255" placeholder="제목">
             </li>
             <li>
-                <label for="qa_content" class="sound_only"<?php echo _('내용') ?><strong><?php echo _('필수') ?></strong></label>
+                <label for="qa_content" class="sound_only">내용<strong>필수</strong></label>
                 <?php echo $editor_html; // 에디터 사용시는 에디터로, 아니면 textarea 로 노출 ?>
             </li>
         </ul>
@@ -57,7 +58,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
     function html_auto_br(obj)
     {
         if (obj.checked) {
-            result = confirm("<?php echo _('동 줄바꿈을 하시겠습니까?\n\n자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>태그로 변환하는 기능입니다.') ?>");
+            result = confirm("자동 줄바꿈을 하시겠습니까?\n\n자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>태그로 변환하는 기능입니다.");
             if (result)
                 obj.value = "2";
             else
@@ -90,19 +91,36 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
         });
 
         if (subject) {
-            alert("<?php echo _('제목에 금지단어('"+subject+"')가 포함되어있습니다') ?>");
+            alert("제목에 금지단어('"+subject+"')가 포함되어있습니다");
             f.qa_subject.focus();
             return false;
         }
 
         if (content) {
-            alert("<?php echo _('내용에 금지단어('"+subject+"')가 포함되어있습니다') ?>");
+            alert("내용에 금지단어('"+content+"')가 포함되어있습니다");
             if (typeof(ed_qa_content) != "undefined")
                 ed_qa_content.returnFalse();
             else
                 f.qa_content.focus();
             return false;
         }
+
+        $.ajax({
+            type: "POST",
+            url: g5_bbs_url+"/ajax.write.token.php",
+            data: { 'token_case' : 'qa_write' },
+            cache: false,
+            async: false,
+            dataType: "json",
+            success: function(data) {
+                if (typeof data.token !== "undefined") {
+                    token = data.token;
+                    if(typeof f.token === "undefined")
+                        $(f).prepend('<input type="hidden" name="token" value="">');
+                    $(f).find("input[name=token]").val(token);
+                }
+            }
+        });
 
         document.getElementById("btn_submit").disabled = "disabled";
 
@@ -114,7 +132,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
     else
     {
     ?>
-    <p id="ans_msg"><?php echo _('고객님의 문의에 대한 답변을 준비 중입니다.') ?></p>
+    <p id="ans_msg">고객님의 문의에 대한 답변을 준비 중입니다.</p>
     <?php
     }
     ?>

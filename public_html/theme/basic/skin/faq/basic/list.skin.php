@@ -15,13 +15,13 @@ echo '<div id="faq_hhtml">'.conv_content($fm['fm_head_html'], 1).'</div>';
 ?>
 
 <fieldset id="faq_sch">
-    <legend><?php echo _('FAQ 검색') ?></legend>
+    <legend>FAQ 검색</legend>
     <form name="faq_search_form" method="get">
-    <span class="sch_tit"><?php echo _('FAQ 검색') ?></span>
+    <span class="sch_tit">FAQ 검색</span>
     <input type="hidden" name="fm_id" value="<?php echo $fm_id;?>">
-    <label for="stx" class="sound_only"><?php echo _('검색어') ?><strong class="sound_only"> <?php echo _('필수') ?></strong></label>
+    <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
     <input type="text" name="stx" value="<?php echo $stx;?>" required id="stx" class="frm_input" size="15" maxlength="15">
-    <button type="submit" value="검색" class="btn_submit"><i class="fa fa-search" aria-hidden="true"></i><?php echo _('검색') ?></button>
+    <button type="submit" value="검색" class="btn_submit"><i class="fa fa-search" aria-hidden="true"></i> 검색</button>
     </form>
 </fieldset>
 
@@ -29,7 +29,7 @@ echo '<div id="faq_hhtml">'.conv_content($fm['fm_head_html'], 1).'</div>';
 if( count($faq_master_list) ){
 ?>
 <nav id="bo_cate">
-    <h2><?php echo _('자주하시는질문 분류') ?></h2>
+    <h2>자주하시는질문 분류</h2>
     <ul id="bo_cate_ul">
         <?php
         foreach( $faq_master_list as $v ){
@@ -37,7 +37,7 @@ if( count($faq_master_list) ){
             $category_option = '';
             if($v['fm_id'] == $fm_id){ // 현재 선택된 카테고리라면
                 $category_option = ' id="bo_cate_on"';
-                $category_msg = '<span class="sound_only">'._('열린 분류').'</span>';
+                $category_msg = '<span class="sound_only">열린 분류 </span>';
             }
         ?>
         <li><a href="<?php echo $category_href;?>?fm_id=<?php echo $v['fm_id'];?>" <?php echo $category_option;?> ><?php echo $category_msg.$v['fm_subject'];?></a></li>
@@ -53,7 +53,7 @@ if( count($faq_master_list) ){
     if( count($faq_list) ){
     ?>
     <section id="faq_con">
-        <h2><?php echo $g5['title']; ?> <?php echo _('목록') ?></h2>
+        <h2><?php echo $g5['title']; ?> 목록</h2>
         <ol>
             <?php
             foreach($faq_list as $key=>$v){
@@ -63,11 +63,11 @@ if( count($faq_master_list) ){
             <li>
                 <h3>
                 	<span class="tit_bg">Q</span><a href="#none" onclick="return faq_open(this);"><?php echo conv_content($v['fa_subject'], 1); ?></a>
-                	<button class="tit_btn" onclick="return faq_open(this);"><i class="fa fa-plus" aria-hidden="true"></i><span class="sound_only"><?php echo _('열기') ?></span></button>
+                	<button class="tit_btn" onclick="return faq_open(this);"><i class="fa fa-plus" aria-hidden="true"></i><span class="sound_only">열기</span></button>
                 </h3>
                 <div class="con_inner">
                     <?php echo conv_content($v['fa_content'], 1); ?>
-                    <button type="button" class="closer_btn"><i class="fa fa-minus" aria-hidden="true"></i><span class="sound_only"><?php echo _('닫기') ?></span></button>
+                    <button type="button" class="closer_btn"><i class="fa fa-minus" aria-hidden="true"></i><span class="sound_only">닫기</span></button>
                 </div>
             </li>
             <?php
@@ -79,11 +79,11 @@ if( count($faq_master_list) ){
 
     } else {
         if($stx){
-            echo '<p class="empty_list">'._('검색된 게시물이 없습니다.').'</p>';
+            echo '<p class="empty_list">검색된 게시물이 없습니다.</p>';
         } else {
-            echo '<div class="empty_list">'._('등록된 FAQ가 없습니다.');
+            echo '<div class="empty_list">등록된 FAQ가 없습니다.';
             if($is_admin)
-                echo '<br><a href="'.G5_ADMIN_URL.'/faqmasterlist.php">'._('FAQ를 새로 등록하시려면 FAQ관리').'</a>'._('메뉴를 이용하십시오.');
+                echo '<br><a href="'.G5_ADMIN_URL.'/faqmasterlist.php">FAQ를 새로 등록하시려면 FAQ관리</a> 메뉴를 이용하십시오.';
             echo '</div>';
         }
     }
@@ -105,7 +105,7 @@ if ($timg_src)
 
 <?php
 if ($admin_href)
-    echo '<div class="faq_admin"><a href="'.$admin_href.'" class="btn_admin btn" title="FAQ 수정"><i class="fa fa-cog fa-spin fa-fw"></i><span class="sound_only">'._('FAQ 수정').'</span></a></div>';
+    echo '<div class="faq_admin"><a href="'.$admin_href.'" class="btn_admin btn" title="FAQ 수정"><i class="fa fa-cog fa-spin fa-fw"></i><span class="sound_only">FAQ 수정</span></a></div>';
 ?>
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>

@@ -22,14 +22,6 @@ $(function() {
 
 <?php run_event('tail_sub'); ?>
 
-<script>
-  function change_trans(lang, url) {
-    var f = document.change; 
-    var chang_tans = '<?php echo PR_CHILD_URL?>/plugin/trans_ch.php?l='+lang+'&u='+url;   
-    location.href=chang_tans;   
-  }
-</script>
-
 </body>
 </html>
-<?php echo html_end(); // HTML 마지막 처리 함수 : 반드시 넣어주시기 바랍니다. ?>
+<?php echo html_end(); // HTML 마지막 처리 함수 : 반드시 넣어주시기 바랍니다.

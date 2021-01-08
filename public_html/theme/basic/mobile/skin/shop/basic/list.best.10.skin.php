@@ -10,7 +10,7 @@ if($this->total_count > 0) {
     $li_width = intval(100 / $this->list_mod);
     $li_width_style = ' style="width:'.$li_width.'%;"';
     $k = 1;
-    $slide_btn = '<button type="button" class="bst_sl">'.$k._('번째 리스트').'</button>';
+    $slide_btn = '<button type="button" class="bst_sl">'.$k.'번째 리스트</button>';
 
     for ($i=0; $row=sql_fetch_array($result); $i++) {
         $is_soldout = is_soldout($row['it_id'], true);   // 품절인지 체크
@@ -18,7 +18,7 @@ if($this->total_count > 0) {
         if($i == 0) {
             echo '<script src="'.G5_JS_URL.'/swipe.js"></script>'.PHP_EOL;
             echo '<section id="best_item">'.PHP_EOL;
-            echo '<h2>'._('베스트상품').'</h2>'.PHP_EOL;
+            echo '<h2>베스트상품</h2>'.PHP_EOL;
             echo '<div id="sbest_list" class="swipe">'.PHP_EOL;
             echo '<div id="sbest_slide" class="slide-wrap">'.PHP_EOL;
             echo '<ul class="sct_best">'.PHP_EOL;
@@ -28,7 +28,7 @@ if($this->total_count > 0) {
             echo '</ul>'.PHP_EOL;
             echo '<ul class="sct_best">'.PHP_EOL;
             $k++;
-            $slide_btn .= '<button type="button">'.$k._('번째 리스트').'</button>';
+            $slide_btn .= '<button type="button">'.$k.'번째 리스트</button>';
         }
 
         echo '<li class="sct_li"'.$li_width_style.'>'.PHP_EOL;
@@ -115,7 +115,7 @@ if($this->total_count > 0) {
         var $btns = this.find(""+cfg.buttons+"");
 
         var idx = cfg.startSlide;
-        var count = $slides.size();
+        var count = $slides.length;
         var width, outerW;
 
         if(count < 1)
@@ -180,4 +180,3 @@ $(function() {
 
 <?php
 }
-?>

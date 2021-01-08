@@ -18,9 +18,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
     <h1 id="win_title"><?php echo $g5['title'] ?></h1>
     <div class="new_win_con2">
         <!-- 설문조사 결과 그래프 시작 { -->
-        <span class="poll_all"><?php echo _('전체') ?> <?php echo $nf_total_po_cnt ?><?php echo _('표') ?></span>
+        <span class="poll_all">전체 <?php echo $nf_total_po_cnt ?>표</span>
         <section id="poll_result_list">
-            <h2><?php echo $po_subject ?> <?php echo _('결과') ?></h2>
+            <h2><?php echo $po_subject ?> 결과</h2>
             <ol>
             	<?php
                 for ($i=1; $i<=count($list); $i++) {
@@ -33,7 +33,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
                         <span style="width:<?php echo number_format($list[$i]['rate'], 1) ?>%"></span>
                     </div>
                     <div class="poll_numerical">
-                    	<strong class="poll_cnt"><?php echo $list[$i]['cnt'] ?> <?php echo _('표') ?></strong>
+                    	<strong class="poll_cnt"><?php echo $list[$i]['cnt'] ?> 표</strong>
                     	<span class="poll_percent"><?php echo number_format($list[$i]['rate'], 1) ?> %</span>
                     </div>
                 </li>
@@ -45,15 +45,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
         <!-- 설문조사 기타의견 시작 { -->
         <?php if ($is_etc) { ?>
         <section id="poll_result_cmt">
-            <h2><?php echo _('이 설문에 대한 기타의견') ?></h2>
+            <h2>이 설문에 대한 기타의견</h2>
 
             <?php for ($i=0; $i<count($list2); $i++) { ?>
             <article>
                 <header>
-                    <h2><?php echo $list2[$i]['pc_name'] ?><span class="sound_only"><?php echo _('님의 의견') ?></span></h2>
+                    <h2><?php echo $list2[$i]['pc_name'] ?><span class="sound_only">님의 의견</span></h2>
                     <?php echo $list2[$i]['name'] ?>
                     <span class="poll_datetime"><?php echo $list2[$i]['datetime'] ?>
-                    <span class="poll_cmt_del"><?php if ($list2[$i]['del']) { echo $list2[$i]['del']."<i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i><span class=\"sound_only\">"._("삭제")."</span></a>"; } ?></span></span>
+                    <span class="poll_cmt_del"><?php if ($list2[$i]['del']) { echo $list2[$i]['del']."<i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i><span class=\"sound_only\">삭제</span></a>"; } ?></span></span>
                 </header>
                 <p>
                     <?php echo $list2[$i]['idea'] ?>
@@ -68,20 +68,20 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
             <input type="hidden" name="skin_dir" value="<?php echo urlencode($skin_dir); ?>">
             <?php if ($is_member) {  ?><input type="hidden" name="pc_name" value="<?php echo get_text(cut_str($member['mb_nick'],255)) ?>"><?php }  ?>
             <div id="poll_result_wcmt">
-            	<h3><span><?php echo _('기타의견') ?></span><?php echo $po_etc ?></h3>
+            	<h3><span>기타의견</span><?php echo $po_etc ?></h3>
                 <div>
-                    <label for="pc_idea" class="sound_only"><?php echo _('의견') ?><strong><?php echo _('필수') ?></strong></label>
-                    <input type="text" id="pc_idea" name="pc_idea" required class="full_input required" size="47" maxlength="100" placeholder="<?php echo _('의견을 입력해주세요') ?>">
+                    <label for="pc_idea" class="sound_only">의견<strong>필수</strong></label>
+                    <input type="text" id="pc_idea" name="pc_idea" required class="full_input required" size="47" maxlength="100" placeholder="의견을 입력해주세요">
                 </div>
             </div>
             <?php if ($is_guest) {  ?>
             <div class="poll_guest">
-                <label for="pc_name" class="sound_only"><?php echo _('이름') ?><strong><?php echo _('필수') ?></strong></label>
-                <input type="text" name="pc_name" id="pc_name" required class="full_input required" size="20" placeholder="<?php echo _('이름') ?>">
+                <label for="pc_name" class="sound_only">이름<strong>필수</strong></label>
+                <input type="text" name="pc_name" id="pc_name" required class="full_input required" size="20" placeholder="이름">
             </div>
         	<?php }  ?>
             <?php echo captcha_html(); ?>
-			<button type="submit" class="btn_submit"><?php echo _('의견남기기') ?></button>           
+			<button type="submit" class="btn_submit">의견남기기</button>           
             </form>
             <?php }  ?>
 
@@ -91,7 +91,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
 		
 		<!-- 설문조사 다른 결과 보기 시작 { -->
         <aside id="poll_result_oth">
-            <h2><?php echo _('다른 투표 결과 보기') ?></h2>
+            <h2>다른 투표 결과 보기</h2>
             <ul>
                 <?php for ($i=0; $i<count($list3); $i++) {  ?>
                 <li><a href="./poll_result.php?po_id=<?php echo $list3[$i]['po_id'] ?>&amp;skin_dir=<?php echo urlencode($skin_dir); ?>"> <?php echo $list3[$i]['subject'] ?> </a><span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list3[$i]['date'] ?></span></li>
@@ -101,7 +101,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
 		<!-- } 설문조사 다른 결과 보기 끝 -->
 		
         <div class="win_btn">
-            <button type="button" onclick="window.close();" class="btn_close"><?php echo _('창닫기') ?></button>
+            <button type="button" onclick="window.close();" class="btn_close">창닫기</button>
         </div>
     </div>
 </div>
@@ -109,7 +109,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
 <script>
 $(function() {
     $(".poll_delete").click(function() {
-        if(!confirm("<?php echo _('해당 기타의견을 삭제하시겠습니까?') ?>"))
+        if(!confirm("해당 기타의견을 삭제하시겠습니까?"))
             return false;
     });
 });

@@ -1,4 +1,4 @@
-Theme Name: 베이직_다국어
+Theme Name: 베이직
 Theme URI: http://theme.sir.kr/gnuboard5/demo/basic
 Maker: SIR
 Maker URI: http://sir.kr

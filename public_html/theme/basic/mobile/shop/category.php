@@ -35,7 +35,7 @@ $mshop_categories = get_shop_category_array(true);
                     <a href="<?php echo $mshop_ca_row1['url']; ?>"><?php echo get_text($mshop_ca_row1['ca_name']); ?></a>
                     <?php
                     if( count($cate1) > 1 )
-                        echo '<button class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row1['ca_name'])._('하위분류 열기').'</button>'.PHP_EOL;
+                        echo '<button class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row1['ca_name']).' 하위분류 열기</button>'.PHP_EOL;
 
                     $j=0;
                     foreach($cate1 as $key=>$cate2){
@@ -50,7 +50,7 @@ $mshop_categories = get_shop_category_array(true);
                             <?php
                             $mshop_ca_res3 = sql_query(get_mshop_category($mshop_ca_row2['ca_id'], 6));
                             if( count($cate2) > 1 )
-                                echo '<button type="button" class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row2['ca_name'])._('하위분류 열기').'</button>'.PHP_EOL;
+                                echo '<button type="button" class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row2['ca_name']).' 하위분류 열기</button>'.PHP_EOL;
                             
                             $k = 0;
                             foreach($cate2 as $cate3_key=>$cate3){
@@ -65,7 +65,7 @@ $mshop_categories = get_shop_category_array(true);
                                     <?php
                                     $mshop_ca_res4 = sql_query(get_mshop_category($mshop_ca_row3['ca_id'], 8));
                                     if(sql_num_rows($mshop_ca_res4))
-                                        echo '<button type="button" class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row3['ca_name'])._(' 하위분류 열기').'</button>'.PHP_EOL;
+                                        echo '<button type="button" class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row3['ca_name']).' 하위분류 열기</button>'.PHP_EOL;
 
                                     for($m=0; $mshop_ca_row4=sql_fetch_array($mshop_ca_res4); $m++) {
                                         if($m == 0)
@@ -76,7 +76,7 @@ $mshop_categories = get_shop_category_array(true);
                                             <?php
                                             $mshop_ca_res5 = sql_query(get_mshop_category($mshop_ca_row4['ca_id'], 10));
                                             if(sql_num_rows($mshop_ca_res5))
-                                                echo '<button type="button" class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row4['ca_name'])._('하위분류 열기').'</button>'.PHP_EOL;
+                                                echo '<button type="button" class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row4['ca_name']).' 하위분류 열기</button>'.PHP_EOL;
 
                                             for($n=0; $mshop_ca_row5=sql_fetch_array($mshop_ca_res5); $n++) {
                                                 if($n == 0)
@@ -129,12 +129,12 @@ $mshop_categories = get_shop_category_array(true);
         <?php include(G5_MSHOP_SKIN_PATH.'/boxtodayview.skin.php'); // 오늘 본 상품 ?>
 
         <ul id="cate_tnb">
-            <li><a href="<?php echo G5_SHOP_URL; ?>/couponzone.php"><i class="fa fa-ticket"></i> <?php echo _('쿠폰존') ?></a></li>
-            <li><a href="<?php echo G5_SHOP_URL; ?>/itemuselist.php"><i class="fa fa-camera"></i> <?php echo _('사용후기') ?></a></li>
-            <li><a href="<?php echo G5_BBS_URL; ?>/faq.php"><i class="fa fa-question"></i><?php echo _('FAQ') ?></a></li>
-            <li><a href="<?php echo G5_BBS_URL; ?>/qalist.php"><i class="fa fa-comments"></i><?php echo _('1:1문의') ?></a></li>
-            <li><a href="<?php echo G5_SHOP_URL; ?>/personalpay.php"><i class="fa fa-credit-card"></i><?php echo _('개인결제') ?></a></li>
-            <li><a href="<?php echo G5_URL; ?>"><i class="fa fa-home"></i><?php echo _('커뮤니티') ?></a></li>
+            <li><a href="<?php echo G5_SHOP_URL; ?>/couponzone.php"><i class="fa fa-ticket"></i> 쿠폰존</a></li>
+            <li><a href="<?php echo G5_SHOP_URL; ?>/itemuselist.php"><i class="fa fa-camera"></i> 사용후기</a></li>
+            <li><a href="<?php echo G5_BBS_URL; ?>/faq.php"><i class="fa fa-question"></i>FAQ</a></li>
+            <li><a href="<?php echo G5_BBS_URL; ?>/qalist.php"><i class="fa fa-comments"></i>1:1문의</a></li>
+            <li><a href="<?php echo G5_SHOP_URL; ?>/personalpay.php"><i class="fa fa-credit-card"></i>개인결제</a></li>
+            <li><a href="<?php echo G5_URL; ?>"><i class="fa fa-home"></i>커뮤니티</a></li>
         </ul> 
     </div>
 </div>
@@ -145,7 +145,7 @@ jQuery(function ($){
         var $this = $(this);
         $sub_ul = $(this).closest("li").children("ul.sub_cate");
 
-        if($sub_ul.size() > 0) {
+        if($sub_ul.length > 0) {
             var txt = $this.text();
 
             if($sub_ul.is(":visible")) {

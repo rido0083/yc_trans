@@ -104,9 +104,9 @@ foreach((array) $list as $row){
 	
 	// 위시리스트 + 공유 버튼 시작 {
 	echo "<div class=\"sct_op_btn\">\n";
-	echo "<button type=\"button\" class=\"btn_wish\" data-it_id=\"{$row['it_id']}\"><span class=\"sound_only\">"._('위시리스트')."</span><i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i></button>\n";
+	echo "<button type=\"button\" class=\"btn_wish\" data-it_id=\"{$row['it_id']}\"><span class=\"sound_only\">위시리스트</span><i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i></button>\n";
     if ($this->view_sns) {
-	    echo "<button type=\"button\" class=\"btn_share\"><span class=\"sound_only\">"._('공유하기')."</span><i class=\"fa fa-share-alt\" aria-hidden=\"true\"></i></button>\n";
+	    echo "<button type=\"button\" class=\"btn_share\"><span class=\"sound_only\">공유하기</span><i class=\"fa fa-share-alt\" aria-hidden=\"true\"></i></button>\n";
 	}
 
 	echo "<div class=\"sct_sns_wrap\">";
@@ -115,11 +115,11 @@ foreach((array) $list as $row){
         $sns_url  = $item_link_href;
         $sns_title = get_text($row['it_name']).' | '.get_text($config['cf_title']);
         echo "<div class=\"sct_sns\">";
-		echo "<h3>SNS "._('공유')."</h3>";
+		echo "<h3>SNS 공유</h3>";
         echo get_sns_share_link('facebook', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/facebook.png');
         echo get_sns_share_link('twitter', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/twitter.png');
         echo get_sns_share_link('googleplus', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/gplus.png');
-        echo "<button type=\"button\" class=\"sct_sns_cls\"><span class=\"sound_only\">"._('닫기')."</span><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button>";
+        echo "<button type=\"button\" class=\"sct_sns_cls\"><span class=\"sound_only\">닫기</span><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button>";
         echo "</div>\n";
     }
 	echo "<div class=\"sct_sns_bg\"></div>";
@@ -137,7 +137,7 @@ foreach((array) $list as $row){
 
 if ($i >= 1) echo "</ul>\n";
 
-if($i == 0) echo "<p class=\"sct_noitem\">"._('등록된 상품이 없습니다.')."</p>\n";
+if($i == 0) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
 ?>
 <!-- } 상품진열40 끝 -->
 

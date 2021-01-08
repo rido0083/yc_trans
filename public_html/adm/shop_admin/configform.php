@@ -3,11 +3,12 @@ $sub_menu = '400100';
 include_once('./_common.php');
 include_once(G5_EDITOR_LIB);
 
-auth_check($auth[$sub_menu], "r");
+auth_check_menu($auth, $sub_menu, "r");
 
 if (!$config['cf_icode_server_ip'])   $config['cf_icode_server_ip'] = '211.172.232.124';
 if (!$config['cf_icode_server_port']) $config['cf_icode_server_port'] = '7295';
 
+$userinfo = array('payment'=>'');
 if ($config['cf_sms_use'] && $config['cf_icode_id'] && $config['cf_icode_pw']) {
     $userinfo = get_icode_userinfo($config['cf_icode_id'], $config['cf_icode_pw']);
 }
@@ -1738,7 +1739,7 @@ $(function() {
             }
         });
 
-        function hash_goto_scroll(hash=""){
+        function hash_goto_scroll(hash){
             var $elem = hash ? $("#"+hash) : $('#' + window.location.hash.replace('#', ''));
             if($elem.length) {
 
@@ -1772,11 +1773,11 @@ $(function() {
     $(".kcp_info_fld").show();
     $("#kcp_vbank_url").show();
     <?php } ?>
-    $(".de_pg_tab").on("click", "a", function(e){
+    $(document).on("click", ".de_pg_tab a", function(e){
 
         var pg = $(this).attr("data-value"),
             class_name = "tab-current";
-        
+
         $("#de_pg_service").val(pg);
         $(this).parent("li").addClass(class_name).siblings().removeClass(class_name);
 
@@ -1943,6 +1944,14 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
     if($default['de_pg_service'] == 'lg') {
         $log_path = G5_LGXPAY_PATH.'/lgdacom/log';
 
+        try {
+            if( ! is_dir($log_path) && is_writable(G5_LGXPAY_PATH.'/lgdacom/') ){
+                @mkdir($log_path, G5_DIR_PERMISSION);
+                @chmod($log_path, G5_DIR_PERMISSION);
+            }
+        } catch(Exception $e) {
+        }
+
         if(!is_dir($log_path)) {
 
             if( is_writable(G5_LGXPAY_PATH.'/lgdacom/') ){
@@ -1990,6 +1999,14 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
         }
 
         $log_path = G5_SHOP_PATH.'/inicis/log';
+        
+        try {
+            if( ! is_dir($log_path) && is_writable(G5_SHOP_PATH.'/inicis/') ){
+                @mkdir($log_path, G5_DIR_PERMISSION);
+                @chmod($log_path, G5_DIR_PERMISSION);
+            }
+        } catch(Exception $e) {
+        }
 
         if(!is_dir($log_path)) {
             echo '<script>'.PHP_EOL;
@@ -2031,4 +2048,3 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
 }
 
 include_once (G5_ADMIN_PATH.'/admin.tail.php');
-?>

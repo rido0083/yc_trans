@@ -7,22 +7,22 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
 
 <!-- 전체게시물 검색 시작 { -->
 <fieldset id="new_sch">
-    <legend><?php echo _('상세검색') ?></legend>
+    <legend>상세검색</legend>
     <form name="fnew" method="get">
     	<?php echo $group_select ?>
-    	<label for="view" class="sound_only"><?php echo _('검색대상') ?></label>
+    	<label for="view" class="sound_only">검색대상</label>
 		<select name="view" id="view" onchange="select_change()">
-	        <option value=""><?php echo _('전체게시물') ?>
-	        <option value="w"><?php echo _('원글만') ?>
-	        <option value="c"><?php echo _('코멘트만') ?>
+	        <option value="">전체게시물
+	        <option value="w">원글만
+	        <option value="c">코멘트만
 	    </select>
 	    <div class="ipt_sch">
-	    	<label for="mb_id" class="sound_only"><?php echo _('검색어') ?><strong class="sound_only"><?php echo _('필수') ?></strong></label>
-	    	<input type="text" name="mb_id" value="<?php echo $mb_id ?>" id="mb_id" placeholder="<?php echo _('검색어를 입력하세요') ?>" required class="frm_input">
+	    	<label for="mb_id" class="sound_only">검색어<strong class="sound_only">필수</strong></label>
+	    	<input type="text" name="mb_id" value="<?php echo $mb_id ?>" id="mb_id" placeholder="검색어를 입력하세요" required class="frm_input">
 	    	<button type="submit" class="btn_submit"><i class="fa fa-search" aria-hidden="true"></i></button>
     	</div>
     </form>
-    <p><?php echo _('회원 아이디만 검색 가능') ?></p>
+    <p>회원 아이디만 검색 가능</p>
     <script>
     function select_change()
     {
@@ -56,7 +56,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
     <?php } ?>
 
     <?php if ($i == 0)
-		echo '<li class="empty_table">'._('게시물이 없습니다.)'.'</li>';
+		echo '<li class="empty_table">게시물이 없습니다.</li>';
     ?>
     </ul>
 </div>

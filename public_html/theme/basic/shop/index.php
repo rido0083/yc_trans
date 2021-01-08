@@ -19,7 +19,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 <!-- 히트상품 시작 { -->
 <section id="idx_hit" class="sct_wrap">
     <header>
-        <h2><a href="<?php echo shop_type_url('1'); ?>"><?php echo _('히트상품') ?></a></h2>
+        <h2><a href="<?php echo shop_type_url('1'); ?>">히트상품</a></h2>
     </header>
     <?php
     $list = new item_list();
@@ -57,7 +57,7 @@ $(function(){
 <!-- 최신상품 시작 { -->
 <section class="sct_wrap">
     <header>
-        <h2><a href="<?php echo shop_type_url('3'); ?>"><?php echo _('최신상품') ?></a></h2>
+        <h2><a href="<?php echo shop_type_url('3'); ?>">최신상품</a></h2>
     </header>
     <?php
     $list = new item_list();
@@ -80,7 +80,7 @@ $(function(){
 <!-- 추천상품 시작 { -->
 <section class="sct_wrap">
     <header>
-        <h2><a href="<?php echo shop_type_url('2'); ?>"><?php echo _('추천상품') ?></a></h2>
+        <h2><a href="<?php echo shop_type_url('2'); ?>">추천상품</a></h2>
     </header>
     <?php
     $list = new item_list();
@@ -105,7 +105,7 @@ $(function(){
 <!-- 할인상품 시작 { -->
 <section class="sct_wrap">
     <header>
-        <h2><a href="<?php echo shop_type_url('5'); ?>"><?php echo _('할인상품') ?></a></h2>
+        <h2><a href="<?php echo shop_type_url('5'); ?>">할인상품</a></h2>
     </header>
     <?php
     $list = new item_list();
@@ -126,4 +126,3 @@ $(function(){
 
 <?php
 include_once(G5_THEME_SHOP_PATH.'/shop.tail.php');
-?>

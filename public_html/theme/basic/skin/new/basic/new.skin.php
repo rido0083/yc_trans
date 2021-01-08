@@ -12,19 +12,19 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
 
 <!-- 전체게시물 검색 시작 { -->
 <fieldset id="new_sch">
-    <legend><?php echo _('상세검색') ?></legend>
+    <legend>상세검색</legend>
     <form name="fnew" method="get">
     <?php echo $group_select ?>
-    <label for="view" class="sound_only"><?php echo _('검색대상') ?></label>
+    <label for="view" class="sound_only">검색대상</label>
     <select name="view" id="view">
-        <option value=""><?php echo _('전체게시물') ?>
-        <option value="w"><?php echo _('원글만') ?>
-        <option value="c"><?php echo _('코멘트만') ?>
+        <option value="">전체게시물
+        <option value="w">원글만
+        <option value="c">코멘트만
     </select>
-    <label for="mb_id" class="sound_only"><?php echo _('검색어') ?><strong class="sound_only"><?php echo _('필수') ?> </strong></label>
+    <label for="mb_id" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
     <input type="text" name="mb_id" value="<?php echo $mb_id ?>" id="mb_id" required class="frm_input" size="40">
-    <button type="submit" class="btn_submit"><i class="fa fa-search" aria-hidden="true"></i> <?php echo _('검색') ?> </button>
-    <p><?php echo _('회원 아이디만 검색 가능') ?></p>
+    <button type="submit" class="btn_submit"><i class="fa fa-search" aria-hidden="true"></i> 검색</button>
+    <p>회원 아이디만 검색 가능</p>
     </form>
     <script>
     /* 셀렉트 박스에서 자동 이동 해제
@@ -63,15 +63,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
         	<input type="checkbox" id="all_chk" class="selec_chk">
             <label for="all_chk">
             	<span></span>
-				<b class="sound_only"><?php echo _('목록 전체') ?></b>
+				<b class="sound_only">목록 전체</b>
             </label>
         </th>
         <?php } ?>
-        <th scope="col"><?php echo _('그룹') ?></th>
-        <th scope="col"><?php echo _('게시판') ?></th>
-        <th scope="col"><?php echo _('제목') ?></th>
-        <th scope="col"><?php echo _('이름') ?></th>
-        <th scope="col"><?php echo _('일시') ?></th>
+        <th scope="col">그룹</th>
+        <th scope="col">게시판</th>
+        <th scope="col">제목</th>
+        <th scope="col">이름</th>
+        <th scope="col">일시</th>
     </tr>
     </thead>
     <tbody>
@@ -114,7 +114,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
 
 <?php if ($is_admin) { ?>
 <div class="admin_new_btn">
-    <button type="submit" onclick="document.pressed=this.title" title="선택삭제" class="btn_b01 btn"><i class="fa fa-trash-o" aria-hidden="true"></i><span class="sound_only"><?php echo _('선택삭제') ?></span></button>
+    <button type="submit" onclick="document.pressed=this.title" title="선택삭제" class="btn_b01 btn"><i class="fa fa-trash-o" aria-hidden="true"></i><span class="sound_only">선택삭제</span></button>
 </div>
 <?php } ?>
 </form>
@@ -138,11 +138,11 @@ function fnew_submit(f)
     }
 
     if (!cnt) {
-        alert(document.pressed+"<?php echo _('할 게시물을 하나 이상 선택하세요.') ?>");
+        alert(document.pressed+"할 게시물을 하나 이상 선택하세요.");
         return false;
     }
 
-    if (!confirm("선택한 게시물을 정말 "+document.pressed+" <?php echo _('하시겠습니까?') ?>\n\n<?php echo _('한번 삭제한 자료는 복구할 수 없습니다') ?>")) {
+    if (!confirm("선택한 게시물을 정말 "+document.pressed+" 하시겠습니까?\n\n한번 삭제한 자료는 복구할 수 없습니다")) {
         return false;
     }
 

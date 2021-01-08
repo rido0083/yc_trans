@@ -57,7 +57,7 @@ foreach((array) $list as $row){
     
     if ( !$is_soldout ){    // 품절 상태가 아니면 출력합니다.
         echo "<div class=\"sct_btn list-10-btn\">
-            <button type=\"button\" class=\"btn_cart sct_cart\" data-it_id=\"{$row['it_id']}\"><i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i>"._("장바구니")."</button>\n";
+            <button type=\"button\" class=\"btn_cart sct_cart\" data-it_id=\"{$row['it_id']}\"><i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i> 장바구니</button>\n";
         echo "</div>\n";
 	}
 
@@ -114,9 +114,9 @@ foreach((array) $list as $row){
         
         // 위시리스트 + 공유 버튼 시작
         echo "<div class=\"sct_op_btn\">\n";
-        echo "<button type=\"button\" class=\"btn_wish\" data-it_id=\"{$row['it_id']}\"><span class=\"sound_only\">"._("위시리스트")."</span><i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i></button>\n";
+        echo "<button type=\"button\" class=\"btn_wish\" data-it_id=\"{$row['it_id']}\"><span class=\"sound_only\">위시리스트</span><i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i></button>\n";
         if ($this->view_sns) {
-            echo "<button type=\"button\" class=\"btn_share\"><span class=\"sound_only\">"._("공유하기")."</span><i class=\"fa fa-share-alt\" aria-hidden=\"true\"></i></button>\n";
+            echo "<button type=\"button\" class=\"btn_share\"><span class=\"sound_only\">공유하기</span><i class=\"fa fa-share-alt\" aria-hidden=\"true\"></i></button>\n";
         }
         
         echo "<div class=\"sct_sns_wrap\">";
@@ -149,7 +149,7 @@ foreach((array) $list as $row){
 
 if ($i >= 1) echo "</ul>\n";
 
-if($i === 0) echo "<p class=\"sct_noitem\">")._("등록된 상품이 없습니다.")."</p>\n";
+if($i === 0) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
 ?>
 <!-- } 상품진열 10 끝 -->
 

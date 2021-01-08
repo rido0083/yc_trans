@@ -50,7 +50,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
         var itemShow = <?php echo $tv_div['img_length']; ?>; // 한번에 보여줄 아이템 수량
         if (itemQty > itemShow)
         {
-            $('#stv_btn').append('<button type="button" id="up"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="sound_only"><?php echo _('이전') ?></span></button><button type="button" id="down"><span class="sound_only"><?php echo _('다음') ?></span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>');
+            $('#stv_btn').append('<button type="button" id="up"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="sound_only">이전</span></button><button type="button" id="down"><span class="sound_only">다음</span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>');
         }
         var Flag = 1; // 페이지
         var EOFlag = parseInt(<?php echo $i-1; ?>/itemShow); // 전체 리스트를 3(한 번에 보여줄 값)으로 나눠 페이지 최댓값을 구하고
@@ -64,7 +64,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
         $('#up').click(function() {
             if (Flag == 1)
             {
-                alert('<?php echo _('목록의 처음입니다.') ?>');
+                alert('목록의 처음입니다.');
             } else {
                 Flag--;
                 $('.c'+Flag).css('display','block');
@@ -75,7 +75,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
         $('#down').click(function() {
             if (Flag == EOFlag)
             {
-                alert('<?php echo _('더 이상 목록이 없습니다.') ?>');
+                alert('더 이상 목록이 없습니다.');
             } else {
                 Flag++;
                 $('.c'+Flag).css('display','block');
@@ -88,7 +88,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 
     <?php } else { // 오늘 본 상품이 없을 때 ?>
 
-    <p class="li_empty"><?php echo _('없음') ?></p>
+    <p class="li_empty">없음</p>
     <?php } ?>
 </div>
 

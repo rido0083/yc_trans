@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 ?>
 
 <div id="sit_pvi_nw" class="new_win">
-    <h1><?php echo _('상품 이미지 새창 보기') ?></h1>
+    <h1>상품 이미지 새창 보기</h1>
 
     <div id="sit_pvi_nwbig">
         <?php
@@ -46,7 +46,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
     ?>
 
     <div class="win_btn">
-        <button type="button" onclick="javascript:window.close();" class="btn_close"><?php echo _('창닫기') ?></button>
+        <button type="button" onclick="javascript:window.close();" class="btn_close">창닫기</button>
     </div>
 </div>
 
@@ -73,7 +73,7 @@ function fit_width()
     var sw = $(window).width();
     var $img = $("#sit_pvi_nwbig span img");
 
-    if($img.size() < 1)
+    if($img.length < 1)
         return;
 
     $img.each(function() {

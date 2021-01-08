@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$popular_skin_url.'/style.css">',
 ?>
 
 <aside id="popular">
-    <h2><?php echo _('인기검색어') ?></h2>
+    <h2>인기검색어</h2>
     
     <?php
     if( isset($list) && is_array($list) ){

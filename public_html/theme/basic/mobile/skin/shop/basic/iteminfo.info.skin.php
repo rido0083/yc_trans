@@ -7,7 +7,7 @@ include_once(G5_LIB_PATH.'/iteminfo.lib.php');
 add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">', 0);
 ?>
 
-<h1><?php echo _('상품설명') ?></h1>
+<h1>상품설명</h1>
 
 <div id="sit_inf" class="win_desc">
     <?php if ($it['it_basic']) { // 상품 기본설명 ?>
@@ -47,7 +47,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
     <?php
         } else {
             if($is_admin) {
-                echo _('<p>상품 정보 고시 정보가 올바르게 저장되지 않았습니다.<br>config.php 파일의 G5_ESCAPE_FUNCTION 설정을 addslashes 로<br>변경하신 후 관리자 &gt; 상품정보 수정에서 상품 정보를 다시 저장해주세요. </p>');
+                echo '<p>상품 정보 고시 정보가 올바르게 저장되지 않았습니다.<br>config.php 파일의 G5_ESCAPE_FUNCTION 설정을 addslashes 로<br>변경하신 후 관리자 &gt; 상품정보 수정에서 상품 정보를 다시 저장해주세요. </p>';
             }
         }
     } //if

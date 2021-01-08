@@ -9,7 +9,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_MSHOP_SKIN_URL.'/style.css">',
 for ($i=0; $row=sql_fetch_array($result); $i++)
 {
 
-    if ($i==0) echo '<aside id="sbn_side"><h2>'._('쇼핑몰 배너').'</h2><ul class="sb_bn">'.PHP_EOL;
+    if ($i==0) echo '<aside id="sbn_side"><h2>쇼핑몰 배너</h2><ul class="sb_bn">'.PHP_EOL;
     //print_r2($row);
     // 테두리 있는지
     $bn_border  = ($row['bn_border']) ? ' class="sbn_border"' : '';;
