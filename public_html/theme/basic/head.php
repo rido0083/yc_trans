@@ -189,7 +189,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     }   //end foreach $row
 
                     if ($i == 0) {  ?>
-                        <li class="gnb_empty"><?php echo _('메뉴 준비 중입니다.') ?><?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php"><?php echo _('관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.') ?><?php } ?></li>
+                        <li class="gnb_empty"><?php echo _('메뉴 준비 중입니다.') ?><?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php"><?php echo _('관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.') ?><?php } ?></a></li>
                     <?php } ?>
                 </ul>
                 <button type="button" class="gnb_close_btn"><i class="fa fa-times" aria-hidden="true"></i></button>

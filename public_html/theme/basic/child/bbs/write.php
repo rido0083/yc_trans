@@ -379,7 +379,7 @@ if ($w == '') {
     $content = get_text($write['wr_content'], 0);
 }
 
-$upload_max_filesize = number_format($board['bo_upload_size']) . ' 바이트';
+$upload_max_filesize = number_format($board['bo_upload_size']) . _(' 바이트');
 
 $width = $board['bo_table_width'];
 if ($width <= 100)

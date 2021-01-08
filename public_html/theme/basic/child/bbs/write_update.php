@@ -15,7 +15,7 @@ if($board['bo_use_category']) {
     if(!$ca_name) {
         $msg[] = '<strong>'._('분류').'</strong>'._('를 선택하세요.');
     } else {
-        $categories = array_map('trim', explode("|", $board['bo_category_list'].($is_admin ? '|공지' : '')));
+        $categories = array_map('trim', explode("|", $board['bo_category_list'].($is_admin ? _('|공지') : '')));
         if(!empty($categories) && !in_array($ca_name, $categories))
             $msg[] = _('분류를 올바르게 입력하세요.');
 
@@ -500,8 +500,8 @@ if(isset($_FILES['bf_file']['name']) && is_array($_FILES['bf_file']['name'])) {
 
         // 서버에 설정된 값보다 큰파일을 업로드 한다면
         if ($filename) {
-            if ($_FILES['bf_file']['error'][$i] == 1) {
-                $file_upload_msg .= '\"'.$filename._('\" 파일의 용량이 서버에 설정()'.$upload_max_filesize._(')된 값보다 크므로 업로드 할 수 없습니다.').'\\n';
+            if ($_FILES['bf_file']['error'][$i] == 1) {                
+                $file_upload_msg .= '\"'.$filename._('\" 파일의 용량이 서버에 설정(').$upload_max_filesize._(')된 값보다 크므로 업로드 할 수 없습니다.\\n');
                 continue;
             }
             else if ($_FILES['bf_file']['error'][$i] != 0) {

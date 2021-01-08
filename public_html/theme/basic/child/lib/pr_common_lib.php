@@ -230,6 +230,3 @@ function pr_shotcode() {
 <?php
 }
 ?>
-<script>
-console.log('<?php echo $pr_child_file ?>');
-</script>

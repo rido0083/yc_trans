@@ -1,0 +1,11 @@
+#파일 이름으로 제외하기
+#testfile.txt
+
+#폴더 이름으로 해당 디렉토리 전부 제외
+#commons/
+public/data
+
+#와일드카드를 사용하여 디렉토리/파일 제한 시키기
+#testfile.*
+#*.txt
+#test* #이러면 test로 시작하는 파일명 전부 제한.

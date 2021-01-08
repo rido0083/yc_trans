@@ -45,7 +45,8 @@ define('PR_AJAX_JS', PR_CHILD_URL.'/js');         //사용하는 플러그인 pa
 
 define('PR_SHOP_PATH', PR_THEME_CHILD.'/shop');         //
 define('PR_MSHOP_PATH', PR_THEME_CHILD.'/moble/shop');         //
-define('PR_BBS_DIR', G5_THEME_DIR.'/child/bbs');         //
+define('PR_BBS_DIR', G5_THEME_DIR.'/'.$config['cf_theme'].'/child/bbs');         //
+define('PR_SHOP_DIR', G5_THEME_DIR.'/'.$config['cf_theme'].'/child/shop');         //
 
 
 //기본설정 변수설정
